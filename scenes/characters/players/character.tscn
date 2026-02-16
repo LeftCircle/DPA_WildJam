@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://c835gp74gd31s" path="res://scenes/characters/states/in_air.gd" id="5_ma1fs"]
 [ext_resource type="Script" uid="uid://b7lmgww4w6p4" path="res://resources/character/CoyoteTimer.gd" id="5_oxdt7"]
 [ext_resource type="Script" uid="uid://b3scqiwxsp3ai" path="res://scenes/characters/states/dash.gd" id="6_eqpns"]
+[ext_resource type="Script" uid="uid://c7cdvchn6xmqc" path="res://scenes/characters/states/jump_state.gd" id="8_fwqwt"]
+[ext_resource type="Script" uid="uid://dshk7xfko5k4n" path="res://scenes/characters/players/input_processor.gd" id="8_ymfos"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1bdar"]
 
@@ -20,6 +22,10 @@ var/var/hint_string = ""
 [sub_resource type="Resource" id="Resource_ymfos"]
 script = ExtResource("5_oxdt7")
 metadata/_custom_type_script = "uid://b7lmgww4w6p4"
+
+[sub_resource type="Curve" id="Curve_fwqwt"]
+_data = [Vector2(0.5233333, 1), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [sub_resource type="Animation" id="Animation_oxdt7"]
 resource_name = "falling"
@@ -45,26 +51,40 @@ texture = ExtResource("1_x31xa")
 scale = Vector2(6.4, 6.4)
 shape = SubResource("CircleShape2D_1bdar")
 
-[node name="SM_Character" type="LimboHSM" parent="." unique_id=1789133882 node_paths=PackedStringArray("char")]
+[node name="SM_Character" type="LimboHSM" parent="." unique_id=1789133882 node_paths=PackedStringArray("character")]
 blackboard_plan = SubResource("BlackboardPlan_1bdar")
 script = ExtResource("3_2qjml")
-char = NodePath("..")
+character = NodePath("..")
 
-[node name="OnGround" type="LimboState" parent="SM_Character" unique_id=1913486763 node_paths=PackedStringArray("air_state", "character")]
+[node name="OnGround" type="LimboState" parent="SM_Character" unique_id=1913486763 node_paths=PackedStringArray("air_state", "jump_state", "character", "input_processor")]
 script = ExtResource("4_ma1fs")
+speed = 1000
 air_state = NodePath("../InAir")
+jump_state = NodePath("../JumpState")
 character = NodePath("../..")
+input_processor = NodePath("../../input_processor")
 coyote_timer = SubResource("Resource_ymfos")
 
-[node name="InAir" type="LimboState" parent="SM_Character" unique_id=366118137 node_paths=PackedStringArray("char")]
+[node name="InAir" type="LimboState" parent="SM_Character" unique_id=366118137 node_paths=PackedStringArray("character", "ground_state")]
 script = ExtResource("5_ma1fs")
-char = NodePath("../..")
+character = NodePath("../..")
+ground_state = NodePath("../OnGround")
 
 [node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899]
 script = ExtResource("6_eqpns")
 metadata/_custom_type_script = "uid://b3scqiwxsp3ai"
 
+[node name="JumpState" type="LimboState" parent="SM_Character" unique_id=685114196 node_paths=PackedStringArray("air_state", "character")]
+script = ExtResource("8_fwqwt")
+jump_curve = SubResource("Curve_fwqwt")
+air_state = NodePath("../InAir")
+character = NodePath("../..")
+metadata/_custom_type_script = "uid://c7cdvchn6xmqc"
+
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=319241558]
 libraries/ = SubResource("AnimationLibrary_fwqwt")
 tree_root = SubResource("AnimationNodeBlendSpace2D_y3q2w")
 parameters/blend_position = Vector2(0, 0)
+
+[node name="input_processor" type="Node" parent="." unique_id=656449399]
+script = ExtResource("8_ymfos")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bex0lffxwuad4"]
 
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_0sd55"]
+[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="2_yjjn1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iag8j"]
 distance = 2.0
@@ -17,3 +18,8 @@ shape = SubResource("WorldBoundaryShape2D_iag8j")
 
 [node name="Character" parent="Characters" unique_id=608707863 instance=ExtResource("1_0sd55")]
 position = Vector2(510, 185)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=36951187]
+position = Vector2(578, 582)
+scale = Vector2(9.0859375, 1)
+texture = ExtResource("2_yjjn1")
