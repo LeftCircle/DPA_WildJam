@@ -6,8 +6,6 @@ class_name CharacterGroundState
 @export_range(2000, 10000) var decceleration = 5000;
 
 
-@export var air_state : LimboState
-@export var jump_state : LimboState
 @export var character : CharacterBody2D
 @export var input_processor : InputProcessor
 @export var coyote_timer : CoyoteTimer
@@ -21,7 +19,7 @@ func _update(delta : float):
 	else:
 		_move(delta)
 	if Input.is_action_just_pressed("jump"):
-		get_root().change_active_state(air_state)
+		dispatch("ground_to_jump")
 
 func _move(delta : float) -> void:
 	var a : float = 0
@@ -31,15 +29,12 @@ func _move(delta : float) -> void:
 		a = decceleration
 	var og_vel = character.velocity
 	character.velocity = character.velocity.move_toward(input_processor.input_dir * speed, a * delta)
-	print(input_processor.input_dir)
 	character.velocity.y = og_vel.y
-	print(character.velocity)
 	character.move_and_slide()
-
 
 func _on_coyote_frame_reached():
 	coyote_timer.reset()
-	get_root().change_active_state(air_state)
+	dispatch("ground_to_air")
 
 func _exit():
 	coyote_timer.reset()

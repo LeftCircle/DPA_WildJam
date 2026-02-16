@@ -14,13 +14,13 @@ func _enter():
 
 func _update(delta):
 	_current_jump_time += delta
-	if _current_jump_time > jump_duration:
-		state_machine.change_active_state(air_state)
+	if _current_jump_time > jump_duration or not Input.is_action_pressed("jump"):
+		dispatch("jump_to_air")
 	else:
-		var curve_point = jump_curve.get_point_position(_current_jump_time / jump_duration)
-		character.velocity.y = curve_point * jump_max_speed
+		var curve_point = jump_curve.sample(_current_jump_time / jump_duration)
+		var new_y : float = (curve_point * jump_max_speed)
+		character.velocity.y = -new_y
 		character.move_and_slide()
-	
 
 func _exit():
 	_current_jump_time = 0

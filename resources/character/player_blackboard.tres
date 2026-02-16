@@ -1,0 +1,23 @@
+[gd_resource type="BlackboardPlan" format=3 uid="uid://jquj81t3d3xq"]
+
+[resource]
+var/jump_state/name = &"jump_state"
+var/jump_state/type = 21
+var/jump_state/value = &"jump"
+var/jump_state/hint = 0
+var/jump_state/hint_string = ""
+var/in_air/name = &"in_air"
+var/in_air/type = 21
+var/in_air/value = &"air"
+var/in_air/hint = 0
+var/in_air/hint_string = ""
+var/dash/name = &"dash"
+var/dash/type = 21
+var/dash/value = &"dash"
+var/dash/hint = 0
+var/dash/hint_string = ""
+var/on_ground/name = &"on_ground"
+var/on_ground/type = 21
+var/on_ground/value = &"ground"
+var/on_ground/hint = 0
+var/on_ground/hint_string = ""
