@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bl58xmmt8lpct" path="res://scenes/characters/states/on_ground.gd" id="4_ma1fs"]
 [ext_resource type="Script" uid="uid://c835gp74gd31s" path="res://scenes/characters/states/in_air.gd" id="5_ma1fs"]
 [ext_resource type="Script" uid="uid://b7lmgww4w6p4" path="res://resources/character/CoyoteTimer.gd" id="5_oxdt7"]
+[ext_resource type="Resource" uid="uid://cp2xagdfik1wc" path="res://resources/character/PlayerHorizontalMovement.tres" id="6_al1dr"]
 [ext_resource type="Script" uid="uid://b3scqiwxsp3ai" path="res://scenes/characters/states/dash.gd" id="6_eqpns"]
 [ext_resource type="Script" uid="uid://c7cdvchn6xmqc" path="res://scenes/characters/states/jump_state.gd" id="8_fwqwt"]
 [ext_resource type="Script" uid="uid://dshk7xfko5k4n" path="res://scenes/characters/players/input_processor.gd" id="8_ymfos"]
@@ -53,26 +54,30 @@ character = NodePath("..")
 [node name="OnGround" type="LimboState" parent="SM_Character" unique_id=1913486763 node_paths=PackedStringArray("character", "input_processor")]
 blackboard_plan = ExtResource("3_y3q2w")
 script = ExtResource("4_ma1fs")
-speed = 1000
+horizontal_movement = ExtResource("6_al1dr")
 character = NodePath("../..")
 input_processor = NodePath("../../input_processor")
 coyote_timer = SubResource("Resource_ymfos")
 
-[node name="InAir" type="LimboState" parent="SM_Character" unique_id=366118137 node_paths=PackedStringArray("character", "ground_state")]
+[node name="InAir" type="LimboState" parent="SM_Character" unique_id=366118137 node_paths=PackedStringArray("character", "ground_state", "input_processor")]
 script = ExtResource("5_ma1fs")
 character = NodePath("../..")
 ground_state = NodePath("../OnGround")
+horizontal_movement = ExtResource("6_al1dr")
+input_processor = NodePath("../../input_processor")
 
 [node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899]
 script = ExtResource("6_eqpns")
 metadata/_custom_type_script = "uid://b3scqiwxsp3ai"
 
-[node name="JumpState" type="LimboState" parent="SM_Character" unique_id=685114196 node_paths=PackedStringArray("air_state", "character")]
+[node name="JumpState" type="LimboState" parent="SM_Character" unique_id=685114196 node_paths=PackedStringArray("air_state", "input_processor", "character")]
 script = ExtResource("8_fwqwt")
 jump_duration = 1.0
 jump_max_speed = 300.0
 jump_curve = SubResource("Curve_fwqwt")
 air_state = NodePath("../InAir")
+horizontal_movement = ExtResource("6_al1dr")
+input_processor = NodePath("../../input_processor")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://c7cdvchn6xmqc"
 
