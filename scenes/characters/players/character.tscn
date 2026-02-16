@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bnt0x2atitjy4"]
+
+[ext_resource type="Script" uid="uid://btk0heslwdsdl" path="res://scenes/characters/players/character.gd" id="1_1bdar"]
+[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="1_x31xa"]
+[ext_resource type="Script" uid="uid://ccpfg8mkwq6u6" path="res://scenes/characters/states/sm_character.gd" id="3_2qjml"]
+[ext_resource type="Script" uid="uid://bl58xmmt8lpct" path="res://scenes/characters/states/on_ground.gd" id="4_ma1fs"]
+[ext_resource type="Script" uid="uid://c835gp74gd31s" path="res://scenes/characters/states/in_air.gd" id="5_ma1fs"]
+[ext_resource type="Script" uid="uid://b7lmgww4w6p4" path="res://resources/character/CoyoteTimer.gd" id="5_oxdt7"]
+[ext_resource type="Script" uid="uid://b3scqiwxsp3ai" path="res://scenes/characters/states/dash.gd" id="6_eqpns"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bdar"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_1bdar"]
+var/var/name = &"var"
+var/var/type = 3
+var/var/value = 0.0
+var/var/hint = 0
+var/var/hint_string = ""
+
+[sub_resource type="Resource" id="Resource_ymfos"]
+script = ExtResource("5_oxdt7")
+metadata/_custom_type_script = "uid://b7lmgww4w6p4"
+
+[sub_resource type="Animation" id="Animation_oxdt7"]
+resource_name = "falling"
+
+[sub_resource type="Animation" id="Animation_ymfos"]
+resource_name = "rising"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fwqwt"]
+_data = {
+&"falling": SubResource("Animation_oxdt7"),
+&"rising": SubResource("Animation_ymfos")
+}
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_y3q2w"]
+
+[node name="Character" type="CharacterBody2D" unique_id=608707863]
+script = ExtResource("1_1bdar")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1579326263]
+texture = ExtResource("1_x31xa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1548995392]
+scale = Vector2(6.4, 6.4)
+shape = SubResource("CircleShape2D_1bdar")
+
+[node name="SM_Character" type="LimboHSM" parent="." unique_id=1789133882 node_paths=PackedStringArray("char")]
+blackboard_plan = SubResource("BlackboardPlan_1bdar")
+script = ExtResource("3_2qjml")
+char = NodePath("..")
+
+[node name="OnGround" type="LimboState" parent="SM_Character" unique_id=1913486763 node_paths=PackedStringArray("air_state", "character")]
+script = ExtResource("4_ma1fs")
+air_state = NodePath("../InAir")
+character = NodePath("../..")
+coyote_timer = SubResource("Resource_ymfos")
+
+[node name="InAir" type="LimboState" parent="SM_Character" unique_id=366118137 node_paths=PackedStringArray("char")]
+script = ExtResource("5_ma1fs")
+char = NodePath("../..")
+
+[node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899]
+script = ExtResource("6_eqpns")
+metadata/_custom_type_script = "uid://b3scqiwxsp3ai"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=319241558]
+libraries/ = SubResource("AnimationLibrary_fwqwt")
+tree_root = SubResource("AnimationNodeBlendSpace2D_y3q2w")
+parameters/blend_position = Vector2(0, 0)

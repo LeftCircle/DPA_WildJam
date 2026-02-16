@@ -1,0 +1,2 @@
+extends LimboState
+class_name DashState

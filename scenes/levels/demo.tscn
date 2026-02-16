@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bex0lffxwuad4"]
+
+[ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_0sd55"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iag8j"]
+distance = 2.0
+
+[node name="Demo" type="Node2D" unique_id=1753969403]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1126885764]
+position = Vector2(587, 516)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1563480798]
+shape = SubResource("WorldBoundaryShape2D_iag8j")
+
+[node name="Characters" type="Node" parent="." unique_id=1182191473]
+
+[node name="Character" parent="Characters" unique_id=608707863 instance=ExtResource("1_0sd55")]
+position = Vector2(510, 185)
