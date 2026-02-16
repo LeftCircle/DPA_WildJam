@@ -94,5 +94,6 @@ parameters/blend_position = Vector2(0, 0)
 script = ExtResource("8_ymfos")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=80016861]
+zoom = Vector2(0.6, 0.6)
 limit_smoothed = true
 position_smoothing_enabled = true
