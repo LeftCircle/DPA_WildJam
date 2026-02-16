@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://ci2clx0srv2vs"]
+
+[ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_e1ghi"]
+[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="2_t372c"]
+[ext_resource type="PackedScene" uid="uid://p26j0g8a2tki" path="res://scenes/levels/level_block.tscn" id="3_8umyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1ghi"]
+size = Vector2(128, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3k81"]
+size = Vector2(128, 768)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8umyf"]
+size = Vector2(256, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytc0q"]
+size = Vector2(127.6342, 1792.0593)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t372c"]
+size = Vector2(127.6342, 1087.9996)
+
+[node name="Level01" type="Node2D" unique_id=922797211]
+position = Vector2(128.00005, -511.99997)
+
+[node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_e1ghi")]
+position = Vector2(64, 384)
+
+[node name="GroundGeo" type="Node" parent="." unique_id=1557124129]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GroundGeo" unique_id=2042376041]
+position = Vector2(128.00005, -511.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundGeo/StaticBody2D" unique_id=1509821758]
+position = Vector2(-64, 192)
+shape = SubResource("RectangleShape2D_e1ghi")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="GroundGeo" unique_id=2115862263]
+position = Vector2(1920, -512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundGeo/StaticBody2D5" unique_id=1564080911]
+position = Vector2(-64, 0)
+shape = SubResource("RectangleShape2D_v3k81")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="GroundGeo" unique_id=1275721162]
+position = Vector2(1024, -511.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundGeo/StaticBody2D2" unique_id=1277987567]
+position = Vector2(0, -64.00003)
+shape = SubResource("RectangleShape2D_8umyf")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="GroundGeo" unique_id=671666207]
+position = Vector2(128, -128.00003)
+rotation = -1.569844
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundGeo/StaticBody2D3" unique_id=1150966123]
+position = Vector2(-63.32956, 768.09143)
+scale = Vector2(1.0000006, 1.0000005)
+shape = SubResource("RectangleShape2D_ytc0q")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="GroundGeo" unique_id=921869053]
+position = Vector2(128.00006, -640)
+rotation = -1.569844
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundGeo/StaticBody2D4" unique_id=1610127612]
+position = Vector2(-63.3295, 416.12204)
+scale = Vector2(1.0000005, 1.0000004)
+shape = SubResource("RectangleShape2D_t372c")
+
+[node name="LevelBlock" parent="GroundGeo" unique_id=671455562 instance=ExtResource("3_8umyf")]
+position = Vector2(1536, -128)
+scale = Vector2(2, 1)
+
+[node name="LevelBlock2" parent="GroundGeo" unique_id=1841718891 instance=ExtResource("3_8umyf")]
+position = Vector2(1151, -605)
+scale = Vector2(2, 0.33)
+
+[node name="LevelBlock" parent="." unique_id=219215489 instance=ExtResource("3_8umyf")]
+position = Vector2(1536, -384.00003)
+scale = Vector2(2, 1)
+
+[node name="LevelBlock2" parent="." unique_id=1272390435 instance=ExtResource("3_8umyf")]
+position = Vector2(-512.00006, -384.00003)
+scale = Vector2(15, 1)
+
+[node name="LevelBlock6" parent="." unique_id=1140809335 instance=ExtResource("3_8umyf")]
+position = Vector2(-640.00006, -1664)
+scale = Vector2(19, 1)
+
+[node name="LevelBlock3" parent="." unique_id=1969173510 instance=ExtResource("3_8umyf")]
+position = Vector2(-512.00006, -384)
+scale = Vector2(1, 9)
+
+[node name="LevelBlock4" parent="." unique_id=683110693 instance=ExtResource("3_8umyf")]
+position = Vector2(1664, -384)
+scale = Vector2(1, 10)
+
+[node name="LowerRamp" type="StaticBody2D" parent="." unique_id=494812897]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LowerRamp" unique_id=1030263157]
+position = Vector2(-384.00006, -512)
+polygon = PackedVector2Array(832, 0, 448, -320, 0, -320, 0, 0, 0, 0)
+
+[node name="FloatingRamp" type="StaticBody2D" parent="." unique_id=549225467]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FloatingRamp" unique_id=1287144444]
+position = Vector2(-4.5776367e-05, 191.99997)
+polygon = PackedVector2Array(320, -1280, 768, -1280, 768, -1408, 512, -1408)
+
+[node name="LevelBlock5" parent="." unique_id=1427404248 instance=ExtResource("3_8umyf")]
+position = Vector2(1536, -1344)
+scale = Vector2(2, 0.5)
+
+[node name="LevelBlock7" parent="." unique_id=1073172308 instance=ExtResource("3_8umyf")]
+position = Vector2(1023.99994, -1280)
+scale = Vector2(1, 0.5)
+
+[node name="LevelBlock8" parent="." unique_id=1679959809 instance=ExtResource("3_8umyf")]
+position = Vector2(255.99995, -1280)
+scale = Vector2(1, 0.5)
+
+[node name="chain" type="Sprite2D" parent="." unique_id=385092760]
+modulate = Color(0.3, 0.3, 0.3, 0.5411765)
+position = Vector2(319.99994, -1536)
+scale = Vector2(0.25, 2.453125)
+texture = ExtResource("2_t372c")
+
+[node name="chain2" type="Sprite2D" parent="." unique_id=1118963323]
+modulate = Color(0.3, 0.3, 0.3, 0.5411765)
+position = Vector2(1088, -1536)
+scale = Vector2(0.25, 2.453125)
+texture = ExtResource("2_t372c")
+
+[node name="LevelBlock9" parent="." unique_id=764779974 instance=ExtResource("3_8umyf")]
+position = Vector2(-384.00006, -1472)
+scale = Vector2(1, 0.5)

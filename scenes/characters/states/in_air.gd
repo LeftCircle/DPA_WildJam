@@ -14,3 +14,5 @@ func _update(delta : float) -> void:
 	character.move_and_slide()
 	if character.is_on_floor():
 		get_root().change_active_state(ground_state)
+	if Input.is_action_just_pressed("jump"):
+		dispatch("double_jump")

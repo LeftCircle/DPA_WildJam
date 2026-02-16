@@ -1,6 +1,6 @@
 extends LimboHSM
 
-@export var character : CharacterBody2D
+@export var character : PlayerCharacter
 
 
 @onready var on_ground : LimboState = $OnGround
@@ -17,6 +17,16 @@ func _create_transitions() -> void:
 	add_transition($JumpState, $InAir, "jump_to_air")
 	add_transition($InAir, $OnGround, "air_to_ground")
 	add_transition($OnGround, $InAir, "ground_to_air")
+	add_transition($InAir, $JumpState, "double_jump", _check_for_feather)
 
 func _on_on_ground_change_to_in_air():
 	change_active_state(in_air)
+
+func _check_for_feather() -> bool:
+	var check = false
+	if character.feather_counter >= 1:
+		character.feather_counter -= 1
+		check = true
+	print("Current Feathers = ", character.feather_counter)
+	return check
+		
