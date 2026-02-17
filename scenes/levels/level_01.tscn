@@ -57,6 +57,7 @@ scale = Vector2(0.99999994, 0.99999994)
 position = Vector2(-63.32956, 768.09143)
 scale = Vector2(1.0000006, 1.0000005)
 shape = SubResource("RectangleShape2D_ytc0q")
+debug_color = Color(0.19088042, 0.57907706, 0.75621796, 0.41960785)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="GroundGeo" unique_id=921869053]
 position = Vector2(128.00006, -640)
@@ -85,8 +86,8 @@ position = Vector2(-512.00006, -384.00003)
 scale = Vector2(15, 1)
 
 [node name="LevelBlock6" parent="." unique_id=1140809335 instance=ExtResource("3_8umyf")]
-position = Vector2(-640.00006, -1664)
-scale = Vector2(19, 1)
+position = Vector2(-512.0001, -1664)
+scale = Vector2(18, 1)
 
 [node name="LevelBlock3" parent="." unique_id=1969173510 instance=ExtResource("3_8umyf")]
 position = Vector2(-512.00006, -384)
@@ -109,16 +110,22 @@ position = Vector2(-64.000046, 191.99997)
 polygon = PackedVector2Array(256, -1280, 704, -1280, 704, -1408, 448, -1408)
 
 [node name="LevelBlock5" parent="." unique_id=1427404248 instance=ExtResource("3_8umyf")]
-position = Vector2(1536, -1344)
+position = Vector2(1408, -1344)
 scale = Vector2(2, 0.5)
 
 [node name="LevelBlock7" parent="." unique_id=1073172308 instance=ExtResource("3_8umyf")]
 position = Vector2(895.99994, -1344)
 scale = Vector2(1, 0.5)
 
+[node name="CollisionShape2D" parent="LevelBlock7" index="0" unique_id=725713179]
+debug_color = Color(0.8273194, 0.22687283, 0.8027725, 0.41960785)
+
 [node name="LevelBlock8" parent="." unique_id=1679959809 instance=ExtResource("3_8umyf")]
 position = Vector2(255.99995, -1344)
 scale = Vector2(1, 0.5)
+
+[node name="CollisionShape2D" parent="LevelBlock8" index="0" unique_id=725713179]
+debug_color = Color(0.836062, 0.2637752, 0.7149756, 0.41960785)
 
 [node name="chain" type="Sprite2D" parent="." unique_id=385092760]
 modulate = Color(0.3, 0.3, 0.3, 0.5411765)
@@ -135,3 +142,6 @@ texture = ExtResource("2_t372c")
 [node name="LevelBlock9" parent="." unique_id=764779974 instance=ExtResource("3_8umyf")]
 position = Vector2(-384.00006, -1472)
 scale = Vector2(1, 0.5)
+
+[editable path="LevelBlock7"]
+[editable path="LevelBlock8"]

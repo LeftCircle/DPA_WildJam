@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://u3hm0ly3ap0k"]
+
+[ext_resource type="Script" uid="uid://bu2raovobe55" path="res://scenes/characters/ui/hud.gd" id="1_8ocu7"]
+[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="2_wn535"]
+
+[node name="Hud" type="Control" unique_id=1950512039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ocu7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=60555166]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.305
+anchor_bottom = 0.10366667
+offset_right = -0.36001587
+offset_bottom = -0.1760025
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=507473259]
+layout_mode = 2
+texture = ExtResource("2_wn535")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=925298367]
+layout_mode = 2
+texture = ExtResource("2_wn535")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=508206683]
+layout_mode = 2
+texture = ExtResource("2_wn535")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer" unique_id=114518235]
+layout_mode = 2
+texture = ExtResource("2_wn535")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer" unique_id=257868716]
+layout_mode = 2
+texture = ExtResource("2_wn535")
+expand_mode = 2
+stretch_mode = 4
