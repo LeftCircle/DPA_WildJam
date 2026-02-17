@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://p26j0g8a2tki" path="res://scenes/levels/level_block.tscn" id="1_f5vym"]
 [ext_resource type="TileSet" uid="uid://on0muu4a8d60" path="res://scenes/tiles/collision_tiles.tres" id="2_vq1pa"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_c5o3r"]
+[ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="4_3acmf"]
+[ext_resource type="PackedScene" uid="uid://dy2lrckwpbt6d" path="res://scenes/objects/feather/feather_character.tscn" id="5_yjjx0"]
 
 [node name="Level02" type="Node2D" unique_id=453271988]
 
@@ -39,3 +41,9 @@ tile_set = ExtResource("2_vq1pa")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
 position = Vector2(384, -64)
+
+[node name="ThrownFeather" parent="." unique_id=1510378705 instance=ExtResource("4_3acmf")]
+position = Vector2(268, -448)
+
+[node name="FeatherCharacter" parent="." unique_id=1631191588 instance=ExtResource("5_yjjx0")]
+position = Vector2(606, -381)
