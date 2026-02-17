@@ -12,8 +12,7 @@ func _ready():
 func _update(delta : float):
 	if !character.is_on_floor():
 		coyote_timer.tick()
-	else:
-		_move(delta)
+	_move(delta)
 	if Input.is_action_just_pressed("jump"):
 		dispatch("ground_to_jump")
 

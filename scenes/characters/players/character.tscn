@@ -50,10 +50,11 @@ position = Vector2(1.1368684e-13, -50)
 scale = Vector2(6.4, 6.4)
 shape = SubResource("RectangleShape2D_al1dr")
 
-[node name="SM_Character" type="LimboHSM" parent="." unique_id=1789133882 node_paths=PackedStringArray("character")]
+[node name="SM_Character" type="LimboHSM" parent="." unique_id=1789133882 node_paths=PackedStringArray("character", "input_processor")]
 blackboard_plan = ExtResource("3_y3q2w")
 script = ExtResource("3_2qjml")
 character = NodePath("..")
+input_processor = NodePath("../input_processor")
 
 [node name="OnGround" type="LimboState" parent="SM_Character" unique_id=1913486763 node_paths=PackedStringArray("character", "input_processor")]
 blackboard_plan = ExtResource("3_y3q2w")
@@ -70,8 +71,9 @@ ground_state = NodePath("../OnGround")
 horizontal_movement = ExtResource("6_al1dr")
 input_processor = NodePath("../../input_processor")
 
-[node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899]
+[node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899 node_paths=PackedStringArray("input_processor")]
 script = ExtResource("6_eqpns")
+input_processor = NodePath("../../input_processor")
 metadata/_custom_type_script = "uid://b3scqiwxsp3ai"
 
 [node name="JumpState" type="LimboState" parent="SM_Character" unique_id=685114196 node_paths=PackedStringArray("air_state", "input_processor", "character")]
