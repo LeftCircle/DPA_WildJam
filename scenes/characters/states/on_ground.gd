@@ -5,9 +5,16 @@ class_name CharacterGroundState
 @export var character : CharacterBody2D
 @export var input_processor : InputProcessor
 @export var coyote_timer : CoyoteTimer
+@export var anim_tree : AnimationTree
+
+
+@onready var anim_sm : AnimationNodeStateMachinePlayback = anim_tree.get("parameters/playback")
 
 func _ready():
 	coyote_timer.frame_reached.connect(_on_coyote_frame_reached)
+
+func _enter():
+	anim_sm.start("Walk")
 
 func _update(delta : float):
 	if !character.is_on_floor():
@@ -19,6 +26,7 @@ func _update(delta : float):
 func _move(delta : float) -> void:
 	character.velocity.x = horizontal_movement.tick(delta, input_processor.input_dir, character.velocity.x)
 	character.move_and_slide()
+	anim_tree.set("parameters/Walk/blend_position", input_processor.last_input_dir.x)
 
 func _on_coyote_frame_reached():
 	coyote_timer.reset()
@@ -26,4 +34,4 @@ func _on_coyote_frame_reached():
 
 func _exit():
 	coyote_timer.reset()
-	
+	anim_sm.start("RESET")

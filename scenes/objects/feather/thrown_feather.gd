@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+class_name ThrownFeather
 
 
 func _physics_process(delta):
