@@ -2,6 +2,19 @@
 
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_up1bk"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_31sm7"]
+[ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_wu80y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nanf4"]
+size = Vector2(896, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu80y"]
+size = Vector2(64, 1408)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6e47"]
+size = Vector2(60, 568)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4k"]
+size = Vector2(64, 364)
 
 [node name="Level04" type="Node2D" unique_id=823577351]
 
@@ -12,5 +25,42 @@ tile_map_data = PackedByteArray("AAAAAPn/AAAAAAAAAAABAPn/AAAAAAAAAAACAPn/AAAAAAA
 tile_set = ExtResource("1_up1bk")
 
 [node name="HalfGridCollisions" type="TileMapLayer" parent="Collisions" unique_id=1790080491]
-tile_map_data = PackedByteArray("AABjAN3/AAAAAAAAAABiAN3/AAAAAAAAAABhAN3/AAAAAAAAAABgAN3/AAAAAAAAAABfAN3/AAAAAAAAAABeAN3/AAAAAAAAAABdAN3/AAAAAAAAAAAIAPL/AAAAAAAAAAAJAPL/AAAAAAAAAAAKAPL/AAAAAAAAAAALAPL/AAAAAAAAAAAMAPH/AAAAAAAAAAAMAPD/AAAAAAAAAAAMAO//AAAAAAAAAAAMAPL/AAAAAAAAAAAeAPz/AAAAAAAAAAAfAPz/AAAAAAAAAAAgAPz/AAAAAAAAAAAhAPz/AAAAAAAAAAATAO7/AAAAAAAAAAASAO7/AAAAAAAAAAAPAOz/AAAAAAAAAAAPAO3/AAAAAAAAAAAdAOL/AAAAAAAAAAAdAOP/AAAAAAAAAAAdAOT/AAAAAAAAAAAdAOX/AAAAAAAAAAAdAOb/AAAAAAAAAAAdAOf/AAAAAAAAAAAdAOj/AAAAAAAAAAAdAOn/AAAAAAAAAAAdAOr/AAAAAAAAAAAdAOv/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AABjAN3/AAAAAAAAAABiAN3/AAAAAAAAAABhAN3/AAAAAAAAAABgAN3/AAAAAAAAAABfAN3/AAAAAAAAAABeAN3/AAAAAAAAAABdAN3/AAAAAAAAAAAIAPL/AAAAAAAAAAAJAPL/AAAAAAAAAAAKAPL/AAAAAAAAAAALAPL/AAAAAAAAAAAMAPH/AAAAAAAAAAAMAPD/AAAAAAAAAAAMAO//AAAAAAAAAAAMAPL/AAAAAAAAAAAeAPz/AAAAAAAAAAAfAPz/AAAAAAAAAAAgAPz/AAAAAAAAAAAhAPz/AAAAAAAAAAATAO7/AAAAAAAAAAASAO7/AAAAAAAAAAAPAOz/AAAAAAAAAAAPAO3/AAAAAAAAAAAdAOL/AAAAAAAAAAAdAOP/AAAAAAAAAAAdAOT/AAAAAAAAAAAdAOX/AAAAAAAAAAAdAOb/AAAAAAAAAAAdAOf/AAAAAAAAAAAdAOj/AAAAAAAAAAAdAOn/AAAAAAAAAAAdAOr/AAAAAAAAAAAdAOv/AAAAAAAAAAAIAOz/AAAAAAAAAAAIAO3/AAAAAAAAAAAIAO7/AAAAAAAAAAAIAO//AAAAAAAAAAA=")
 tile_set = ExtResource("2_31sm7")
+
+[node name="DeathZones" type="Node" parent="." unique_id=651539020]
+
+[node name="DeathZone" type="Area2D" parent="DeathZones" unique_id=958308475]
+position = Vector2(2048, 0)
+script = ExtResource("3_wu80y")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=986860097]
+shape = SubResource("RectangleShape2D_nanf4")
+
+[node name="DeathZone2" type="Area2D" parent="DeathZones" unique_id=1257547603]
+position = Vector2(256, -1088)
+script = ExtResource("3_wu80y")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone2" unique_id=1217481531]
+position = Vector2(-256, -512)
+shape = SubResource("RectangleShape2D_wu80y")
+
+[node name="DeathZone3" type="Area2D" parent="DeathZones" unique_id=22392686]
+position = Vector2(256, -1088)
+script = ExtResource("3_wu80y")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone3" unique_id=721589672]
+position = Vector2(258, -253)
+shape = SubResource("RectangleShape2D_j6e47")
+
+[node name="DeathZone4" type="Area2D" parent="DeathZones" unique_id=890022755]
+position = Vector2(256, -1088)
+script = ExtResource("3_wu80y")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone4" unique_id=628795697]
+position = Vector2(262, -1036)
+shape = SubResource("RectangleShape2D_ypi4k")

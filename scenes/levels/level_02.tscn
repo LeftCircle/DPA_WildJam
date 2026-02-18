@@ -1,11 +1,20 @@
 [gd_scene format=4 uid="uid://bud5trm8rqsq5"]
 
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_3acmf"]
+[ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_yjjx0"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_c5o3r"]
 [ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="4_3acmf"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="4_yjjx0"]
+[ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="6_a3l5x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keemd"]
+size = Vector2(2239, 61.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3l5x"]
+size = Vector2(700, 57.625)
 
 [node name="Level02" type="Node2D" unique_id=453271988]
+script = ExtResource("1_yjjx0")
 
 [node name="LargeGridCollisions" type="TileMapLayer" parent="." unique_id=1063974431]
 modulate = Color(1, 1, 1, 0.2509804)
@@ -21,3 +30,21 @@ position = Vector2(268, -448)
 [node name="HalfGridCollisions" type="TileMapLayer" parent="." unique_id=989491266]
 tile_map_data = PackedByteArray("AAAIAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAAOAPz/AAAAAAAAAAAPAPz/AAAAAAAAAAA=")
 tile_set = ExtResource("4_yjjx0")
+
+[node name="DeathAreas" type="Node" parent="." unique_id=1000883032]
+
+[node name="DeathZone" type="Area2D" parent="DeathAreas" unique_id=113434131]
+script = ExtResource("6_a3l5x")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAreas/DeathZone" unique_id=970030942]
+position = Vector2(1591.5, -10)
+shape = SubResource("RectangleShape2D_keemd")
+
+[node name="DeathZone2" type="Area2D" parent="DeathAreas" unique_id=501600822]
+script = ExtResource("6_a3l5x")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAreas/DeathZone2" unique_id=895044796]
+position = Vector2(2123, -916)
+shape = SubResource("RectangleShape2D_a3l5x")

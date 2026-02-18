@@ -2,6 +2,10 @@
 
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_fvfhs"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_o4mod"]
+[ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_4wrbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4tf"]
+size = Vector2(5824, 182)
 
 [node name="Level03" type="Node2D" unique_id=912881943]
 
@@ -40,3 +44,13 @@ position = Vector2(384, 1280)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D4" unique_id=1271038278]
 position = Vector2(640, -1664)
 polygon = PackedVector2Array(256, -128, 128, 0, 256, 0)
+
+[node name="DeathZones" type="Node" parent="." unique_id=1892727996]
+
+[node name="DeathZone" type="Area2D" parent="DeathZones" unique_id=1985402099]
+script = ExtResource("3_4wrbh")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=85222796]
+position = Vector2(2912, 27)
+shape = SubResource("RectangleShape2D_ps4tf")

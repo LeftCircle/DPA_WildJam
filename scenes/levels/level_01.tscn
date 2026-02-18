@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ci2clx0srv2vs"]
 
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_e1ghi"]
+[ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_uvc87"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="2_t372c"]
 [ext_resource type="PackedScene" uid="uid://p26j0g8a2tki" path="res://scenes/levels/level_block.tscn" id="3_8umyf"]
 
@@ -21,6 +22,7 @@ size = Vector2(127.6342, 1087.9996)
 
 [node name="Level01" type="Node2D" unique_id=922797211]
 position = Vector2(128.00005, -511.99997)
+script = ExtResource("1_uvc87")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_e1ghi")]
 position = Vector2(1600, -1408)

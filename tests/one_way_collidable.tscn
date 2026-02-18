@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bdf26sjss7vmh"]
+
+[ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_2b51k"]
+[ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="2_dqs0w"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_04eb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04eb8"]
+size = Vector2(212, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqs0w"]
+size = Vector2(616, 247)
+
+[node name="OneWayCollidable" type="Node2D" unique_id=687456439]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1315079564]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1959664690]
+shape = SubResource("WorldBoundaryShape2D_04eb8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=534920888]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1310705971]
+position = Vector2(206, -187)
+shape = SubResource("RectangleShape2D_04eb8")
+one_way_collision = true
+
+[node name="Character" parent="StaticBody2D2" unique_id=608707863 instance=ExtResource("1_2b51k")]
+position = Vector2(31, -27)
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=683268]
+script = ExtResource("2_dqs0w")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=753475009]
+position = Vector2(711, -157)
+shape = SubResource("RectangleShape2D_dqs0w")
