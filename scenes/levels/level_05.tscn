@@ -2,6 +2,25 @@
 
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_7o5v3"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_yy1ns"]
+[ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_xv7r2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy1ns"]
+size = Vector2(128, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv7r2"]
+size = Vector2(320, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jejc5"]
+size = Vector2(176, 1728)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe0ra"]
+size = Vector2(88, 1312)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqfam"]
+size = Vector2(992, 96)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_xv7r2"]
+points = PackedVector2Array(64, 160, -128, 64, 320, -160)
 
 [node name="Level05" type="Node2D" unique_id=282548391]
 
@@ -12,5 +31,63 @@ tile_map_data = PackedByteArray("AAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAABAP7/AAAAAAA
 tile_set = ExtResource("1_7o5v3")
 
 [node name="HalfGridCollisions" type="TileMapLayer" parent="Collisions" unique_id=524236466]
-tile_map_data = PackedByteArray("AAAVAP3/AAAAAAAAAAAWAP3/AAAAAAAAAAAOAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAAOAPj/AAAAAAAAAAAPAPj/AAAAAAAAAAAIAPT/AAAAAAAAAAAHAPT/AAAAAAAAAAAIAOj/AAAAAAAAAAAHAOj/AAAAAAAAAAAEAOT/AAAAAAAAAAAFAOT/AAAAAAAAAAAGAOT/AAAAAAAAAAAHAOT/AAAAAAAAAAAIAOT/AAAAAAAAAAAIAOD/AAAAAAAAAAAJAOD/AAAAAAAAAAAKAOD/AAAAAAAAAAALAOD/AAAAAAAAAAAHANz/AAAAAAAAAAAIANz/AAAAAAAAAAANANn/AAAAAAAAAAANANr/AAAAAAAAAAANANv/AAAAAAAAAAAOANr/AAAAAAAAAAAOANv/AAAAAAAAAAANANj/AAAAAAAAAAAMANj/AAAAAAAAAAAMANn/AAAAAAAAAAAMANr/AAAAAAAAAAAMANv/AAAAAAAAAAAVAPL/AAAAAAAAAAAWAPL/AAAAAAAAAAAXAPL/AAAAAAAAAAAUAPL/AAAAAAAAAAAfAO7/AAAAAAAAAAAgAO7/AAAAAAAAAAAqAO//AAAAAAAAAAArAO//AAAAAAAAAAApAOn/AAAAAAAAAAAoAOn/AAAAAAAAAAAqAOT/AAAAAAAAAAArAOT/AAAAAAAAAAAsAOT/AAAAAAAAAAAtAOT/AAAAAAAAAAAtAN7/AAAAAAAAAAAsAN7/AAAAAAAAAAArAN7/AAAAAAAAAAAqAN7/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAVAP3/AAAAAAAAAAAWAP3/AAAAAAAAAAAOAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAAOAPj/AAAAAAAAAAAPAPj/AAAAAAAAAAANANn/AAAAAAAAAAANANr/AAAAAAAAAAANANv/AAAAAAAAAAAOANr/AAAAAAAAAAAOANv/AAAAAAAAAAANANj/AAAAAAAAAAAMANj/AAAAAAAAAAAMANn/AAAAAAAAAAAMANr/AAAAAAAAAAAMANv/AAAAAAAAAAAVAPL/AAAAAAAAAAAWAPL/AAAAAAAAAAAXAPL/AAAAAAAAAAAUAPL/AAAAAAAAAAAfAO7/AAAAAAAAAAAgAO7/AAAAAAAAAAAqAO//AAAAAAAAAAArAO//AAAAAAAAAAApAOn/AAAAAAAAAAAoAOn/AAAAAAAAAAAqAOT/AAAAAAAAAAArAOT/AAAAAAAAAAAsAOT/AAAAAAAAAAAtAOT/AAAAAAAAAAAtAN7/AAAAAAAAAAAsAN7/AAAAAAAAAAArAN7/AAAAAAAAAAAqAN7/AAAAAAAAAAA=")
 tile_set = ExtResource("2_yy1ns")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=1601973918]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D" unique_id=1166909939]
+position = Vector2(512, -736)
+shape = SubResource("RectangleShape2D_yy1ns")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collisions" unique_id=1321313337]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D2" unique_id=800400062]
+position = Vector2(512, -1504)
+shape = SubResource("RectangleShape2D_yy1ns")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/StaticBody2D2" unique_id=639710309]
+position = Vector2(512, -2272)
+shape = SubResource("RectangleShape2D_yy1ns")
+one_way_collision = true
+
+[node name="DeathZones" type="Node" parent="." unique_id=1995673078]
+
+[node name="DeathZone" type="Area2D" parent="DeathZones" unique_id=1786005740]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(352, -1760)
+script = ExtResource("3_xv7r2")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=441354806]
+position = Vector2(64, 0)
+shape = SubResource("RectangleShape2D_xv7r2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=1389933794]
+position = Vector2(256, -256)
+shape = SubResource("RectangleShape2D_xv7r2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=867806368]
+position = Vector2(352, -928)
+shape = SubResource("RectangleShape2D_xv7r2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=890327430]
+position = Vector2(-152, -96)
+shape = SubResource("RectangleShape2D_jejc5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=2124540075]
+position = Vector2(436, -304)
+shape = SubResource("RectangleShape2D_pe0ra")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=681864530]
+position = Vector2(1136, 992)
+shape = SubResource("RectangleShape2D_hqfam")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=783106907]
+polygon = PackedVector2Array(672, 1024, 1472, 1088, 1600, 1600, 1472, 1472, 1376, 1376, 1088, 1344, 1024, 1152)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=61487589]
+position = Vector2(2144, 896)
+shape = SubResource("ConvexPolygonShape2D_xv7r2")
