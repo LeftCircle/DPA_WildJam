@@ -22,6 +22,7 @@ size = Vector2(10, 15.624997)
 
 [sub_resource type="Resource" id="Resource_ymfos"]
 script = ExtResource("5_oxdt7")
+coyote_frames = 5
 metadata/_custom_type_script = "uid://b7lmgww4w6p4"
 
 [sub_resource type="Curve" id="Curve_fwqwt"]
@@ -385,6 +386,7 @@ character = NodePath("../..")
 metadata/_custom_type_script = "uid://hhqyur0hswxn"
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=319241558]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_wllcr")
 anim_player = NodePath("../AnimationPlayer")
 parameters/DoubleJump/blend_position = -0.21879023
@@ -402,6 +404,7 @@ position_smoothing_enabled = true
 [node name="Wings" type="Sprite2D" parent="." unique_id=2074299470]
 visible = false
 position = Vector2(0, -55)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("12_yqo81")
 hframes = 6
 
