@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bx2ilo45uwif0" path="res://assets/characters/player/TestMCSpriteSheetV2.png" id="15_12orm"]
 [ext_resource type="Script" uid="uid://5ekrd6brmrx3" path="res://scenes/characters/players/player_vfx_controller.gd" id="17_uiu2b"]
 [ext_resource type="PackedScene" uid="uid://d1a0opq8vmrkp" path="res://scenes/VFX/feather_light/vfx_feathers_light.tscn" id="18_wllcr"]
+[ext_resource type="PackedScene" uid="uid://dgo5ql4vc04gt" path="res://scenes/VFX/dust/vfx_dust.tscn" id="19_ntitv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
 light_mode = 1
@@ -378,6 +379,7 @@ jump_curve = SubResource("Curve_fwqwt")
 air_state = NodePath("../InAir")
 horizontal_movement = ExtResource("6_al1dr")
 input_processor = NodePath("../../InputProcessor")
+jump_particles_ps = ExtResource("19_ntitv")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://c7cdvchn6xmqc"
 
@@ -410,7 +412,7 @@ position_smoothing_enabled = true
 [node name="Wings" type="Sprite2D" parent="." unique_id=2074299470]
 visible = false
 position = Vector2(0, -55)
-scale = Vector2(1e-05, 1e-05)
+scale = Vector2(-1, 1)
 texture = ExtResource("12_yqo81")
 hframes = 6
 
@@ -433,3 +435,5 @@ frame = 8
 script = ExtResource("17_uiu2b")
 
 [node name="vfx_feathers_light" parent="PlayerVFX" unique_id=501012890 instance=ExtResource("18_wllcr")]
+
+[node name="vfx_dust" parent="PlayerVFX" unique_id=1359231882 instance=ExtResource("19_ntitv")]

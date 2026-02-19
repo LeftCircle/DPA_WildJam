@@ -1,5 +1,6 @@
 @tool
 extends Node2D
+class_name DustParticleController
 
 @onready var dust: GPUParticles2D = $Dust
 
@@ -7,9 +8,8 @@ extends Node2D
 var test_button := dust_emit
 
 func dust_emit() -> void:
-	if dust:
-		dust.restart()
-		dust.emitting = true
+	dust.emitting = true
 
 func dust_finished():
+	print("Should queue free")
 	queue_free()
