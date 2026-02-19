@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b31c73iplkjll"]
 
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_sr3oh"]
-[ext_resource type="PackedScene" uid="uid://d1a0opq8vmrkp" path="res://scenes/VFX/feather_light/vfx_feathers_light.tscn" id="2_jrnya"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="3_emiss"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1aj68"]
@@ -12,9 +11,8 @@ light_mode = 1
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_sr3oh")]
 material = SubResource("CanvasItemMaterial_1aj68")
 
-[node name="vfx_feathers_light" parent="Character" unique_id=501012890 node_paths=PackedStringArray("target_character") instance=ExtResource("2_jrnya")]
-z_index = -1
-target_character = NodePath("..")
+[node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
+visible = false
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1289104288]
 z_index = -1
@@ -23,4 +21,7 @@ scale = Vector2(2000, 2000)
 texture = ExtResource("3_emiss")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=229405903]
-color = Color(0, 0, 0, 1)
+visible = false
+color = Color(0.28301802, 0.28301802, 0.283018, 1)
+
+[editable path="Character"]

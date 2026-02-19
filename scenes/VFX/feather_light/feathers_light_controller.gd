@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var light: Light2D = $Light
 
-@export var target: CanvasItem
+@export var target_character: CanvasItem
 
 @export_group("light setting")
 @export var min_scale: float = 1.0
@@ -50,6 +50,6 @@ func update_feathers_count(count: int) -> void:
 func update_light_state(is_on: bool):
 	if not is_node_ready() or light == null: 
 		return
-	if target:
+	if target_character:
 		light.visible = is_on
-		target.modulate = Color.WHITE if is_on else _dimmed_color
+		target_character.modulate = Color.WHITE if is_on else _dimmed_color

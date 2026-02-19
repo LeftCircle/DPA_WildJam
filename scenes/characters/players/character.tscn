@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://djhvm2ypm6j4n" path="res://assets/characters/wings/TestWingSpriteSheet.png" id="12_yqo81"]
 [ext_resource type="Script" uid="uid://c8dvwd1im3862" path="res://scenes/characters/players/PlayerAnimationTree.gd" id="13_kgru6"]
 [ext_resource type="Texture2D" uid="uid://bx2ilo45uwif0" path="res://assets/characters/player/TestMCSpriteSheetV2.png" id="15_12orm"]
+[ext_resource type="Script" uid="uid://5ekrd6brmrx3" path="res://scenes/characters/players/player_vfx_controller.gd" id="17_uiu2b"]
+[ext_resource type="PackedScene" uid="uid://d1a0opq8vmrkp" path="res://scenes/VFX/feather_light/vfx_feathers_light.tscn" id="18_wllcr"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
 light_mode = 1
@@ -424,3 +426,8 @@ position = Vector2(0, -47)
 texture = ExtResource("15_12orm")
 hframes = 9
 frame = 8
+
+[node name="PlayerVFX" type="Node2D" parent="." unique_id=1899400860]
+script = ExtResource("17_uiu2b")
+
+[node name="vfx_feathers_light" parent="PlayerVFX" unique_id=501012890 instance=ExtResource("18_wllcr")]
