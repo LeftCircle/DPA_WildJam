@@ -17,6 +17,9 @@
 [ext_resource type="Script" uid="uid://c8dvwd1im3862" path="res://scenes/characters/players/PlayerAnimationTree.gd" id="13_kgru6"]
 [ext_resource type="Texture2D" uid="uid://bx2ilo45uwif0" path="res://assets/characters/player/TestMCSpriteSheetV2.png" id="15_12orm"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
+light_mode = 1
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_al1dr"]
 size = Vector2(10, 15.624997)
 
@@ -320,6 +323,7 @@ _data = {
 }
 
 [node name="Character" type="CharacterBody2D" unique_id=608707863]
+material = SubResource("CanvasItemMaterial_kgru6")
 collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_1bdar")
@@ -402,6 +406,7 @@ position_smoothing_enabled = true
 [node name="Wings" type="Sprite2D" parent="." unique_id=2074299470]
 visible = false
 position = Vector2(0, -55)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("12_yqo81")
 hframes = 6
 
