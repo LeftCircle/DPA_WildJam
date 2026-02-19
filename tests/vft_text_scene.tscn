@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b31c73iplkjll"]
+
+[ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_sr3oh"]
+[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="3_emiss"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1aj68"]
+light_mode = 1
+
+[node name="Node2D" type="Node2D" unique_id=1730999275]
+
+[node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_sr3oh")]
+material = SubResource("CanvasItemMaterial_1aj68")
+
+[node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
+visible = false
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1289104288]
+z_index = -1
+position = Vector2(3328.0002, 30208)
+scale = Vector2(2000, 2000)
+texture = ExtResource("3_emiss")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=229405903]
+visible = false
+color = Color(0.28301802, 0.28301802, 0.283018, 1)
+
+[editable path="Character"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1a0opq8vmrkp"]
+
+[ext_resource type="Script" uid="uid://hpbi1w0n2qbl" path="res://scenes/VFX/feather_light/feathers_light_controller.gd" id="1_8svf5"]
+
+[sub_resource type="Gradient" id="Gradient_6aftn"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8svf5"]
+gradient = SubResource("Gradient_6aftn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="vfx_feathers_light" type="Node2D" unique_id=501012890]
+script = ExtResource("1_8svf5")
+min_scale = 1.5
+max_scale = 6.5
+
+[node name="Light" type="PointLight2D" parent="." unique_id=1657730629]
+energy = 1.2
+texture = SubResource("GradientTexture2D_8svf5")
+texture_scale = 1.5

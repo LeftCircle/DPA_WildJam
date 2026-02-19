@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bqbvfcpbmjdoe"]
+
+[ext_resource type="PackedScene" uid="uid://dgo5ql4vc04gt" path="res://scenes/VFX/dust/vfx_dust.tscn" id="1_xquij"]
+[ext_resource type="Texture2D" uid="uid://q0a3kht0voms" path="res://assets/VFX/Dust02.png" id="2_ai2hn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2cw01"]
+
+[sub_resource type="Curve" id="Curve_5xd8h"]
+_data = [Vector2(0.0025929138, 1), 0.0, 0.0, 0, 0, Vector2(0.82469136, 0.65981317), -1.4198632, -1.4198632, 0, 0, Vector2(1, 0), -5.0665298, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_rjqta"]
+curve = SubResource("Curve_5xd8h")
+
+[sub_resource type="Curve" id="Curve_jqfj5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.60155576, 0.8869073), -0.68558186, -0.68558186, 0, 0, Vector2(1, 0.68032783), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_axm70"]
+curve = SubResource("Curve_jqfj5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pbp5v"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 15.0
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 19.999983
+radial_velocity_min = 9.999977
+radial_velocity_max = 14.999977
+gravity = Vector3(0, 0, 0)
+damping_min = 30.000002
+damping_max = 35.0
+scale_min = 0.29999998
+scale_max = 0.45
+scale_curve = SubResource("CurveTexture_axm70")
+alpha_curve = SubResource("CurveTexture_rjqta")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="vfx_dust02" unique_id=1359231882 instance=ExtResource("1_xquij")]
+
+[node name="Dust" parent="." index="0" unique_id=842057237]
+material = SubResource("CanvasItemMaterial_2cw01")
+amount = 10
+texture = ExtResource("2_ai2hn")
+lifetime = 0.8
+explosiveness = 0.0
+process_material = SubResource("ParticleProcessMaterial_pbp5v")
