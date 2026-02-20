@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1654on721438"]
 
-[ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="2_e8r0s"]
+[ext_resource type="PackedScene" uid="uid://c86h7glewtntv" path="res://scenes/objects/locked_door/locked_door.tscn" id="2_e8r0s"]
 [ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="2_y3dif"]
 
 [node name="ManualTestCollidable" type="Node2D" unique_id=809999213]
@@ -8,5 +8,6 @@
 [node name="ThrownFeather" parent="." unique_id=1510378705 instance=ExtResource("2_y3dif")]
 position = Vector2(479, 328)
 
-[node name="HitTarget" parent="." unique_id=79499531 instance=ExtResource("2_e8r0s")]
-position = Vector2(479, 385)
+[node name="LockedDoor" parent="." unique_id=202399442 instance=ExtResource("2_e8r0s")]
+position = Vector2(541, 392.00003)
+scale = Vector2(2.6541123, 2.5413728)
