@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbeanhdbvgis"
+path="res://.godot/imported/Feather Hit.WAV-58a49f2f3b85f3b5f3ed6cbfcad43f03.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Feather Hit.WAV"
+dest_files=["res://.godot/imported/Feather Hit.WAV-58a49f2f3b85f3b5f3ed6cbfcad43f03.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
