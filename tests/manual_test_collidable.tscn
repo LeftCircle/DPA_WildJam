@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c86h7glewtntv" path="res://scenes/objects/locked_door/locked_door.tscn" id="2_e8r0s"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_dtax6"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="3_y3dif"]
+[ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="4_dtax6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fs328"]
 size = Vector2(57.689175, 20)
@@ -29,3 +30,6 @@ shape = SubResource("RectangleShape2D_fs328")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_dtax6")]
 position = Vector2(883, 461)
+
+[node name="LockedHatch" parent="." unique_id=1802310663 instance=ExtResource("4_dtax6")]
+position = Vector2(69, 335)
