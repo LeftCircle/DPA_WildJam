@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_e1ghi"]
 [ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_uvc87"]
+[ext_resource type="PackedScene" uid="uid://bud5trm8rqsq5" path="res://scenes/levels/level_02.tscn" id="2_qdh5e"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="2_t372c"]
 [ext_resource type="PackedScene" uid="uid://p26j0g8a2tki" path="res://scenes/levels/level_block.tscn" id="3_8umyf"]
+[ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="6_50wog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1ghi"]
 size = Vector2(128, 384)
@@ -20,9 +22,13 @@ size = Vector2(127.6342, 1792.0593)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t372c"]
 size = Vector2(127.6342, 1087.9996)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ey3t"]
+size = Vector2(130.49998, 132.25)
+
 [node name="Level01" type="Node2D" unique_id=922797211]
 position = Vector2(128.00005, -511.99997)
 script = ExtResource("1_uvc87")
+next_level = ExtResource("2_qdh5e")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_e1ghi")]
 position = Vector2(1600, -1408)
@@ -145,7 +151,16 @@ texture = ExtResource("2_t372c")
 position = Vector2(-384.00006, -1472)
 scale = Vector2(1, 0.5)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1284389690]
+[node name="Spawn" type="Node2D" parent="." unique_id=1284389690]
+position = Vector2(148.99995, 204.99997)
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=1937734780]
+script = ExtResource("6_50wog")
+metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=919025778]
+position = Vector2(-435.00006, -1607)
+shape = SubResource("RectangleShape2D_1ey3t")
 
 [editable path="LevelBlock7"]
 [editable path="LevelBlock8"]

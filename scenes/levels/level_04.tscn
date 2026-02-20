@@ -22,9 +22,10 @@ size = Vector2(64, 364)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cw75u"]
 size = Vector2(138, 128)
 
-[node name="Level04" type="Node2D" unique_id=823577351]
+[node name="Level04" type="Node2D" unique_id=823577351 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_j6e47")
 next_level = ExtResource("2_ypi4k")
+spawn_point = NodePath("Spawn")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1917430489]
 

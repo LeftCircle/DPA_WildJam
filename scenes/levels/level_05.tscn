@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_7o5v3"]
 [ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_pe0ra"]
+[ext_resource type="PackedScene" uid="uid://cgcwufr6penc0" path="res://scenes/levels/level_06.tscn" id="2_hqfam"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_yy1ns"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_xv7r2"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_hqfam"]
@@ -27,8 +28,10 @@ points = PackedVector2Array(128, 384, -384, 288, 128, -128, 288, -128, 384, -256
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_836dv"]
 size = Vector2(138, 128)
 
-[node name="Level05" type="Node2D" unique_id=282548391]
+[node name="Level05" type="Node2D" unique_id=282548391 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_pe0ra")
+next_level = ExtResource("2_hqfam")
+spawn_point = NodePath("Spawn")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1209705684]
 
