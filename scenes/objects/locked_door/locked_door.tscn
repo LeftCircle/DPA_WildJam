@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c86h7glewtntv"]
+
+[ext_resource type="Script" uid="uid://byxa0rv3p7sg6" path="res://scenes/objects/locked_door/locked_door.gd" id="1_l1yl6"]
+[ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="2_hbhkk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbhkk"]
+
+[node name="LockedDoor" type="Node2D" unique_id=202399442]
+script = ExtResource("1_l1yl6")
+metadata/Move_Magnitude = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=165079571]
+scale = Vector2(0.5318699, 3.0845773)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1432088471]
+shape = SubResource("RectangleShape2D_hbhkk")
+
+[node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("2_hbhkk")]
+position = Vector2(-22.999998, -5.999999)
+scale = Vector2(0.44318658, 0.44318658)
