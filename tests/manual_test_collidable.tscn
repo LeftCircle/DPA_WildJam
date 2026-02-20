@@ -9,10 +9,11 @@
 [node name="ThrownFeather" parent="." unique_id=1510378705 instance=ExtResource("2_y3dif")]
 position = Vector2(393, 313)
 
-[node name="LockedDoor" parent="." unique_id=202399442 instance=ExtResource("2_e8r0s")]
+[node name="LockedDoor" parent="." unique_id=202399442 node_paths=PackedStringArray("lock") instance=ExtResource("2_e8r0s")]
 position = Vector2(548, 389)
 scale = Vector2(2.6541123, 2.5413728)
-metadata/Target = NodePath("../HitTarget")
+lock = NodePath("../HitTarget")
+move_magnitude = 4.0
 
 [node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("3_y3dif")]
 position = Vector2(392, 384)
