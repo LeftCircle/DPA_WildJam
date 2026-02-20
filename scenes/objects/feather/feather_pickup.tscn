@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cgiuqwrfsqvuy"]
+
+[ext_resource type="Script" uid="uid://bueajn2hl8eq1" path="res://scenes/objects/feather/feather_pickup.gd" id="1_b26d6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_irt8i"]
+
+[node name="FeatherPickup" type="Area2D" unique_id=2120564041]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_b26d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=71552416]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=501757788]
+shape = SubResource("CircleShape2D_irt8i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -127,3 +127,5 @@ position = Vector2(192, -288)
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_ot78m")]
 position = Vector2(224, -320)
+
+[node name="FeatherContainer" type="Node" parent="." unique_id=858447090]
