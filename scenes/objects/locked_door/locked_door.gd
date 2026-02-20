@@ -1,5 +1,14 @@
 extends StaticBody2D
 
+To add a locked door to a scene, it must have a corresponding HitTarget object.
+When both are in the scene, change lock property in inspector to the HitTarget
+you would like the door to move on activation.
+
+Properties:
+	lock - The corresponding HitTarget that controls when the door goes up
+	move_magnitude - how much we will move in the y direction
+	move_speed - how fast we will move
+
 @export var lock : HitTarget
 @export var move_magnitude : float
 @export var move_speed : float
