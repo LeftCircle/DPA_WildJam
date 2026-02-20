@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelDriver="*uid://da3ypp0f5upja"
 DialogueManager="*uid://c3rodes2l3gxb"
+NpcState="*uid://ega173usqy1b"
 
 [editor_plugins]
 
@@ -69,7 +70,7 @@ Interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogue/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/dialogue/test.dialogue", "res://assets/dialogue/NPC_Level_Template.dialogue")
 
 [layer_names]
 

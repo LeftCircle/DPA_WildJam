@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://barpyqlh8xxrx" path="res://assets/characters/npc/grey.png" id="1_kqsl3"]
 [ext_resource type="Texture2D" uid="uid://c67pn6h80qqhc" path="res://assets/characters/npc/NPC_Test.png" id="1_xxdnj"]
 [ext_resource type="PackedScene" uid="uid://baw108qfcqu80" path="res://scenes/characters/interactions/Interactable.tscn" id="2_idr7u"]
-[ext_resource type="Resource" uid="uid://cgok0i3w6cah" path="res://assets/dialogue/test.dialogue" id="3_xxdnj"]
+[ext_resource type="Resource" uid="uid://b1v5s4nbgwjvb" path="res://assets/dialogue/NPC_Level_Template.dialogue" id="4_xxdnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yceuf"]
 
@@ -80,7 +80,7 @@ autoplay = "default"
 frame_progress = 0.016112229
 
 [node name="Interactable" parent="." unique_id=27851606 instance=ExtResource("2_idr7u")]
-dialogue_resource = ExtResource("3_xxdnj")
+dialogue_resource = ExtResource("4_xxdnj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1243130475]
 position = Vector2(0, -56)

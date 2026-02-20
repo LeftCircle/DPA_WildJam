@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b1v5s4nbgwjvb"
+path="res://.godot/imported/NPC_Level_Template.dialogue-eb26ba5fd53d5f3062fe7d3518b4ddba.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/NPC_Level_Template.dialogue"
+dest_files=["res://.godot/imported/NPC_Level_Template.dialogue-eb26ba5fd53d5f3062fe7d3518b4ddba.tres"]
+
+[params]
+
+defaults=true

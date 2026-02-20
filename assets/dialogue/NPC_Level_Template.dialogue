@@ -1,0 +1,15 @@
+~ start
+if NpcState.first_dialogue == true:
+	NPC: Hello.
+	set NpcState.first_dialogue = false
+else:
+	NPC: Hello again.
+What will you do?
+- Give
+	NPC: Thank you.
+	=> END
+- Take
+	NPC: How rude.
+	=> END
+- Ignore
+	=> END
