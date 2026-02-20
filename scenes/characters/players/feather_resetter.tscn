@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c3ansguf6th5d"]
+
+[ext_resource type="Script" uid="uid://b74vjrbn2kt0r" path="res://scenes/characters/players/feather_resetter.gd" id="1_yypu3"]
+
+[node name="FeatherResetter" type="Node" unique_id=863521036]
+script = ExtResource("1_yypu3")
+
+[node name="Timer" type="Timer" parent="." unique_id=650249963]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

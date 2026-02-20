@@ -42,6 +42,7 @@ func _check_for_feather() -> bool:
 	if character.feather_counter >= 1:
 		character.feather_counter -= 1
 		check = true
+		character.feather_used.emit()
 	print("Current Feathers = ", character.feather_counter)
 	return check
 		

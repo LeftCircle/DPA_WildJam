@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cwstlm5fttdfy" path="res://assets/environment/level_04/Level_4_Art.png" id="3_cw75u"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_wu80y"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_ypi4k"]
+[ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="8_gkpor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nanf4"]
 size = Vector2(896, 74)
@@ -92,3 +93,6 @@ position = Vector2(2688, -320)
 [node name="Sprite2D" type="Sprite2D" parent="Environemnt" unique_id=786694708]
 position = Vector2(1408, -1152)
 texture = ExtResource("3_cw75u")
+
+[node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_gkpor")]
+position = Vector2(2688, -256)
