@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="4_3acmf"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="4_yjjx0"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="6_a3l5x"]
-[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="7_keemd"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="7_keemd"]
+[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="9_c6rld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keemd"]
 size = Vector2(2239, 61.5)
@@ -57,8 +57,6 @@ metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
 position = Vector2(2123, -916)
 shape = SubResource("RectangleShape2D_a3l5x")
 
-[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("7_keemd")]
-position = Vector2(2240, -1664)
 [node name="SpawnPoint" type="Node2D" parent="." unique_id=1410135585]
 position = Vector2(3079, -199)
 
@@ -70,3 +68,6 @@ metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=759546298]
 position = Vector2(2983.75, -1749)
 shape = SubResource("RectangleShape2D_ppbiy")
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("9_c6rld")]
+position = Vector2(2236, -1667)
