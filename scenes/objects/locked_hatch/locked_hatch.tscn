@@ -7,16 +7,20 @@
 
 [node name="LockedHatch" type="Node2D" unique_id=1802310663 node_paths=PackedStringArray("lock")]
 script = ExtResource("1_no3y1")
-lock = NodePath("HitTarget")
+lock = NodePath("PivotPoint/HitTarget")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=756601165]
+[node name="PivotPoint" type="Node2D" parent="." unique_id=971548345]
+position = Vector2(76, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PivotPoint" unique_id=756601165]
+position = Vector2(-76, 0)
 scale = Vector2(8.640002, 1)
 collision_layer = 64
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2086622276]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotPoint/StaticBody2D" unique_id=2086622276]
 shape = SubResource("RectangleShape2D_5o83n")
 
-[node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("2_3ldhb")]
-position = Vector2(-72, 24)
+[node name="HitTarget" parent="PivotPoint" unique_id=562628805 instance=ExtResource("2_3ldhb")]
+position = Vector2(-148, 24)
 scale = Vector2(0.7497873, 0.7497873)
