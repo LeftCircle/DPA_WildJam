@@ -1,13 +1,23 @@
 [gd_scene format=4 uid="uid://bkexub1kdvrsm"]
 
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_fvfhs"]
+[ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_lcxk4"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_o4mod"]
+[ext_resource type="PackedScene" uid="uid://cvblvwwelqa28" path="res://scenes/levels/level_04.tscn" id="2_r8ojw"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_4wrbh"]
+[ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="4_ps4tf"]
+[ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="7_1jnh5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4tf"]
 size = Vector2(5824, 182)
 
-[node name="Level03" type="Node2D" unique_id=912881943]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ojw"]
+size = Vector2(274.5, 256)
+
+[node name="Level03" type="Node2D" unique_id=912881943 node_paths=PackedStringArray("spawn_point")]
+script = ExtResource("1_lcxk4")
+next_level = ExtResource("2_r8ojw")
+spawn_point = NodePath("SpawnPoint")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=820483864]
 
@@ -54,3 +64,17 @@ metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=85222796]
 position = Vector2(2912, 27)
 shape = SubResource("RectangleShape2D_ps4tf")
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=1555961930]
+script = ExtResource("4_ps4tf")
+metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=1817198572]
+position = Vector2(128, -1920)
+shape = SubResource("RectangleShape2D_r8ojw")
+
+[node name="Character" parent="ExitArea" unique_id=608707863 instance=ExtResource("7_1jnh5")]
+position = Vector2(128, -512)
+
+[node name="SpawnPoint" type="Node2D" parent="." unique_id=150962013]
+position = Vector2(128, -576)

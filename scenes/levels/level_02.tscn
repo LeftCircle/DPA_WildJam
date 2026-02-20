@@ -2,10 +2,12 @@
 
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_3acmf"]
 [ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_yjjx0"]
+[ext_resource type="PackedScene" uid="uid://bkexub1kdvrsm" path="res://scenes/levels/level_03.tscn" id="2_ppbiy"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_c5o3r"]
 [ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="4_3acmf"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="4_yjjx0"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="6_a3l5x"]
+[ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="7_keemd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keemd"]
 size = Vector2(2239, 61.5)
@@ -13,8 +15,13 @@ size = Vector2(2239, 61.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3l5x"]
 size = Vector2(700, 57.625)
 
-[node name="Level02" type="Node2D" unique_id=453271988]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppbiy"]
+size = Vector2(260.5, 217)
+
+[node name="Level02" type="Node2D" unique_id=453271988 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_yjjx0")
+next_level = ExtResource("2_ppbiy")
+spawn_point = NodePath("SpawnPoint")
 
 [node name="LargeGridCollisions" type="TileMapLayer" parent="." unique_id=1063974431]
 modulate = Color(1, 1, 1, 0.2509804)
@@ -22,7 +29,7 @@ tile_map_data = PackedByteArray("AAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAA
 tile_set = ExtResource("1_3acmf")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(2176, -256)
+position = Vector2(3044, -157)
 
 [node name="ThrownFeather" parent="." unique_id=1510378705 instance=ExtResource("4_3acmf")]
 position = Vector2(268, -448)
@@ -48,3 +55,15 @@ metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAreas/DeathZone2" unique_id=895044796]
 position = Vector2(2123, -916)
 shape = SubResource("RectangleShape2D_a3l5x")
+
+[node name="SpawnPoint" type="Node2D" parent="." unique_id=1410135585]
+position = Vector2(3079, -199)
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=1853293129]
+position = Vector2(-15, 7)
+script = ExtResource("7_keemd")
+metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=759546298]
+position = Vector2(2983.75, -1749)
+shape = SubResource("RectangleShape2D_ppbiy")

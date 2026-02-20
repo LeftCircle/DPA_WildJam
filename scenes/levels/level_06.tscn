@@ -1,14 +1,23 @@
 [gd_scene format=4 uid="uid://cgcwufr6penc0"]
 
+[ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_17n5y"]
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_xbig6"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_7k7rs"]
+[ext_resource type="PackedScene" uid="uid://bepgv1t22ux4p" path="res://scenes/levels/level_07.tscn" id="2_tg547"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_j2blp"]
 [ext_resource type="Texture2D" uid="uid://d2fhva8l4nhle" path="res://assets/environment/level_06/Level_6_sky.png" id="4_yc2un"]
 [ext_resource type="Texture2D" uid="uid://cibbkxghbltjs" path="res://assets/environment/level_06/Level_6_matte.png" id="5_s7m4s"]
 [ext_resource type="Texture2D" uid="uid://b00pdyxw2go2y" path="res://assets/environment/level_06/Level_6_Geo.png" id="6_6h3uw"]
 [ext_resource type="Texture2D" uid="uid://cnbb4kv1dr1q0" path="res://assets/environment/level_06/Level_6_RootsThorns.png" id="7_17n5y"]
+[ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="8_s7m4s"]
 
-[node name="Level06" type="Node2D" unique_id=826856563]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6h3uw"]
+size = Vector2(138, 128)
+
+[node name="Level06" type="Node2D" unique_id=826856563 node_paths=PackedStringArray("spawn_point")]
+script = ExtResource("1_17n5y")
+next_level = ExtResource("2_tg547")
+spawn_point = NodePath("Spawn")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=345466624]
 z_index = -5
@@ -48,3 +57,15 @@ texture = ExtResource("7_17n5y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=1661540075]
 color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=1414754941]
+position = Vector2(918, -7238)
+script = ExtResource("8_s7m4s")
+metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=690204718]
+position = Vector2(59, 0)
+shape = SubResource("RectangleShape2D_6h3uw")
+
+[node name="Spawn" type="Node2D" parent="." unique_id=2080521928]
+position = Vector2(93, -346)

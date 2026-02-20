@@ -73,10 +73,10 @@ tracks/2/path = NodePath("Sprites/Dash:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.13333334, 0.31666666, 0.36666667, 0.4166667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.083333336, 0.13333334, 0.18333334, 0.21666668, 0.31666666, 0.36666667, 0.4166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0, -50.94), Vector2(-13.47, -50.94), Vector2(0, -50.94), Vector2(0, -50.94), Vector2(5.755, -50.94), Vector2(0, -50.94)]
+"values": [Vector2(0, -50.94), Vector2(-13.47, -50.94), Vector2(0, -50.94), Vector2(-14.155, -50.94), Vector2(-22.71, -50.94), Vector2(0, -50.94), Vector2(5.755, -50.94), Vector2(0, -50.94)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
