@@ -11,5 +11,4 @@ func dust_emit() -> void:
 	dust.emitting = true
 
 func dust_finished():
-	print("Should queue free")
 	queue_free()

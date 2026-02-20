@@ -38,18 +38,20 @@ metadata/_custom_type_script = "uid://b7lmgww4w6p4"
 _data = [Vector2(0.12666667, 1), 0.0, 0.0, 0, 0, Vector2(0.21666667, 0.99499995), 0.0, 0.0, 0, 0, Vector2(0.43666667, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wllcr"]
-animation = &"DoubleJumpLeft"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_msr6y"]
+animation = &"Dash"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ntitv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0mw0e"]
 animation = &"DoubleJumpRight"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_5hhuf"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_wllcr")
-blend_point_0/pos = -1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_ntitv")
-blend_point_1/pos = 1.0
-blend_mode = 1
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mt0yb"]
+animation = &"Falling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y28c2"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewdww"]
+animation = &"Jump"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uiu2b"]
 animation = &"RESET"
@@ -57,17 +59,17 @@ animation = &"RESET"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a1yh3"]
 animation = &"RunRight"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_12orm"]
-animation = &"WalkLeft"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kgru6"]
 animation = &"WalkRight"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0tlt7"]
+animation = &"WalkRight"
+
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_uiu2b"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_12orm")
-blend_point_0/pos = -1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_kgru6")
-blend_point_1/pos = 1.0
+blend_point_0/node = SubResource("AnimationNodeAnimation_kgru6")
+blend_point_0/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_0tlt7")
+blend_point_1/pos = -1.0
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_12orm"]
@@ -79,34 +81,132 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ntitv"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uiu2b"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5hhuf"]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0tlt7"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y28c2"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_msr6y"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mt0yb"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a1yh3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ewdww"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wllcr"]
-states/DoubleJump/node = SubResource("AnimationNodeBlendSpace1D_5hhuf")
-states/DoubleJump/position = Vector2(546.4478, 212.33333)
+states/Dash/node = SubResource("AnimationNodeAnimation_msr6y")
+states/Dash/position = Vector2(507.63306, 363.3333)
+states/DoubleJump/node = SubResource("AnimationNodeAnimation_0mw0e")
+states/DoubleJump/position = Vector2(506.3491, 195.33334)
+states/Falling/node = SubResource("AnimationNodeAnimation_mt0yb")
+states/Falling/position = Vector2(261.89233, 319.55557)
+states/Idle/node = SubResource("AnimationNodeAnimation_y28c2")
+states/Idle/position = Vector2(102.11453, 333.66666)
+states/Jump/node = SubResource("AnimationNodeAnimation_ewdww")
+states/Jump/position = Vector2(669.4479, 212.88889)
 states/RESET/node = SubResource("AnimationNodeAnimation_uiu2b")
 states/RESET/position = Vector2(155.2604, 200.99998)
 states/Run/node = SubResource("AnimationNodeAnimation_a1yh3")
-states/Run/position = Vector2(295.11453, 291.6667)
+states/Run/position = Vector2(508.44788, 292.33334)
 states/Start/position = Vector2(156, 94.59259)
 states/Walk/node = SubResource("AnimationNodeBlendSpace1D_uiu2b")
 states/Walk/position = Vector2(421.11453, 94.00274)
-transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_12orm"), "Walk", "End", SubResource("AnimationNodeStateMachineTransition_kgru6"), "Walk", "RESET", SubResource("AnimationNodeStateMachineTransition_wllcr"), "RESET", "Walk", SubResource("AnimationNodeStateMachineTransition_ntitv"), "DoubleJump", "RESET", SubResource("AnimationNodeStateMachineTransition_uiu2b"), "RESET", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_5hhuf"), "RESET", "Run", SubResource("AnimationNodeStateMachineTransition_0tlt7"), "Run", "RESET", SubResource("AnimationNodeStateMachineTransition_y28c2")]
-graph_offset = Vector2(-256.2188, 148)
-
-[sub_resource type="Animation" id="Animation_ntitv"]
-resource_name = "DashLeft"
-step = 0.125
+transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_12orm"), "Walk", "End", SubResource("AnimationNodeStateMachineTransition_kgru6"), "Walk", "RESET", SubResource("AnimationNodeStateMachineTransition_wllcr"), "RESET", "Walk", SubResource("AnimationNodeStateMachineTransition_ntitv"), "RESET", "Run", SubResource("AnimationNodeStateMachineTransition_0tlt7"), "Run", "RESET", SubResource("AnimationNodeStateMachineTransition_y28c2"), "RESET", "Idle", SubResource("AnimationNodeStateMachineTransition_msr6y"), "Idle", "RESET", SubResource("AnimationNodeStateMachineTransition_mt0yb"), "Falling", "RESET", SubResource("AnimationNodeStateMachineTransition_a1yh3"), "RESET", "Falling", SubResource("AnimationNodeStateMachineTransition_ewdww")]
+graph_offset = Vector2(-2.218811, 118)
 
 [sub_resource type="Animation" id="Animation_5hhuf"]
-resource_name = "DashRight"
-step = 0.125
+resource_name = "Dash"
+length = 0.5666684
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Dash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Dash:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.08333329, 0.11666663, 0.16666663, 0.21666664, 0.26666662, 0.31666663, 0.36666662, 0.41666663, 0.44999996, 0.4833333, 0.51666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14]
+}
+
+[sub_resource type="Animation" id="Animation_yqo81"]
+resource_name = "DoubleJump"
+length = 0.5
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Wings:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Wings:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.18333334, 0.23333333, 0.38333333, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Wings:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(1, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/Jump:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.001, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/Jump:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_uiu2b"]
 resource_name = "DoubleJumpLeft"
@@ -119,7 +219,7 @@ tracks/0/path = NodePath("Sprites/Wings:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.033333335, 0),
+"times": PackedFloat32Array(0, 0.05),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
@@ -149,57 +249,13 @@ tracks/2/keys = {
 "values": [Vector2(-1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_yqo81"]
-resource_name = "DoubleJump_00"
-length = 0.50000167
-step = 0.016666668
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/Wings:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.50000167),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/Wings:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.18333334, 0.23333333, 0.38333333, 0.43333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprites/Wings:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_msr6y"]
-resource_name = "FallingRight"
-
-[sub_resource type="Animation" id="Animation_ap4c4"]
-resource_name = "IdleLeft"
-step = 0.125
+resource_name = "Falling"
+step = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/Idle:visible")
+tracks/0/path = NodePath("Sprites/Jump:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -211,18 +267,18 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/Idle:frame")
+tracks/1/path = NodePath("Sprites/Jump:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [4, 5, 6]
 }
 
 [sub_resource type="Animation" id="Animation_a1yh3"]
-resource_name = "IdleRight"
+resource_name = "Idle"
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -247,6 +303,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mt0yb"]
+resource_name = "Jump"
+length = 0.50000834
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Jump:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Jump:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.25, 0.41666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_7lw86"]
@@ -383,38 +468,42 @@ tracks/10/keys = {
 "update": 1,
 "values": [false]
 }
-
-[sub_resource type="Animation" id="Animation_mt0yb"]
-resource_name = "RisingRight"
-step = 0.16666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/Jump:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sprites/Dash:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/Jump:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1),
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sprites/Dash:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2, 3, 4]
+"values": [0]
 }
-
-[sub_resource type="Animation" id="Animation_0tlt7"]
-resource_name = "RunLeft"
-step = 0.125
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sprites/Wings:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_y28c2"]
 resource_name = "RunRight"
@@ -529,16 +618,13 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7lw86"]
 _data = {
-&"DashLeft": SubResource("Animation_ntitv"),
-&"DashRight": SubResource("Animation_5hhuf"),
+&"Dash": SubResource("Animation_5hhuf"),
+&"DoubleJump": SubResource("Animation_yqo81"),
 &"DoubleJumpLeft": SubResource("Animation_uiu2b"),
-&"DoubleJumpRight": SubResource("Animation_yqo81"),
-&"FallingRight": SubResource("Animation_msr6y"),
-&"IdleLeft": SubResource("Animation_ap4c4"),
-&"IdleRight": SubResource("Animation_a1yh3"),
+&"Falling": SubResource("Animation_msr6y"),
+&"Idle": SubResource("Animation_a1yh3"),
+&"Jump": SubResource("Animation_mt0yb"),
 &"RESET": SubResource("Animation_7lw86"),
-&"RisingRight": SubResource("Animation_mt0yb"),
-&"RunLeft": SubResource("Animation_0tlt7"),
 &"RunRight": SubResource("Animation_y28c2"),
 &"WalkLeft": SubResource("Animation_12orm"),
 &"WalkRight": SubResource("Animation_kgru6")
@@ -576,20 +662,21 @@ input_processor = NodePath("../../InputProcessor")
 coyote_timer = SubResource("Resource_ymfos")
 anim_tree = NodePath("../../AnimationTree")
 
-[node name="InAir" type="LimboState" parent="SM_Character" unique_id=366118137 node_paths=PackedStringArray("character", "ground_state", "input_processor", "anim_tree")]
+[node name="InAir" type="LimboState" parent="SM_Character" unique_id=366118137 node_paths=PackedStringArray("character", "ground_state", "input_processor", "anim_tree", "anim_player")]
 script = ExtResource("5_ma1fs")
 character = NodePath("../..")
 ground_state = NodePath("../Run")
 horizontal_movement = ExtResource("6_al1dr")
 input_processor = NodePath("../../InputProcessor")
 anim_tree = NodePath("../../AnimationTree")
+anim_player = NodePath("../../AnimationPlayer")
 
 [node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899 node_paths=PackedStringArray("input_processor")]
 script = ExtResource("6_eqpns")
 input_processor = NodePath("../../InputProcessor")
 metadata/_custom_type_script = "uid://b3scqiwxsp3ai"
 
-[node name="JumpState" type="LimboState" parent="SM_Character" unique_id=685114196 node_paths=PackedStringArray("air_state", "input_processor", "character")]
+[node name="JumpState" type="LimboState" parent="SM_Character" unique_id=685114196 node_paths=PackedStringArray("air_state", "input_processor", "anim_tree", "character")]
 script = ExtResource("8_fwqwt")
 jump_duration = 1.0
 jump_max_speed = 550.0
@@ -598,6 +685,7 @@ air_state = NodePath("../InAir")
 horizontal_movement = ExtResource("6_al1dr")
 input_processor = NodePath("../../InputProcessor")
 jump_particles_ps = ExtResource("19_ntitv")
+anim_tree = NodePath("../../AnimationTree")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://c7cdvchn6xmqc"
 
@@ -612,9 +700,9 @@ character = NodePath("../..")
 metadata/_custom_type_script = "uid://hhqyur0hswxn"
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=319241558 node_paths=PackedStringArray("input_processor", "sprite_container")]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_wllcr")
 anim_player = NodePath("../AnimationPlayer")
-parameters/DoubleJump/blend_position = -0.21879023
 parameters/Walk/blend_position = -1.0
 script = ExtResource("13_kgru6")
 input_processor = NodePath("../InputProcessor")
@@ -656,7 +744,6 @@ frame = 8
 visible = false
 position = Vector2(0, -55)
 rotation = 3.1415927
-scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("12_yqo81")
 hframes = 6
 
@@ -671,6 +758,7 @@ frame = 1
 visible = false
 position = Vector2(0, -102.665)
 texture = ExtResource("21_a1yh3")
+hframes = 17
 
 [node name="Jump" type="Sprite2D" parent="Sprites" unique_id=64023432]
 visible = false
@@ -684,3 +772,10 @@ visible = false
 position = Vector2(0, -47)
 texture = ExtResource("15_12orm")
 hframes = 9
+
+[node name="OtherWings" type="Sprite2D" parent="Sprites" unique_id=1509378264]
+visible = false
+position = Vector2(0, -54.245)
+texture = ExtResource("12_yqo81")
+hframes = 6
+frame = 5

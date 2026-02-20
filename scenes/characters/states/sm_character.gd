@@ -7,6 +7,7 @@ extends LimboHSM
 @onready var in_air : LimboState = $InAir
 @onready var dash : CharacterState = $DashState
 @onready var throw : CharacterState = $ThrowState
+@onready var jump_state : CharacterState = $JumpState
 
 func _ready():
 	initialize(character)
@@ -15,11 +16,11 @@ func _ready():
 	set_active(true)
 
 func _create_transitions() -> void:
-	add_transition($OnGround, $JumpState, "ground_to_jump")
-	add_transition($JumpState, $InAir, "jump_to_air")
-	add_transition($InAir, $OnGround, "air_to_ground")
-	add_transition($OnGround, $InAir, "ground_to_air")
-	add_transition($InAir, $JumpState, "double_jump", _check_for_feather)
+	add_transition(run, jump_state, "ground_to_jump")
+	add_transition(jump_state, in_air, "jump_to_air")
+	add_transition(in_air, run, "air_to_ground")
+	add_transition(run, in_air, "ground_to_air")
+	add_transition(in_air, jump_state, "double_jump", _check_for_feather)
 	add_transition(dash, run, "dash_to_ground")
 	add_transition(throw, run, "throw_to_ground")
 

@@ -7,6 +7,7 @@ class_name CharacterGroundState
 @export var coyote_timer : CoyoteTimer
 @export var anim_tree : PlayerAnimationTree
 
+var is_idle : bool = false
 
 @onready var anim_sm : AnimationNodeStateMachinePlayback = anim_tree.get("parameters/playback")
 
@@ -15,14 +16,24 @@ func _ready():
 
 func _enter():
 	#anim_sm.start("Walk")
-	anim_tree.start_anim("Run")
+	anim_tree.start_anim("Idle")
+	is_idle = true
 
 func _update(delta : float):
+	_play_animations()
 	if !character.is_on_floor():
 		coyote_timer.tick()
 	_move(delta)
 	if Input.is_action_just_pressed("jump"):
 		dispatch("ground_to_jump")
+
+func _play_animations() -> void:
+	if not is_idle and character.velocity == Vector2.ZERO:
+		anim_tree.start_anim("Idle")
+		is_idle = true
+	elif is_idle and character.velocity != Vector2.ZERO:
+		anim_tree.start_anim("Run")
+		is_idle = false
 
 func _move(delta : float) -> void:
 	character.velocity.x = horizontal_movement.tick(delta, input_processor.input_dir, character.velocity.x)
