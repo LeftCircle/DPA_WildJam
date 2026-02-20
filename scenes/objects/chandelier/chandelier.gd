@@ -10,6 +10,7 @@ enum {ACTIVE, INACTIVE}
 @onready var base_sprite : Sprite2D = $StaticBody2D/CollisionShape2D/Base
 @onready var base_body : StaticBody2D = $StaticBody2D
 @onready var base_target_position = base_body.position
+@onready var base_resting_position = base_body.position
 @onready var state = INACTIVE
 @onready var move_direction : Vector2 = Vector2(0, 0)
 
@@ -21,8 +22,7 @@ func _ready() -> void:
 			child.start()
 
 func _process(delta: float) -> void:
-	if (self.position.y < base_target_position.y):
-		print("something")
+	if (base_resting_position.y < base_target_position.y):
 		base_body.move_and_collide(move_direction * move_speed)
 
 func _lower_chandelier():
@@ -34,4 +34,7 @@ func _lower_chandelier():
 		move_direction = unit_vector
 		
 		base_target_position += unit_vector * chain_length
+		
+		print(base_resting_position.y)
+		print(base_target_position.y)
 		
