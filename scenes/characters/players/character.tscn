@@ -38,82 +38,6 @@ metadata/_custom_type_script = "uid://b7lmgww4w6p4"
 _data = [Vector2(0.12666667, 1), 0.0, 0.0, 0, 0, Vector2(0.21666667, 0.99499995), 0.0, 0.0, 0, 0, Vector2(0.43666667, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_msr6y"]
-animation = &"Dash"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0mw0e"]
-animation = &"DoubleJumpRight"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mt0yb"]
-animation = &"Falling"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y28c2"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewdww"]
-animation = &"Jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uiu2b"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a1yh3"]
-animation = &"RunRight"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kgru6"]
-animation = &"WalkRight"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0tlt7"]
-animation = &"WalkRight"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_uiu2b"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_kgru6")
-blend_point_0/pos = 1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_0tlt7")
-blend_point_1/pos = -1.0
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_12orm"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kgru6"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wllcr"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ntitv"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0tlt7"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y28c2"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_msr6y"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mt0yb"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a1yh3"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ewdww"]
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wllcr"]
-states/Dash/node = SubResource("AnimationNodeAnimation_msr6y")
-states/Dash/position = Vector2(507.63306, 363.3333)
-states/DoubleJump/node = SubResource("AnimationNodeAnimation_0mw0e")
-states/DoubleJump/position = Vector2(506.3491, 195.33334)
-states/Falling/node = SubResource("AnimationNodeAnimation_mt0yb")
-states/Falling/position = Vector2(261.89233, 319.55557)
-states/Idle/node = SubResource("AnimationNodeAnimation_y28c2")
-states/Idle/position = Vector2(102.11453, 333.66666)
-states/Jump/node = SubResource("AnimationNodeAnimation_ewdww")
-states/Jump/position = Vector2(669.4479, 212.88889)
-states/RESET/node = SubResource("AnimationNodeAnimation_uiu2b")
-states/RESET/position = Vector2(155.2604, 200.99998)
-states/Run/node = SubResource("AnimationNodeAnimation_a1yh3")
-states/Run/position = Vector2(508.44788, 292.33334)
-states/Start/position = Vector2(156, 94.59259)
-states/Walk/node = SubResource("AnimationNodeBlendSpace1D_uiu2b")
-states/Walk/position = Vector2(421.11453, 94.00274)
-transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_12orm"), "Walk", "End", SubResource("AnimationNodeStateMachineTransition_kgru6"), "Walk", "RESET", SubResource("AnimationNodeStateMachineTransition_wllcr"), "RESET", "Walk", SubResource("AnimationNodeStateMachineTransition_ntitv"), "RESET", "Run", SubResource("AnimationNodeStateMachineTransition_0tlt7"), "Run", "RESET", SubResource("AnimationNodeStateMachineTransition_y28c2"), "RESET", "Idle", SubResource("AnimationNodeStateMachineTransition_msr6y"), "Idle", "RESET", SubResource("AnimationNodeStateMachineTransition_mt0yb"), "Falling", "RESET", SubResource("AnimationNodeStateMachineTransition_a1yh3"), "RESET", "Falling", SubResource("AnimationNodeStateMachineTransition_ewdww")]
-graph_offset = Vector2(-2.218811, 118)
-
 [sub_resource type="Animation" id="Animation_5hhuf"]
 resource_name = "Dash"
 length = 0.5666684
@@ -279,6 +203,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_a1yh3"]
 resource_name = "Idle"
+loop_mode = 1
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -504,9 +429,33 @@ tracks/13/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Sprites/Dash:region_enabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Sprites/OtherWings:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_y28c2"]
-resource_name = "RunRight"
+resource_name = "Run"
 loop_mode = 1
 step = 0.125
 tracks/0/type = "value"
@@ -535,7 +484,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_12orm"]
-resource_name = "WalkLeft"
+resource_name = "Walk"
 loop_mode = 1
 step = 0.125
 tracks/0/type = "value"
@@ -625,8 +574,8 @@ _data = {
 &"Idle": SubResource("Animation_a1yh3"),
 &"Jump": SubResource("Animation_mt0yb"),
 &"RESET": SubResource("Animation_7lw86"),
-&"RunRight": SubResource("Animation_y28c2"),
-&"WalkLeft": SubResource("Animation_12orm"),
+&"Run": SubResource("Animation_y28c2"),
+&"Walk": SubResource("Animation_12orm"),
 &"WalkRight": SubResource("Animation_kgru6")
 }
 
@@ -699,14 +648,11 @@ projectile_container = NodePath("../../ProjectileContainer")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://hhqyur0hswxn"
 
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=319241558 node_paths=PackedStringArray("input_processor", "sprite_container")]
-active = false
-tree_root = SubResource("AnimationNodeStateMachine_wllcr")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Walk/blend_position = -1.0
+[node name="AnimationTree" type="Node" parent="." unique_id=1974321728 node_paths=PackedStringArray("input_processor", "sprite_container", "anim_player")]
 script = ExtResource("13_kgru6")
 input_processor = NodePath("../InputProcessor")
 sprite_container = NodePath("../Sprites")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="InputProcessor" type="Node" parent="." unique_id=656449399]
 script = ExtResource("8_ymfos")
