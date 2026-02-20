@@ -1,19 +1,31 @@
 [gd_scene format=3 uid="uid://1654on721438"]
 
 [ext_resource type="PackedScene" uid="uid://c86h7glewtntv" path="res://scenes/objects/locked_door/locked_door.tscn" id="2_e8r0s"]
-[ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="2_y3dif"]
+[ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_dtax6"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="3_y3dif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs328"]
+size = Vector2(57.689175, 20)
 
 [node name="ManualTestCollidable" type="Node2D" unique_id=809999213]
 
-[node name="ThrownFeather" parent="." unique_id=1510378705 instance=ExtResource("2_y3dif")]
-position = Vector2(393, 313)
-
-[node name="LockedDoor" parent="." unique_id=202399442 node_paths=PackedStringArray("lock") instance=ExtResource("2_e8r0s")]
-position = Vector2(548, 389)
-scale = Vector2(2.6541123, 2.5413728)
-lock = NodePath("../HitTarget")
-move_magnitude = 4.0
-
 [node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("3_y3dif")]
-position = Vector2(392, 384)
+position = Vector2(392.99994, 372)
+scale = Vector2(1.1075872, 1.1075872)
+
+[node name="LockedDoor" parent="." unique_id=1878691132 node_paths=PackedStringArray("lock") instance=ExtResource("2_e8r0s")]
+position = Vector2(466.99997, 378.00003)
+scale = Vector2(1.4942465, 10.706672)
+lock = NodePath("../HitTarget")
+move_magnitude = 100.0
+move_speed = 3.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=85080947]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=826767097]
+position = Vector2(465.49997, 517.99994)
+scale = Vector2(16.83158, 3.1126761)
+shape = SubResource("RectangleShape2D_fs328")
+
+[node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_dtax6")]
+position = Vector2(883, 461)
