@@ -1,8 +1,11 @@
 [gd_scene format=4 uid="uid://cvblvwwelqa28"]
 
+[ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_j6e47"]
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_up1bk"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_31sm7"]
+[ext_resource type="PackedScene" uid="uid://cwdr74u1mywek" path="res://scenes/levels/level_05.tscn" id="2_ypi4k"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_wu80y"]
+[ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_ypi4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nanf4"]
 size = Vector2(896, 74)
@@ -16,7 +19,12 @@ size = Vector2(60, 568)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4k"]
 size = Vector2(64, 364)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw75u"]
+size = Vector2(138, 128)
+
 [node name="Level04" type="Node2D" unique_id=823577351]
+script = ExtResource("1_j6e47")
+next_level = ExtResource("2_ypi4k")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1917430489]
 
@@ -64,3 +72,15 @@ metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone4" unique_id=628795697]
 position = Vector2(262, -1036)
 shape = SubResource("RectangleShape2D_ypi4k")
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=884376325]
+position = Vector2(2688, -1600)
+script = ExtResource("5_ypi4k")
+metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=120359211]
+position = Vector2(59, 0)
+shape = SubResource("RectangleShape2D_cw75u")
+
+[node name="Spawn" type="Node2D" parent="." unique_id=1989583718]
+position = Vector2(2688, -320)

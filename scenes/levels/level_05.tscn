@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://cwdr74u1mywek"]
 
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_7o5v3"]
+[ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_pe0ra"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_yy1ns"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_xv7r2"]
+[ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_hqfam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy1ns"]
 size = Vector2(128, 64)
@@ -22,7 +24,11 @@ size = Vector2(992, 96)
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_xv7r2"]
 points = PackedVector2Array(128, 384, -384, 288, 128, -128, 288, -128, 384, -256, 352, -704, 448, -800, 448, 320)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_836dv"]
+size = Vector2(138, 128)
+
 [node name="Level05" type="Node2D" unique_id=282548391]
+script = ExtResource("1_pe0ra")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1209705684]
 
@@ -94,3 +100,15 @@ shape = SubResource("ConvexPolygonShape2D_xv7r2")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=1789325274]
 polygon = PackedVector2Array(2336, -352, 2592, -352, 2592, -32, 2496, -256, 2400, -256, 2304, -160, 2176, -32, 2176, 160, 2208, 320, 2336, 448, 2336, 544, 2272, 512, 2144, 384, 2112, 448, 2080, 544, 2048, 480, 2048, 320, 2048, 160, 2112, -192)
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=2048681686]
+position = Vector2(3072, -2240)
+script = ExtResource("5_hqfam")
+metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=1914781733]
+position = Vector2(59, 0)
+shape = SubResource("RectangleShape2D_836dv")
+
+[node name="Spawn" type="Node2D" parent="." unique_id=1933073855]
+position = Vector2(64, -352)

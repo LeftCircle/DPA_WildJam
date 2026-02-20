@@ -145,5 +145,7 @@ texture = ExtResource("2_t372c")
 position = Vector2(-384.00006, -1472)
 scale = Vector2(1, 0.5)
 
+[node name="Node2D" type="Node2D" parent="." unique_id=1284389690]
+
 [editable path="LevelBlock7"]
 [editable path="LevelBlock8"]
