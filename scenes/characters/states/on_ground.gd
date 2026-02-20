@@ -32,7 +32,6 @@ func _play_animations() -> void:
 	elif is_idle and character.velocity != Vector2.ZERO:
 		anim_tree.start_anim("Run")
 		is_idle = false
-	#anim_tree.start_anim("Run")
 
 func _move(delta : float) -> void:
 	character.velocity.x = horizontal_movement.tick(delta, input_processor.input_dir, character.velocity.x)
