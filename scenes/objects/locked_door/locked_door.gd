@@ -17,7 +17,6 @@ enum {OPEN, CLOSED}
 
 @onready var state = CLOSED
 @onready var target_position : Vector2 = self.position
-@onready var resting_position : Vector2 = self.position
 @onready var move_direction : Vector2 = Vector2(0,0)
 
 func _ready() -> void:
