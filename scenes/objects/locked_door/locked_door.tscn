@@ -6,8 +6,6 @@
 
 [node name="LockedDoor" type="Node2D" unique_id=202399442]
 script = ExtResource("1_l1yl6")
-metadata/Move_Magnitude = 0.0
-metadata/Target = NodePath("")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=165079571]
 scale = Vector2(0.5318699, 3.0845773)
