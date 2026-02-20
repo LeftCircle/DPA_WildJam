@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cpewp1rmmj6s5"]
+
+[ext_resource type="Texture2D" uid="uid://hf3ija0iv6an" path="res://assets/environment/general/flame.png" id="1_jkhwl"]
+[ext_resource type="Script" uid="uid://dfdbu6g3mb0mb" path="res://scenes/objects/chandelier/flame.gd" id="2_4586x"]
+
+[sub_resource type="Animation" id="Animation_4586x"]
+resource_name = "Flicker"
+length = 1.0000017
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3166667, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.09599310885968812, 0.09773843811168285, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jkhwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.08028515]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkhqj"]
+_data = {
+&"Flicker": SubResource("Animation_4586x"),
+&"RESET": SubResource("Animation_jkhwl")
+}
+
+[node name="Flame" type="Sprite2D" unique_id=1476004817]
+texture = ExtResource("1_jkhwl")
+offset = Vector2(0, -64)
+script = ExtResource("2_4586x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=536095558]
+active = false
+libraries/ = SubResource("AnimationLibrary_qkhqj")
