@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamInteractive" format=3 uid="uid://q1f5hk1lvd1b"]
+
+[ext_resource type="AudioStream" uid="uid://2i8e3m23djwb" path="res://audio/sfx/jump_randomizer.tres" id="1_esil4"]
+[ext_resource type="AudioStream" uid="uid://bqc5st1q5cqc5" path="res://audio/sfx/Dashing.WAV" id="2_vy1lu"]
+
+[resource]
+clip_count = 2
+clip_0/name = &"Jump Randomizer"
+clip_0/stream = ExtResource("1_esil4")
+clip_0/auto_advance = 0
+clip_1/name = &"Dashing"
+clip_1/stream = ExtResource("2_vy1lu")
+clip_1/auto_advance = 0

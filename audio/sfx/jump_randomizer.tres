@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://2i8e3m23djwb"]
+
+[ext_resource type="AudioStream" uid="uid://2v207gj4kms4" path="res://audio/sfx/Single Jump.WAV" id="1_lbmce"]
+
+[resource]
+random_pitch = 1.1844084
+random_volume_offset_db = 1.31
+streams_count = 1
+stream_0/stream = ExtResource("1_lbmce")

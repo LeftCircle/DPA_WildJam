@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name PlayerCharacter
 
 signal feather_used()
+signal dash()
 
 var feather_counter = 99
 var acquired_feathers : int = 99

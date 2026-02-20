@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_xv7r2"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_hqfam"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="8_ot78m"]
+[ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="9_c1tix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy1ns"]
 size = Vector2(128, 64)
@@ -29,6 +30,9 @@ points = PackedVector2Array(128, 384, -384, 288, 128, -128, 288, -128, 384, -256
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_836dv"]
 size = Vector2(138, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywrx1"]
+size = Vector2(202, 106)
 
 [node name="Level05" type="Node2D" unique_id=282548391 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_pe0ra")
@@ -129,3 +133,11 @@ position = Vector2(192, -288)
 position = Vector2(224, -320)
 
 [node name="FeatherContainer" type="Node" parent="." unique_id=858447090]
+
+[node name="DashCollider" parent="." unique_id=1292891066 instance=ExtResource("9_c1tix")]
+
+[node name="CollisionShape2D" parent="DashCollider" index="0" unique_id=2039415823]
+position = Vector2(576, -512)
+shape = SubResource("RectangleShape2D_ywrx1")
+
+[editable path="DashCollider"]

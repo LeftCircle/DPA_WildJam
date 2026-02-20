@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dmxadubd3eidt"]
+
+[ext_resource type="Script" uid="uid://eg5uygnpo1ct" path="res://scenes/objects/dash_collider/dash_collider.gd" id="1_1j44n"]
+
+[node name="DashCollider" type="StaticBody2D" unique_id=1292891066]
+script = ExtResource("1_1j44n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039415823]
