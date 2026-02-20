@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_dtax6"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="3_y3dif"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="4_dtax6"]
+[ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="5_fs328"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fs328"]
 size = Vector2(57.689175, 20)
@@ -33,3 +34,9 @@ position = Vector2(883, 461)
 
 [node name="LockedHatch" parent="." unique_id=1802310663 instance=ExtResource("4_dtax6")]
 position = Vector2(69, 335)
+
+[node name="Chandelier" parent="." unique_id=2022063999 instance=ExtResource("5_fs328")]
+position = Vector2(738.99994, 239.99998)
+scale = Vector2(0.20247164, 0.20247164)
+chain_length = 20.0
+move_speed = 1.0
