@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c86h7glewtntv"]
+
+[ext_resource type="Script" uid="uid://byxa0rv3p7sg6" path="res://scenes/objects/locked_door/locked_door.gd" id="1_l1yl6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1yl6"]
+
+[node name="LockedDoor" type="StaticBody2D" unique_id=1878691132]
+scale = Vector2(0.7740943, 5.546591)
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_l1yl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2102852642]
+shape = SubResource("RectangleShape2D_l1yl6")
