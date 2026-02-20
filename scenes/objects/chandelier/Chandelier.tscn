@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c037eq4c6thr1"]
+
+[ext_resource type="Texture2D" uid="uid://bes3ix5wetcll" path="res://assets/environment/general/chandelier.png" id="1_31hxp"]
+[ext_resource type="Script" uid="uid://q11io88wmfdm" path="res://scenes/objects/chandelier/chandelier.gd" id="1_hk8m0"]
+[ext_resource type="PackedScene" uid="uid://cpewp1rmmj6s5" path="res://scenes/objects/chandelier/Flame.tscn" id="2_vol6c"]
+
+[node name="Chandelier" type="Node2D" unique_id=2022063999]
+script = ExtResource("1_hk8m0")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=1895817165]
+texture = ExtResource("1_31hxp")
+
+[node name="Flame" parent="." unique_id=1476004817 instance=ExtResource("2_vol6c")]
+position = Vector2(-320, -96)
+
+[node name="Flame2" parent="." unique_id=1148418310 instance=ExtResource("2_vol6c")]
+position = Vector2(-112.00001, -73.00001)
+
+[node name="Flame3" parent="." unique_id=1510751351 instance=ExtResource("2_vol6c")]
+position = Vector2(118, -67)
+
+[node name="Flame4" parent="." unique_id=1241317450 instance=ExtResource("2_vol6c")]
+position = Vector2(329, -102)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=3953421]

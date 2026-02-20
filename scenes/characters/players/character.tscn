@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dgo5ql4vc04gt" path="res://scenes/VFX/dust/vfx_dust.tscn" id="19_ntitv"]
 [ext_resource type="Texture2D" uid="uid://bmhrqgmkq5col" path="res://assets/characters/player/RunSprites.png" id="20_ap4c4"]
 [ext_resource type="Texture2D" uid="uid://cnjfj735v4lub" path="res://assets/characters/player/dash.png" id="21_a1yh3"]
-[ext_resource type="Texture2D" uid="uid://c0cncjm0qnb8u" path="res://assets/characters/player/MCSpriteSheetJumpV2.png" id="22_a1yh3"]
+[ext_resource type="Texture2D" uid="uid://b482a70sptrw3" path="res://assets/characters/player/MCSpriteSheetJumpV3.png" id="22_a1yh3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
 light_mode = 1
@@ -219,10 +219,10 @@ tracks/1/path = NodePath("Sprites/Jump:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [4, 5, 6]
+"values": [4, 5]
 }
 
 [sub_resource type="Animation" id="Animation_a1yh3"]
@@ -277,10 +277,34 @@ tracks/1/path = NodePath("Sprites/Jump:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.25, 0.41666666),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.083333336, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [1, 2, 3, 4]
+"values": [1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Jump:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -65.6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/Jump:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.82, 0.82)]
 }
 
 [sub_resource type="Animation" id="Animation_7lw86"]
@@ -500,6 +524,30 @@ tracks/17/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Sprites/Jump:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -82.685)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Sprites/Jump:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.82, 0.82)]
 }
 
 [sub_resource type="Animation" id="Animation_y28c2"]
@@ -758,9 +806,10 @@ hframes = 17
 
 [node name="Jump" type="Sprite2D" parent="Sprites" unique_id=64023432]
 visible = false
-position = Vector2(0, -56.195)
+position = Vector2(0, -82.685)
+scale = Vector2(0.82, 0.82)
 texture = ExtResource("22_a1yh3")
-hframes = 9
+hframes = 7
 frame = 2
 
 [node name="Idle" type="Sprite2D" parent="Sprites" unique_id=893526566]
