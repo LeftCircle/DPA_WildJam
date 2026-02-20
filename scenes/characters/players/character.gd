@@ -6,4 +6,3 @@ var feather_counter = 99
 
 func _ready():
 	$AnimationTree.active = true
-	$Wings.visible = false
