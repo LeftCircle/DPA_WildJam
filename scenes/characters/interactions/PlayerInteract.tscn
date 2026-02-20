@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://e0q6ej4cqhvc"]
+
+[ext_resource type="Script" uid="uid://bnnpphxe1vvln" path="res://scenes/characters/interactions/PlayerInteract.gd" id="1_rl4de"]
+
+[node name="PlayerInteract" type="Area2D" unique_id=1225313529]
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("1_rl4de")
+metadata/_custom_type_script = "uid://bnnpphxe1vvln"

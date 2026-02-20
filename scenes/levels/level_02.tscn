@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="4_3acmf"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="4_yjjx0"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="6_a3l5x"]
+[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="7_keemd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keemd"]
 size = Vector2(2239, 61.5)
@@ -22,7 +23,7 @@ tile_map_data = PackedByteArray("AAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAA
 tile_set = ExtResource("1_3acmf")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(2176, -256)
+position = Vector2(1893, -1680)
 
 [node name="ThrownFeather" parent="." unique_id=1510378705 instance=ExtResource("4_3acmf")]
 position = Vector2(268, -448)
@@ -48,3 +49,6 @@ metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAreas/DeathZone2" unique_id=895044796]
 position = Vector2(2123, -916)
 shape = SubResource("RectangleShape2D_a3l5x")
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("7_keemd")]
+position = Vector2(2240, -1664)

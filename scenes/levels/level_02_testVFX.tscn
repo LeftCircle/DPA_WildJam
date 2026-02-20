@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://hpbi1w0n2qbl" path="res://scenes/VFX/feather_light/feathers_light_controller.gd" id="4_l0jy7"]
 [ext_resource type="PackedScene" uid="uid://d1a0opq8vmrkp" path="res://scenes/VFX/feather_light/vfx_feathers_light.tscn" id="4_yii21"]
 [ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="4_yq87l"]
-[ext_resource type="PackedScene" uid="uid://dy2lrckwpbt6d" path="res://scenes/objects/feather/feather_character.tscn" id="5_l0jy7"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="8_2yvd4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nlixi"]
@@ -64,10 +63,6 @@ _test_bool = true
 
 [node name="ThrownFeather" parent="." unique_id=1510378705 instance=ExtResource("4_yq87l")]
 position = Vector2(268, -448)
-
-[node name="FeatherCharacter" parent="." unique_id=1631191588 instance=ExtResource("5_l0jy7")]
-visible = false
-position = Vector2(606, -381)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=651000954]
 position = Vector2(-1, 0)
