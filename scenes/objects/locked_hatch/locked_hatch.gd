@@ -4,29 +4,29 @@ extends Node2D
 # a locked hatch in. As long as a feather hits the hit target, it should work
 
 @export var lock : HitTarget
+@export var rotation_amount : float
 
 enum {OPEN, CLOSED}
 
 @onready var pivot_point : Node2D = $PivotPoint
-@onready var hatch_body : StaticBody2D = $PivotPoint/StaticBody2D
-@onready var collisionLayer : int = 7
+@onready var hatch_body : CollisionShape2D = $PivotPoint/StaticBody2D/CollisionShape2D
 @onready var state = CLOSED
-@onready var rotation_amount : float = float(0.0)
+@onready var rotation_amount_radian = rotation_amount * (PI/180)
 
 func _ready() -> void:
-	hatch_body.set_collision_layer_value(collisionLayer, true)
 	lock.target_hit.connect(_open_hatch)
+	set_physics_process(false)
 	
-func _process(delta: float) -> void:
-	if(state == CLOSED):
-		if(pivot_point.rotation > -PI/2):
-			pivot_point.rotate(rotation_amount)
+func _physics_process(delta: float) -> void:
+	pivot_point.rotate(rotation_amount_radian * delta)
+	if(pivot_point.global_rotation < -PI/2) :
+		set_physics_process(false)
 	
 func _open_hatch():
 	if (state == CLOSED):
-		rotation_amount = -0.1 
 		state == OPEN
-		hatch_body.set_collision_layer_value(collisionLayer, false)
+		hatch_body.set_deferred("disabled", true)
+		set_physics_process(true)
 		
 		
 	

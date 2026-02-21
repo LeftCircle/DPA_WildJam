@@ -32,6 +32,7 @@ position = Vector2(883, 461)
 
 [node name="LockedHatch" parent="." unique_id=1802310663 instance=ExtResource("4_dtax6")]
 position = Vector2(69, 335)
+rotation_amount = -300.0
 
 [node name="Chandelier" parent="." unique_id=2022063999 node_paths=PackedStringArray("target") instance=ExtResource("5_fs328")]
 position = Vector2(738, 239.00002)
@@ -40,3 +41,6 @@ target = NodePath("../HitTarget2")
 
 [node name="HitTarget2" parent="." unique_id=1365559832 instance=ExtResource("3_y3dif")]
 position = Vector2(738, 134)
+
+[editable path="LockedHatch"]
+[editable path="Chandelier"]
