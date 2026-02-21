@@ -19,8 +19,6 @@ scale = Vector2(1.1075872, 1.1075872)
 position = Vector2(466.99997, 378.00003)
 scale = Vector2(1.4942465, 10.706672)
 lock = NodePath("../HitTarget")
-move_magnitude = 100.0
-move_speed = 3.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=85080947]
 
@@ -35,8 +33,10 @@ position = Vector2(883, 461)
 [node name="LockedHatch" parent="." unique_id=1802310663 instance=ExtResource("4_dtax6")]
 position = Vector2(69, 335)
 
-[node name="Chandelier" parent="." unique_id=2022063999 instance=ExtResource("5_fs328")]
-position = Vector2(738.99994, 239.99998)
+[node name="Chandelier" parent="." unique_id=2022063999 node_paths=PackedStringArray("target") instance=ExtResource("5_fs328")]
+position = Vector2(738, 239.00002)
 scale = Vector2(0.20247164, 0.20247164)
-chain_length = 20.0
-move_speed = 1.0
+target = NodePath("../HitTarget2")
+
+[node name="HitTarget2" parent="." unique_id=1365559832 instance=ExtResource("3_y3dif")]
+position = Vector2(738, 134)
