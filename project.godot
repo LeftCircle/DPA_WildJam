@@ -21,6 +21,10 @@ LevelDriver="*uid://da3ypp0f5upja"
 DialogueManager="*uid://c3rodes2l3gxb"
 NpcState="*uid://ega173usqy1b"
 
+[dotnet]
+
+project/assembly_name="DPA_WildJam"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/gut/plugin.cfg")

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d4adqa8778rvx" path="res://assets/environment/level_04/Level_4_matte.png" id="7_03g8n"]
 [ext_resource type="Texture2D" uid="uid://cd5bchftcmalw" path="res://assets/environment/level_04/Level_4_hazards.png" id="8_d1lip"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="8_gkpor"]
+[ext_resource type="PackedScene" uid="uid://bihh1ol0cd65k" path="res://scenes/VFX/firefly/vfx_firefly.tscn" id="8_tdc43"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="9_a0uur"]
 [ext_resource type="Texture2D" uid="uid://bc8gdl6t78cb7" path="res://assets/environment/level_04/Level_4_staticGeo.png" id="9_o3rdr"]
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="10_yy4na"]
@@ -143,11 +144,17 @@ occluder = SubResource("OccluderPolygon2D_07dqf")
 visible = false
 color = Color(0.68514574, 0.6851458, 0.6851457, 1)
 
+[node name="Effects" type="Node2D" parent="Environemnt" unique_id=1756858117]
+visible = false
+
+[node name="vfx_firefly" parent="Environemnt/Effects" unique_id=1928004762 instance=ExtResource("8_tdc43")]
+position = Vector2(1386, -1073)
+
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_gkpor")]
 position = Vector2(782, -1062)
 
 [node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
-_test_count = 17
+_test_count = 16
 
 [node name="Feathers" type="Node" parent="." unique_id=1634791762]
 
@@ -239,6 +246,7 @@ position = Vector2(1086, -1144)
 rotation_amount = -90.0
 
 [editable path="Character"]
+[editable path="Character/PlayerVFX/vfx_feathers_light"]
 [editable path="Interactables/MovingPlatforms/MovingPlatform"]
 [editable path="Interactables/MovingPlatforms/MovingPlatform2"]
 [editable path="Interactables/MovingPlatforms/MovingPlatform3"]

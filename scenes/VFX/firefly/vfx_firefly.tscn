@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bihh1ol0cd65k"]
+
+[ext_resource type="Texture2D" uid="uid://1bfii5uyg3cd" path="res://assets/VFX/Flare_small.PNG" id="1_patqr"]
+
+[sub_resource type="Curve" id="Curve_patqr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.09661355, 1), 0.0, 0.0, 0, 0, Vector2(0.22808766, 1), 0.0, 0.0, 0, 0, Vector2(0.35059762, 0.016139865), 0.0, 0.0, 0, 0, Vector2(0.42231077, 1), 0.0, 0.0, 0, 0, Vector2(0.57768923, 1), 0.0, 0.0, 0, 0, Vector2(0.69123507, 0), 0.0, 0.0, 0, 0, Vector2(0.7360558, 1), 0.0, 0.0, 0, 0, Vector2(0.89541835, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 10
+
+[sub_resource type="CurveTexture" id="CurveTexture_6f8pp"]
+curve = SubResource("Curve_patqr")
+
+[sub_resource type="Gradient" id="Gradient_6f8pp"]
+offsets = PackedFloat32Array(0.007874016, 1)
+colors = PackedColorArray(0, 1, 0, 1, 0.98039216, 0.7411765, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jj6j5"]
+gradient = SubResource("Gradient_6f8pp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c81wl"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 0.99999774
+scale_min = 0.79999995
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_jj6j5")
+alpha_curve = SubResource("CurveTexture_6f8pp")
+turbulence_enabled = true
+
+[node name="vfx_firefly" type="Node2D" unique_id=1928004762]
+
+[node name="Particle" type="GPUParticles2D" parent="." unique_id=153070895]
+scale = Vector2(10, 10)
+amount = 30
+texture = ExtResource("1_patqr")
+lifetime = 30.0
+process_material = SubResource("ParticleProcessMaterial_c81wl")
