@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_wu80y"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_ypi4k"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="8_gkpor"]
+[ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="9_a0uur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nanf4"]
 size = Vector2(896, 74)
@@ -96,3 +97,9 @@ texture = ExtResource("3_cw75u")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_gkpor")]
 position = Vector2(2688, -256)
+
+[node name="FeatherPickup" parent="." unique_id=2120564041 instance=ExtResource("9_a0uur")]
+position = Vector2(1216, -1216)
+
+[node name="FeatherPickup2" parent="." unique_id=1352743658 instance=ExtResource("9_a0uur")]
+position = Vector2(192, -2240)

@@ -12,6 +12,7 @@ class_name ThrowState
 
 var projectile : ThrownFeather
 var float_velocity : Vector2
+var _throw_dir : Vector2
 
 func _enter():
 	projectile = projectile_ps.instantiate()
@@ -25,7 +26,9 @@ func _update(delta : float) -> void:
 	if !character.is_on_floor():
 		_float()
 	if input_processor.is_throw_released():
-		projectile.apply_central_impulse(impulse_force * input_processor.last_input_dir)
+		_throw_dir = throw_point.global_position.direction_to(throw_point.get_global_mouse_position())
+		print("Throw dir = ", _throw_dir)
+		projectile.apply_central_impulse(impulse_force * _throw_dir)
 		dispatch("throw_to_ground")
 		_bounce_on_throw()
 
