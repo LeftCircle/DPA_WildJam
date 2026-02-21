@@ -1,11 +1,10 @@
 extends Node
 
-
+signal player_entered_cage()
 
 var current_level : Level
 var player : PlayerCharacter
 var player_starting_state : PlayerStartingState = PlayerStartingState.new()
-
 
 func _ready():
 	player_starting_state.current_feathers = 1

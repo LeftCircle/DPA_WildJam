@@ -22,9 +22,9 @@ enum {OPEN, CLOSED}
 func _ready() -> void:
 	lock.target_hit.connect(_open_door)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if(self.position.y > target_position.y):
-		move_and_collide(move_direction * move_speed)
+		move_and_collide(move_direction * move_speed * delta)
 		
 func _open_door() -> void:
 	if (state == CLOSED):
