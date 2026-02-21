@@ -87,3 +87,5 @@ dialogue_resource = ExtResource("4_xxdnj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1243130475]
 position = Vector2(0, -56)
 shape = SubResource("RectangleShape2D_v4ppa")
+
+[connection signal="queue_scene_free" from="Interactable" to="." method="_on_interactable_queue_scene_free"]

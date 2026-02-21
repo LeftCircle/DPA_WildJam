@@ -19,6 +19,12 @@ if check_feathers():
 	- Ignore
 		=> END
 else:
+	What will you do?
+	- ??? [if check_feathers()]
+		=>< Give_Dialogue
+		do give_feathers()
+		do disappear()
+		=> END
 	- Take
 		=>< Take_Dialogue
 		do take_feathers()

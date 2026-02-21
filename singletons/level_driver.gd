@@ -9,7 +9,7 @@ var player_starting_state : PlayerStartingState = PlayerStartingState.new()
 
 
 func _ready():
-	player_starting_state.current_feathers = 1
+	player_starting_state.current_feathers = 2
 
 func register_npc(npc_name : String, _npc : NPC) -> void:
 	npcs[name] = _npc

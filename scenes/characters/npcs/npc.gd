@@ -6,3 +6,7 @@ func _ready() -> void:
 
 func _exit_tree() -> void:
 	LevelDriver.remove_npc(self.name)
+
+
+func _on_interactable_queue_scene_free() -> void:
+	queue_free()
