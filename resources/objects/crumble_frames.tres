@@ -1,0 +1,123 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://d3hweglls4wcu"]
+
+[ext_resource type="Texture2D" uid="uid://c5sedrmpr37kf" path="res://assets/environment/general/stoneSpritesColors.png" id="1_81ljy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qs56"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(70, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq7ry"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(311, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0egn"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(552, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3l3i"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(793, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhnhr"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(1034, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl4ow"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(1275, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xitj3"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(1516, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oyai"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(1757, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sxhf"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(1998, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jikj7"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(2239, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87o7y"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(2480, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yve4"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(2721, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb5da"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(2962, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw1jg"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(3203, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt2ji"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(3444, 70, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxmwb"]
+atlas = ExtResource("1_81ljy")
+region = Rect2(3685, 70, 200, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qs56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq7ry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0egn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3l3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhnhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl4ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xitj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oyai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sxhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jikj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87o7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yve4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb5da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw1jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt2ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxmwb")
+}],
+"loop": false,
+"name": &"PinkCrumble",
+"speed": 12.0
+}]

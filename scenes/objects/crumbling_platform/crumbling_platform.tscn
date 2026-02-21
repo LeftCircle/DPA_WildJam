@@ -1,11 +1,24 @@
 [gd_scene format=3 uid="uid://bfau541w7rx5y"]
 
 [ext_resource type="Script" uid="uid://dsxujvafxvgmv" path="res://scenes/objects/crumbling_platform/crumbling_platform.gd" id="1_gm02o"]
+[ext_resource type="SpriteFrames" uid="uid://d3hweglls4wcu" path="res://resources/objects/crumble_frames.tres" id="2_mpnxe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpnxe"]
+size = Vector2(128, 128)
 
 [node name="CrumblingPlatform" type="StaticBody2D" unique_id=1786747694]
+collision_mask = 3
 script = ExtResource("1_gm02o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=826611416]
+position = Vector2(64, -64)
 shape = SubResource("RectangleShape2D_mpnxe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1495355994]
+position = Vector2(64, -64)
+rotation = 1.5707964
+scale = Vector2(0.66, 0.66)
+sprite_frames = ExtResource("2_mpnxe")
+animation = &"PinkCrumble"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

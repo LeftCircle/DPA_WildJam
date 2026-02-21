@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://c5lxyowwkw8t6" path="res://scenes/objects/sinking_pillar/sinking_pillar.gd" id="1_yo1qf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yo1qf"]
-size = Vector2(20, 16.154308)
+size = Vector2(1251.3004, 259.17877)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rya3q"]
-size = Vector2(20, 9.853748)
+size = Vector2(1251.3005, 323.97345)
 
 [node name="SinkingPillar" type="StaticBody2D" unique_id=229374165]
 script = ExtResource("1_yo1qf")

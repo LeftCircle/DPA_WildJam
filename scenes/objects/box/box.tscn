@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bvxosuyforqvs"]
+
+[ext_resource type="Texture2D" uid="uid://yo0c2xewe2rw" path="res://assets/environment/general/crate1.png" id="1_58xvf"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_46tvr"]
+a = Vector2(0, -256)
+b = Vector2(128, -256)
+
+[node name="Box" type="Node2D" unique_id=298692615]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=88191160]
+position = Vector2(64, -63.999996)
+scale = Vector2(0.42666668, 0.42666674)
+texture = ExtResource("1_58xvf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=882900827]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1846299907]
+position = Vector2(0, 128)
+shape = SubResource("SegmentShape2D_46tvr")
+one_way_collision = true

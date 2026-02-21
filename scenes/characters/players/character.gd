@@ -14,12 +14,21 @@ func _ready():
 	reset_feathers_to(LevelDriver.player_starting_state.current_feathers)
 	reset_feathers_to(99)
 
+func _physics_process(delta):
+	_crumble_platforms()
+
 func is_missing_feather() -> bool:
 	return feather_counter < acquired_feathers
 
 func _on_feather_pickup() -> void:
 	feather_counter += 1
 	acquired_feathers += 1
+
+func _crumble_platforms() -> void:
+	var coll : KinematicCollision2D = get_last_slide_collision()
+	if is_instance_valid(coll):
+		if coll.get_collider().has_method("crumble"):
+			coll.get_collider().crumble()
 
 func _on_death() -> void:
 	pass
