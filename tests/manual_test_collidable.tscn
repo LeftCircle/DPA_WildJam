@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://1654on721438"]
 
+[ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_8pm3k"]
 [ext_resource type="PackedScene" uid="uid://c86h7glewtntv" path="res://scenes/objects/locked_door/locked_door.tscn" id="2_e8r0s"]
+[ext_resource type="PackedScene" uid="uid://bud5trm8rqsq5" path="res://scenes/levels/level_02.tscn" id="2_wo4vd"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_dtax6"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="3_y3dif"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="4_dtax6"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="5_fs328"]
+[ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="8_s668h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fs328"]
 size = Vector2(57.689175, 20)
 
 [node name="ManualTestCollidable" type="Node2D" unique_id=809999213]
+script = ExtResource("1_8pm3k")
+next_level = ExtResource("2_wo4vd")
+
+[node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_dtax6")]
 
 [node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("3_y3dif")]
 position = Vector2(392.99994, 372)
@@ -19,6 +26,9 @@ scale = Vector2(1.1075872, 1.1075872)
 position = Vector2(466.99997, 378.00003)
 scale = Vector2(1.4942465, 10.706672)
 lock = NodePath("../HitTarget")
+move_magnitude = 100.0
+velocity = 128.0
+can_dash_through = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=85080947]
 
@@ -26,9 +36,6 @@ lock = NodePath("../HitTarget")
 position = Vector2(465.49997, 517.99994)
 scale = Vector2(16.83158, 3.1126761)
 shape = SubResource("RectangleShape2D_fs328")
-
-[node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_dtax6")]
-position = Vector2(883, 461)
 
 [node name="LockedHatch" parent="." unique_id=1802310663 instance=ExtResource("4_dtax6")]
 position = Vector2(69, 335)
@@ -41,6 +48,10 @@ target = NodePath("../HitTarget2")
 
 [node name="HitTarget2" parent="." unique_id=1365559832 instance=ExtResource("3_y3dif")]
 position = Vector2(738, 134)
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=709515918]
+script = ExtResource("8_s668h")
+metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
 
 [editable path="LockedHatch"]
 [editable path="Chandelier"]
