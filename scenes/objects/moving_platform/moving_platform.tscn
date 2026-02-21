@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://drvovmggotd4m"]
+
+[ext_resource type="Script" uid="uid://dudpa71uv43no" path="res://scenes/objects/moving_platform/moving_platform.gd" id="1_wdmyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3y2h"]
+
+[node name="MovingPlatform" type="StaticBody2D" unique_id=1025126161]
+script = ExtResource("1_wdmyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1901615131]
+shape = SubResource("RectangleShape2D_p3y2h")
