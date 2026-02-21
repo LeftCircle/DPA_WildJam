@@ -25,3 +25,6 @@ func _update(delta : float) -> void:
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Dash":
 		dispatch("dash_to_ground")
+
+func _exit() -> void:
+	character.dash_finished.emit()

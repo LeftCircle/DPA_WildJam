@@ -16,14 +16,14 @@ enum {ACTIVE, INACTIVE}
 
 func _ready() -> void:
 	target.target_hit.connect(_lower_chandelier)
+	_play_fire_animations()
+	set_physics_process(false)
 	
-	for child in base_sprite.get_children():
-		if child.has_method("start"):
-			child.start()
 
-func _process(delta: float) -> void:
-	if (base_resting_position.y < base_target_position.y):
-		base_body.move_and_collide(move_direction * move_speed)
+func _physics_process(delta: float) -> void:
+	if state == ACTIVE and base_body.position < base_target_position:
+		base_body.move_and_collide(move_direction * move_speed * delta)
+		
 
 func _lower_chandelier():
 	if (state == INACTIVE):
@@ -37,4 +37,10 @@ func _lower_chandelier():
 		
 		print(base_resting_position.y)
 		print(base_target_position.y)
+		set_physics_process(true)
+
+func _play_fire_animations() -> void:
+	for child in base_sprite.get_children():
+		if child.has_method("start"):
+			child.start()
 		

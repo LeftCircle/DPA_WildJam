@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpewp1rmmj6s5" path="res://scenes/objects/chandelier/Flame.tscn" id="2_vol6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvcnq"]
+size = Vector2(20.344116, 20)
 
 [node name="Chandelier" type="Node2D" unique_id=2022063999 node_paths=PackedStringArray("target")]
 script = ExtResource("1_hk8m0")
