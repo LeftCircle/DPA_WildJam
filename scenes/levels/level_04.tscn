@@ -25,6 +25,15 @@ size = Vector2(64, 364)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cw75u"]
 size = Vector2(138, 128)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a0uur"]
+polygon = PackedVector2Array(2900, -251, 2440, -257, 2438, 3, 1666, -1, 1662, -253, 504, -255, 510, -845, 806, -847, 808, -1037, 770, -1045, 769, -901, -9, -913, 69, -1664, -13, -2173, 88, -2316, 459, -2309, 495, -1902, 1881, -1912, 1886, -1289, 1924, -1291, 1929, -1912, 2561, -1911, 2563, -1664, 2903, -1662, 2909, -2482, -94, -2494, -88, 191, 2900, 200)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yy4na"]
+polygon = PackedVector2Array(2906, -377, 2561, -386, 2557, -762, 1536, -766, 1544, -517, 1281, -513, 1285, -1126, 1152, -1126, 1156, -1158, 1281, -1154, 1276, -1278, 1016, -1284, 1014, -1143, 989, -1144, 991, -1284, 545, -1281, 542, -1029, 513, -1030, 463, -1358, 518, -1669, 1668, -1665, 1668, -1161, 2554, -1157, 2556, -1409, 2320, -1413, 2315, -1297, 2177, -1293, 2181, -1553, 2902, -1552)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_07dqf"]
+polygon = PackedVector2Array(1920, -206, 2170, -208, 2172, -252, 1921, -253)
+
 [node name="Level04" type="Node2D" unique_id=823577351 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_j6e47")
 next_level = ExtResource("2_ypi4k")
@@ -95,11 +104,38 @@ position = Vector2(2688, -320)
 position = Vector2(1408, -1152)
 texture = ExtResource("3_cw75u")
 
+[node name="Lights" type="Node2D" parent="Environemnt" unique_id=1529224101]
+visible = false
+
+[node name="Occluders" type="Node2D" parent="Environemnt" unique_id=196327038]
+visible = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=281102643]
+z_index = -1
+occluder = SubResource("OccluderPolygon2D_a0uur")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=342171560]
+z_index = -1
+occluder = SubResource("OccluderPolygon2D_yy4na")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1413390200]
+z_index = -1
+occluder = SubResource("OccluderPolygon2D_07dqf")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environemnt" unique_id=1298645441]
+visible = false
+color = Color(0.68514574, 0.6851458, 0.6851457, 1)
+
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_gkpor")]
 position = Vector2(2688, -256)
+
+[node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
+_test_count = 17
 
 [node name="FeatherPickup" parent="." unique_id=2120564041 instance=ExtResource("9_a0uur")]
 position = Vector2(1216, -1216)
 
 [node name="FeatherPickup2" parent="." unique_id=1352743658 instance=ExtResource("9_a0uur")]
 position = Vector2(192, -2240)
+
+[editable path="Character"]
