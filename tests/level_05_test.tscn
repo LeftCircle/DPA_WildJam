@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjkkr5xfkra6x"]
+[gd_scene format=3 uid="uid://8hn3o7wvfrvp"]
 
 [ext_resource type="PackedScene" uid="uid://cwdr74u1mywek" path="res://scenes/levels/level_05.tscn" id="1_q2cex"]
 [ext_resource type="Texture2D" uid="uid://dbcvx275h70gn" path="res://assets/VFX/cfxr stretch inv spike fade.png" id="2_pnwo1"]
@@ -23,29 +23,34 @@ polygon = PackedVector2Array(-1491, 1106, -1361, 1104, -1360, 522, -1493, 521)
 [node name="Background" parent="Environment" parent_id_path=PackedInt32Array(275101980) index="0" unique_id=808624385]
 position = Vector2(1632, -1506)
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Background" index="0" unique_id=1985214172]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Occluders" parent_id_path=PackedInt32Array(1795442860) index="0" unique_id=1985214172]
+position = Vector2(1632, -1506)
 occluder = SubResource("OccluderPolygon2D_q2cex")
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environment/Background" index="1" unique_id=681773091]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environment/Occluders" parent_id_path=PackedInt32Array(1795442860) index="1" unique_id=681773091]
+position = Vector2(1632, -1506)
 occluder = SubResource("OccluderPolygon2D_pnwo1")
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environment/Background" index="2" unique_id=1198612364]
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environment/Occluders" parent_id_path=PackedInt32Array(1795442860) index="2" unique_id=1198612364]
+position = Vector2(1632, -1506)
 occluder = SubResource("OccluderPolygon2D_uhvu8")
 
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="Environment/Background" index="3" unique_id=600608048]
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Environment/Occluders" parent_id_path=PackedInt32Array(1795442860) index="3" unique_id=600608048]
+position = Vector2(1632, -1506)
 occluder = SubResource("OccluderPolygon2D_extis")
 
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="Environment/Background" index="4" unique_id=481018400]
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Environment/Occluders" parent_id_path=PackedInt32Array(1795442860) index="4" unique_id=481018400]
+position = Vector2(1632, -1506)
 occluder = SubResource("OccluderPolygon2D_0r6tf")
 
 [node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
 _test_count = 15
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." index="8" unique_id=204137897]
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="7" unique_id=204137897]
 position = Vector2(1632, -1506)
 color = Color(0.6073017, 0.6073016, 0.6073017, 1)
 
-[node name="Node" type="Node" parent="." index="9" unique_id=763320899]
+[node name="Node" type="Node" parent="." index="8" unique_id=763320899]
 
 [node name="PointLight2D" type="PointLight2D" parent="Node" index="0" unique_id=1223405385]
 position = Vector2(516, -529.00006)
@@ -59,4 +64,3 @@ texture = ExtResource("2_pnwo1")
 texture_scale = 2.8
 
 [editable path="Character"]
-[editable path="DashCollider"]
