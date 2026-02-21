@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e2p81t27ffog"]
 
 [ext_resource type="Texture2D" uid="uid://barpyqlh8xxrx" path="res://assets/characters/npc/grey.png" id="1_kqsl3"]
+[ext_resource type="Script" uid="uid://cybvhf1oxjwrd" path="res://scenes/characters/npcs/npc.gd" id="1_v4ppa"]
 [ext_resource type="Texture2D" uid="uid://c67pn6h80qqhc" path="res://assets/characters/npc/NPC_Test.png" id="1_xxdnj"]
 [ext_resource type="PackedScene" uid="uid://baw108qfcqu80" path="res://scenes/characters/interactions/Interactable.tscn" id="2_idr7u"]
 [ext_resource type="Resource" uid="uid://b1v5s4nbgwjvb" path="res://assets/dialogue/NPC_Level_Template.dialogue" id="4_xxdnj"]
@@ -62,6 +63,7 @@ size = Vector2(128, 112)
 
 [node name="Npc" type="CharacterBody2D" unique_id=1113561624]
 collision_layer = 128
+script = ExtResource("1_v4ppa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1865951905]
 position = Vector2(3, 18)

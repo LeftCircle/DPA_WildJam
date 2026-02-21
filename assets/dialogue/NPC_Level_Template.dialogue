@@ -1,15 +1,44 @@
 ~ start
-if NpcState.first_dialogue == true:
-	NPC: Hello.
-	set NpcState.first_dialogue = false
+if first == true:
+	=>< Introduction
+	set first = false
 else:
-	NPC: Hello again.
+	=>< Reintroduction
 What will you do?
-- Give
-	NPC: Thank you.
-	=> END
-- Take
-	NPC: How rude.
-	=> END
-- Ignore
-	=> END
+if check_feathers():
+	- Give
+		=>< Give_Dialogue
+		do give_feathers()
+		do disappear()
+		=> END
+	- Take
+		=>< Take_Dialogue
+		do take_feathers()
+		do disappear()
+		=> END
+	- Ignore
+		=> END
+else:
+	- Take
+		=>< Take_Dialogue
+		do take_feathers()
+		do disappear()
+		=> END
+	- Ignore
+		=> END
+
+~ Introduction
+NPC: Hello.
+ => END
+
+~ Reintroduction
+NPC: Hello again.
+ => END
+
+~ Give_Dialogue
+NPC: Thank you.
+ => END
+
+~ Take_Dialogue
+NPC: How rude.
+ => END

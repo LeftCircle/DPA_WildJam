@@ -30,7 +30,7 @@ tile_map_data = PackedByteArray("AAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAA
 tile_set = ExtResource("1_3acmf")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(3044, -157)
+position = Vector2(1919, -1677)
 
 [node name="ThrownFeather" parent="." unique_id=1510378705 instance=ExtResource("4_3acmf")]
 position = Vector2(268, -448)

@@ -21,9 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://dgo5ql4vc04gt" path="res://scenes/VFX/dust/vfx_dust.tscn" id="19_ntitv"]
 [ext_resource type="Texture2D" uid="uid://bmhrqgmkq5col" path="res://assets/characters/player/RunSprites.png" id="20_ap4c4"]
 [ext_resource type="Texture2D" uid="uid://cnjfj735v4lub" path="res://assets/characters/player/dash.png" id="21_a1yh3"]
-[ext_resource type="Script" uid="uid://bnnpphxe1vvln" path="res://scenes/characters/interactions/PlayerInteract.gd" id="23_0tlt7"]
 [ext_resource type="Texture2D" uid="uid://b482a70sptrw3" path="res://assets/characters/player/MCSpriteSheetJumpV3.png" id="22_a1yh3"]
-[ext_resource type="PackedScene" uid="uid://c3ansguf6th5d" path="res://scenes/characters/players/feather_resetter.tscn" id="23_0tlt7"]
+[ext_resource type="Script" uid="uid://bnnpphxe1vvln" path="res://scenes/characters/interactions/PlayerInteract.gd" id="23_0tlt7"]
+[ext_resource type="PackedScene" uid="uid://c3ansguf6th5d" path="res://scenes/characters/players/feather_resetter.tscn" id="24_y28c2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
 light_mode = 1
@@ -840,7 +840,7 @@ metadata/_custom_type_script = "uid://bnnpphxe1vvln"
 position = Vector2(0, -52)
 shape = SubResource("RectangleShape2D_y28c2")
 
-[node name="FeatherResetter" parent="." unique_id=863521036 node_paths=PackedStringArray("player") instance=ExtResource("23_0tlt7")]
+[node name="FeatherResetter" parent="." unique_id=863521036 node_paths=PackedStringArray("player") instance=ExtResource("24_y28c2")]
 player = NodePath("..")
 
 [connection signal="feather_used" from="." to="FeatherResetter" method="_on_character_feather_used"]
