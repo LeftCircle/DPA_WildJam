@@ -4,9 +4,11 @@
 [ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_pe0ra"]
 [ext_resource type="PackedScene" uid="uid://cgcwufr6penc0" path="res://scenes/levels/level_06.tscn" id="2_hqfam"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_yy1ns"]
-[ext_resource type="Texture2D" uid="uid://bnyymawnx45sd" path="res://assets/environment/level_05/Level_5_GamePath.png" id="3_836dv"]
+[ext_resource type="Texture2D" uid="uid://dwfcd7lgljlpi" path="res://assets/environment/level_05/Level_5_matte.png" id="3_6shqt"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_xv7r2"]
 [ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/level_5_window_light.tscn" id="4_c1tix"]
+[ext_resource type="Texture2D" uid="uid://cqlt5lwp58ulf" path="res://assets/environment/level_05/Level_5_hazards.png" id="4_de7pb"]
+[ext_resource type="Texture2D" uid="uid://dt4jbinx2k4ja" path="res://assets/environment/level_05/Level_5_staticGeo.png" id="5_5j0jk"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_hqfam"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="8_ot78m"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="10_ywrx1"]
@@ -80,7 +82,18 @@ metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="Environment" unique_id=808624385]
 position = Vector2(1632, -1504)
-texture = ExtResource("3_836dv")
+texture = ExtResource("3_6shqt")
+metadata/_edit_lock_ = true
+
+[node name="Hazards" type="Sprite2D" parent="Environment" unique_id=1683565976]
+z_index = 1
+position = Vector2(1632, -1504)
+texture = ExtResource("4_de7pb")
+metadata/_edit_lock_ = true
+
+[node name="StaticGeo" type="Sprite2D" parent="Environment" unique_id=1779618260]
+position = Vector2(1632, -1504)
+texture = ExtResource("5_5j0jk")
 metadata/_edit_lock_ = true
 
 [node name="Lights" type="Node2D" parent="Environment" unique_id=1601875454]

@@ -4,10 +4,12 @@
 [ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_uvc87"]
 [ext_resource type="PackedScene" uid="uid://bud5trm8rqsq5" path="res://scenes/levels/level_02.tscn" id="2_qdh5e"]
 [ext_resource type="PackedScene" uid="uid://p26j0g8a2tki" path="res://scenes/levels/level_block.tscn" id="3_8umyf"]
+[ext_resource type="Texture2D" uid="uid://cxhnftu0wc8mm" path="res://assets/environment/level_01/Level_1_Art.png" id="3_ijn0p"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="6_50wog"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="7_1ey3t"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="8_t0hvh"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="9_kfebt"]
+[ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="10_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="10_r72dd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ey3t"]
@@ -36,6 +38,13 @@ position = Vector2(128.00005, -511.99997)
 script = ExtResource("1_uvc87")
 next_level = ExtResource("2_qdh5e")
 
+[node name="Environment" type="Node" parent="." unique_id=546714053]
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment" unique_id=1534323426]
+z_index = -1
+position = Vector2(768, -1152)
+texture = ExtResource("3_ijn0p")
+
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_e1ghi")]
 position = Vector2(151, 257)
 
@@ -50,7 +59,7 @@ metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
 position = Vector2(-435.00006, -1607)
 shape = SubResource("RectangleShape2D_1ey3t")
 
-[node name="CollisionGeo" type="Node" parent="." unique_id=1112778789]
+[node name="CollisionGeo" type="Node" parent="." unique_id=692325882]
 
 [node name="GroundGeo" type="Node" parent="CollisionGeo" unique_id=1557124129]
 
@@ -163,23 +172,29 @@ shape = SubResource("RectangleShape2D_kfebt")
 [node name="LockedHatch" parent="Interactables" unique_id=1802310663 instance=ExtResource("9_kfebt")]
 position = Vector2(1598, -891)
 
-[node name="Chandelier2" parent="Interactables" unique_id=1656317491 instance=ExtResource("10_r72dd")]
+[node name="Chandelier2" parent="Interactables" unique_id=1656317491 node_paths=PackedStringArray("target") instance=ExtResource("10_r72dd")]
 position = Vector2(1087, -2015.9999)
 scale = Vector2(0.215, 0.215)
+target = NodePath("../HitTarget2")
 chain_length = 256.0
-move_speed = 256.0
 
-[node name="StaticBody2D" parent="Interactables/Chandelier2" index="1" unique_id=1376589567]
+[node name="StaticBody2D" parent="Interactables/Chandelier2" index="0" unique_id=1376589567]
 position = Vector2(0, -236.53)
 
-[node name="Chandelier3" parent="Interactables" unique_id=2022063999 instance=ExtResource("10_r72dd")]
-position = Vector2(370, -2009.9999)
+[node name="HitTarget2" parent="Interactables" unique_id=594915268 instance=ExtResource("10_ijn0p")]
+position = Vector2(1085, -2176)
+
+[node name="Chandelier3" parent="Interactables" unique_id=2022063999 node_paths=PackedStringArray("target") instance=ExtResource("10_r72dd")]
+position = Vector2(372, -2011.9999)
 scale = Vector2(0.215, 0.215)
+target = NodePath("../HitTarget")
 chain_length = 256.0
-move_speed = 256.0
 
-[node name="StaticBody2D" parent="Interactables/Chandelier3" index="1" unique_id=1376589567]
+[node name="StaticBody2D" parent="Interactables/Chandelier3" index="0" unique_id=1376589567]
 position = Vector2(0, -236.53)
+
+[node name="HitTarget" parent="Interactables" unique_id=562628805 instance=ExtResource("10_ijn0p")]
+position = Vector2(369, -2170)
 
 [editable path="Interactables/DashCollider"]
 [editable path="Interactables/Chandelier2"]

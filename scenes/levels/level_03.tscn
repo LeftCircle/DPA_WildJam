@@ -5,7 +5,10 @@
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_o4mod"]
 [ext_resource type="PackedScene" uid="uid://cvblvwwelqa28" path="res://scenes/levels/level_04.tscn" id="2_r8ojw"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_4wrbh"]
+[ext_resource type="Texture2D" uid="uid://b6kb05js8voml" path="res://assets/environment/level_03/Level_3_Water.png" id="4_7oqvy"]
+[ext_resource type="Texture2D" uid="uid://c1xc3votynngb" path="res://assets/environment/level_03/Level_3_matte.png" id="4_ghs8o"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="4_ps4tf"]
+[ext_resource type="TileSet" uid="uid://bf3ofngk54hsf" path="res://resources/levels/quarter_tile_collisions.tres" id="6_j33in"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="7_1jnh5"]
 [ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="8_jgt0v"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="9_8w8tq"]
@@ -14,6 +17,14 @@
 [ext_resource type="Script" uid="uid://c5lxyowwkw8t6" path="res://scenes/objects/sinking_pillar/sinking_pillar.gd" id="11_iaq7h"]
 [ext_resource type="Script" uid="uid://byxa0rv3p7sg6" path="res://scenes/objects/locked_door/locked_door.gd" id="12_iaubp"]
 [ext_resource type="PackedScene" uid="uid://bvxosuyforqvs" path="res://scenes/objects/box/box.tscn" id="13_iaubp"]
+[ext_resource type="Texture2D" uid="uid://ca840a5qlu5p7" path="res://assets/environment/level_03/Level_3_StaticGeo.png" id="15_xunku"]
+[ext_resource type="Texture2D" uid="uid://h17lvuae8lh4" path="res://assets/environment/level_03/Level_3_column1.png" id="16_1uqhn"]
+[ext_resource type="Texture2D" uid="uid://c1malub47hxmw" path="res://assets/environment/level_03/Level_3_column2.png" id="17_kapun"]
+[ext_resource type="Texture2D" uid="uid://cosl81tl3w08u" path="res://assets/environment/level_03/Level_3_column4.png" id="19_410tk"]
+[ext_resource type="Texture2D" uid="uid://hc5ijr83ftof" path="res://assets/environment/level_03/Level_3_column3.png" id="19_tipwo"]
+[ext_resource type="Texture2D" uid="uid://def6p3q55es4g" path="res://assets/environment/level_03/Level_3_column5.png" id="21_gpenj"]
+[ext_resource type="Texture2D" uid="uid://c6qwn1bwbe0ln" path="res://assets/environment/level_03/Level_3_column6.png" id="22_dn1io"]
+[ext_resource type="Texture2D" uid="uid://b4fi2p7yftlls" path="res://assets/environment/level_03/Level_3_column7.png" id="23_jeigf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4tf"]
 size = Vector2(5824, 182)
@@ -37,10 +48,16 @@ size = Vector2(1251.3004, 453.56284)
 size = Vector2(1251.3005, 1231.0991)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xunku"]
-size = Vector2(1251.3004, 453.56284)
+size = Vector2(1450.074, 453.56284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j33in"]
-size = Vector2(1251.3005, 356.3708)
+size = Vector2(1023.1991, 213.62003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dn1io"]
+size = Vector2(811.3904, 326.5045)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeigf"]
+size = Vector2(723.40717, 169.20013)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7oqvy"]
 size = Vector2(895.30664, 1518.7086)
@@ -65,12 +82,16 @@ spawn_point = NodePath("SpawnPoint")
 [node name="Collisions" type="Node2D" parent="." unique_id=820483864]
 
 [node name="LargeCollisionTiles" type="TileMapLayer" parent="Collisions" unique_id=1744496761]
-tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP//AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAIAP3/AAAAAAAAAAAAAPT/AAAAAAAAAAAAAPX/AAAAAAAAAAAAAPb/AAAAAAAAAAAAAPf/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAABAPT/AAAAAAAAAAABAPX/AAAAAAAAAAABAPb/AAAAAAAAAAABAPf/AAAAAAAAAAABAPj/AAAAAAAAAAABAPn/AAAAAAAAAAABAPr/AAAAAAAAAAAFAPj/AAAAAAAAAAAFAPn/AAAAAAAAAAAFAPr/AAAAAAAAAAAGAPj/AAAAAAAAAAAGAPn/AAAAAAAAAAAGAPr/AAAAAAAAAAAHAPj/AAAAAAAAAAAHAPn/AAAAAAAAAAAHAPr/AAAAAAAAAAAHAPb/AAAAAAAAAAAHAPf/AAAAAAAAAAAAAPL/AAAAAAAAAAABAPL/AAAAAAAAAAACAPL/AAAAAAAAAAADAPL/AAAAAAAAAAAEAPL/AAAAAAAAAAAAAPD/AAAAAAAAAAABAPD/AAAAAAAAAAAAAO//AAAAAAAAAAABAO//AAAAAAAAAAACAO//AAAAAAAAAAADAO//AAAAAAAAAAAEAO//AAAAAAAAAAAFAO//AAAAAAAAAAAGAO//AAAAAAAAAAAHAO//AAAAAAAAAAAAAOz/AAAAAAAAAAAAAO3/AAAAAAAAAAAAAO7/AAAAAAAAAAABAOz/AAAAAAAAAAABAO3/AAAAAAAAAAABAO7/AAAAAAAAAAACAOz/AAAAAAAAAAACAO3/AAAAAAAAAAACAO7/AAAAAAAAAAADAOz/AAAAAAAAAAADAO3/AAAAAAAAAAADAO7/AAAAAAAAAAAEAOz/AAAAAAAAAAAEAO3/AAAAAAAAAAAEAO7/AAAAAAAAAAAFAOz/AAAAAAAAAAAFAO3/AAAAAAAAAAAFAO7/AAAAAAAAAAAGAOz/AAAAAAAAAAAHAOz/AAAAAAAAAAAIAOz/AAAAAAAAAAAJAOz/AAAAAAAAAAAKAOz/AAAAAAAAAAALAOz/AAAAAAAAAAAMAOz/AAAAAAAAAAANAOz/AAAAAAAAAAAOAOz/AAAAAAAAAAAOAO3/AAAAAAAAAAAPAOz/AAAAAAAAAAAPAO3/AAAAAAAAAAAQAOz/AAAAAAAAAAAQAO3/AAAAAAAAAAARAOz/AAAAAAAAAAASAOz/AAAAAAAAAAATAOz/AAAAAAAAAAAUAOz/AAAAAAAAAAAVAOz/AAAAAAAAAAAVAO3/AAAAAAAAAAAWAOz/AAAAAAAAAAAWAO3/AAAAAAAAAAAXAOz/AAAAAAAAAAAXAO3/AAAAAAAAAAAYAOz/AAAAAAAAAAAZAOz/AAAAAAAAAAAaAOz/AAAAAAAAAAAbAOz/AAAAAAAAAAAcAOz/AAAAAAAAAAAdAOz/AAAAAAAAAAAeAOz/AAAAAAAAAAAfAOz/AAAAAAAAAAAgAOz/AAAAAAAAAAAhAOz/AAAAAAAAAAAiAOz/AAAAAAAAAAAjAOz/AAAAAAAAAAAkAOz/AAAAAAAAAAAkAO3/AAAAAAAAAAAlAOz/AAAAAAAAAAAlAO3/AAAAAAAAAAAmAOz/AAAAAAAAAAAmAO3/AAAAAAAAAAAnAOz/AAAAAAAAAAAnAO3/AAAAAAAAAAAoAOz/AAAAAAAAAAApAOz/AAAAAAAAAAAqAOz/AAAAAAAAAAArAOz/AAAAAAAAAAAsAOz/AAAAAAAAAAAtAOz/AAAAAAAAAAAuAOz/AAAAAAAAAAAvAOz/AAAAAAAAAAAwAOz/AAAAAAAAAAAxAOz/AAAAAAAAAAAyAOz/AAAAAAAAAAAyAO3/AAAAAAAAAAAyAO7/AAAAAAAAAAAyAO//AAAAAAAAAAAyAPD/AAAAAAAAAAAyAPH/AAAAAAAAAAAyAPL/AAAAAAAAAAAyAPP/AAAAAAAAAAAyAPT/AAAAAAAAAAAtAPb/AAAAAAAAAAAtAPf/AAAAAAAAAAAtAPj/AAAAAAAAAAAtAPn/AAAAAAAAAAAtAPr/AAAAAAAAAAAtAPv/AAAAAAAAAAAtAPz/AAAAAAAAAAAtAP3/AAAAAAAAAAAtAP7/AAAAAAAAAAAtAP//AAAAAAAAAAAJAP3/AAAAAAAAAAAyAPb/AAAAAAAAAAAxAPb/AAAAAAAAAAAwAPb/AAAAAAAAAAAvAPb/AAAAAAAAAAAuAPb/AAAAAAAAAAAyAPX/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP//AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAIAP3/AAAAAAAAAAAAAPT/AAAAAAAAAAAAAPX/AAAAAAAAAAAAAPb/AAAAAAAAAAAAAPf/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAABAPT/AAAAAAAAAAABAPX/AAAAAAAAAAABAPb/AAAAAAAAAAABAPf/AAAAAAAAAAABAPj/AAAAAAAAAAABAPn/AAAAAAAAAAABAPr/AAAAAAAAAAAFAPj/AAAAAAAAAAAFAPn/AAAAAAAAAAAFAPr/AAAAAAAAAAAGAPj/AAAAAAAAAAAGAPn/AAAAAAAAAAAGAPr/AAAAAAAAAAAHAPj/AAAAAAAAAAAHAPn/AAAAAAAAAAAHAPr/AAAAAAAAAAAHAPb/AAAAAAAAAAAHAPf/AAAAAAAAAAAAAPL/AAAAAAAAAAABAPL/AAAAAAAAAAACAPL/AAAAAAAAAAADAPL/AAAAAAAAAAAEAPL/AAAAAAAAAAAAAPD/AAAAAAAAAAABAPD/AAAAAAAAAAAAAO//AAAAAAAAAAABAO//AAAAAAAAAAACAO//AAAAAAAAAAADAO//AAAAAAAAAAAEAO//AAAAAAAAAAAFAO//AAAAAAAAAAAGAO//AAAAAAAAAAAHAO//AAAAAAAAAAAAAOz/AAAAAAAAAAAAAO3/AAAAAAAAAAAAAO7/AAAAAAAAAAABAOz/AAAAAAAAAAABAO3/AAAAAAAAAAABAO7/AAAAAAAAAAACAOz/AAAAAAAAAAACAO3/AAAAAAAAAAACAO7/AAAAAAAAAAADAOz/AAAAAAAAAAADAO3/AAAAAAAAAAADAO7/AAAAAAAAAAAEAOz/AAAAAAAAAAAEAO3/AAAAAAAAAAAEAO7/AAAAAAAAAAAFAOz/AAAAAAAAAAAFAO3/AAAAAAAAAAAFAO7/AAAAAAAAAAAGAOz/AAAAAAAAAAAHAOz/AAAAAAAAAAAIAOz/AAAAAAAAAAAJAOz/AAAAAAAAAAAKAOz/AAAAAAAAAAALAOz/AAAAAAAAAAAMAOz/AAAAAAAAAAANAOz/AAAAAAAAAAAOAOz/AAAAAAAAAAAOAO3/AAAAAAAAAAAPAOz/AAAAAAAAAAAPAO3/AAAAAAAAAAAQAOz/AAAAAAAAAAAQAO3/AAAAAAAAAAARAOz/AAAAAAAAAAASAOz/AAAAAAAAAAATAOz/AAAAAAAAAAAUAOz/AAAAAAAAAAAVAOz/AAAAAAAAAAAVAO3/AAAAAAAAAAAWAOz/AAAAAAAAAAAWAO3/AAAAAAAAAAAXAOz/AAAAAAAAAAAXAO3/AAAAAAAAAAAYAOz/AAAAAAAAAAAZAOz/AAAAAAAAAAAaAOz/AAAAAAAAAAAbAOz/AAAAAAAAAAAcAOz/AAAAAAAAAAAdAOz/AAAAAAAAAAAeAOz/AAAAAAAAAAAfAOz/AAAAAAAAAAAgAOz/AAAAAAAAAAAhAOz/AAAAAAAAAAAiAOz/AAAAAAAAAAAjAOz/AAAAAAAAAAAkAOz/AAAAAAAAAAAkAO3/AAAAAAAAAAAlAOz/AAAAAAAAAAAlAO3/AAAAAAAAAAAmAOz/AAAAAAAAAAAmAO3/AAAAAAAAAAAnAOz/AAAAAAAAAAAnAO3/AAAAAAAAAAAoAOz/AAAAAAAAAAApAOz/AAAAAAAAAAAqAOz/AAAAAAAAAAArAOz/AAAAAAAAAAAsAOz/AAAAAAAAAAAtAOz/AAAAAAAAAAAuAOz/AAAAAAAAAAAvAOz/AAAAAAAAAAAwAOz/AAAAAAAAAAAxAOz/AAAAAAAAAAAyAOz/AAAAAAAAAAAyAO3/AAAAAAAAAAAyAO7/AAAAAAAAAAAyAO//AAAAAAAAAAAyAPD/AAAAAAAAAAAyAPH/AAAAAAAAAAAyAPL/AAAAAAAAAAAyAPP/AAAAAAAAAAAyAPT/AAAAAAAAAAAtAPb/AAAAAAAAAAAtAPf/AAAAAAAAAAAtAPj/AAAAAAAAAAAtAPn/AAAAAAAAAAAtAPr/AAAAAAAAAAAtAPv/AAAAAAAAAAAtAPz/AAAAAAAAAAAtAP3/AAAAAAAAAAAtAP7/AAAAAAAAAAAtAP//AAAAAAAAAAAJAP3/AAAAAAAAAAAyAPb/AAAAAAAAAAAxAPb/AAAAAAAAAAAwAPb/AAAAAAAAAAAvAPb/AAAAAAAAAAAuAPb/AAAAAAAAAAAyAPX/AAAAAAAAAAAsAP//AAAAAAAAAAAsAP7/AAAAAAAAAAAsAP3/AAAAAAAAAAAsAPz/AAAAAAAAAAAsAPv/AAAAAAAAAAAsAPr/AAAAAAAAAAAsAPn/AAAAAAAAAAAsAPj/AAAAAAAAAAAsAPf/AAAAAAAAAAAsAPb/AAAAAAAAAAA=")
 tile_set = ExtResource("1_fvfhs")
 
 [node name="HalfGridCollisions" type="TileMapLayer" parent="Collisions" unique_id=735973786]
-tile_map_data = PackedByteArray("AABjAN3/AAAAAAAAAABiAN3/AAAAAAAAAABhAN3/AAAAAAAAAABgAN3/AAAAAAAAAABfAN3/AAAAAAAAAABeAN3/AAAAAAAAAABdAN3/AAAAAAAAAAAPAOv/AAAAAAAAAAAPAOr/AAAAAAAAAAAPAOn/AAAAAAAAAAAPAOj/AAAAAAAAAAAPAOf/AAAAAAAAAAAPAOb/AAAAAAAAAAAPAOX/AAAAAAAAAAAPAOT/AAAAAAAAAAAPAOP/AAAAAAAAAAAPAOL/AAAAAAAAAAAPAOH/AAAAAAAAAAAPAOD/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAPAOv/AAAAAAAAAAAPAOr/AAAAAAAAAAAPAOn/AAAAAAAAAAAPAOj/AAAAAAAAAAAPAOf/AAAAAAAAAAAPAOb/AAAAAAAAAAAPAOX/AAAAAAAAAAAPAOT/AAAAAAAAAAAPAOP/AAAAAAAAAAAPAOL/AAAAAAAAAAAPAOH/AAAAAAAAAAAPAOD/AAAAAAAAAAA=")
 tile_set = ExtResource("2_o4mod")
+
+[node name="QuarterCollisions" type="TileMapLayer" parent="Collisions" unique_id=1696977791]
+tile_map_data = PackedByteArray("AACvAP3/AAAAAAAAAACvAPz/AAAAAAAAAACvAPv/AAAAAAAAAACvAPr/AAAAAAAAAACvAPn/AAAAAAAAAACvAPj/AAAAAAAAAACvAPf/AAAAAAAAAACvAPb/AAAAAAAAAACvAPX/AAAAAAAAAACvAPT/AAAAAAAAAACvAPP/AAAAAAAAAACwAPP/AAAAAAAAAACwAPL/AAAAAAAAAACwAPH/AAAAAAAAAACwAPD/AAAAAAAAAACvAPL/AAAAAAAAAACvAPH/AAAAAAAAAACvAPD/AAAAAAAAAACvAO//AAAAAAAAAACvAO7/AAAAAAAAAACvAO3/AAAAAAAAAACvAOz/AAAAAAAAAACvAOv/AAAAAAAAAACvAOr/AAAAAAAAAACvAOn/AAAAAAAAAACvAOj/AAAAAAAAAACvAOf/AAAAAAAAAACvAOb/AAAAAAAAAACvAOX/AAAAAAAAAACvAOT/AAAAAAAAAACvAOP/AAAAAAAAAACvAOL/AAAAAAAAAACvAOH/AAAAAAAAAACvAOD/AAAAAAAAAACvAN//AAAAAAAAAACvAN7/AAAAAAAAAACvAN3/AAAAAAAAAACvANz/AAAAAAAAAACvANv/AAAAAAAAAACvANr/AAAAAAAAAACvANn/AAAAAAAAAACvANj/AAAAAAAAAADHALT/AAAAAAAAAADHALX/AAAAAAAAAADHALb/AAAAAAAAAADHALf/AAAAAAAAAADHALj/AAAAAAAAAADHALn/AAAAAAAAAADHALr/AAAAAAAAAADHALv/AAAAAAAAAADHALz/AAAAAAAAAADHAL3/AAAAAAAAAADHAL7/AAAAAAAAAADHAL//AAAAAAAAAADHAMD/AAAAAAAAAADHAMH/AAAAAAAAAADHAML/AAAAAAAAAADHAMP/AAAAAAAAAADHAMT/AAAAAAAAAADHAMX/AAAAAAAAAADHAMb/AAAAAAAAAADHAMf/AAAAAAAAAADHAMj/AAAAAAAAAADHAMn/AAAAAAAAAADHAMr/AAAAAAAAAADHAMv/AAAAAAAAAADHAMz/AAAAAAAAAADHAM3/AAAAAAAAAADHAM7/AAAAAAAAAADHAM//AAAAAAAAAADHAND/AAAAAAAAAADHANH/AAAAAAAAAADHANL/AAAAAAAAAADHANP/AAAAAAAAAADHANT/AAAAAAAAAADHANX/AAAAAAAAAADHANb/AAAAAAAAAADHANf/AAAAAAAAAADHANj/AAAAAAAAAAC4ALv/AAAAAAAAAAC5ALv/AAAAAAAAAAC6ALv/AAAAAAAAAAC7ALv/AAAAAAAAAAC8ALv/AAAAAAAAAAC9ALv/AAAAAAAAAAC+ALv/AAAAAAAAAAC/ALv/AAAAAAAAAADAALv/AAAAAAAAAADBALv/AAAAAAAAAADCALv/AAAAAAAAAADDALv/AAAAAAAAAADEALv/AAAAAAAAAADFALv/AAAAAAAAAADGALv/AAAAAAAAAAA=")
+tile_set = ExtResource("6_j33in")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=402746738]
 
@@ -97,6 +118,24 @@ position = Vector2(384, 1280)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D4" unique_id=1271038278]
 position = Vector2(640, -1664)
 polygon = PackedVector2Array(256, -128, 128, 0, 256, 0)
+
+[node name="Environment" type="Node2D" parent="." unique_id=1085159454]
+
+[node name="Background" type="Sprite2D" parent="Environment" unique_id=156787043]
+position = Vector2(3296, -1280)
+texture = ExtResource("4_ghs8o")
+metadata/_edit_lock_ = true
+
+[node name="StaticGeo" type="Sprite2D" parent="Environment" unique_id=573725267]
+position = Vector2(3296, -1280)
+texture = ExtResource("15_xunku")
+metadata/_edit_lock_ = true
+
+[node name="Water" type="Sprite2D" parent="Environment" unique_id=2115722993]
+z_index = 1
+position = Vector2(3296, -1280)
+texture = ExtResource("4_7oqvy")
+metadata/_edit_lock_ = true
 
 [node name="DeathZones" type="Node" parent="." unique_id=1892727996]
 
@@ -133,10 +172,10 @@ position = Vector2(768, -256)
 position = Vector2(896, -256)
 
 [node name="CrumblingPlatform3" parent="Interactables/Crumble" unique_id=373274314 instance=ExtResource("8_jgt0v")]
-position = Vector2(5632, -960)
+position = Vector2(5472, -960)
 
 [node name="CrumblingPlatform4" parent="Interactables/Crumble" unique_id=306179297 instance=ExtResource("8_jgt0v")]
-position = Vector2(5504, -960)
+position = Vector2(5344, -960)
 
 [node name="Chandeliers" type="Node" parent="Interactables" unique_id=202214157]
 
@@ -210,10 +249,20 @@ position = Vector2(-576, -383.99994)
 scale = Vector2(0.3068808, 0.9877352)
 shape = SubResource("RectangleShape2D_yo1qf")
 
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Pillars/SinkingPillar/CollisionShape2D" unique_id=495773147]
+position = Vector2(3851.6584, -344.22183)
+scale = Vector2(2.9230077, 1.1816992)
+texture = ExtResource("16_1uqhn")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Pillars/SinkingPillar" unique_id=1771800302]
 position = Vector2(-576, 416)
 scale = Vector2(0.3068808, 0.9877352)
 shape = SubResource("RectangleShape2D_iaq7h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Pillars/SinkingPillar/CollisionShape2D2" unique_id=2137757519]
+position = Vector2(4223.138, -1282.7324)
+scale = Vector2(3.1961322, 1.2921166)
+texture = ExtResource("17_kapun")
 
 [node name="LockedDoor" type="StaticBody2D" parent="Interactables/Pillars/SinkingPillar" unique_id=1878691132]
 position = Vector2(-64, 63.999985)
@@ -239,10 +288,20 @@ position = Vector2(-511.99997, 640)
 scale = Vector2(0.3068808, 0.9877352)
 shape = SubResource("RectangleShape2D_iaubp")
 
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Pillars/SinkingPillar2/CollisionShape2D" unique_id=157947006]
+position = Vector2(1221.973, -1319.1794)
+scale = Vector2(2.846874, 1.1509202)
+texture = ExtResource("19_410tk")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Pillars/SinkingPillar2" unique_id=1057286818]
 position = Vector2(-512, -416)
 scale = Vector2(0.3068808, 0.9877352)
 shape = SubResource("RectangleShape2D_rya3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Pillars/SinkingPillar2/CollisionShape2D2" unique_id=1823864716]
+position = Vector2(1231.7488, -119.465164)
+scale = Vector2(2.846874, 1.1509202)
+texture = ExtResource("19_tipwo")
 
 [node name="LockedDoor" type="StaticBody2D" parent="Interactables/Pillars/SinkingPillar2" unique_id=1867614250]
 position = Vector2(0, 255.99998)
@@ -263,20 +322,30 @@ script = ExtResource("11_iaq7h")
 trigger = NodePath("../HitTarget")
 move_magnitude = 3840.0
 
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Pillars/SinkingPillar3" unique_id=547725032]
+position = Vector2(-1848, -588)
+scale = Vector2(0.87365097, 1.1368043)
+texture = ExtResource("21_gpenj")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Pillars/SinkingPillar3" unique_id=1087984053]
-position = Vector2(-1408.0001, 511.99994)
+position = Vector2(-1377.5, 511.99994)
 scale = Vector2(0.3068808, 0.9877352)
 shape = SubResource("RectangleShape2D_xunku")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Pillars/SinkingPillar3" unique_id=262376330]
-position = Vector2(-1280, 112)
+position = Vector2(-1315, 182.5)
 scale = Vector2(0.3068808, 0.9877352)
 shape = SubResource("RectangleShape2D_j33in")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Interactables/Pillars/SinkingPillar3" unique_id=885875465]
-position = Vector2(-1216, -128)
+position = Vector2(-1289.5, -88.75)
 scale = Vector2(0.3068808, 0.9877352)
-shape = SubResource("RectangleShape2D_j33in")
+shape = SubResource("RectangleShape2D_dn1io")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Interactables/Pillars/SinkingPillar3" unique_id=1726869064]
+position = Vector2(-1276, -335.4375)
+scale = Vector2(0.3068808, 0.9877352)
+shape = SubResource("RectangleShape2D_jeigf")
 
 [node name="LockedDoor" type="StaticBody2D" parent="Interactables/Pillars/SinkingPillar3" unique_id=855030178]
 position = Vector2(0, 255.99998)
@@ -320,52 +389,62 @@ is_door = false
 position = Vector2(6650.4487, 759.35425)
 shape = SubResource("RectangleShape2D_kapun")
 
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Pillars/SinkingPillar4" unique_id=1249403270]
+position = Vector2(-1681, -482)
+scale = Vector2(0.7506895, 0.97680557)
+texture = ExtResource("22_dn1io")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interactables/Pillars/SinkingPillar4" unique_id=748655633]
+position = Vector2(-1873, -629)
+scale = Vector2(0.87365097, 1.1368043)
+texture = ExtResource("23_jeigf")
+
 [node name="Node" type="Node" parent="Interactables" unique_id=915932093]
 
 [node name="Box" parent="Interactables/Node" unique_id=298692615 instance=ExtResource("13_iaubp")]
-position = Vector2(5888, -1408)
+position = Vector2(5856, -1408)
 
 [node name="Box13" parent="Interactables/Node" unique_id=1173139235 instance=ExtResource("13_iaubp")]
-position = Vector2(5888, -1280)
+position = Vector2(5856, -1280)
 
 [node name="Box14" parent="Interactables/Node" unique_id=1595137294 instance=ExtResource("13_iaubp")]
-position = Vector2(6016, -1280)
+position = Vector2(5984, -1280)
 
 [node name="Box15" parent="Interactables/Node" unique_id=1490831798 instance=ExtResource("13_iaubp")]
-position = Vector2(6144, -1280)
+position = Vector2(6112, -1280)
 
 [node name="Box16" parent="Interactables/Node" unique_id=1529241932 instance=ExtResource("13_iaubp")]
-position = Vector2(6272, -1280)
+position = Vector2(6240, -1280)
 
 [node name="Box2" parent="Interactables/Node" unique_id=565164129 instance=ExtResource("13_iaubp")]
-position = Vector2(6016, -1408)
+position = Vector2(5984, -1408)
 
 [node name="Box3" parent="Interactables/Node" unique_id=616588730 instance=ExtResource("13_iaubp")]
-position = Vector2(6144, -1408)
+position = Vector2(6112, -1408)
 
 [node name="Box4" parent="Interactables/Node" unique_id=1351663283 instance=ExtResource("13_iaubp")]
-position = Vector2(6272, -1408)
+position = Vector2(6240, -1408)
 
 [node name="Box5" parent="Interactables/Node" unique_id=60409802 instance=ExtResource("13_iaubp")]
-position = Vector2(6016, -1536)
+position = Vector2(5984, -1536)
 
 [node name="Box6" parent="Interactables/Node" unique_id=1402347980 instance=ExtResource("13_iaubp")]
-position = Vector2(6016, -1664)
+position = Vector2(5984, -1664)
 
 [node name="Box7" parent="Interactables/Node" unique_id=241188367 instance=ExtResource("13_iaubp")]
-position = Vector2(6144, -1664)
+position = Vector2(6112, -1664)
 
 [node name="Box8" parent="Interactables/Node" unique_id=678996347 instance=ExtResource("13_iaubp")]
-position = Vector2(6144, -1536)
+position = Vector2(6112, -1536)
 
 [node name="Box9" parent="Interactables/Node" unique_id=509807537 instance=ExtResource("13_iaubp")]
-position = Vector2(6272, -1536)
+position = Vector2(6240, -1536)
 
 [node name="Box10" parent="Interactables/Node" unique_id=789245553 instance=ExtResource("13_iaubp")]
-position = Vector2(6272, -1664)
+position = Vector2(6240, -1664)
 
 [node name="Box11" parent="Interactables/Node" unique_id=262607651 instance=ExtResource("13_iaubp")]
-position = Vector2(6272, -1792)
+position = Vector2(6240, -1792)
 
 [node name="LockedDoor" type="StaticBody2D" parent="Interactables" unique_id=667270179 node_paths=PackedStringArray("lock")]
 scale = Vector2(0.7740943, 5.546591)
@@ -390,7 +469,7 @@ position = Vector2(64, -1600)
 position = Vector2(896, -2304)
 
 [node name="FeatherPickup2" parent="Feathers" unique_id=569059541 instance=ExtResource("9_hvqp8")]
-position = Vector2(6208, -1344)
+position = Vector2(6176, -1344)
 
 [editable path="Interactables/Chandeliers/Chandelier"]
 [editable path="Interactables/Chandeliers/Chandelier2"]

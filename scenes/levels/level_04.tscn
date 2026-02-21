@@ -4,11 +4,13 @@
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_up1bk"]
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_31sm7"]
 [ext_resource type="PackedScene" uid="uid://cwdr74u1mywek" path="res://scenes/levels/level_05.tscn" id="2_ypi4k"]
-[ext_resource type="Texture2D" uid="uid://cwstlm5fttdfy" path="res://assets/environment/level_04/Level_4_Art.png" id="3_cw75u"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_wu80y"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_ypi4k"]
+[ext_resource type="Texture2D" uid="uid://d4adqa8778rvx" path="res://assets/environment/level_04/Level_4_matte.png" id="7_03g8n"]
+[ext_resource type="Texture2D" uid="uid://cd5bchftcmalw" path="res://assets/environment/level_04/Level_4_hazards.png" id="8_d1lip"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="8_gkpor"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="9_a0uur"]
+[ext_resource type="Texture2D" uid="uid://bc8gdl6t78cb7" path="res://assets/environment/level_04/Level_4_staticGeo.png" id="9_o3rdr"]
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="10_yy4na"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="11_07dqf"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="11_76vq8"]
@@ -106,9 +108,18 @@ position = Vector2(2688, -320)
 
 [node name="Environemnt" type="Node2D" parent="." unique_id=1876460908]
 
-[node name="Sprite2D" type="Sprite2D" parent="Environemnt" unique_id=786694708]
+[node name="Background" type="Sprite2D" parent="Environemnt" unique_id=786694708]
 position = Vector2(1408, -1152)
-texture = ExtResource("3_cw75u")
+texture = ExtResource("7_03g8n")
+
+[node name="Hazards" type="Sprite2D" parent="Environemnt" unique_id=1071092291]
+z_index = 1
+position = Vector2(1408, -1152)
+texture = ExtResource("8_d1lip")
+
+[node name="StaticGeo" type="Sprite2D" parent="Environemnt" unique_id=295222202]
+position = Vector2(1408, -1152)
+texture = ExtResource("9_o3rdr")
 
 [node name="Lights" type="Node2D" parent="Environemnt" unique_id=1529224101]
 visible = false

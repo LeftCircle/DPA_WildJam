@@ -17,4 +17,5 @@ func _on_death_area_entered() -> void:
 	print("Death Area entered")
 	player._on_death()
 	player.reset_feathers_to(player_starting_state.current_feathers)
-	player.global_position = current_level.spawn_point.global_position
+	#player.global_position = current_level.spawn_point.global_position
+	get_tree().reload_current_scene()
