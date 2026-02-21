@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_ypi4k"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="8_gkpor"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="9_a0uur"]
+[ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="10_yy4na"]
+[ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="11_07dqf"]
+[ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="11_76vq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nanf4"]
 size = Vector2(896, 74)
@@ -33,6 +36,9 @@ polygon = PackedVector2Array(2906, -377, 2561, -386, 2557, -762, 1536, -766, 154
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_07dqf"]
 polygon = PackedVector2Array(1920, -206, 2170, -208, 2172, -252, 1921, -253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdc43"]
+size = Vector2(64, 149)
 
 [node name="Level04" type="Node2D" unique_id=823577351 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_j6e47")
@@ -127,15 +133,106 @@ visible = false
 color = Color(0.68514574, 0.6851458, 0.6851457, 1)
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_gkpor")]
-position = Vector2(2688, -256)
+position = Vector2(782, -1062)
 
 [node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
 _test_count = 17
 
-[node name="FeatherPickup" parent="." unique_id=2120564041 instance=ExtResource("9_a0uur")]
+[node name="Feathers" type="Node" parent="." unique_id=1634791762]
+
+[node name="FeatherPickup" parent="Feathers" unique_id=2120564041 instance=ExtResource("9_a0uur")]
 position = Vector2(1216, -1216)
 
-[node name="FeatherPickup2" parent="." unique_id=1352743658 instance=ExtResource("9_a0uur")]
+[node name="FeatherPickup2" parent="Feathers" unique_id=1352743658 instance=ExtResource("9_a0uur")]
 position = Vector2(192, -2240)
 
+[node name="FeatherPickup3" parent="Feathers" unique_id=68953627 instance=ExtResource("9_a0uur")]
+position = Vector2(2048, -128)
+
+[node name="Interactables" type="Node" parent="." unique_id=751571489]
+
+[node name="MovingPlatforms" type="Node" parent="Interactables" unique_id=174826038]
+
+[node name="MovingPlatform" parent="Interactables/MovingPlatforms" unique_id=208779414 instance=ExtResource("10_yy4na")]
+position = Vector2(512, -448)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(208779414, 351322013) index="0" unique_id=769849614]
+position = Vector2(512, -448)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(208779414, 351322013) index="1" unique_id=1832171401]
+position = Vector2(1152, -448)
+
+[node name="MovingPlatform2" parent="Interactables/MovingPlatforms" unique_id=748222657 instance=ExtResource("10_yy4na")]
+position = Vector2(768, -768)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform2/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(748222657, 351322013) index="0" unique_id=769849614]
+position = Vector2(512, -768)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform2/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(748222657, 351322013) index="1" unique_id=1832171401]
+position = Vector2(1152, -768)
+
+[node name="MovingPlatform3" parent="Interactables/MovingPlatforms" unique_id=1482803975 instance=ExtResource("10_yy4na")]
+position = Vector2(64, -1088)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(1482803975, 351322013) index="0" unique_id=769849614]
+position = Vector2(0, -1088)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(1482803975, 351322013) index="1" unique_id=1832171401]
+position = Vector2(384, -1088)
+
+[node name="MovingPlatform4" parent="Interactables/MovingPlatforms" unique_id=971800936 instance=ExtResource("10_yy4na")]
+position = Vector2(256, -1344)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(971800936, 351322013) index="0" unique_id=769849614]
+position = Vector2(0, -1344)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(971800936, 351322013) index="1" unique_id=1832171401]
+position = Vector2(448, -1344)
+
+[node name="MovingPlatform5" parent="Interactables/MovingPlatforms" unique_id=400789848 instance=ExtResource("10_yy4na")]
+position = Vector2(192, -1600)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform5/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(400789848, 351322013) index="0" unique_id=769849614]
+position = Vector2(0, -1600)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform5/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(400789848, 351322013) index="1" unique_id=1832171401]
+position = Vector2(448, -1600)
+
+[node name="MovingPlatform6" parent="Interactables/MovingPlatforms" unique_id=1056922326 instance=ExtResource("10_yy4na")]
+position = Vector2(256, -1856)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform6/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(1056922326, 351322013) index="0" unique_id=769849614]
+position = Vector2(-64, -1856)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform6/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(1056922326, 351322013) index="1" unique_id=1832171401]
+position = Vector2(448, -1856)
+
+[node name="MovingPlatform7" parent="Interactables/MovingPlatforms" unique_id=781202113 instance=ExtResource("10_yy4na")]
+position = Vector2(64, -2112)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform7/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(781202113, 351322013) index="0" unique_id=769849614]
+position = Vector2(-64, -2112)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform7/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(781202113, 351322013) index="1" unique_id=1832171401]
+position = Vector2(448, -2112)
+
+[node name="DashCollider" parent="Interactables" unique_id=1292891066 instance=ExtResource("11_76vq8")]
+position = Vector2(2240, -1280)
+
+[node name="CollisionShape2D" parent="Interactables/DashCollider" index="0" unique_id=2039415823]
+position = Vector2(0, 53.5)
+shape = SubResource("RectangleShape2D_tdc43")
+
+[node name="LockedHatch" parent="Interactables" unique_id=1802310663 instance=ExtResource("11_07dqf")]
+position = Vector2(1086, -1144)
+rotation_amount = -90.0
+
 [editable path="Character"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform2"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform3"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform4"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform5"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform6"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform7"]
+[editable path="Interactables/DashCollider"]
