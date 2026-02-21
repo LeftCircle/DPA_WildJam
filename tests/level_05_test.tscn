@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bjkkr5xfkra6x"]
+
+[ext_resource type="PackedScene" uid="uid://cwdr74u1mywek" path="res://scenes/levels/level_05.tscn" id="1_q2cex"]
+[ext_resource type="Texture2D" uid="uid://dbcvx275h70gn" path="res://assets/VFX/cfxr stretch inv spike fade.png" id="2_pnwo1"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q2cex"]
+polygon = PackedVector2Array(-339, 1326, -213, 1326, -207, 1360, -334, 1359)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pnwo1"]
+polygon = PackedVector2Array(-843, 971, -780, 968, -673, 1010, -612, 1055, -576, 1032, -578, 475, -583, 342, -681, 338, -718, 310, -784, 335, -826, 323, -849, 346)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uhvu8"]
+polygon = PackedVector2Array(-1491, 1243, -722, 1244, -636, 1149, -576, 1166, -576, 1414, -1489, 1414)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_extis"]
+polygon = PackedVector2Array(-582, 868, -405, 907, -370, 978, -293, 979, -300, 1042, -229, 1128, -163, 1120, -96, 1156, -60, 1124, 133, 1274, 184, 1257, 257, 1297, 301, 1255, 315, 1414, 571, 1418, 575, 593, 308, 602, 304, 893, 236, 965, 130, 947, 39, 933, -98, 968, -234, 871, -329, 792, -451, 690, -573, 689)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0r6tf"]
+polygon = PackedVector2Array(-1491, 1106, -1361, 1104, -1360, 522, -1493, 521)
+
+[node name="Level05" unique_id=282548391 instance=ExtResource("1_q2cex")]
+
+[node name="Background" parent="Environment" parent_id_path=PackedInt32Array(275101980) index="0" unique_id=808624385]
+position = Vector2(1632, -1506)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Background" index="0" unique_id=1985214172]
+occluder = SubResource("OccluderPolygon2D_q2cex")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environment/Background" index="1" unique_id=681773091]
+occluder = SubResource("OccluderPolygon2D_pnwo1")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environment/Background" index="2" unique_id=1198612364]
+occluder = SubResource("OccluderPolygon2D_uhvu8")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Environment/Background" index="3" unique_id=600608048]
+occluder = SubResource("OccluderPolygon2D_extis")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Environment/Background" index="4" unique_id=481018400]
+occluder = SubResource("OccluderPolygon2D_0r6tf")
+
+[node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
+_test_count = 15
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="8" unique_id=204137897]
+position = Vector2(1632, -1506)
+color = Color(0.6073017, 0.6073016, 0.6073017, 1)
+
+[node name="Node" type="Node" parent="." index="9" unique_id=763320899]
+
+[node name="PointLight2D" type="PointLight2D" parent="Node" index="0" unique_id=1223405385]
+position = Vector2(516, -529.00006)
+rotation = -1.5707964
+scale = Vector2(0.739346, 2.0982916)
+energy = 0.77
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 21.7
+texture = ExtResource("2_pnwo1")
+texture_scale = 2.8
+
+[editable path="Character"]
+[editable path="DashCollider"]

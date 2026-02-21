@@ -1,4 +1,5 @@
 extends Node2D
+class_name FeathersLight
 
 @onready var light: Light2D = $Light
 
@@ -9,34 +10,31 @@ extends Node2D
 @export var max_scale: float = 3.0
 
 @export_group("tests")
-@export_range(1, MAX_COUNT, 1) var _test_count: int = 0:
+@export_range(1, MAX_COUNT, 1) var _test_count: int = INIT_COUNT:
 	set(value):
 		_test_count = value
 		if is_node_ready():
 			update_feathers_count(_test_count)
-
-@export var _test_bool: bool = false:
+@export var _test_light_is_on: bool = true:
 	set(value):
-		_test_bool = value
+		_test_light_is_on = value
 		if is_node_ready():
-			update_light_state(_test_bool)
+			update_light_state(_test_light_is_on)
 
 const MAX_COUNT := 20
+const INIT_COUNT := 1
 var _level: float = 0.0
 var _current_count = 0;
 var _dimmed_color: Color
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_level = (max_scale-min_scale)/MAX_COUNT	
 	var cm_node = get_tree().root.find_child("CanvasModulate", true, false)
 	if cm_node is CanvasModulate:
 		_dimmed_color = cm_node.color
-	update_light_state(false);
+	update_feathers_count(INIT_COUNT)
 	
-func _process(delta: float) -> void:
-	pass
-
+	
 # light update ( 1-20 )
 func update_feathers_count(count: int) -> void:
 	if not is_node_ready() or light == null or count < 1: 
