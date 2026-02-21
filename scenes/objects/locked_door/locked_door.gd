@@ -20,9 +20,11 @@ enum {OPEN, CLOSED}
 @export var move_magnitude : float = 100
 @export var velocity : float = 128
 @export var can_dash_through : bool = false
+@export var is_door : bool = true
 
 func _ready() -> void:
-	lock.target_hit.connect(_open_door)
+	if (is_door):
+		lock.target_hit.connect(_open_door)
 	if (can_dash_through) :
 		LevelDriver.player.dash.connect(_on_player_dash)
 		LevelDriver.player.dash_finished.connect(_on_player_dash_finished)
