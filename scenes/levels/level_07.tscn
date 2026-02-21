@@ -1,7 +1,16 @@
 [gd_scene format=4 uid="uid://bepgv1t22ux4p"]
 
-[ext_resource type="Script" uid="uid://bfrwfwqd7i6c6" path="res://scenes/levels/level_07.gd" id="1_eafdw"]
+[ext_resource type="Script" path="res://scenes/levels/level_07.gd" id="1_eafdw"]
 [ext_resource type="TileSet" uid="uid://djajgs10tblms" path="res://resources/levels/large_collision_tiles.tres" id="1_kwequ"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eafdw"]
+polygon = PackedVector2Array(8, -2660, 1797, -2666, 1785, -2, -4, -2)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ux21u"]
+polygon = PackedVector2Array(2314, -1507, 2937, -1516, 2950, -2, 2314, 7)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rxvob"]
+polygon = PackedVector2Array(3827, -1531, 3836, -11, 3072, 10, 3078, -1540)
 
 [node name="Level07" type="Node2D" unique_id=539152322 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_eafdw")
@@ -12,3 +21,24 @@ tile_map_data = PackedByteArray("AAAAAOv/AAAAAAAAAAAAAOz/AAAAAAAAAAAAAO3/AAAAAAA
 tile_set = ExtResource("1_kwequ")
 
 [node name="Spawn" type="Node2D" parent="." unique_id=635813902]
+
+[node name="Environemnt" type="Node2D" parent="." unique_id=51953663]
+
+[node name="Occluders" type="Node2D" parent="Environemnt" unique_id=26157816]
+visible = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=685431940]
+occluder = SubResource("OccluderPolygon2D_eafdw")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=827652844]
+occluder = SubResource("OccluderPolygon2D_ux21u")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1089422331]
+occluder = SubResource("OccluderPolygon2D_rxvob")
+
+[node name="Lights" type="Node2D" parent="Environemnt" unique_id=164686119]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environemnt" unique_id=508369362]
+visible = false
+color = Color(0.6706895, 0.6706895, 0.6706895, 1)

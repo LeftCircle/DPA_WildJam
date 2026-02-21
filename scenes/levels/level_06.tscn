@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="15_ejjlu"]
 [ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="16_ejjlu"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="16_lesd3"]
-[ext_resource type="Script" uid="uid://outuy70de4aj" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
+[ext_resource type="Script" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="17_gbsts"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="18_3d6ih"]
 [ext_resource type="Script" uid="uid://t0jo0yf4akm7" path="res://scenes/objects/hit_target/hit_target.gd" id="18_c7h1x"]
@@ -144,11 +144,9 @@ texture = ExtResource("7_17n5y")
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=1661540075]
-visible = false
-color = Color(0.6194887, 0.6194887, 0.61948854, 1)
+color = Color(0.446777, 0.44677705, 0.44677693, 1)
 
 [node name="Lights" type="Node2D" parent="Environment" unique_id=1979007900]
-visible = false
 
 [node name="level5_window_light" parent="Environment/Lights" unique_id=1477126154 instance=ExtResource("10_tg547")]
 position = Vector2(2902.4067, -6000.7383)
@@ -182,7 +180,6 @@ offset = Vector2(-1014.0764, 2.8807983)
 texture_scale = 4.3
 
 [node name="Occluders" type="Node2D" parent="Environment" unique_id=1444223111]
-visible = false
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Occluders" unique_id=156438906]
 z_index = -3
@@ -344,7 +341,6 @@ shape = SubResource("RectangleShape2D_gfj5l")
 script = ExtResource("17_64yx1")
 node_to_move = NodePath("..")
 target_positions = [NodePath("point"), NodePath("point2")]
-metadata/_custom_type_script = "uid://outuy70de4aj"
 
 [node name="point" type="Node2D" parent="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" unique_id=346874468]
 position = Vector2(1536, -3904)
@@ -391,7 +387,6 @@ shape = SubResource("RectangleShape2D_lesd3")
 script = ExtResource("17_64yx1")
 node_to_move = NodePath("..")
 target_positions = [NodePath("point"), NodePath("point2")]
-metadata/_custom_type_script = "uid://outuy70de4aj"
 
 [node name="point" type="Node2D" parent="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" unique_id=597792504]
 position = Vector2(1280, -3904)

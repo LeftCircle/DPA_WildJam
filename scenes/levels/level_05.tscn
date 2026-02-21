@@ -166,6 +166,7 @@ occluder = SubResource("OccluderPolygon2D_kkx70")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=523999365]
 visible = false
+color = Color(0.62152386, 0.62152386, 0.6215238, 1)
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1209705684]
 visible = false

@@ -23,6 +23,15 @@ size = Vector2(700, 57.625)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppbiy"]
 size = Vector2(260.5, 217)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_km0xc"]
+polygon = PackedVector2Array(132, 147, 137, -2422, 2814, -2416, 2814, -1913, 3196, -1906, 3198, -1784, 2691, -1792, 2693, -2302, 257, -2299, 263, -1277, 764, -1271, 764, -1150, 253, -1140, 263, -252, 511, -248, 507, -28, 1926, -12, 1924, -111, 2167, -113, 2169, 18, 2691, 16, 2695, -117, 3456, -106, 3451, 126)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n536o"]
+polygon = PackedVector2Array(392, -884, 504, -880, 519, -398, 392, -388)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m2jhg"]
+polygon = PackedVector2Array(1024, -2160, 1276, -2160, 1273, -1661, 1658, -1645, 1666, -1281, 1787, -1275, 1789, -895, 2433, -903, 2442, -1279, 2683, -1269, 2693, -1412, 2159, -1418, 2161, -1171, 2047, -1163, 2057, -1408, 1793, -1410, 1801, -1659, 3082, -1649, 3071, -1801, 3194, -1792, 3209, -1154, 2822, -1150, 2820, -377, 3456, -369, 3456, -88, 3335, -85, 3333, -259, 2695, -263, 2697, -645, 1537, -635, 1535, -1524, 637, -1526, 646, -1668, 1028, -1655)
+
 [node name="Level02" type="Node2D" unique_id=453271988 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_yjjx0")
 next_level = ExtResource("2_ppbiy")
@@ -171,6 +180,26 @@ position = Vector2(768, -2304)
 
 [node name="FeatherPickup" parent="Feathers" unique_id=2120564041 instance=ExtResource("13_km0xc")]
 position = Vector2(2560, -1344)
+
+[node name="Environemnt" type="Node2D" parent="." unique_id=1376156260]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environemnt" unique_id=1968136896]
+visible = false
+
+[node name="Occluders" type="Node2D" parent="Environemnt" unique_id=2053150416]
+visible = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=2095341164]
+occluder = SubResource("OccluderPolygon2D_km0xc")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1450899474]
+occluder = SubResource("OccluderPolygon2D_n536o")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1265212893]
+occluder = SubResource("OccluderPolygon2D_m2jhg")
+
+[node name="Lights" type="Node2D" parent="Environemnt" unique_id=710798192]
+visible = false
 
 [editable path="Interactables/FirstDoor/LockedDoor"]
 [editable path="Interactables/Chandelier/Chandelier"]
