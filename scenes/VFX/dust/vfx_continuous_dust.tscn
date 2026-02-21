@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1flbmgttel05"]
 
-[ext_resource type="Script" uid="uid://ux7m8ogoh6ic" path="res://scenes/VFX/dust/vfx_dust_controller.gd" id="1_t30hy"]
+[ext_resource type="Script" uid="uid://ux7m8ogoh6ic" path="res://scenes/VFX/vfx_one_shot.gd" id="1_t30hy"]
 [ext_resource type="Texture2D" uid="uid://b1we6i5q6tibi" path="res://assets/VFX/Dust01.png" id="2_x6g22"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uuevm"]

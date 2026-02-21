@@ -735,7 +735,6 @@ jump_curve = SubResource("Curve_fwqwt")
 air_state = NodePath("../InAir")
 horizontal_movement = ExtResource("6_al1dr")
 input_processor = NodePath("../../InputProcessor")
-jump_particles_ps = ExtResource("19_ntitv")
 anim_tree = NodePath("../../AnimationTree")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://c7cdvchn6xmqc"
@@ -774,6 +773,7 @@ position = Vector2(0, -123)
 
 [node name="PlayerVFX" type="Node2D" parent="." unique_id=1899400860]
 script = ExtResource("17_uiu2b")
+jump_dust_particles = ExtResource("19_ntitv")
 
 [node name="vfx_feathers_light" parent="PlayerVFX" unique_id=501012890 instance=ExtResource("18_wllcr")]
 

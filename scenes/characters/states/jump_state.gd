@@ -9,9 +9,8 @@ class_name JumpState
 @export var air_state : CharacterAirState
 @export var horizontal_movement : HorizontalMovement = load("res://resources/character/PlayerHorizontalMovement.tres")
 @export var input_processor : InputProcessor
-@export var jump_particles_ps : PackedScene
 @export var anim_tree : PlayerAnimationTree
-
+@onready var playerVFX: PlayerVFX =$"../../PlayerVFX"
 var _current_jump_time : float = 0
 var _jump_frames : int = 0
 
@@ -22,14 +21,14 @@ func _enter():
 		anim_tree.start_anim("DoubleJump", true)
 	else:
 		anim_tree.start_anim("Jump", true)
-
+	_emit_jump_dust()
 
 func _update(delta):
 	_current_jump_time += delta
 	if _current_jump_time > jump_duration or not Input.is_action_pressed("jump"):
 		dispatch("jump_to_air")
 	else:
-		_emit_jump_dust()
+		
 		var curve_point = jump_curve.sample(_current_jump_time / jump_duration)
 		var new_y : float = (curve_point * jump_max_speed)
 		character.velocity.y = -new_y
@@ -40,10 +39,8 @@ func _update(delta):
 
 func _emit_jump_dust() -> void:
 	if _jump_frames <= particle_frames:
-		var particles : DustParticleController = jump_particles_ps.instantiate()
-		character.add_child(particles)
-		particles.dust_emit()
-		
+		print("[PlayerVFX] dust_emitting() called")
+		playerVFX.dust_emitting(character.global_position)		
 
 func _exit():
 	_current_jump_time = 0

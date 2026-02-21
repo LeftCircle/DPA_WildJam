@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgo5ql4vc04gt"]
 
-[ext_resource type="Script" uid="uid://ux7m8ogoh6ic" path="res://scenes/VFX/dust/vfx_dust_controller.gd" id="1_8tj22"]
+[ext_resource type="Script" uid="uid://ux7m8ogoh6ic" path="res://scenes/VFX/vfx_one_shot.gd" id="1_8tj22"]
 [ext_resource type="Texture2D" uid="uid://b1we6i5q6tibi" path="res://assets/VFX/Dust01.png" id="2_css88"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uuevm"]
@@ -48,14 +48,15 @@ anim_speed_max = 1.0
 [node name="vfx_dust" type="Node2D" unique_id=1359231882]
 script = ExtResource("1_8tj22")
 
-[node name="Dust" type="GPUParticles2D" parent="." unique_id=842057237]
+[node name="Particle" type="GPUParticles2D" parent="." unique_id=842057237]
 material = SubResource("CanvasItemMaterial_uuevm")
 position = Vector2(9, -10)
 emitting = false
 amount = 2
 texture = ExtResource("2_css88")
+lifetime = 0.7
 one_shot = true
 explosiveness = 0.5
 process_material = SubResource("ParticleProcessMaterial_3mxgn")
 
-[connection signal="finished" from="Dust" to="." method="dust_finished"]
+[connection signal="finished" from="Particle" to="." method="dust_finished"]

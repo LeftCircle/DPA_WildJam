@@ -11,6 +11,9 @@ light_mode = 1
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_sr3oh")]
 material = SubResource("CanvasItemMaterial_1aj68")
 
+[node name="JumpState" parent="Character/SM_Character" parent_id_path=PackedInt32Array(608707863, 1789133882) index="3" unique_id=685114196]
+particle_frames = 5
+
 [node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
 visible = false
 
