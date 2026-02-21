@@ -39,7 +39,6 @@ func _update(delta):
 
 func _emit_jump_dust() -> void:
 	if _jump_frames <= particle_frames:
-		print("[PlayerVFX] dust_emitting() called")
 		playerVFX.dust_emitting(character.global_position)		
 
 func _exit():

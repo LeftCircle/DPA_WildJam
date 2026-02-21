@@ -13,5 +13,4 @@ func dust_emitting(position: Vector2) -> void:
 	get_tree().current_scene.add_child(particles)
 	particles.global_position = position
 	particles.particle_emit()
-	print("dust_emitting() called")
 	
