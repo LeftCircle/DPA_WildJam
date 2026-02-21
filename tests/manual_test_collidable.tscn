@@ -1,26 +1,24 @@
 [gd_scene format=3 uid="uid://1654on721438"]
 
+[ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_8pm3k"]
 [ext_resource type="PackedScene" uid="uid://c86h7glewtntv" path="res://scenes/objects/locked_door/locked_door.tscn" id="2_e8r0s"]
+[ext_resource type="PackedScene" uid="uid://bud5trm8rqsq5" path="res://scenes/levels/level_02.tscn" id="2_wo4vd"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_dtax6"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="3_y3dif"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="4_dtax6"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="5_fs328"]
+[ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="8_s668h"]
+[ext_resource type="PackedScene" uid="uid://b6sfenqs5dyh5" path="res://scenes/objects/sinking_pillar/sinking_pillar.tscn" id="9_67hju"]
+[ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="10_weomb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fs328"]
 size = Vector2(57.689175, 20)
 
 [node name="ManualTestCollidable" type="Node2D" unique_id=809999213]
+script = ExtResource("1_8pm3k")
+next_level = ExtResource("2_wo4vd")
 
-[node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("3_y3dif")]
-position = Vector2(392.99994, 372)
-scale = Vector2(1.1075872, 1.1075872)
-
-[node name="LockedDoor" parent="." unique_id=1878691132 node_paths=PackedStringArray("lock") instance=ExtResource("2_e8r0s")]
-position = Vector2(466.99997, 378.00003)
-scale = Vector2(1.4942465, 10.706672)
-lock = NodePath("../HitTarget")
-move_magnitude = 100.0
-move_speed = 3.0
+[node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_dtax6")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=85080947]
 
@@ -29,14 +27,59 @@ position = Vector2(465.49997, 517.99994)
 scale = Vector2(16.83158, 3.1126761)
 shape = SubResource("RectangleShape2D_fs328")
 
-[node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_dtax6")]
-position = Vector2(883, 461)
+[node name="ExitArea" type="Area2D" parent="." unique_id=709515918]
+script = ExtResource("8_s668h")
+metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
 
-[node name="LockedHatch" parent="." unique_id=1802310663 instance=ExtResource("4_dtax6")]
-position = Vector2(69, 335)
+[node name="Interactables" type="Node" parent="." unique_id=1471337054]
 
-[node name="Chandelier" parent="." unique_id=2022063999 instance=ExtResource("5_fs328")]
-position = Vector2(738.99994, 239.99998)
+[node name="Pillars" type="Node" parent="Interactables" unique_id=854163342]
+
+[node name="SinkingPillar" parent="Interactables/Pillars" unique_id=229374165 node_paths=PackedStringArray("trigger") instance=ExtResource("9_67hju")]
+position = Vector2(1177, 341)
+scale = Vector2(25.344845, 25.344845)
+trigger = NodePath("../../Targets/HitTarget")
+move_magnitude = 150.0
+velocity = 64.0
+
+[node name="SinkingPillar2" parent="Interactables/Pillars" unique_id=2091747154 node_paths=PackedStringArray("trigger") instance=ExtResource("9_67hju")]
+position = Vector2(1533, 185)
+scale = Vector2(24.810734, 24.810734)
+trigger = NodePath("../../Targets/HitTarget")
+
+[node name="SinkingPillar3" parent="Interactables/Pillars" unique_id=1992966990 node_paths=PackedStringArray("trigger") instance=ExtResource("9_67hju")]
+position = Vector2(1895, 501)
+scale = Vector2(24.600677, 24.600677)
+trigger = NodePath("../../Targets/HitTarget")
+move_magnitude = 200.0
+velocity = 256.0
+
+[node name="Targets" type="Node" parent="Interactables" unique_id=86638552]
+
+[node name="HitTarget" parent="Interactables/Targets" unique_id=562628805 instance=ExtResource("3_y3dif")]
+position = Vector2(392.99994, 372)
+scale = Vector2(1.1075872, 1.1075872)
+
+[node name="HitTarget2" parent="Interactables/Targets/HitTarget" unique_id=1365559832 instance=ExtResource("3_y3dif")]
+position = Vector2(311.488, -214.88153)
+scale = Vector2(0.9028635, 0.9028635)
+
+[node name="Cage" parent="Interactables" unique_id=1612517743 instance=ExtResource("10_weomb")]
+position = Vector2(-196, 364)
+
+[node name="Chandelier" parent="Interactables" unique_id=2022063999 node_paths=PackedStringArray("target") instance=ExtResource("5_fs328")]
+position = Vector2(738, 239.00002)
 scale = Vector2(0.20247164, 0.20247164)
-chain_length = 20.0
-move_speed = 1.0
+target = NodePath("../Targets/HitTarget/HitTarget2")
+
+[node name="LockedHatch" parent="Interactables" unique_id=1802310663 instance=ExtResource("4_dtax6")]
+position = Vector2(69, 335)
+rotation_amount = -300.0
+
+[node name="LockedDoor" parent="Interactables" unique_id=1878691132 node_paths=PackedStringArray("lock") instance=ExtResource("2_e8r0s")]
+position = Vector2(466.99997, 378.00003)
+scale = Vector2(1.4942465, 10.706672)
+lock = NodePath("../Targets/HitTarget")
+move_magnitude = 100.0
+velocity = 128.0
+can_dash_through = true

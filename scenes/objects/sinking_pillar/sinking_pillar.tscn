@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b6sfenqs5dyh5"]
+
+[ext_resource type="PackedScene" uid="uid://c86h7glewtntv" path="res://scenes/objects/locked_door/locked_door.tscn" id="1_o8xd5"]
+[ext_resource type="Script" uid="uid://c5lxyowwkw8t6" path="res://scenes/objects/sinking_pillar/sinking_pillar.gd" id="1_yo1qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo1qf"]
+size = Vector2(20, 16.154308)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rya3q"]
+size = Vector2(20, 9.853748)
+
+[node name="SinkingPillar" type="StaticBody2D" unique_id=229374165]
+script = ExtResource("1_yo1qf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141818045]
+position = Vector2(0, -10)
+scale = Vector2(0.3068808, 0.9877352)
+shape = SubResource("RectangleShape2D_yo1qf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1771800302]
+position = Vector2(0, 6.9959755)
+scale = Vector2(0.3068808, 0.9877352)
+shape = SubResource("RectangleShape2D_rya3q")
+
+[node name="LockedDoor" parent="." unique_id=1878691132 instance=ExtResource("1_o8xd5")]
+position = Vector2(0, 0.09177971)
+scale = Vector2(-0.07698729, -0.16856429)
+move_magnitude = 100.0
+velocity = 128.0
+can_dash_through = true
+is_door = false

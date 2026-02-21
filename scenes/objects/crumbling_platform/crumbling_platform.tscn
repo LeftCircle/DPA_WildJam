@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bfau541w7rx5y"]
+
+[ext_resource type="Script" uid="uid://dsxujvafxvgmv" path="res://scenes/objects/crumbling_platform/crumbling_platform.gd" id="1_gm02o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpnxe"]
+
+[node name="CrumblingPlatform" type="StaticBody2D" unique_id=1786747694]
+script = ExtResource("1_gm02o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=826611416]
+shape = SubResource("RectangleShape2D_mpnxe")

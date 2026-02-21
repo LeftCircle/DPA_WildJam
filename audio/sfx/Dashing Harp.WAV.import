@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blncn77783pvh"
+path="res://.godot/imported/Dashing Harp.WAV-37b217491e84df6a75fd6e6118e11deb.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Dashing Harp.WAV"
+dest_files=["res://.godot/imported/Dashing Harp.WAV-37b217491e84df6a75fd6e6118e11deb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

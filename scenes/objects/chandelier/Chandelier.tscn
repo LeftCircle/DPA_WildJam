@@ -2,18 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bes3ix5wetcll" path="res://assets/environment/general/chandelier.png" id="1_31hxp"]
 [ext_resource type="Script" uid="uid://q11io88wmfdm" path="res://scenes/objects/chandelier/chandelier.gd" id="1_hk8m0"]
-[ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="2_jvcnq"]
 [ext_resource type="PackedScene" uid="uid://cpewp1rmmj6s5" path="res://scenes/objects/chandelier/Flame.tscn" id="2_vol6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvcnq"]
+size = Vector2(20.344116, 20)
 
 [node name="Chandelier" type="Node2D" unique_id=2022063999 node_paths=PackedStringArray("target")]
+scale = Vector2(0.285, 0.285)
 script = ExtResource("1_hk8m0")
-target = NodePath("HitTarget")
-
-[node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("2_jvcnq")]
-position = Vector2(0, -653.99994)
-scale = Vector2(5.462955, 5.462955)
+target = NodePath("")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1376589567]
 position = Vector2(0, 44.999996)

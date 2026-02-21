@@ -29,7 +29,7 @@
 light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_al1dr"]
-size = Vector2(10, 15.624997)
+size = Vector2(7.968749, 8.906249)
 
 [sub_resource type="Resource" id="Resource_ymfos"]
 script = ExtResource("5_oxdt7")
@@ -693,7 +693,7 @@ scale = Vector2(0.5, 0.7890625)
 texture = ExtResource("1_x31xa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1548995392]
-position = Vector2(1.1368684e-13, -50)
+position = Vector2(0.49999928, -38.5)
 scale = Vector2(6.4, 6.4)
 shape = SubResource("RectangleShape2D_al1dr")
 
@@ -721,10 +721,11 @@ input_processor = NodePath("../../InputProcessor")
 anim_tree = NodePath("../../AnimationTree")
 anim_player = NodePath("../../AnimationPlayer")
 
-[node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899 node_paths=PackedStringArray("input_processor", "anim_tree")]
+[node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899 node_paths=PackedStringArray("input_processor", "anim_tree", "character")]
 script = ExtResource("6_eqpns")
 input_processor = NodePath("../../InputProcessor")
 anim_tree = NodePath("../../AnimationTree")
+character = NodePath("../..")
 metadata/_custom_type_script = "uid://b3scqiwxsp3ai"
 
 [node name="JumpState" type="LimboState" parent="SM_Character" unique_id=685114196 node_paths=PackedStringArray("air_state", "input_processor", "anim_tree", "character")]
@@ -769,7 +770,7 @@ libraries/ = SubResource("AnimationLibrary_7lw86")
 [node name="ProjectileContainer" type="Node" parent="." unique_id=1092862845]
 
 [node name="ThrowPoint" type="Node2D" parent="." unique_id=242450336]
-position = Vector2(0, -123)
+position = Vector2(0, -81)
 
 [node name="PlayerVFX" type="Node2D" parent="." unique_id=1899400860]
 script = ExtResource("17_uiu2b")

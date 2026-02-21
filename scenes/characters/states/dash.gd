@@ -8,6 +8,8 @@ class_name DashState
 var _current_dash_frames : int = 0
 var _dash_direction : Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	LevelDriver.player_entered_cage.connect(_on_player_entered_cage)
 
 func _enter():
 	_dash_direction = input_processor.get_input_dir()
@@ -21,7 +23,14 @@ func _update(delta : float) -> void:
 	character.move_and_slide()
 	_current_dash_frames += 1
 
-
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Dash":
 		dispatch("dash_to_ground")
+
+func _exit() -> void:
+	character.dash_finished.emit()
+
+func _on_player_entered_cage() -> void:
+	character.velocity = Vector2.ZERO
+	dispatch("dash_to_ground")
+	

@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://drtmt1mktrlyl"]
+
+[ext_resource type="Script" uid="uid://blrycgrsihn4h" path="res://scenes/objects/cage/cage.gd" id="1_qfch2"]
+[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="2_a4msc"]
+[ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="3_a4msc"]
+[ext_resource type="Script" uid="uid://lf5iarb5wneo" path="res://scenes/objects/cage/dash_collision_enabler.gd" id="4_qfch2"]
+[ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="5_m3uxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfch2"]
+size = Vector2(20, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3uxa"]
+size = Vector2(20, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wkho"]
+size = Vector2(120, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jln6"]
+size = Vector2(120, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4msc"]
+size = Vector2(74, 74)
+
+[node name="Cage" type="Node2D" unique_id=1612517743 node_paths=PackedStringArray("target_position")]
+script = ExtResource("1_qfch2")
+target_position = NodePath("Node/Target")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2016495508]
+position = Vector2(4, 121)
+
+[node name="CageSprite" type="Sprite2D" parent="Node2D" unique_id=348515842]
+z_index = -1
+position = Vector2(-4, -57)
+scale = Vector2(0.885, 0.885)
+texture = ExtResource("2_a4msc")
+
+[node name="CollisionBorders" type="Node2D" parent="Node2D" unique_id=1783952756]
+
+[node name="DashCollider" parent="Node2D/CollisionBorders" unique_id=1292891066 instance=ExtResource("3_a4msc")]
+position = Vector2(26, 3)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Node2D/CollisionBorders/DashCollider" index="0" unique_id=2039415823]
+position = Vector2(27, -59)
+shape = SubResource("RectangleShape2D_qfch2")
+
+[node name="DashCollider2" parent="Node2D/CollisionBorders" unique_id=8876226 instance=ExtResource("3_a4msc")]
+position = Vector2(-144, 5)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Node2D/CollisionBorders/DashCollider2" index="0" unique_id=2039415823]
+position = Vector2(80, -61)
+shape = SubResource("RectangleShape2D_m3uxa")
+
+[node name="DashCollider3" parent="Node2D/CollisionBorders" unique_id=1285032291 instance=ExtResource("3_a4msc")]
+position = Vector2(-114, 3)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Node2D/CollisionBorders/DashCollider3" index="0" unique_id=2039415823]
+position = Vector2(108, -3)
+shape = SubResource("RectangleShape2D_8wkho")
+
+[node name="DashCollider4" parent="Node2D/CollisionBorders" unique_id=214932986 instance=ExtResource("3_a4msc")]
+position = Vector2(-113, -161)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Node2D/CollisionBorders/DashCollider4" index="0" unique_id=2039415823]
+position = Vector2(107, 41)
+shape = SubResource("RectangleShape2D_5jln6")
+
+[node name="DashCollisionEnabler" type="Area2D" parent="Node2D" unique_id=2017984844]
+collision_mask = 2
+script = ExtResource("4_qfch2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/DashCollisionEnabler" unique_id=1816077567]
+position = Vector2(-5, -55)
+shape = SubResource("RectangleShape2D_a4msc")
+
+[node name="Node" type="Node" parent="." unique_id=1417091144]
+
+[node name="Target" type="Node2D" parent="Node" unique_id=1141455337]
+
+[node name="HitTarget" parent="Node" unique_id=562628805 instance=ExtResource("5_m3uxa")]
+
+[connection signal="body_entered" from="Node2D/DashCollisionEnabler" to="Node2D/DashCollisionEnabler" method="_on_body_entered"]
+[connection signal="target_hit" from="Node/HitTarget" to="." method="_on_hit_target_target_hit"]
+
+[editable path="Node2D/CollisionBorders/DashCollider"]
+[editable path="Node2D/CollisionBorders/DashCollider2"]
+[editable path="Node2D/CollisionBorders/DashCollider3"]
+[editable path="Node2D/CollisionBorders/DashCollider4"]
