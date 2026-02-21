@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://2owmwuwa3oxv"]
+
+[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="1_gfj5l"]
+[ext_resource type="Script" uid="uid://outuy70de4aj" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="2_fja67"]
+[ext_resource type="Script" uid="uid://t0jo0yf4akm7" path="res://scenes/objects/hit_target/hit_target.gd" id="3_fja67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfj5l"]
+size = Vector2(128, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhnjg"]
+size = Vector2(78.04878, 37.80488)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahe2n"]
+size = Vector2(84.14635, 45.731705)
+
+[node name="MovingPlatform" type="Node2D" unique_id=208779414]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=390816198]
+position = Vector2(64, -32)
+scale = Vector2(1, 0.5)
+texture = ExtResource("1_gfj5l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=699296989]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1397954966]
+position = Vector2(64, -32)
+shape = SubResource("RectangleShape2D_gfj5l")
+
+[node name="MoveAndPauseOnHit" type="Node" parent="." unique_id=351322013 node_paths=PackedStringArray("node_to_move", "target_positions")]
+script = ExtResource("2_fja67")
+node_to_move = NodePath("..")
+target_positions = [NodePath("point"), NodePath("point2")]
+metadata/_custom_type_script = "uid://outuy70de4aj"
+
+[node name="point" type="Node2D" parent="MoveAndPauseOnHit" unique_id=769849614]
+
+[node name="point2" type="Node2D" parent="MoveAndPauseOnHit" unique_id=1832171401]
+
+[node name="HitTarget" type="StaticBody2D" parent="." unique_id=562628805]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_fja67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitTarget" unique_id=407416290]
+position = Vector2(62.999996, -32)
+scale = Vector2(1.64, 1.64)
+shape = SubResource("RectangleShape2D_xhnjg")
+
+[node name="Area2D" type="Area2D" parent="HitTarget" unique_id=1680344580]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitTarget/Area2D" unique_id=1855681186]
+position = Vector2(64, -32.5)
+scale = Vector2(1.64, 1.64)
+shape = SubResource("RectangleShape2D_ahe2n")
+
+[connection signal="target_hit" from="HitTarget" to="MoveAndPauseOnHit" method="_on_hit_target_target_hit"]
