@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="2_a4msc"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="3_a4msc"]
 [ext_resource type="Script" uid="uid://lf5iarb5wneo" path="res://scenes/objects/cage/dash_collision_enabler.gd" id="4_qfch2"]
+[ext_resource type="Script" uid="uid://bwduccylw6pjw" path="res://scenes/objects/components/move_to_positions_on_hit.gd" id="5_8wkho"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="5_m3uxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfch2"]
@@ -21,9 +22,8 @@ size = Vector2(120, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4msc"]
 size = Vector2(74, 74)
 
-[node name="Cage" type="Node2D" unique_id=1612517743 node_paths=PackedStringArray("target_position")]
+[node name="Cage" type="Node2D" unique_id=1612517743]
 script = ExtResource("1_qfch2")
-target_position = NodePath("Node/Target")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=2016495508]
 position = Vector2(4, 121)
@@ -80,14 +80,19 @@ script = ExtResource("4_qfch2")
 position = Vector2(-5, -55)
 shape = SubResource("RectangleShape2D_a4msc")
 
-[node name="Node" type="Node" parent="." unique_id=1417091144]
+[node name="MoveToPositionsOnHit" type="Node" parent="." unique_id=1417091144 node_paths=PackedStringArray("node_to_move", "target_positions")]
+script = ExtResource("5_8wkho")
+node_to_move = NodePath("..")
+target_positions = [NodePath("Target"), NodePath("Target2")]
 
-[node name="Target" type="Node2D" parent="Node" unique_id=1141455337]
+[node name="Target" type="Node2D" parent="MoveToPositionsOnHit" unique_id=1141455337]
 
-[node name="HitTarget" parent="Node" unique_id=562628805 instance=ExtResource("5_m3uxa")]
+[node name="Target2" type="Node2D" parent="MoveToPositionsOnHit" unique_id=1289752025]
+
+[node name="HitTarget" parent="MoveToPositionsOnHit" unique_id=562628805 instance=ExtResource("5_m3uxa")]
 
 [connection signal="body_entered" from="Node2D/DashCollisionEnabler" to="Node2D/DashCollisionEnabler" method="_on_body_entered"]
-[connection signal="target_hit" from="Node/HitTarget" to="." method="_on_hit_target_target_hit"]
+[connection signal="target_hit" from="MoveToPositionsOnHit/HitTarget" to="MoveToPositionsOnHit" method="_on_hit_target_target_hit"]
 
 [editable path="Node2D/CollisionBorders/DashCollider"]
 [editable path="Node2D/CollisionBorders/DashCollider2"]
