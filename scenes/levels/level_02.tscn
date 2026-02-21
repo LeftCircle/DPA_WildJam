@@ -82,6 +82,7 @@ tile_set = ExtResource("4_yjjx0")
 position = Vector2(2788, -184)
 lock = NodePath("../HitTarget")
 move_magnitude = 128.0
+can_dash_through = false
 
 [node name="CollisionShape2D" parent="Interactables/FirstDoor/LockedDoor" index="0" unique_id=2102852642]
 position = Vector2(-54.256844, -1.9832001)
