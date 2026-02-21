@@ -57,6 +57,7 @@ texture = ExtResource("2_css88")
 lifetime = 0.7
 one_shot = true
 explosiveness = 0.5
+interpolate = false
 process_material = SubResource("ParticleProcessMaterial_3mxgn")
 
 [connection signal="finished" from="Particle" to="." method="dust_finished"]

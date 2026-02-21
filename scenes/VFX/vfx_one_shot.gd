@@ -8,7 +8,6 @@ class_name DustParticleController
 var test_button := particle_emit
 
 func particle_emit() -> void:
-	particle.one_shot = true
 	particle.emitting = true
 
 func particle_finished():

@@ -10,7 +10,7 @@ func _ready() -> void:
 # dust
 func dust_emitting(position: Vector2) -> void:
 	var particles : Node2D = jump_dust_particles.instantiate()
-	get_tree().current_scene.add_child(particles)
 	particles.global_position = position
+	get_tree().current_scene.add_child(particles)
 	particles.particle_emit()
 	
