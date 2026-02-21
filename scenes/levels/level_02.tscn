@@ -82,7 +82,6 @@ tile_set = ExtResource("4_yjjx0")
 position = Vector2(2788, -184)
 lock = NodePath("../HitTarget")
 move_magnitude = 128.0
-move_speed = 64.0
 
 [node name="CollisionShape2D" parent="Interactables/FirstDoor/LockedDoor" index="0" unique_id=2102852642]
 position = Vector2(-54.256844, -1.9832001)
@@ -104,12 +103,15 @@ position = Vector2(304, -1134)
 [node name="target" type="Node2D" parent="Interactables/Chandelier" unique_id=1782116363]
 position = Vector2(1730, -380)
 
-[node name="Chandelier" parent="Interactables/Chandelier" unique_id=2022063999 node_paths=PackedStringArray("target_position") instance=ExtResource("12_4hx2o")]
+[node name="HitTarget" parent="Interactables/Chandelier/target" unique_id=636465791 instance=ExtResource("10_o4ql5")]
+position = Vector2(-9, -240)
+
+[node name="Chandelier" parent="Interactables/Chandelier" unique_id=2022063999 node_paths=PackedStringArray("target") instance=ExtResource("12_4hx2o")]
 position = Vector2(1724.9999, -444.99997)
 scale = Vector2(0.275, 0.275)
-target_position = NodePath("../target")
+target = NodePath("../target/HitTarget")
 
-[node name="StaticBody2D" parent="Interactables/Chandelier/Chandelier" index="1" unique_id=1376589567]
+[node name="StaticBody2D" parent="Interactables/Chandelier/Chandelier" index="0" unique_id=1376589567]
 position = Vector2(-14.5450115, -210.9092)
 
 [node name="Cage" type="Node2D" parent="Interactables" unique_id=669785031]
