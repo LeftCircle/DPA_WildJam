@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="9_kfebt"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="10_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="10_r72dd"]
+[ext_resource type="PackedScene" uid="uid://dh5si3s3ql611" path="res://scenes/VFX/lights/chandelier_light.tscn" id="13_tyxjt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ey3t"]
 size = Vector2(130.49998, 132.25)
@@ -42,6 +43,9 @@ polygon = PackedVector2Array(-507.00006, -1790, 1794, -1785, 1795, 275.99997, 16
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ijn0p"]
 polygon = PackedVector2Array(199.99995, -1087, 641.99994, -1083, 642.99994, -1213, 380.99994, -1213)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tyxjt"]
+polygon = PackedVector2Array(241.99995, -1629, 184.99995, -1561, 243.99995, -1491, 307.99994, -1561)
 
 [node name="Level01" type="Node2D" unique_id=922797211]
 position = Vector2(128.00005, -511.99997)
@@ -210,10 +214,11 @@ position = Vector2(0, -236.53)
 
 [node name="HitTarget" parent="Interactables" unique_id=562628805 instance=ExtResource("10_ijn0p")]
 position = Vector2(369, -2170)
+
 [node name="Environemnt" type="Node2D" parent="." unique_id=1292971125]
 
 [node name="Occluders" type="Node2D" parent="Environemnt" unique_id=259571948]
-visible = false
+metadata/_edit_lock_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=2067701062]
 z_index = -3
@@ -227,12 +232,22 @@ occluder = SubResource("OccluderPolygon2D_r72dd")
 z_index = -3
 occluder = SubResource("OccluderPolygon2D_ijn0p")
 
-[node name="Lights" type="Node2D" parent="Environemnt" unique_id=1045007681]
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1247440215]
 visible = false
+occluder = SubResource("OccluderPolygon2D_tyxjt")
+
+[node name="Lights" type="Node2D" parent="Environemnt" unique_id=1045007681]
+
+[node name="chandelier_light2" parent="Environemnt/Lights" unique_id=1037235206 instance=ExtResource("13_tyxjt")]
+position = Vector2(955.99994, -1565)
+color = Color(1, 0.4392157, 0, 1)
+
+[node name="chandelier_light" parent="Environemnt/Lights" unique_id=1680736457 instance=ExtResource("13_tyxjt")]
+position = Vector2(242.99995, -1587)
+color = Color(1, 0.4392157, 0, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environemnt" unique_id=1528113843]
-visible = false
-color = Color(0.48962224, 0.48962224, 0.48962218, 1)
+color = Color(0.45452428, 0.45452422, 0.4545244, 1)
 
 [editable path="Interactables/DashCollider"]
 [editable path="Interactables/Chandelier2"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bihh1ol0cd65k" path="res://scenes/VFX/firefly/vfx_firefly.tscn" id="2_83klo"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="3_emiss"]
+[ext_resource type="PackedScene" uid="uid://cqf2bumwyf4es" path="res://scenes/VFX/feather_light/feather_self_emission.tscn" id="3_sr3oh"]
 
 [node name="Node2D" type="Node2D" unique_id=1730999275]
 
@@ -15,3 +16,7 @@ texture = ExtResource("3_emiss")
 color = Color(0.7121294, 0.7121294, 0.71212924, 1)
 
 [node name="vfx_firefly" parent="." unique_id=1928004762 instance=ExtResource("2_83klo")]
+visible = false
+
+[node name="feather_self_emission" parent="." unique_id=131690398 instance=ExtResource("3_sr3oh")]
+position = Vector2(123, 121)
