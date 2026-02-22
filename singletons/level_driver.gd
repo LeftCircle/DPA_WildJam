@@ -7,8 +7,13 @@ var player : PlayerCharacter
 var npcs : Dictionary[String, NPC] = {}
 var player_starting_state : PlayerStartingState = PlayerStartingState.new()
 
+@onready var level_music : AudioStreamPlayer = $LevelMusic
+
 func _ready():
 	player_starting_state.current_feathers = 2
+	level_music.bus = "Music"
+	level_music.play()
+	
 
 func register_npc(npc_name : String, _npc : NPC) -> void:
 	npcs[name] = _npc
@@ -27,3 +32,7 @@ func _on_death_area_entered() -> void:
 	player.reset_feathers_to(player_starting_state.current_feathers)
 	#player.global_position = current_level.spawn_point.global_position
 	get_tree().call_deferred("reload_current_scene")
+
+
+func _on_level_music_finished():
+	level_music.play(0.0)
