@@ -1,11 +1,10 @@
 extends CharacterBody2D
 class_name NPC
 
-func _ready() -> void:
-	LevelDriver.register_npc(self.name, self)
+@export var sprite_index : int = 0
 
-func _exit_tree() -> void:
-	LevelDriver.remove_npc(self.name)
+func _ready() -> void:
+	$Sprite2D.frame = sprite_index
 
 
 func _on_interactable_queue_scene_free() -> void:

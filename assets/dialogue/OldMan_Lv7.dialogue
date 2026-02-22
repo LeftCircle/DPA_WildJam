@@ -2,10 +2,14 @@
 if check_perfect() == true && first == true:
 	=>< Perfect
 	set first = false
+	=> END
 elif first == true:
 	=>< Introduction
+	set first = false
+	=> END
 else:
 	=>< Reintroduction
+	=> END
 
 
 ~ Perfect
@@ -14,7 +18,7 @@ The Old Man: Is that your doing? It brings my heart so much warmth.
 The Old Man: Your friends are waiting for you above.
 The Old Man: Still, your wings may not have the strength to make it up that cliff. 
 The Old Man: Here, I want you to have this. I’ve been saving it for just such an occasion.
-do gift_feather()
+do give_feathers()
 The Old Man: Still, if you lack the courage to make the final leap, you may rest here as long as you like.
  => END
 

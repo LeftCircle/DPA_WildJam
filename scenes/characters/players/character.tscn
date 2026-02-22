@@ -934,6 +934,7 @@ stream = ExtResource("31_t5lbr")
 
 [node name="HUD" parent="." unique_id=510809081 node_paths=PackedStringArray("player") instance=ExtResource("32_t02n3")]
 player = NodePath("..")
+
 [node name="BulletTimeDuration" type="Timer" parent="." unique_id=1316856730]
 wait_time = 2.0
 one_shot = true

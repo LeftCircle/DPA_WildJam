@@ -1,4 +1,5 @@
 extends Area2D
+class_name CutsceneTrigger
 
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"

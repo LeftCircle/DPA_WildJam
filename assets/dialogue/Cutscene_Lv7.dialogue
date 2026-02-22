@@ -1,16 +1,22 @@
 ~ start
 =>< Introduction
 #scale animation plays, wait to continue, or do each different one in each block idk
-if is_doomed():
+if check_doomed():
 	=>< Doom
 	#animation of being blown off
 	#start ending steal
-elif is_perfect():
+	set ending_to_load = 2
+	do load_ending()
+	=> END
+elif check_perfect():
 	=>< Perfect
-elif saved_one():
+	=> END
+elif check_saved_one():
 	=>< Good
+	=> END
 else:
 	=>< Neutral
+	=> END
 
 ~ Introduction
 The Arbiter: You have done well to make it this far.

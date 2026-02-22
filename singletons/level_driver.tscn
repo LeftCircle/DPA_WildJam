@@ -6,7 +6,7 @@
 
 [node name="LevelDriver" type="Node" unique_id=1178145967]
 script = ExtResource("1_tkdj7")
-ending_ps = Array[PackedScene]([ExtResource("2_n7s5l")])
+ending_ps = Array[PackedScene]([ExtResource("2_n7s5l"), ExtResource("2_n7s5l"), ExtResource("2_n7s5l"), ExtResource("2_n7s5l"), ExtResource("2_n7s5l"), ExtResource("2_n7s5l")])
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=195350862]
 stream = ExtResource("2_jubos")
