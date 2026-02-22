@@ -44,8 +44,10 @@ func disappear() -> void:
 	done = true
 	
 func on_dialogue_end(dialogue :DialogueResource) -> void:
+	get_tree().paused = false
 	if dialogue == dialogue_resource and done:
 		queue_scene_free.emit()
 
 func action() -> void:
+	get_tree().paused = true
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start, [self])
