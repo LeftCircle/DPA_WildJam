@@ -31,7 +31,7 @@ func _update(delta : float) -> void:
 		print("Throw dir = ", _throw_dir)
 		projectile.apply_central_impulse(impulse_force * _throw_dir)
 		dispatch("throw_to_ground")
-		_bounce_on_throw()
+		#_bounce_on_throw()
 		anim_tree.start_anim("Throw")
 
 func _float() -> void:

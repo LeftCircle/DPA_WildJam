@@ -308,7 +308,7 @@ position = Vector2(369, -2170)
 position = Vector2(-328, -29)
 
 [node name="URC" type="Node2D" parent="CameraLimits" unique_id=2117157828]
-position = Vector2(1859, -2253)
+position = Vector2(1863, -2253)
 
 [node name="Interactable" parent="." unique_id=27851606 instance=ExtResource("15_gi8m4")]
 position = Vector2(487.99997, 367.99997)

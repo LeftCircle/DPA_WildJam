@@ -18,8 +18,9 @@
 [ext_resource type="TileSet" uid="uid://bf3ofngk54hsf" path="res://resources/levels/quarter_tile_collisions.tres" id="12_4dr30"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="12_4hx2o"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="13_km0xc"]
-[ext_resource type="Texture2D" uid="uid://b2nixutnk7xla" path="res://assets/environment/general/woodenDoor.png" id="14_dscar"]
+[ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="15_m2te4"]
 [ext_resource type="Texture2D" uid="uid://7imgv35cai7u" path="res://assets/environment/general/darkChandelierNoChain.png" id="17_01hg1"]
+[ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="21_kxbgd"]
 [ext_resource type="PackedScene" uid="uid://bmphlybfnvbgs" path="res://scenes/characters/npcs/Braggart.tscn" id="21_m2te4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_km0xc"]
@@ -108,7 +109,7 @@ energy = 0.7
 texture = ExtResource("6_dscar")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(2944, -128)
+position = Vector2(2965, -127)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=1928407894]
 unique_name_in_owner = true
@@ -174,15 +175,16 @@ script = ExtResource("9_km0xc")
 lock = NodePath("../HitTarget")
 move_magnitude = 128.0
 velocity = null
+can_dash_through = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/FirstDoor/LockedDoor" unique_id=2102852642]
 position = Vector2(-1.291748, 1.4423313)
 shape = SubResource("RectangleShape2D_l1yl6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/FirstDoor/LockedDoor" unique_id=1540575966]
-position = Vector2(0, 0.9915982)
-scale = Vector2(0.222, 0.020179622)
-texture = ExtResource("14_dscar")
+position = Vector2(-32.295807, 1.2620373)
+scale = Vector2(-0.29473293, 0.041814532)
+texture = ExtResource("15_m2te4")
 
 [node name="HitTarget" parent="Interactables/FirstDoor" unique_id=562628805 instance=ExtResource("10_o4ql5")]
 position = Vector2(2669, -198)
@@ -224,7 +226,7 @@ position = Vector2(240.39105, 20.20485)
 color = Color(9.62615e-07, 0.7869806, 0.4550653, 1)
 
 [node name="Cage" parent="Interactables" unique_id=1488418667 instance=ExtResource("11_o4ql5")]
-position = Vector2(832, -1024)
+position = Vector2(828, -1024)
 
 [node name="Target" parent="Interactables/Cage/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1488418667, 1417091144) index="0" unique_id=1141455337]
 position = Vector2(832, -1472)
@@ -233,7 +235,7 @@ position = Vector2(832, -1472)
 position = Vector2(832, -960)
 
 [node name="HitTarget" parent="Interactables/Cage/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1488418667, 1417091144) index="2" unique_id=562628805]
-position = Vector2(832, -1489)
+position = Vector2(828, -1489)
 
 [node name="Cage2" parent="Interactables" unique_id=1612517743 instance=ExtResource("11_o4ql5")]
 position = Vector2(320, -384)
@@ -285,6 +287,12 @@ position = Vector2(768, -1984)
 
 [node name="HitTarget" parent="Interactables/Cage5/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(983691347, 1417091144) index="2" unique_id=562628805]
 position = Vector2(768, -2272)
+
+[node name="CrumblingPlatform" parent="Interactables" unique_id=1786747694 instance=ExtResource("21_kxbgd")]
+position = Vector2(522, -752)
+
+[node name="CrumblingPlatform2" parent="Interactables" unique_id=1771812993 instance=ExtResource("21_kxbgd")]
+position = Vector2(650, -752)
 
 [node name="Feathers" type="Node2D" parent="." unique_id=789649564]
 

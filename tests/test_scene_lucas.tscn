@@ -119,3 +119,8 @@ position = Vector2(1145, -14)
 
 [node name="TutorialBox" parent="." unique_id=395832783 instance=ExtResource("9_67c3q")]
 position = Vector2(598, 403)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=954146772]
+position = Vector2(598, 277)
+
+[node name="TutorialBox" parent="RigidBody2D" unique_id=989283664 instance=ExtResource("9_67c3q")]

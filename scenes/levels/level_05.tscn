@@ -357,7 +357,7 @@ position = Vector2(1216, -2560)
 position = Vector2(1216, -2688)
 
 [node name="Cage2" parent="Interactables/Cages" unique_id=1821929377 instance=ExtResource("13_tavyg")]
-position = Vector2(1344, -1728)
+position = Vector2(1344, -1668)
 
 [node name="Target" parent="Interactables/Cages/Cage2/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1821929377, 1417091144) index="0" unique_id=1141455337]
 position = Vector2(1344, -1472)

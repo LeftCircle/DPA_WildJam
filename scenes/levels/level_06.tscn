@@ -113,7 +113,7 @@ llc = NodePath("CameraLimits/LLC")
 urc = NodePath("CameraLimits/URC")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_j2blp")]
-position = Vector2(2118, -5439)
+position = Vector2(85, -274)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=150881781]
 unique_name_in_owner = true
