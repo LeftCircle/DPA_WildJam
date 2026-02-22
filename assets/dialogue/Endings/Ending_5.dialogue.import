@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cad0cponr8aj7"
+path="res://.godot/imported/Ending_5.dialogue-c29b1f91cb02945e71766cf12ac8c548.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Endings/Ending_5.dialogue"
+dest_files=["res://.godot/imported/Ending_5.dialogue-c29b1f91cb02945e71766cf12ac8c548.tres"]
+
+[params]
+
+defaults=true

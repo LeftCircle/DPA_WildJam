@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dn14b0o44vrv6"
+path="res://.godot/imported/Thief_Farewell.dialogue-d250f6cb01442489fea62cbb1a192eec.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Farewells/Thief_Farewell.dialogue"
+dest_files=["res://.godot/imported/Thief_Farewell.dialogue-d250f6cb01442489fea62cbb1a192eec.tres"]
+
+[params]
+
+defaults=true

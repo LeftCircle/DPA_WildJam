@@ -3,10 +3,15 @@
 [ext_resource type="Script" uid="uid://da3ypp0f5upja" path="res://singletons/level_driver.gd" id="1_tkdj7"]
 [ext_resource type="AudioStream" uid="uid://1stc4qsf4dk" path="res://audio/music/Level Music for Feather Game.wav" id="2_jubos"]
 [ext_resource type="PackedScene" uid="uid://brca2nofowf6m" path="res://scenes/menus/ending_screen_1.tscn" id="2_n7s5l"]
+[ext_resource type="PackedScene" uid="uid://drv7j0bybgc7" path="res://scenes/menus/ending_screen_2.tscn" id="3_0prri"]
+[ext_resource type="PackedScene" uid="uid://cjj32eseagrvq" path="res://scenes/menus/ending_screen_3.tscn" id="4_qe0lu"]
+[ext_resource type="PackedScene" uid="uid://2qobo8ohistj" path="res://scenes/menus/ending_screen_4.tscn" id="5_mqfq5"]
+[ext_resource type="PackedScene" uid="uid://ban5vqk36jqsf" path="res://scenes/menus/ending_screen_5.tscn" id="6_hljd5"]
+[ext_resource type="PackedScene" uid="uid://upmqubi2371k" path="res://scenes/menus/ending_screen_6.tscn" id="7_ga5ti"]
 
 [node name="LevelDriver" type="Node" unique_id=1178145967]
 script = ExtResource("1_tkdj7")
-ending_ps = Array[PackedScene]([ExtResource("2_n7s5l"), ExtResource("2_n7s5l"), ExtResource("2_n7s5l"), ExtResource("2_n7s5l"), ExtResource("2_n7s5l"), ExtResource("2_n7s5l")])
+ending_ps = Array[PackedScene]([ExtResource("2_n7s5l"), ExtResource("3_0prri"), ExtResource("4_qe0lu"), ExtResource("5_mqfq5"), ExtResource("6_hljd5"), ExtResource("7_ga5ti")])
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=195350862]
 stream = ExtResource("2_jubos")

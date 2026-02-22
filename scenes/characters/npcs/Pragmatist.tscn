@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://fd777pnanqoq" path="res://assets/dialogue/Pragmatist_Lv3.dialogue" id="2_c7qoi"]
 
 [node name="Npc" unique_id=1113561624 instance=ExtResource("1_6art4")]
+sprite_index = 6
 
 [node name="Interactable" parent="." index="3" unique_id=27851606]
 dialogue_resource = ExtResource("2_c7qoi")

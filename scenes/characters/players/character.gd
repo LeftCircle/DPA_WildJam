@@ -11,9 +11,9 @@ signal reset_feathers()
 
 var feather_counter = 0
 var acquired_feathers : int = 0
-var npcs_saved: Array[bool] = [false, false, false, false, false]
-#var npcs_saved: Array[bool] = [true,true,true,true,true]
-var doomed = true
+#var npcs_saved: Array[bool] = [false, false, false, false, false]
+var npcs_saved: Array[bool] = [true,true,true,true,true]
+var doomed = false
 var _can_bullet_time : bool = true
 
 @onready var camera = %Camera2D

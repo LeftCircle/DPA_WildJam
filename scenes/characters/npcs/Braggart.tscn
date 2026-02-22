@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://bii3skosd4h1o" path="res://assets/dialogue/Braggart_Lv2.dialogue" id="2_x2kyq"]
 
 [node name="Npc" unique_id=1113561624 instance=ExtResource("1_iu5ju")]
+sprite_index = 3
 
 [node name="Interactable" parent="." index="3" unique_id=27851606]
 dialogue_resource = ExtResource("2_x2kyq")

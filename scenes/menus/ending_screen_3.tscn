@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://brca2nofowf6m"]
+[gd_scene format=3 uid="uid://cjj32eseagrvq"]
 
-[ext_resource type="Script" uid="uid://ha5kwc2f2h7v" path="res://scenes/menus/ending_screen_normal.gd" id="1_82nfs"]
-[ext_resource type="PackedScene" uid="uid://dr2uj3id5qrck" path="res://scenes/menus/Main_Menu.tscn" id="2_rrxei"]
-[ext_resource type="Resource" uid="uid://yg6ycf44kigg" path="res://assets/dialogue/Endings/Ending_1.dialogue" id="3_r81gc"]
+[ext_resource type="Script" uid="uid://ha5kwc2f2h7v" path="res://scenes/menus/ending_screen_normal.gd" id="1_k4vxw"]
+[ext_resource type="PackedScene" uid="uid://dr2uj3id5qrck" path="res://scenes/menus/Main_Menu.tscn" id="2_tv7tm"]
+[ext_resource type="Resource" uid="uid://d0pc83a8jmb3n" path="res://assets/dialogue/Endings/Ending_3.dialogue" id="3_k4vxw"]
 
 [node name="Ending_Screen" type="Control" unique_id=338245671]
 layout_mode = 3
@@ -11,9 +11,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_82nfs")
-main_menu = ExtResource("2_rrxei")
-dialogue_resource = ExtResource("3_r81gc")
+script = ExtResource("1_k4vxw")
+main_menu = ExtResource("2_tv7tm")
+dialogue_resource = ExtResource("3_k4vxw")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=815066840]
 layout_mode = 1
