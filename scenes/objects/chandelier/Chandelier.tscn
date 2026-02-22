@@ -2,15 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://bes3ix5wetcll" path="res://assets/environment/general/chandelier.png" id="1_31hxp"]
 [ext_resource type="Script" uid="uid://q11io88wmfdm" path="res://scenes/objects/chandelier/chandelier.gd" id="1_hk8m0"]
+[ext_resource type="PackedScene" uid="uid://dh5si3s3ql611" path="res://scenes/VFX/lights/chandelier_light.tscn" id="2_jvcnq"]
 [ext_resource type="PackedScene" uid="uid://cpewp1rmmj6s5" path="res://scenes/objects/chandelier/Flame.tscn" id="2_vol6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvcnq"]
 size = Vector2(20.344116, 20)
 
-[node name="Chandelier" type="Node2D" unique_id=2022063999 node_paths=PackedStringArray("target")]
+[node name="Chandelier" type="Node2D" unique_id=2022063999]
 scale = Vector2(0.285, 0.285)
 script = ExtResource("1_hk8m0")
-target = NodePath("")
+
+[node name="chandelier_light" parent="." unique_id=1680736457 instance=ExtResource("2_jvcnq")]
+position = Vector2(0, -221.05263)
+scale = Vector2(1.5, 1.5)
+offset = Vector2(0, 91.22807)
+texture_scale = 50.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1376589567]
 position = Vector2(0, 44.999996)

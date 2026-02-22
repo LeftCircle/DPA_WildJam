@@ -4,9 +4,9 @@
 
 [node name="chandelier_light" type="PointLight2D" unique_id=1680736457]
 color = Color(1, 0.5058824, 0, 1)
-energy = 2.0
+energy = 2.5
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 20.0
 texture = ExtResource("1_wgv63")
-texture_scale = 25.0
+texture_scale = 30.0
