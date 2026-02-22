@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ansguf6th5d" path="res://scenes/characters/players/feather_resetter.tscn" id="23_0tlt7"]
 [ext_resource type="Texture2D" uid="uid://buqgu5ssjyva5" path="res://assets/characters/player/MCSpriteSheetThrowSide.png" id="24_mt0yb"]
 [ext_resource type="AudioStream" uid="uid://2i8e3m23djwb" path="res://audio/sfx/jump_randomizer.tres" id="24_y28c2"]
-[ext_resource type="Script" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
+[ext_resource type="Script" uid="uid://bu0m3hx2a4xrk" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
 [ext_resource type="PackedScene" uid="uid://e0q6ej4cqhvc" path="res://scenes/characters/interactions/PlayerInteract.tscn" id="27_ewdww"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
@@ -895,7 +895,8 @@ position = Vector2(0, -50)
 texture = ExtResource("24_mt0yb")
 hframes = 5
 
-[node name="FeatherResetter" parent="." unique_id=863521036 instance=ExtResource("23_0tlt7")]
+[node name="FeatherResetter" parent="." unique_id=863521036 node_paths=PackedStringArray("player") instance=ExtResource("23_0tlt7")]
+player = NodePath("..")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1304099039]
 stream = ExtResource("24_y28c2")
