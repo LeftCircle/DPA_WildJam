@@ -12,12 +12,6 @@ size = Vector2(20.344116, 20)
 scale = Vector2(0.285, 0.285)
 script = ExtResource("1_hk8m0")
 
-[node name="chandelier_light" parent="." unique_id=1680736457 instance=ExtResource("2_jvcnq")]
-position = Vector2(0, -221.05263)
-scale = Vector2(1.5, 1.5)
-offset = Vector2(0, 91.22807)
-texture_scale = 50.0
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1376589567]
 position = Vector2(0, 44.999996)
 scale = Vector2(34.750923, 7.410741)
@@ -41,3 +35,9 @@ position = Vector2(118, -67)
 
 [node name="Flame4" parent="StaticBody2D/CollisionShape2D/Base" unique_id=1241317450 instance=ExtResource("2_vol6c")]
 position = Vector2(329, -102)
+
+[node name="chandelier_light" parent="StaticBody2D" unique_id=1680736457 instance=ExtResource("2_jvcnq")]
+position = Vector2(0, -35.900948)
+scale = Vector2(0.06, 0.282)
+offset = Vector2(0, 91.22807)
+texture_scale = 50.0
