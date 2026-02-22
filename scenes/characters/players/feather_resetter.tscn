@@ -7,5 +7,3 @@ script = ExtResource("1_yypu3")
 
 [node name="Timer" type="Timer" parent="." unique_id=650249963]
 one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
