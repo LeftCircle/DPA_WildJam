@@ -1,7 +1,7 @@
 ~ start
 Would you like to rest?
-- Accept
-	#DO ENDING 3/5
+- Accept [NO TURNING BACK]
+	#DO ENDING 3-5
 	if check_perfect():
 		set ending_to_load = 5
 		do load_ending()

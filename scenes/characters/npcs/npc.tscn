@@ -59,7 +59,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4ppa"]
-size = Vector2(128, 112)
+size = Vector2(96, 112)
 
 [node name="Npc" type="CharacterBody2D" unique_id=1113561624]
 collision_layer = 128

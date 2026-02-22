@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d0tluvr1qnfh1"
+path="res://.godot/imported/Innocent_Farewell.dialogue-d4e518947c21b2ccd205b4879b70a88d.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Farewells/Innocent_Farewell.dialogue"
+dest_files=["res://.godot/imported/Innocent_Farewell.dialogue-d4e518947c21b2ccd205b4879b70a88d.tres"]
+
+[params]
+
+defaults=true

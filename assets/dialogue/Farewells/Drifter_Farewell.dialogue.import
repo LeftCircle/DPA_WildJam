@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://5fa1bntfqsqk"
+path="res://.godot/imported/Drifter_Farewell.dialogue-9f7a0bd0d4d0e6bfca619b6646f53fa5.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Farewells/Drifter_Farewell.dialogue"
+dest_files=["res://.godot/imported/Drifter_Farewell.dialogue-9f7a0bd0d4d0e6bfca619b6646f53fa5.tres"]
+
+[params]
+
+defaults=true
