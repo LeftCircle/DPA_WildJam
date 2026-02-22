@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ntuemj3pul34" path="res://assets/feathers/goodFeather.png" id="2_irt8i"]
 [ext_resource type="PackedScene" uid="uid://cqf2bumwyf4es" path="res://scenes/VFX/feather_light/feather_self_emission.tscn" id="3_vifbp"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vifbp"]
+light_mode = 1
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_irt8i"]
 radius = 31.780497
 
@@ -13,10 +16,12 @@ collision_mask = 2
 script = ExtResource("1_b26d6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=71552416]
+material = SubResource("CanvasItemMaterial_vifbp")
 scale = Vector2(0.425, 0.425)
 texture = ExtResource("2_irt8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=501757788]
+visible = false
 shape = SubResource("CircleShape2D_irt8i")
 
 [node name="feather_self_emission" parent="." unique_id=131690398 instance=ExtResource("3_vifbp")]
