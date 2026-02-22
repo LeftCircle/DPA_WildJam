@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="10_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="10_r72dd"]
 [ext_resource type="Texture2D" uid="uid://7imgv35cai7u" path="res://assets/environment/general/darkChandelierNoChain.png" id="13_gi8m4"]
+[ext_resource type="PackedScene" uid="uid://b7ngnf7bybf6r" path="res://scenes/characters/interactions/Cutscene_Trigger.tscn" id="15_gi8m4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kfebt"]
 polygon = PackedVector2Array(2.9999542, 386.99997, 1.9999542, -5.0000305, 765.99994, -3.0517578e-05, 770.99994, 254.99997, 1023.99994, 256.99997, 1028, -89.00003, 1280, -90.00003, 1279, -135.00003, 1028, -134.00003, 1027, -384.00003, 1407, -380.00003, 1410, -510.00003, 438.99994, -509.00003, 60.999954, -827, -379.00006, -827, -379.00006, -1468, -255.00005, -1467, -256.00006, -1534, -509.00006, -1534, -513.00006, -382.00003, 768.99994, -380.00003, 766.99994, -128.00003, -128.00005, -129.00003, -129.00005, 515, 1666, 511.99997, 1668, 389.99997, 1792, 386.99997, 1793, 263.99997, 1411, 260.99997, 1415, 372.99997)
@@ -48,6 +49,9 @@ size = Vector2(127.6342, 1087.9996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfebt"]
 size = Vector2(30.999954, 130.99997)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwffn"]
+size = Vector2(20, 122)
 
 [node name="Level01" type="Node2D" unique_id=922797211 node_paths=PackedStringArray("spawn_point", "llc", "urc")]
 position = Vector2(128.00005, -511.99997)
@@ -309,6 +313,13 @@ position = Vector2(-328, -29)
 
 [node name="URC" type="Node2D" parent="CameraLimits" unique_id=2117157828]
 position = Vector2(1859, -2253)
+
+[node name="Interactable" parent="." unique_id=27851606 instance=ExtResource("15_gi8m4")]
+position = Vector2(487.99997, 367.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=936045244]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_cwffn")
 
 [editable path="Interactables/DashCollider"]
 [editable path="Interactables/Chandelier2"]

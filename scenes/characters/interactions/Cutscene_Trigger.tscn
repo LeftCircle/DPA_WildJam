@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b7ngnf7bybf6r"]
+
+[ext_resource type="Script" uid="uid://b1jsd017woo05" path="res://scenes/characters/interactions/cutscene_trigger.gd" id="1_pkq7q"]
+[ext_resource type="Resource" uid="uid://cfd6i32xjuiyg" path="res://assets/dialogue/Cutscene_Lv1.dialogue" id="2_3i4kx"]
+
+[node name="Interactable" type="Area2D" unique_id=27851606]
+process_mode = 3
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_pkq7q")
+dialogue_resource = ExtResource("2_3i4kx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
