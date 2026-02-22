@@ -20,10 +20,21 @@ func _ready() -> void:
 func check_feathers() -> bool:
 	return (LevelDriver.player.acquired_feathers + feather_give) > 0
 
+func check_perfect() -> bool:
+	return LevelDriver.player.is_perfect()
+	
+
+func check_saved_one() -> bool:
+	return LevelDriver.player.saved_one()
+	
+
+func play_sfx() -> void:
+	#passes an sfx to play
+	pass
+
 func give_feathers() -> void:
 	LevelDriver.player.reset_feathers_to(LevelDriver.player.acquired_feathers + feather_give)
-	
-	
+
 func give_feathers_drifter() -> void:
 	LevelDriver.player.reset_feathers_to(1)
 

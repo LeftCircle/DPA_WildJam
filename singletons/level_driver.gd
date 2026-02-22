@@ -36,6 +36,8 @@ func _on_death_area_entered() -> void:
 	#player.global_position = current_level.spawn_point.global_position
 	get_tree().call_deferred("reload_current_scene")
 
+func load_ending(ending: int) -> void:
+	pass
 
 func _on_level_music_finished():
 	level_music.play(0.0)
