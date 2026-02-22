@@ -17,12 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="15_ejjlu"]
 [ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="16_ejjlu"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="16_lesd3"]
-[ext_resource type="Script" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
+[ext_resource type="Script" uid="uid://outuy70de4aj" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="17_gbsts"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="18_3d6ih"]
 [ext_resource type="Script" uid="uid://t0jo0yf4akm7" path="res://scenes/objects/hit_target/hit_target.gd" id="18_c7h1x"]
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="22_64yx1"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="23_c7h1x"]
+[ext_resource type="PackedScene" uid="uid://dwav2e80ef8gn" path="res://scenes/characters/npcs/Innocent.tscn" id="24_1dtt1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6vksy"]
 cull_mode = 1
@@ -114,7 +115,7 @@ tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAJAPf/AAAAAAA
 tile_set = ExtResource("2_7k7rs")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_j2blp")]
-position = Vector2(200, -297)
+position = Vector2(1799, -2163)
 
 [node name="Environment" type="Node2D" parent="." unique_id=993262859]
 metadata/_edit_lock_ = true
@@ -170,6 +171,7 @@ shadow_filter_smooth = 25.0
 offset = Vector2(-627.1792, -1.1088867)
 
 [node name="level5_window_light4" parent="Environment/Lights" unique_id=562540595 instance=ExtResource("10_tg547")]
+visible = false
 position = Vector2(51.33374, -6995.2207)
 rotation = -2.1648774
 scale = Vector2(2.9089122, 10.677901)
@@ -629,6 +631,9 @@ polygon = PackedVector2Array(1101, -4047, 1059, -4158, 262, -3719, 338, -3629)
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=412727658]
 position = Vector2(1541, -3825)
 polygon = PackedVector2Array(-40, -2866, 81, -3075, 327, -3207, 1389, -2896, 1289, -2355, 1150, -2462, 961, -2593, 825, -2815, 683, -2850, 542, -2828, 471, -2906, 418, -3096, 331, -3122, 215, -3090)
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("24_1dtt1")]
+position = Vector2(2008, -1923)
 
 [connection signal="target_hit" from="Interactables/MovingPlatforms/MovingPlatform3/HitTarget" to="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" method="_on_hit_target_target_hit"]
 [connection signal="target_hit" from="Interactables/MovingPlatforms/MovingPlatform4/HitTarget" to="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" method="_on_hit_target_target_hit"]

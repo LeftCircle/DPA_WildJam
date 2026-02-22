@@ -10,13 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://dvi2cd4c4jawg" path="res://assets/environment/level_02/Level_2_water.png" id="5_q6ljp"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="6_a3l5x"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="7_keemd"]
-[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="9_c6rld"]
 [ext_resource type="Script" uid="uid://byxa0rv3p7sg6" path="res://scenes/objects/locked_door/locked_door.gd" id="9_km0xc"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="10_o4ql5"]
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="11_o4ql5"]
 [ext_resource type="TileSet" uid="uid://bf3ofngk54hsf" path="res://resources/levels/quarter_tile_collisions.tres" id="12_4dr30"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="12_4hx2o"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="13_km0xc"]
+[ext_resource type="PackedScene" uid="uid://bmphlybfnvbgs" path="res://scenes/characters/npcs/Braggart.tscn" id="17_4dr30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keemd"]
 size = Vector2(2239, 61.5)
@@ -59,7 +59,7 @@ position = Vector2(1536, -1152)
 texture = ExtResource("5_q6ljp")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(3008, -128)
+position = Vector2(2005, -1734)
 
 [node name="DeathAreas" type="Node" parent="." unique_id=1000883032]
 
@@ -90,9 +90,6 @@ metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=759546298]
 position = Vector2(2983.75, -1749)
 shape = SubResource("RectangleShape2D_ppbiy")
-
-[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("9_c6rld")]
-position = Vector2(2236, -1667)
 
 [node name="LevelGeo" type="Node2D" parent="." unique_id=1901881762]
 
@@ -231,7 +228,12 @@ occluder = SubResource("OccluderPolygon2D_m2jhg")
 [node name="Lights" type="Node2D" parent="Environemnt" unique_id=710798192]
 visible = false
 
-[editable path="Npc"]
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("17_4dr30")]
+position = Vector2(2236, -1655)
+
+[node name="Interactable" parent="Npc" index="3" unique_id=27851606]
+feather_give = -5
+
 [editable path="Interactables/Chandelier/Chandelier"]
 [editable path="Interactables/Cage"]
 [editable path="Interactables/Cage/Node2D/CollisionBorders/DashCollider"]
@@ -258,3 +260,4 @@ visible = false
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider2"]
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider3"]
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider4"]
+[editable path="Npc"]

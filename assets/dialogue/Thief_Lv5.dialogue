@@ -1,0 +1,63 @@
+~ start
+if first == true:
+	=>< Introduction
+	set first = false
+else:
+	=>< Reintroduction
+if check_feathers():
+	What will you do?
+	- Forgiving yourself is the first step to freeing yourself. (Give)
+		=>< Give_Dialogue
+		do give_feathers()
+		do save_npc()
+		do disappear()
+		=> END
+	- This is all your fault. You don’t deserve the feathers you hold. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do doom_player()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+else:
+	What will you do?
+	- ??? [if check_feathers()]
+		=>< Give_Dialogue
+		do give_feathers()
+		do disappear()
+		=> END
+	- This is all your fault. You don’t deserve the feathers you hold. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+
+~ Introduction
+The Thief: …I can’t do it. I can’t hold them any longer.
+The Thief: I took them. The feathers, I mean. I just needed to escape, to get out of here, so I took as many as I could carry…
+The Thief: But I can’t bear the weight any longer. The looks on their faces, the guilt; it’s so heavy…
+The Thief: They wouldn’t forgive me. I wouldn’t forgive me. I don’t deserve it.
+
+ => END
+
+~ Reintroduction
+The Thief: Are you here to condemn me, too?
+ => END
+
+~ Give_Dialogue
+The Thief: I… you’re giving these to me?
+The Thief: Huh, they feel so light…
+The Thief: Thank you, I can feel strength returning to my legs. 
+The Thief: I’ll repay this kindness someday, I swear it. To you and to them.
+
+ => END
+
+~ Take_Dialogue
+The Thief: You’re right…
+The Thief: I deserve this prison. I deserve this pain.
+The Thief: There’s no reason to hold on any longer.
+
+ => END

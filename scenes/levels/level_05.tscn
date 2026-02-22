@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="12_tavyg"]
 [ext_resource type="SpriteFrames" uid="uid://d3hweglls4wcu" path="res://resources/objects/crumble_frames.tres" id="13_kkx70"]
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="13_tavyg"]
+[ext_resource type="PackedScene" uid="uid://du6v5oy87d2hw" path="res://scenes/characters/npcs/Thief.tscn" id="18_de7pb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ot78m"]
 polygon = PackedVector2Array(-339, 1326, -213, 1326, -207, 1360, -334, 1359)
@@ -385,6 +386,9 @@ position = Vector2(1728, -1728)
 
 [node name="HitTarget" parent="Interactables/Cages/Cage5/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1816597658, 1417091144) index="2" unique_id=562628805]
 position = Vector2(1728, -2688)
+
+[node name="Npc" parent="Interactables/Cages/Cage5" unique_id=1113561624 instance=ExtResource("18_de7pb")]
+position = Vector2(0, 108)
 
 [connection signal="animation_finished" from="Interactables/CrumbleBlocks/CrumblingPlatform3/AnimatedSprite2D" to="Interactables/CrumbleBlocks/CrumblingPlatform3" method="_on_animated_sprite_2d_animation_finished"]
 

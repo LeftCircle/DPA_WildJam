@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhn7vevcjn7cl"
+path="res://.godot/imported/Drifter_Lv4.dialogue-6c20db5ed13180981b3d5b3feed815c6.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Drifter_Lv4.dialogue"
+dest_files=["res://.godot/imported/Drifter_Lv4.dialogue-6c20db5ed13180981b3d5b3feed815c6.tres"]
+
+[params]
+
+defaults=true

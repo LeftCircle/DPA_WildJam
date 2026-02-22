@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="10_yy4na"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="11_07dqf"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="11_76vq8"]
+[ext_resource type="PackedScene" uid="uid://wmhe3h0cis6a" path="res://scenes/characters/npcs/Drifter.tscn" id="16_o3rdr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nanf4"]
 size = Vector2(896, 74)
@@ -244,6 +245,9 @@ shape = SubResource("RectangleShape2D_tdc43")
 [node name="LockedHatch" parent="Interactables" unique_id=1802310663 instance=ExtResource("11_07dqf")]
 position = Vector2(1086, -1144)
 rotation_amount = -90.0
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("16_o3rdr")]
+position = Vector2(2432, -1160)
 
 [editable path="Character"]
 [editable path="Character/PlayerVFX/vfx_feathers_light"]

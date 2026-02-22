@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://def6p3q55es4g" path="res://assets/environment/level_03/Level_3_column5.png" id="21_gpenj"]
 [ext_resource type="Texture2D" uid="uid://c6qwn1bwbe0ln" path="res://assets/environment/level_03/Level_3_column6.png" id="22_dn1io"]
 [ext_resource type="Texture2D" uid="uid://b4fi2p7yftlls" path="res://assets/environment/level_03/Level_3_column7.png" id="23_jeigf"]
+[ext_resource type="PackedScene" uid="uid://djcwgxca24fgm" path="res://scenes/characters/npcs/Pragmatist.tscn" id="26_jeigf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4tf"]
 size = Vector2(5824, 182)
@@ -517,6 +518,9 @@ visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environemnt" unique_id=1440775786]
 visible = false
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("26_jeigf")]
+position = Vector2(5682, -1282)
 
 [editable path="Interactables/Chandeliers/Chandelier"]
 [editable path="Interactables/Chandeliers/Chandelier2"]
