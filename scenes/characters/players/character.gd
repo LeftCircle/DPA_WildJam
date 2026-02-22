@@ -43,6 +43,7 @@ func _on_death() -> void:
 func reset_feathers_to(val : int) -> void:
 	acquired_feathers = val
 	feather_counter = val
+	reset_feathers.emit()
 
 func reset_doom_to(val : bool) -> void:
 	doomed = val

@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://bu0m3hx2a4xrk" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
 [ext_resource type="PackedScene" uid="uid://e0q6ej4cqhvc" path="res://scenes/characters/interactions/PlayerInteract.tscn" id="27_ewdww"]
 [ext_resource type="AudioStream" uid="uid://v07t1rlfhshi" path="res://audio/sfx/Collect Feather.WAV" id="31_t5lbr"]
+[ext_resource type="PackedScene" uid="uid://u3hm0ly3ap0k" path="res://scenes/characters/ui/HUD.tscn" id="32_t02n3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
 light_mode = 1
@@ -930,6 +931,9 @@ delayed = true
 [node name="FeatherStream" type="AudioStreamPlayer" parent="Audio" unique_id=613455354]
 unique_name_in_owner = true
 stream = ExtResource("31_t5lbr")
+
+[node name="HUD" parent="." unique_id=510809081 node_paths=PackedStringArray("player") instance=ExtResource("32_t02n3")]
+player = NodePath("..")
 
 [connection signal="feather_used" from="." to="FeatherResetter" method="_on_character_feather_used"]
 [connection signal="clear_sound" from="SM_Character/Run" to="Audio/RunStream" method="_on_run_clear_sound"]

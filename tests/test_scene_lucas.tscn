@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_56sry"]
 [ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_k4wrx"]
-[ext_resource type="PackedScene" uid="uid://u3hm0ly3ap0k" path="res://scenes/characters/ui/HUD.tscn" id="1_lpe0m"]
 [ext_resource type="PackedScene" uid="uid://cwdr74u1mywek" path="res://scenes/levels/level_05.tscn" id="2_g0mm2"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="2_jia1c"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="3_lpe0m"]
@@ -49,8 +48,6 @@ target = NodePath("../HitTarget")
 
 [node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("3_lpe0m")]
 position = Vector2(1009, 36)
-
-[node name="HUD" parent="." unique_id=510809081 instance=ExtResource("1_lpe0m")]
 
 [node name="FeatherPickup" parent="." unique_id=2120564041 instance=ExtResource("8_g0mm2")]
 position = Vector2(-105, 401)
@@ -122,5 +119,3 @@ position = Vector2(1145, -14)
 
 [node name="TutorialBox" parent="." unique_id=395832783 instance=ExtResource("9_67c3q")]
 position = Vector2(598, 403)
-
-[editable path="HUD"]

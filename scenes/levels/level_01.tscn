@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bamwno3soqdcg" path="res://assets/environment/level_01/Level_1_matte.png" id="3_jmes4"]
 [ext_resource type="Texture2D" uid="uid://drjugcc4o7xmn" path="res://assets/environment/level_01/Level_1_colisionGeo.png" id="4_tyxjt"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="6_50wog"]
-[ext_resource type="PackedScene" uid="uid://u3hm0ly3ap0k" path="res://scenes/characters/ui/HUD.tscn" id="6_gi8m4"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="7_1ey3t"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="8_t0hvh"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="9_kfebt"]
@@ -109,9 +108,6 @@ position = Vector2(151, 257)
 unique_name_in_owner = true
 position = Vector2(-1.000061, -250.00003)
 zoom = Vector2(1.555, 1.555)
-
-[node name="HUD" parent="Character/Camera2D" unique_id=510809081 instance=ExtResource("6_gi8m4")]
-layer = 7
 
 [node name="Spawn" type="Node2D" parent="." unique_id=1284389690]
 position = Vector2(148.99995, 204.99997)
