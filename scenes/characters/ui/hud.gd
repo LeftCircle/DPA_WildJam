@@ -5,15 +5,16 @@ extends CanvasLayer
 @onready var hbox_separation : int = hbox.get_theme_constant("separation")
 
 @export var featherUIItem : PackedScene
+@export var player : PlayerCharacter
 
 func _ready() -> void:
-	num_feathers = LevelDriver.player_starting_state.current_feathers
+	num_feathers = player.feather_counter
 	for feather in range(num_feathers):
 		_add_feather()
 		
-	LevelDriver.player.feather_collected.connect(_on_feather_collected)
-	LevelDriver.player.feather_used.connect(_on_feather_used)
-	LevelDriver.player.reset_feathers.connect(_on_reset)
+	player.feather_collected.connect(_on_feather_collected)
+	player.feather_used.connect(_on_feather_used)
+	player.reset_feathers.connect(_on_reset)
 
 func _on_feather_collected() -> void:
 	_add_feather()
