@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b00pdyxw2go2y" path="res://assets/environment/level_06/Level_6_Geo.png" id="6_6h3uw"]
 [ext_resource type="Texture2D" uid="uid://cnbb4kv1dr1q0" path="res://assets/environment/level_06/Level_6_RootsThorns.png" id="7_17n5y"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="8_s7m4s"]
-[ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/level_5_window_light.tscn" id="10_tg547"]
+[ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/window_light.tscn" id="10_tg547"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="12_6vksy"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="13_sppnv"]
 [ext_resource type="Script" uid="uid://eg5uygnpo1ct" path="res://scenes/objects/dash_collider/dash_collider.gd" id="14_cdd1g"]

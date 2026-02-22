@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="2_yy1ns"]
 [ext_resource type="Texture2D" uid="uid://dwfcd7lgljlpi" path="res://assets/environment/level_05/Level_5_matte.png" id="3_6shqt"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="3_xv7r2"]
-[ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/level_5_window_light.tscn" id="4_c1tix"]
+[ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/window_light.tscn" id="4_c1tix"]
 [ext_resource type="Texture2D" uid="uid://cqlt5lwp58ulf" path="res://assets/environment/level_05/Level_5_hazards.png" id="4_de7pb"]
 [ext_resource type="Texture2D" uid="uid://dt4jbinx2k4ja" path="res://assets/environment/level_05/Level_5_staticGeo.png" id="5_5j0jk"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="5_hqfam"]
