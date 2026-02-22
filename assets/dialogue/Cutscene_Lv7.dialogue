@@ -1,0 +1,54 @@
+~ start
+=>< Introduction
+#scale animation plays, wait to continue, or do each different one in each block idk
+if check_doomed():
+	=>< Doom
+	#animation of being blown off
+	#start ending steal
+	set ending_to_load = 2
+	do load_ending()
+	=> END
+elif check_perfect():
+	=>< Perfect
+	=> END
+elif check_saved_one():
+	=>< Good
+	=> END
+else:
+	=>< Neutral
+	=> END
+
+~ Introduction
+The Arbiter: You have done well to make it this far.
+The Arbiter: Tell me, with everything you’ve seen, have you truly grasped your freedom?
+The Arbiter: I suppose we shall see…
+
+ => END
+
+~ Doom
+The Arbiter: The weight of your actions has kept you shackled to the earth.
+The Arbiter: If you truly desire freedom, then you must reflect on what you’ve done, and grow from it.
+
+ => END
+
+~ Perfect
+The Arbiter: You have done well. 
+The Arbiter: You have aided your fellows in their struggles, and come out of your prison with a spirit that is bright and clear.
+The Arbiter: Speak to them, if you wish. Then, when you are ready, you are free to leave.
+
+ => END
+
+~ Good
+The Arbiter: You are well along the path to freedom. Your work has born fruit, and you are the lighter for it.
+The Arbiter: Speak with your fellows, and reflect on your journey. I am sure the answer will come to you in time.
+
+ => END
+
+
+~ Neutral
+The Arbiter: You traveled far to get to this place, but did your eyes see everything along the path?
+The Arbiter: Your fellows struggled and yearned for freedom themselves.
+The Arbiter: Reach out to them, perhaps they hold the answers you seek.
+The Arbiter: For now, you may rest, and reflect on all that you have seen.
+
+ => END

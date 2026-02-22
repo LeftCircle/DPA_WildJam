@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DPA_WildJam"
-run/main_scene="uid://cb2uxuoqhve3b"
+run/main_scene="uid://dr2uj3id5qrck"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,11 +19,14 @@ config/icon="res://icon.svg"
 
 DialogueManager="*uid://c3rodes2l3gxb"
 LevelDriver="*uid://bjk2ot631uqsi"
+TransitionManager="*uid://c3ws1iojn1u3n"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -83,7 +86,7 @@ bullet_time={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogue/test.dialogue", "res://assets/dialogue/NPC_Level_Template.dialogue", "res://assets/dialogue/Braggart_Lv2.dialogue", "res://assets/dialogue/Pragmatist_Lv3.dialogue", "res://assets/dialogue/Drifter_Lv4.dialogue", "res://assets/dialogue/Thief_Lv5.dialogue", "res://assets/dialogue/Innocent_Lv6.dialogue", "res://assets/dialogue/Cutscene_Lv1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/dialogue/test.dialogue", "res://assets/dialogue/NPC_Level_Template.dialogue", "res://assets/dialogue/Braggart_Lv2.dialogue", "res://assets/dialogue/Pragmatist_Lv3.dialogue", "res://assets/dialogue/Drifter_Lv4.dialogue", "res://assets/dialogue/Thief_Lv5.dialogue", "res://assets/dialogue/Innocent_Lv6.dialogue", "res://assets/dialogue/Cutscene_Lv1.dialogue", "res://assets/dialogue/OldMan_Lv7.dialogue", "res://assets/dialogue/Cutscene_Lv7.dialogue", "res://assets/dialogue/Campfire_1.dialogue", "res://assets/dialogue/Campfire_2.dialogue", "res://assets/dialogue/Endings/Ending_1.dialogue")
 
 [layer_names]
 
@@ -106,3 +109,5 @@ common/physics_interpolation=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

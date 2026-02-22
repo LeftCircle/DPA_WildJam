@@ -3,20 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://bihh1ol0cd65k" path="res://scenes/VFX/firefly/vfx_firefly.tscn" id="2_83klo"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="3_emiss"]
 [ext_resource type="PackedScene" uid="uid://cqf2bumwyf4es" path="res://scenes/VFX/feather_light/feather_self_emission.tscn" id="3_sr3oh"]
+[ext_resource type="PackedScene" uid="uid://c3ws1iojn1u3n" path="res://scenes/VFX/transition/transition.tscn" id="4_jrnya"]
 
 [node name="Node2D" type="Node2D" unique_id=1730999275]
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1289104288]
+visible = false
 z_index = -1
 position = Vector2(3328.0002, 30208)
 scale = Vector2(2000, 2000)
 texture = ExtResource("3_emiss")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=229405903]
+visible = false
 color = Color(0.7121294, 0.7121294, 0.71212924, 1)
 
 [node name="vfx_firefly" parent="." unique_id=1928004762 instance=ExtResource("2_83klo")]
 visible = false
 
 [node name="feather_self_emission" parent="." unique_id=131690398 instance=ExtResource("3_sr3oh")]
+visible = false
 position = Vector2(123, 121)
+
+[node name="Transition" parent="." unique_id=894692011 instance=ExtResource("4_jrnya")]

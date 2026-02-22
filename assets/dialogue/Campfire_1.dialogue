@@ -1,0 +1,9 @@
+~ start
+Would you like to rest?
+- Accept [NO TURNING BACK]
+	The Old Man: Very well. Feel proud of your accomplishments, and rest easy.
+	set ending_to_load = 0
+	do load_ending()
+- Refuse
+	The Old Man: Very well. I wish you the best of luck in your climb.
+ => END

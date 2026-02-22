@@ -12,7 +12,8 @@ signal reset_feathers()
 var feather_counter = 0
 var acquired_feathers : int = 0
 var npcs_saved: Array[bool] = [false, false, false, false, false]
-var doomed = false
+#var npcs_saved: Array[bool] = [true,true,true,true,true]
+var doomed = true
 var _can_bullet_time : bool = true
 
 @onready var camera = %Camera2D
@@ -41,6 +42,21 @@ func _try_to_bullet_time() -> void:
 
 func is_missing_feather() -> bool:
 	return feather_counter < acquired_feathers
+	
+func is_doomed() -> bool:
+	return doomed
+
+func is_perfect() -> bool:
+	for npc in npcs_saved:
+		if !npc:
+			return false
+	return true
+
+func saved_one() -> bool:
+	for npc in npcs_saved:
+		if npc:
+			return true
+	return false
 
 func _on_feather_pickup() -> void:
 	feather_counter += 1
