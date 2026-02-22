@@ -15,8 +15,6 @@ func _physics_process(delta):
 	if _can_reset and player.is_missing_feather() and player.is_on_floor():
 		player.reset_feathers_to(player.acquired_feathers)
 		print("Reset feathers")
-		player.reset_feathers.emit()
-
 
 func _on_timer_timeout():
 	_can_reset = true
