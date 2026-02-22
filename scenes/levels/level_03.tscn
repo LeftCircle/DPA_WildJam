@@ -278,10 +278,12 @@ position = Vector2(768, -256)
 position = Vector2(896, -256)
 
 [node name="CrumblingPlatform3" parent="Interactables/Crumble" unique_id=373274314 instance=ExtResource("8_jgt0v")]
-position = Vector2(5472, -960)
+position = Vector2(5504, -896)
+scale = Vector2(1, 0.5)
 
 [node name="CrumblingPlatform4" parent="Interactables/Crumble" unique_id=306179297 instance=ExtResource("8_jgt0v")]
-position = Vector2(5344, -960)
+position = Vector2(5376, -896)
+scale = Vector2(1, 0.5)
 
 [node name="Chandeliers" type="Node" parent="Interactables" unique_id=202214157]
 

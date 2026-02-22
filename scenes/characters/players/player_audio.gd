@@ -1,10 +1,15 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 class_name PlayerAudio
 
 @export var _frames_between : int = 10
+@export var delayed : bool = false
 var _frame : int = 0
 var sound_to_queue : AudioStream
 var _start_at : float
+
+func _ready() -> void:
+	if not delayed:
+		set_physics_process(false)
 
 func _physics_process(delta):
 	_frame += 1
@@ -20,8 +25,12 @@ func _on_jump_state_play_sound(sound : AudioStream, start_at : float):
 	print("Playing audio")
 
 func _play_sound(sound : AudioStream, start_at : float) -> void:
-	sound_to_queue = sound
-	_start_at = start_at
+	if delayed:
+		sound_to_queue = sound
+		_start_at = start_at
+	else:
+		stream = sound
+		play(start_at)
 
 
 func _on_run_clear_sound():

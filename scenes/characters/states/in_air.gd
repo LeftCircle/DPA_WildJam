@@ -7,6 +7,7 @@ class_name CharacterAirState
 @export var input_processor : InputProcessor
 @export var anim_tree : PlayerAnimationTree
 @export var anim_player : AnimationPlayer
+@export var grav_scale = 1.25
 
 @onready var g = ProjectSettings.get("physics/2d/default_gravity")
 
@@ -20,7 +21,7 @@ func _enter():
 
 func _update(delta : float) -> void:
 	_enter_fall_animation()
-	character.velocity.y += g * delta
+	character.velocity.y += g * delta * grav_scale
 	character.velocity.x = horizontal_movement.tick(delta, input_processor.input_dir, character.velocity.x)
 	character.move_and_slide()
 	if character.is_on_floor():

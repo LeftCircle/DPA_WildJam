@@ -5,8 +5,8 @@ signal feather_used()
 signal dash()
 signal dash_finished()
 
-var feather_counter = 99
-var acquired_feathers : int = 99
+var feather_counter = 0
+var acquired_feathers : int = 0
 var npcs_saved: Array[bool] = [false, false, false, false, false]
 var doomed = false
 
@@ -16,7 +16,6 @@ var doomed = false
 func _ready():
 	LevelDriver.player = self
 	reset_feathers_to(LevelDriver.player_starting_state.current_feathers)
-	reset_feathers_to(99)
 
 func _physics_process(delta):
 	_crumble_platforms()
@@ -27,6 +26,7 @@ func is_missing_feather() -> bool:
 func _on_feather_pickup() -> void:
 	feather_counter += 1
 	acquired_feathers += 1
+	%FeatherStream.play(0.35)
 
 func _crumble_platforms() -> void:
 	var coll : KinematicCollision2D = get_last_slide_collision()
