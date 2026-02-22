@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://bf3ofngk54hsf" path="res://resources/levels/quarter_tile_collisions.tres" id="6_6u67p"]
 [ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/window_light.tscn" id="7_6u67p"]
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="8_4h4ws"]
+[ext_resource type="Script" uid="uid://q7wrgyf31rgt" path="res://scenes/levels/load_ending.gd" id="9_rd35g"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eafdw"]
 polygon = PackedVector2Array(34, -2583, 1766, -2587, 1831, -2627, 1870, -2569, 1815, -2502, 1819, -28, -108, -35, -105, -2591)
@@ -17,6 +18,8 @@ polygon = PackedVector2Array(3217, -1909, 3332, -1429, 2877, -1254, 2968, -664, 
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rxvob"]
 polygon = PackedVector2Array(3867, -1606, 3863, -8, 2296, -3, 2336, -1619, 2967, -1612, 2964, -1482, 3115, -1484, 3114, -1606)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ubdts"]
 
 [node name="Level07" type="Node2D" unique_id=539152322 node_paths=PackedStringArray("spawn_point", "llc", "urc")]
 script = ExtResource("1_eafdw")
@@ -103,3 +106,13 @@ position = Vector2(3360, -1700)
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=1532733784]
 unique_name_in_owner = true
 position = Vector2(0, -214)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1996072750]
+collision_mask = 2
+script = ExtResource("9_rd35g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=281908707]
+position = Vector2(0, 1019)
+shape = SubResource("WorldBoundaryShape2D_ubdts")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

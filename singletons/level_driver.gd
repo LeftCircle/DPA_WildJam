@@ -2,6 +2,8 @@ extends Node
 
 signal player_entered_cage()
 
+@export var ending_ps : Array[PackedScene] = []
+
 var current_level : Level
 var player : PlayerCharacter
 var npcs : Dictionary[String, NPC] = {}
@@ -14,12 +16,8 @@ func _ready():
 	level_music.bus = "Music"
 	level_music.play()
 	
-
-func register_npc(npc_name : String, _npc : NPC) -> void:
-	npcs[name] = _npc
-
-func remove_npc(name : String) -> void:
-	pass
+func reset_player():
+	player_starting_state = PlayerStartingState.new()
 
 func _on_level_exit():
 	player_starting_state.current_feathers = player.acquired_feathers
@@ -37,7 +35,7 @@ func _on_death_area_entered() -> void:
 	get_tree().call_deferred("reload_current_scene")
 
 func load_ending(ending: int) -> void:
-	pass
+	get_tree().call_deferred("change_scene_to_packed", ending_ps[ending])
 
 func _on_level_music_finished():
 	level_music.play(0.0)

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dr2uj3id5qrck"]
+
+[ext_resource type="Script" uid="uid://ch3js2u518i46" path="res://scenes/menus/main_menu.gd" id="1_dn0ou"]
+
+[node name="Main_Menu" type="Control" unique_id=338245671]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dn0ou")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=815066840]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.5
+offset_top = -260.0
+offset_right = 249.50012
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=920651444]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1797408765]
+layout_mode = 2
+text = "Simurgh Spire"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1339010147]
+layout_mode = 2
+text = "Start"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=572697950]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

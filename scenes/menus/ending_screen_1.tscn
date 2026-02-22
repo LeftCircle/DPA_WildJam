@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://brca2nofowf6m"]
 
-[ext_resource type="Script" uid="uid://ch3js2u518i46" path="res://ending_screen.gd" id="1_82nfs"]
-[ext_resource type="Resource" uid="uid://yg6ycf44kigg" path="res://assets/dialogue/Endings/Ending_1.dialogue" id="2_rrxei"]
+[ext_resource type="Script" uid="uid://ha5kwc2f2h7v" path="res://scenes/menus/ending_screen_1.gd" id="1_82nfs"]
+[ext_resource type="PackedScene" uid="uid://dr2uj3id5qrck" path="res://scenes/menus/Main_Menu.tscn" id="2_rrxei"]
+[ext_resource type="Resource" uid="uid://yg6ycf44kigg" path="res://assets/dialogue/Endings/Ending_1.dialogue" id="3_r81gc"]
 
 [node name="Ending_Screen" type="Control" unique_id=338245671]
 layout_mode = 3
@@ -11,7 +12,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_82nfs")
-dialogue_resource = ExtResource("2_rrxei")
+main_menu = ExtResource("2_rrxei")
+dialogue_resource = ExtResource("3_r81gc")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=815066840]
 layout_mode = 1
@@ -38,10 +40,13 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1339010147]
+[node name="Main_Menu_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1339010147]
 layout_mode = 2
 text = "Main Menu"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=572697950]
+[node name="Quit_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=572697950]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main_Menu_Button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
