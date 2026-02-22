@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bncm5i3a8mg8w"
+path="res://.godot/imported/Innocent_Lv6.dialogue-ad410ecc17b0d60816de1918330d07a6.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Innocent_Lv6.dialogue"
+dest_files=["res://.godot/imported/Innocent_Lv6.dialogue-ad410ecc17b0d60816de1918330d07a6.tres"]
+
+[params]
+
+defaults=true

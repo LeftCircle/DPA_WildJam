@@ -1,0 +1,49 @@
+~ start
+if first == true:
+	=>< Introduction
+	set first = false
+else:
+	=>< Reintroduction
+if check_feathers():
+	What will you do?
+	- Every journey starts with a single step... (Give)
+		=>< Give_Dialogue
+		do give_feathers_drifter()
+		do save_npc()
+		do disappear()
+		=> END
+	- Get your head out of the clouds and face reality. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do doom_player()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+
+~ Introduction
+The Drifter: Hmph. Another lost soul wandering around.
+The Drifter: Don’t you know that it’s pointless? 
+The Drifter: There’s no hope for any of us locked in here.
+ => END
+
+~ Reintroduction
+The Drifter: What are you still doing here?
+The Drifter: I’m not some animal to be gawked at. Leave me be.
+ => END
+
+~ Give_Dialogue
+The Drifter: Fool. You really shouldn’t be so trusting.
+The Drifter: I was like you once, I gave and gave and gave, and never received anything in return. 
+The Drifter: I was left with nothing, abandoned in this cell. 
+The Drifter: Now, I can finally be free.
+The Drifter: …
+The Drifter: What’s with that look in your eye? This is just how the world works.
+The Drifter: …
+The Drifter: …Fine. Take this.
+ => END
+
+~ Take_Dialogue
+The Drifter: You’re just like all the rest. 
+The Drifter: Well, jokes on you, because I have nothing left to give.
+ => END

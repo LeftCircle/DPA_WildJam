@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c6qwn1bwbe0ln" path="res://assets/environment/level_03/Level_3_column6.png" id="22_dn1io"]
 [ext_resource type="Texture2D" uid="uid://b4fi2p7yftlls" path="res://assets/environment/level_03/Level_3_column7.png" id="23_jeigf"]
 [ext_resource type="Texture2D" uid="uid://b2nixutnk7xla" path="res://assets/environment/general/woodenDoor.png" id="25_jeigf"]
+[ext_resource type="PackedScene" uid="uid://djcwgxca24fgm" path="res://scenes/characters/npcs/Pragmatist.tscn" id="26_jeigf"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iaubp"]
 polygon = PackedVector2Array(7, -390, 761, -392, 762, 194, 0, 169)
@@ -751,6 +752,9 @@ position = Vector2(-261, 294)
 
 [node name="URC" type="Node2D" parent="CameraLimits" unique_id=139111620]
 position = Vector2(6816, -2846)
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("26_jeigf")]
+position = Vector2(5682, -1282)
 
 [editable path="Interactables/Chandeliers/Chandelier"]
 [editable path="Interactables/Chandeliers/Chandelier2"]

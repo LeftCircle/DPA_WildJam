@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://fd777pnanqoq"
+path="res://.godot/imported/Pragmatist_Lv3.dialogue-d4ef4072ade48bfee9340d105148e9b7.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Pragmatist_Lv3.dialogue"
+dest_files=["res://.godot/imported/Pragmatist_Lv3.dialogue-d4ef4072ade48bfee9340d105148e9b7.tres"]
+
+[params]
+
+defaults=true

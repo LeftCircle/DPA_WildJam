@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bii3skosd4h1o"
+path="res://.godot/imported/Braggart_Lv2.dialogue-80f681496d0ed7bac295029c7889deb3.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Braggart_Lv2.dialogue"
+dest_files=["res://.godot/imported/Braggart_Lv2.dialogue-80f681496d0ed7bac295029c7889deb3.tres"]
+
+[params]
+
+defaults=true

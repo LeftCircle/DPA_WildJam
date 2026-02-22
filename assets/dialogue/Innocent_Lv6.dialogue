@@ -1,0 +1,64 @@
+~ start
+if first == true:
+	=>< Introduction
+	set first = false
+else:
+	=>< Reintroduction
+if check_feathers():
+	What will you do?
+	- Why don’t you see for yourself? (Give)
+		=>< Give_Dialogue
+		do give_feathers()
+		do save_npc()
+		do disappear()
+		=> END
+	- Give it up, kid. This world isn’t made for little snots like you. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do doom_player()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+else:
+	What will you do?
+	- ??? [if check_feathers()]
+		=>< Give_Dialogue
+		do give_feathers()
+		do disappear()
+		=> END
+	- Give it up, kid. This world isn’t made for little snots like you. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+
+~ Introduction
+The Innocent: Wow, hey, mister! What are you doing here?
+The Innocent: You’re the first person I’ve seen in such a long time!
+The Innocent: Hey, can you do me a favor? 
+The Innocent: I can’t quite make it up to that window. Can you tell me what you see? 
+The Innocent: I’ve never seen what’s out there, but sometimes I hear birds chirping! I bet it’s really pretty…
+ => END
+
+~ Reintroduction
+The Innocent: I wonder what’s out there…
+The Innocent: I bet it’s really pretty!
+ => END
+
+~ Give_Dialogue
+The Innocent: Wow, you’re giving me all of these? Thanks, mister!
+The Innocent: I’m so excited to see what’s outside! Race ya!
+
+
+ => END
+
+~ Take_Dialogue
+The Innocent: Hey! Wait, mister, that’s mine!
+The Innocent: Where are you going?
+The Innocent: Don’t leave me alone in here!
+
+
+ => END

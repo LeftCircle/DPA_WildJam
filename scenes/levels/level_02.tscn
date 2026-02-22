@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dmge4tooys6a2" path="res://assets/VFX/Gradient01.png" id="6_dscar"]
 [ext_resource type="PackedScene" uid="uid://lfnekpog5n6n" path="res://scenes/VFX/lights/glowing_water.tscn" id="6_m2te4"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="7_keemd"]
-[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="9_c6rld"]
 [ext_resource type="Script" uid="uid://byxa0rv3p7sg6" path="res://scenes/objects/locked_door/locked_door.gd" id="9_km0xc"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="10_o4ql5"]
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="11_o4ql5"]
@@ -144,9 +143,6 @@ metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=759546298]
 position = Vector2(2983.75, -1749)
 shape = SubResource("RectangleShape2D_ppbiy")
-
-[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("9_c6rld")]
-position = Vector2(2236, -1667)
 
 [node name="LevelGeo" type="Node2D" parent="." unique_id=1901881762]
 visible = false
@@ -346,3 +342,4 @@ position = Vector2(3200, -2816)
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider2"]
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider3"]
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider4"]
+[editable path="Npc"]
