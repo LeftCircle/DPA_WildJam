@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://da5bg7t4rj2pj" path="res://scenes/characters/ui/hud.gd" id="1_8ocu7"]
 [ext_resource type="PackedScene" uid="uid://bxvym8fm7bn21" path="res://scenes/characters/ui/feather_ui_item.tscn" id="2_wn535"]
+[ext_resource type="Script" uid="uid://cqbycqfb1o36t" path="res://scenes/characters/ui/fullscreen.gd" id="3_0guy0"]
 
 [node name="HUD" type="CanvasLayer" unique_id=510809081]
 script = ExtResource("1_8ocu7")
@@ -15,3 +16,23 @@ scale = Vector2(0.25, 0.25)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1150478435]
 layout_mode = 2
+
+[node name="Control" type="Control" parent="." unique_id=442011581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fullscreen" type="Button" parent="Control" unique_id=1395602203]
+layout_mode = 0
+offset_left = 1821.0
+offset_top = 1040.0
+offset_right = 1906.0
+offset_bottom = 1071.0
+text = "fullscreen
+"
+script = ExtResource("3_0guy0")
+
+[connection signal="pressed" from="Control/fullscreen" to="." method="_on_fullscreen_pressed"]
