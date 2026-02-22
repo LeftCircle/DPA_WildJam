@@ -10,7 +10,7 @@ var player_starting_state : PlayerStartingState = PlayerStartingState.new()
 @onready var level_music : AudioStreamPlayer = $LevelMusic
 
 func _ready():
-	player_starting_state.current_feathers = 2
+	player_starting_state.current_feathers = 0
 	level_music.bus = "Music"
 	level_music.play()
 	
@@ -22,7 +22,7 @@ func remove_npc(name : String) -> void:
 	pass
 
 func _on_level_exit():
-	player_starting_state.current_feathers = player.feather_counter
+	player_starting_state.current_feathers = player.acquired_feathers
 	#get_tree().change_scene_to_packed(current_level.next_level)
 	get_tree().call_deferred("change_scene_to_packed", current_level.next_level)
 	player_starting_state.npcs_saved = player.npcs_saved
