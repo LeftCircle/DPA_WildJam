@@ -12,7 +12,8 @@ class_name Level
 
 func _ready():
 	LevelDriver.current_level = self
-	exit_area.exit_level.connect(LevelDriver._on_level_exit)
+	if is_instance_valid(exit_area):
+		exit_area.exit_level.connect(LevelDriver._on_level_exit)
 	set_camera_limits(llc.global_position, urc.global_position)
 
 
