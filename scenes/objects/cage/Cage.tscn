@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drtmt1mktrlyl"]
 
 [ext_resource type="Script" uid="uid://blrycgrsihn4h" path="res://scenes/objects/cage/cage.gd" id="1_qfch2"]
-[ext_resource type="Texture2D" uid="uid://c7d5vgir4rgmf" path="res://assets/environment/general/cage.png" id="2_8wkho"]
+[ext_resource type="Texture2D" uid="uid://soc75qc5mtjg" path="res://assets/environment/general/cageNoChain.png" id="2_8wkho"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="3_a4msc"]
 [ext_resource type="Script" uid="uid://lf5iarb5wneo" path="res://scenes/objects/cage/dash_collision_enabler.gd" id="4_qfch2"]
 [ext_resource type="Script" uid="uid://bwduccylw6pjw" path="res://scenes/objects/components/move_to_positions_on_hit.gd" id="5_8wkho"]
@@ -30,7 +30,7 @@ position = Vector2(4, 121)
 
 [node name="CageSprite" type="Sprite2D" parent="Node2D" unique_id=348515842]
 z_index = 1
-position = Vector2(-4, -289)
+position = Vector2(-5, -80)
 scale = Vector2(0.20500058, 0.20500058)
 texture = ExtResource("2_8wkho")
 

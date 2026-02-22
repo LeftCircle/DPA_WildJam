@@ -9,6 +9,7 @@ class_name ThrowState
 @export var projectile_container : Node
 @export_range(0.0, 1.0, 0.01) var hang_speed_mod : float = 0.25
 @export var throw_impulse : float = 850
+@export var anim_tree : PlayerAnimationTree
 
 var projectile : ThrownFeather
 var float_velocity : Vector2
@@ -31,6 +32,7 @@ func _update(delta : float) -> void:
 		projectile.apply_central_impulse(impulse_force * _throw_dir)
 		dispatch("throw_to_ground")
 		_bounce_on_throw()
+		anim_tree.start_anim("Throw")
 
 func _float() -> void:
 	character.velocity = float_velocity
