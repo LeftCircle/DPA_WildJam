@@ -25,7 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://c3ansguf6th5d" path="res://scenes/characters/players/feather_resetter.tscn" id="23_0tlt7"]
 [ext_resource type="Texture2D" uid="uid://buqgu5ssjyva5" path="res://assets/characters/player/MCSpriteSheetThrowSide.png" id="24_mt0yb"]
 [ext_resource type="AudioStream" uid="uid://2i8e3m23djwb" path="res://audio/sfx/jump_randomizer.tres" id="24_y28c2"]
-[ext_resource type="Script" uid="uid://bu0m3hx2a4xrk" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
+[ext_resource type="Script" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
+[ext_resource type="PackedScene" uid="uid://e0q6ej4cqhvc" path="res://scenes/characters/interactions/PlayerInteract.tscn" id="27_ewdww"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
 light_mode = 1
@@ -733,7 +734,7 @@ _data = {
 &"WalkRight": SubResource("Animation_kgru6")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y28c2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mw0e"]
 size = Vector2(96, 104)
 
 [node name="Character" type="CharacterBody2D" unique_id=608707863]
@@ -894,22 +895,17 @@ position = Vector2(0, -50)
 texture = ExtResource("24_mt0yb")
 hframes = 5
 
-[node name="PlayerInteract" type="Area2D" parent="." unique_id=2084492722]
-collision_layer = 256
-collision_mask = 256
-metadata/_custom_type_script = "uid://bnnpphxe1vvln"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteract" unique_id=1359402889]
-position = Vector2(0, -52)
-shape = SubResource("RectangleShape2D_y28c2")
-
-[node name="FeatherResetter" parent="." unique_id=863521036 node_paths=PackedStringArray("player") instance=ExtResource("24_y28c2")]
-player = NodePath("..")
+[node name="FeatherResetter" parent="." unique_id=863521036 instance=ExtResource("23_0tlt7")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1304099039]
 stream = ExtResource("24_y28c2")
 script = ExtResource("25_msr6y")
 
-[connection signal="feather_used" from="." to="FeatherResetter" method="_on_character_feather_used"]
+[node name="PlayerInteract" parent="." unique_id=1225313529 instance=ExtResource("27_ewdww")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteract" unique_id=248721896]
+position = Vector2(0, -52)
+shape = SubResource("RectangleShape2D_0mw0e")
+
 [connection signal="play_sound" from="SM_Character/JumpState" to="AudioStreamPlayer2D" method="_on_jump_state_play_sound"]
 [connection signal="animation_finished" from="AnimationPlayer" to="SM_Character/DashState" method="_on_animation_player_animation_finished"]

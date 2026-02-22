@@ -29,6 +29,7 @@ size = Vector2(260.5, 217)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1yl6"]
 size = Vector2(82.677246, 23.077238)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_km0xc"]
 polygon = PackedVector2Array(132, 147, 137, -2422, 2814, -2416, 2814, -1913, 3196, -1906, 3198, -1784, 2691, -1792, 2693, -2302, 257, -2299, 263, -1277, 764, -1271, 764, -1150, 253, -1140, 263, -252, 511, -248, 507, -28, 1926, -12, 1924, -111, 2167, -113, 2169, 18, 2691, 16, 2695, -117, 3456, -106, 3451, 126)
 
@@ -230,7 +231,7 @@ occluder = SubResource("OccluderPolygon2D_m2jhg")
 [node name="Lights" type="Node2D" parent="Environemnt" unique_id=710798192]
 visible = false
 
-[editable path="Interactables/FirstDoor/LockedDoor"]
+[editable path="Npc"]
 [editable path="Interactables/Chandelier/Chandelier"]
 [editable path="Interactables/Cage"]
 [editable path="Interactables/Cage/Node2D/CollisionBorders/DashCollider"]
