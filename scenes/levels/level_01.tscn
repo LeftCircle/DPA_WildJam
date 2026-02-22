@@ -238,7 +238,7 @@ scale = Vector2(0.215, 0.215)
 target = NodePath("../HitTarget2")
 chain_length = 256.0
 
-[node name="StaticBody2D" parent="Interactables/Chandelier2" index="1" unique_id=1376589567]
+[node name="StaticBody2D" parent="Interactables/Chandelier2" index="0" unique_id=1376589567]
 position = Vector2(0, -236.53)
 
 [node name="Base" parent="Interactables/Chandelier2/StaticBody2D/CollisionShape2D" parent_id_path=PackedInt32Array(1656317491, 1388294678) index="0" unique_id=1895817165]
@@ -267,7 +267,7 @@ scale = Vector2(0.215, 0.215)
 target = NodePath("../HitTarget")
 chain_length = 256.0
 
-[node name="StaticBody2D" parent="Interactables/Chandelier3" index="1" unique_id=1376589567]
+[node name="StaticBody2D" parent="Interactables/Chandelier3" index="0" unique_id=1376589567]
 position = Vector2(0, -236.53)
 
 [node name="Base" parent="Interactables/Chandelier3/StaticBody2D/CollisionShape2D" parent_id_path=PackedInt32Array(2022063999, 1388294678) index="0" unique_id=1895817165]

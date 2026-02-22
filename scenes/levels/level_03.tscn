@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="8_jgt0v"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="9_8w8tq"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="9_hvqp8"]
+[ext_resource type="PackedScene" uid="uid://lfnekpog5n6n" path="res://scenes/VFX/lights/glowing_water.tscn" id="9_s4yq3"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="10_foqc1"]
 [ext_resource type="Script" uid="uid://c5lxyowwkw8t6" path="res://scenes/objects/sinking_pillar/sinking_pillar.gd" id="11_iaq7h"]
 [ext_resource type="Script" uid="uid://byxa0rv3p7sg6" path="res://scenes/objects/locked_door/locked_door.gd" id="12_iaubp"]
@@ -27,6 +28,42 @@
 [ext_resource type="Texture2D" uid="uid://c6qwn1bwbe0ln" path="res://assets/environment/level_03/Level_3_column6.png" id="22_dn1io"]
 [ext_resource type="Texture2D" uid="uid://b4fi2p7yftlls" path="res://assets/environment/level_03/Level_3_column7.png" id="23_jeigf"]
 [ext_resource type="Texture2D" uid="uid://b2nixutnk7xla" path="res://assets/environment/general/woodenDoor.png" id="25_jeigf"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iaubp"]
+polygon = PackedVector2Array(7, -390, 761, -392, 762, 194, 0, 169)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xunku"]
+polygon = PackedVector2Array(1027, -388, 1178, -384, 1280, -473, 1266, 452, 935, 455, 1053, -105, 1022, -106)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j33in"]
+polygon = PackedVector2Array(-382, -406, 42, -387, 47, -635, 512, -624, 376, -764, 247, -766, 248, -1528, 35, -1527, 37, -1668, -371, -1650)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7oqvy"]
+polygon = PackedVector2Array(10, -1665, 638, -1662, 768, -1662, 645, -1788, -2, -1788)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ghs8o"]
+polygon = PackedVector2Array(873, -1283, 988, -1287, 1001, -2057, 1020, -2060, 1024, -1279, 1022, -644, 645, -634, 647, -1023)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1uqhn"]
+polygon = PackedVector2Array(755, -2179, 1028, -2174, 1025, -2060, -458, -2055, -469, -3007, 7053, -3017, 7066, 461, 5569, 461, 5603, -1279, 6367, -1274, 6367, -2173, 5884, -2179, 5884, -2209, 6369, -2216, 6370, -2427, 5106, -2432, 5111, -2301, 5055, -2291, 5049, -801, 4684, -805, 4675, -2289, 4607, -2292, 4603, -2430, 3080, -2433, 3080, -2378, 2677, -2377, 2674, -2431, 2179, -2426, 2177, -2288, 1789, -2235, 1787, -2431, 756, -2432)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s4yq3"]
+polygon = PackedVector2Array(1797, -1145, 1993, -1334, 2155, -1327, 2166, -775, 1802, -769)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_01jms"]
+polygon = PackedVector2Array(1786, -518, 2180, -518, 2180, 140, 1770, 127)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2v2jw"]
+polygon = PackedVector2Array(2696, -288, 3059, -288, 3084, 170, 2654, 190)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_py8xv"]
+polygon = PackedVector2Array(2701, -1651, 2911, -1845, 3059, -1851, 3070, -513, 2698, -508)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j1cpe"]
+polygon = PackedVector2Array(3796, -1144, 3956, -1200, 4025, -1090, 4033, 87, 3572, 57, 3580, -405, 3769, -627, 3724, -802)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d10hc"]
+polygon = PackedVector2Array(4659, -580, 5075, -579, 5102, 165, 4628, 148)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4tf"]
 size = Vector2(5824, 182)
@@ -75,24 +112,6 @@ size = Vector2(895.30664, 1518.7086)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tipwo"]
 size = Vector2(82.67728, 46.154488)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iaubp"]
-polygon = PackedVector2Array(10, -369, 766, -373, 762, -4, -5, 1)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xunku"]
-polygon = PackedVector2Array(1034, -369, 1159, -376, 1278, -502, 1277, -8, 1024, 0)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j33in"]
-polygon = PackedVector2Array(6, -635, 515, -642, 390, -764, 253, -768, 253, -1527, 3, -1527)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7oqvy"]
-polygon = PackedVector2Array(10, -1665, 638, -1662, 768, -1662, 645, -1788, -2, -1788)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ghs8o"]
-polygon = PackedVector2Array(903, -1271, 1030, -1270, 1022, -644, 645, -634, 647, -1023)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1uqhn"]
-polygon = PackedVector2Array(765, -2166, 1019, -2170, 1025, -2060, -1, -2045, 0, -2560, 6513, -2538, 6519, -1142, 5887, -1145, 5890, -2, 5766, 2, 5763, -1277, 6402, -1269, 6404, -2167, 5955, -2165, 5954, -2232, 6406, -2232, 6406, -2434, 5115, -2431, 5111, -2301, 4614, -2303, 4609, -2429, 3071, -2429, 3073, -2308, 2691, -2303, 2688, -2431, 2179, -2426, 2177, -2300, 1787, -2296, 1787, -2431, 767, -2427)
 
 [node name="Level03" type="Node2D" unique_id=912881943 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_lcxk4")
@@ -156,6 +175,64 @@ z_index = 1
 position = Vector2(3296, -1280)
 texture = ExtResource("4_7oqvy")
 metadata/_edit_lock_ = true
+
+[node name="Occluders" type="Node2D" parent="Environment" unique_id=613116769]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Occluders" unique_id=349956349]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_iaubp")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environment/Occluders" unique_id=847100779]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_xunku")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1831575635]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_j33in")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Environment/Occluders" unique_id=254087766]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_7oqvy")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Environment/Occluders" unique_id=696457797]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_ghs8o")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Environment/Occluders" unique_id=680457320]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_1uqhn")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="Environment/Occluders" unique_id=870448092]
+occluder = SubResource("OccluderPolygon2D_s4yq3")
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Environment/Occluders" unique_id=610151393]
+occluder = SubResource("OccluderPolygon2D_01jms")
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Environment/Occluders" unique_id=85030123]
+occluder = SubResource("OccluderPolygon2D_2v2jw")
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1049694482]
+occluder = SubResource("OccluderPolygon2D_py8xv")
+
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1760941990]
+occluder = SubResource("OccluderPolygon2D_j1cpe")
+
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1306173370]
+occluder = SubResource("OccluderPolygon2D_d10hc")
+
+[node name="Lights" type="Node2D" parent="Environment" unique_id=1264299050]
+
+[node name="glowing_water" parent="Environment/Lights" unique_id=1171283211 instance=ExtResource("9_s4yq3")]
+position = Vector2(896, 10.000003)
+scale = Vector2(2.3799746, 1.7932518)
+
+[node name="glowing_water2" parent="Environment/Lights" unique_id=756848039 instance=ExtResource("9_s4yq3")]
+position = Vector2(3445, 181.00002)
+rotation = -3.1415925
+scale = Vector2(34.281803, 4.4878387)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=1440775786]
+color = Color(0.7267314, 0.726732, 0.7267316, 1)
 
 [node name="DeathZones" type="Node" parent="." unique_id=1892727996]
 
@@ -222,6 +299,9 @@ position = Vector2(95.98086, 15.407646)
 [node name="Flame4" parent="Interactables/Chandeliers/Chandelier/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
 position = Vector2(240.66562, 11.333267)
 
+[node name="chandelier_light" parent="Interactables/Chandeliers/Chandelier/StaticBody2D" parent_id_path=PackedInt32Array(2022063999, 1376589567) index="1" unique_id=1680736457]
+color = Color(0.8870373, 0.8995872, 0.6837872, 1)
+
 [node name="HitTarget" parent="Interactables/Chandeliers" unique_id=562628805 instance=ExtResource("10_foqc1")]
 position = Vector2(384, -1664)
 
@@ -247,6 +327,9 @@ position = Vector2(95.98086, 15.407646)
 
 [node name="Flame4" parent="Interactables/Chandeliers/Chandelier2/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
 position = Vector2(240.66562, 11.333267)
+
+[node name="chandelier_light" parent="Interactables/Chandeliers/Chandelier2/StaticBody2D" parent_id_path=PackedInt32Array(1032838932, 1376589567) index="1" unique_id=1680736457]
+color = Color(0.8870373, 0.8995872, 0.6837872, 1)
 
 [node name="HitTarget2" parent="Interactables/Chandeliers" unique_id=1413708491 instance=ExtResource("10_foqc1")]
 position = Vector2(1536, -2432)
@@ -274,6 +357,9 @@ position = Vector2(95.98086, 15.407646)
 [node name="Flame4" parent="Interactables/Chandeliers/Chandelier3/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
 position = Vector2(240.66562, 11.333267)
 
+[node name="chandelier_light" parent="Interactables/Chandeliers/Chandelier3/StaticBody2D" parent_id_path=PackedInt32Array(1943394069, 1376589567) index="1" unique_id=1680736457]
+color = Color(0.8862745, 0.8980392, 0.68235296, 1)
+
 [node name="HitTarget3" parent="Interactables/Chandeliers" unique_id=469462573 instance=ExtResource("10_foqc1")]
 position = Vector2(2432, -2432)
 
@@ -299,6 +385,9 @@ position = Vector2(95.98086, 15.407646)
 
 [node name="Flame4" parent="Interactables/Chandeliers/Chandelier4/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
 position = Vector2(240.66562, 11.333267)
+
+[node name="chandelier_light" parent="Interactables/Chandeliers/Chandelier4/StaticBody2D" parent_id_path=PackedInt32Array(92077135, 1376589567) index="1" unique_id=1680736457]
+color = Color(0.8870373, 0.8995872, 0.6837872, 1)
 
 [node name="HitTarget4" parent="Interactables/Chandeliers" unique_id=1093266042 instance=ExtResource("10_foqc1")]
 position = Vector2(3392, -2432)
@@ -326,6 +415,9 @@ position = Vector2(95.98086, 15.407646)
 [node name="Flame4" parent="Interactables/Chandeliers/Chandelier5/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
 position = Vector2(240.66562, 11.333267)
 
+[node name="chandelier_light" parent="Interactables/Chandeliers/Chandelier5/StaticBody2D" parent_id_path=PackedInt32Array(1102720399, 1376589567) index="1" unique_id=1680736457]
+color = Color(0.8870373, 0.8995872, 0.6837872, 1)
+
 [node name="HitTarget5" parent="Interactables/Chandeliers" unique_id=1221011572 instance=ExtResource("10_foqc1")]
 position = Vector2(4288, -2432)
 
@@ -351,6 +443,9 @@ position = Vector2(95.98086, 15.407646)
 
 [node name="Flame4" parent="Interactables/Chandeliers/Chandelier6/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
 position = Vector2(240.66562, 11.333267)
+
+[node name="chandelier_light" parent="Interactables/Chandeliers/Chandelier6/StaticBody2D" parent_id_path=PackedInt32Array(1810407589, 1376589567) index="1" unique_id=1680736457]
+color = Color(0.8870373, 0.8995872, 0.6837872, 1)
 
 [node name="HitTarget6" parent="Interactables/Chandeliers" unique_id=1970837978 instance=ExtResource("10_foqc1")]
 position = Vector2(5568, -2432)
@@ -597,35 +692,6 @@ position = Vector2(896, -2304)
 
 [node name="FeatherPickup2" parent="Feathers" unique_id=569059541 instance=ExtResource("9_hvqp8")]
 position = Vector2(6176, -1344)
-
-[node name="Environemnt" type="Node2D" parent="." unique_id=903700090]
-
-[node name="Occluders" type="Node2D" parent="Environemnt" unique_id=613116769]
-visible = false
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=349956349]
-occluder = SubResource("OccluderPolygon2D_iaubp")
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=847100779]
-occluder = SubResource("OccluderPolygon2D_xunku")
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1831575635]
-occluder = SubResource("OccluderPolygon2D_j33in")
-
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=254087766]
-occluder = SubResource("OccluderPolygon2D_7oqvy")
-
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=696457797]
-occluder = SubResource("OccluderPolygon2D_ghs8o")
-
-[node name="LightOccluder2D6" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=680457320]
-occluder = SubResource("OccluderPolygon2D_1uqhn")
-
-[node name="Lights" type="Node2D" parent="Environemnt" unique_id=1264299050]
-visible = false
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Environemnt" unique_id=1440775786]
-visible = false
 
 [editable path="Interactables/Chandeliers/Chandelier"]
 [editable path="Interactables/Chandeliers/Chandelier2"]
