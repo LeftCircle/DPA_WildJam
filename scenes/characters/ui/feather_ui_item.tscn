@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bxvym8fm7bn21"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ugi1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i2oe6"]
+load_path = "res://.godot/imported/goodFeather.png-64c757511eb57452881a1e04bd8a652b.ctex"
+
+[node name="FeatherUiItem" type="PanelContainer" unique_id=1721849648]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7ugi1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1134869201]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_i2oe6")
