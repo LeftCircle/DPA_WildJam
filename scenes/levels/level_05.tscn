@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="12_tavyg"]
 [ext_resource type="SpriteFrames" uid="uid://d3hweglls4wcu" path="res://resources/objects/crumble_frames.tres" id="13_kkx70"]
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="13_tavyg"]
+[ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="17_de7pb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ot78m"]
 polygon = PackedVector2Array(-339, 1326, -213, 1326, -207, 1360, -334, 1359)
@@ -323,6 +324,11 @@ position = Vector2(2728, -2320)
 [node name="CollisionShape2D" parent="Interactables/DashCollider" index="0" unique_id=2039415823]
 position = Vector2(12, -6)
 shape = SubResource("RectangleShape2D_f3k6o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/DashCollider" unique_id=1689609190]
+position = Vector2(75, -9.000002)
+scale = Vector2(0.345, 0.395)
+texture = ExtResource("17_de7pb")
 
 [node name="Cages" type="Node" parent="Interactables" unique_id=1094633682]
 

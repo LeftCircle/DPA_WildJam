@@ -7,17 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_j2blp"]
 [ext_resource type="Texture2D" uid="uid://d2fhva8l4nhle" path="res://assets/environment/level_06/Level_6_sky.png" id="4_yc2un"]
 [ext_resource type="Texture2D" uid="uid://cibbkxghbltjs" path="res://assets/environment/level_06/Level_6_matte.png" id="5_s7m4s"]
-[ext_resource type="Texture2D" uid="uid://b00pdyxw2go2y" path="res://assets/environment/level_06/Level_6_Geo.png" id="6_6h3uw"]
 [ext_resource type="Texture2D" uid="uid://cnbb4kv1dr1q0" path="res://assets/environment/level_06/Level_6_RootsThorns.png" id="7_17n5y"]
+[ext_resource type="Texture2D" uid="uid://fu6587nltyln" path="res://assets/environment/level_06/Level_6_staticGeo.png" id="8_1dtt1"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="8_s7m4s"]
 [ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/window_light.tscn" id="10_tg547"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="12_6vksy"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="13_sppnv"]
 [ext_resource type="Script" uid="uid://eg5uygnpo1ct" path="res://scenes/objects/dash_collider/dash_collider.gd" id="14_cdd1g"]
+[ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="15_1dtt1"]
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="15_ejjlu"]
 [ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="16_ejjlu"]
 [ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="16_lesd3"]
-[ext_resource type="Script" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
+[ext_resource type="Script" uid="uid://outuy70de4aj" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="17_gbsts"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="18_3d6ih"]
 [ext_resource type="Script" uid="uid://t0jo0yf4akm7" path="res://scenes/objects/hit_target/hit_target.gd" id="18_c7h1x"]
@@ -110,7 +111,7 @@ tile_set = ExtResource("1_xbig6")
 [node name="HalfGridCollisions" type="TileMapLayer" parent="." unique_id=1067852637]
 modulate = Color(1, 1, 1, 0.18039216)
 z_index = -5
-tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAJAPf/AAAAAAAAAAAKAPf/AAAAAAAAAAAKAPL/AAAAAAAAAAAJAPL/AAAAAAAAAAAIAPL/AAAAAAAAAAAHAPL/AAAAAAAAAAAGAPL/AAAAAAAAAAACAOz/AAAAAAAAAAADAOz/AAAAAAAAAAAEAOz/AAAAAAAAAAAFAOz/AAAAAAAAAAAIAOT/AAAAAAAAAAAJAOT/AAAAAAAAAAAKAOT/AAAAAAAAAAALAOT/AAAAAAAAAAAMAOT/AAAAAAAAAAANAOT/AAAAAAAAAAAOAOT/AAAAAAAAAAAPAOT/AAAAAAAAAAAPAOz/AAAAAAAAAAAOAOz/AAAAAAAAAAASAOb/AAAAAAAAAAASAOf/AAAAAAAAAAASAOj/AAAAAAAAAAASAOn/AAAAAAAAAAASAOr/AAAAAAAAAAASAOv/AAAAAAAAAAASAOz/AAAAAAAAAAASAO3/AAAAAAAAAAASAO7/AAAAAAAAAAASAO//AAAAAAAAAAASAPL/AAAAAAAAAAASAPP/AAAAAAAAAAASAPT/AAAAAAAAAAASAPX/AAAAAAAAAAASAPb/AAAAAAAAAAASAPf/AAAAAAAAAAASAPj/AAAAAAAAAAASAPn/AAAAAAAAAAASAPr/AAAAAAAAAAASAPv/AAAAAAAAAAASAPz/AAAAAAAAAAASAP3/AAAAAAAAAAASAP7/AAAAAAAAAAASAP//AAAAAAAAAAARANv/AAAAAAAAAAAQANv/AAAAAAAAAAANANv/AAAAAAAAAAAMANv/AAAAAAAAAAALANv/AAAAAAAAAAAKANv/AAAAAAAAAAAJANv/AAAAAAAAAAAIANv/AAAAAAAAAAAHANv/AAAAAAAAAAAGANv/AAAAAAAAAAAFANv/AAAAAAAAAAAEANv/AAAAAAAAAAADANv/AAAAAAAAAAACANv/AAAAAAAAAAARAM7/AAAAAAAAAAAQAM7/AAAAAAAAAAAPAM7/AAAAAAAAAAAOAM7/AAAAAAAAAAANAM7/AAAAAAAAAAAMAM7/AAAAAAAAAAALAM7/AAAAAAAAAAAKAM7/AAAAAAAAAAAJAM7/AAAAAAAAAAAIAM7/AAAAAAAAAAAHAM7/AAAAAAAAAAAGAM7/AAAAAAAAAAAFAM7/AAAAAAAAAAAEAM7/AAAAAAAAAAAWAMj/AAAAAAAAAAAXAMj/AAAAAAAAAAAYAMj/AAAAAAAAAAAZAMj/AAAAAAAAAAACALj/AAAAAAAAAAADALj/AAAAAAAAAAAEALj/AAAAAAAAAAAFALj/AAAAAAAAAAAQALD/AAAAAAAAAAARALD/AAAAAAAAAAASALD/AAAAAAAAAAATALD/AAAAAAAAAAAgAKz/AAAAAAAAAAAhAKz/AAAAAAAAAAAiAKz/AAAAAAAAAAAjAKz/AAAAAAAAAAAgAKD/AAAAAAAAAAAfAKD/AAAAAAAAAAAhAKD/AAAAAAAAAAAeAKD/AAAAAAAAAAAeAKH/AAAAAAAAAAAeAKL/AAAAAAAAAAAdAKL/AAAAAAAAAAAcAKL/AAAAAAAAAAAbAKL/AAAAAAAAAAAaAKL/AAAAAAAAAAAaAKP/AAAAAAAAAAAaAKT/AAAAAAAAAAAXAKL/AAAAAAAAAAAWAKL/AAAAAAAAAAAVAKL/AAAAAAAAAAAUAKL/AAAAAAAAAAAQAJT/AAAAAAAAAAARAJT/AAAAAAAAAAASAJT/AAAAAAAAAAATAJT/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAJAPf/AAAAAAAAAAAKAPf/AAAAAAAAAAAKAPL/AAAAAAAAAAAJAPL/AAAAAAAAAAAIAPL/AAAAAAAAAAAHAPL/AAAAAAAAAAAGAPL/AAAAAAAAAAACAOz/AAAAAAAAAAADAOz/AAAAAAAAAAAEAOz/AAAAAAAAAAAFAOz/AAAAAAAAAAAIAOT/AAAAAAAAAAAJAOT/AAAAAAAAAAAKAOT/AAAAAAAAAAALAOT/AAAAAAAAAAAMAOT/AAAAAAAAAAANAOT/AAAAAAAAAAAOAOT/AAAAAAAAAAAPAOT/AAAAAAAAAAAPAOz/AAAAAAAAAAAOAOz/AAAAAAAAAAASAOb/AAAAAAAAAAASAOf/AAAAAAAAAAASAOj/AAAAAAAAAAASAOn/AAAAAAAAAAASAOr/AAAAAAAAAAASAOv/AAAAAAAAAAASAOz/AAAAAAAAAAASAO3/AAAAAAAAAAASAO7/AAAAAAAAAAASAO//AAAAAAAAAAASAPL/AAAAAAAAAAASAPP/AAAAAAAAAAASAPT/AAAAAAAAAAASAPX/AAAAAAAAAAASAPb/AAAAAAAAAAASAPf/AAAAAAAAAAASAPj/AAAAAAAAAAASAPn/AAAAAAAAAAASAPr/AAAAAAAAAAASAPv/AAAAAAAAAAASAPz/AAAAAAAAAAASAP3/AAAAAAAAAAASAP7/AAAAAAAAAAASAP//AAAAAAAAAAARANv/AAAAAAAAAAAQANv/AAAAAAAAAAANANv/AAAAAAAAAAAMANv/AAAAAAAAAAALANv/AAAAAAAAAAAKANv/AAAAAAAAAAAJANv/AAAAAAAAAAAIANv/AAAAAAAAAAAHANv/AAAAAAAAAAAGANv/AAAAAAAAAAAFANv/AAAAAAAAAAAEANv/AAAAAAAAAAADANv/AAAAAAAAAAACANv/AAAAAAAAAAARAM7/AAAAAAAAAAAQAM7/AAAAAAAAAAAPAM7/AAAAAAAAAAAOAM7/AAAAAAAAAAANAM7/AAAAAAAAAAAMAM7/AAAAAAAAAAALAM7/AAAAAAAAAAAKAM7/AAAAAAAAAAAJAM7/AAAAAAAAAAAIAM7/AAAAAAAAAAAHAM7/AAAAAAAAAAAGAM7/AAAAAAAAAAAFAM7/AAAAAAAAAAAEAM7/AAAAAAAAAAAWAMj/AAAAAAAAAAAXAMj/AAAAAAAAAAAYAMj/AAAAAAAAAAAZAMj/AAAAAAAAAAACALj/AAAAAAAAAAADALj/AAAAAAAAAAAEALj/AAAAAAAAAAAFALj/AAAAAAAAAAAQALD/AAAAAAAAAAARALD/AAAAAAAAAAASALD/AAAAAAAAAAATALD/AAAAAAAAAAAgAKz/AAAAAAAAAAAhAKz/AAAAAAAAAAAiAKz/AAAAAAAAAAAjAKz/AAAAAAAAAAAgAKD/AAAAAAAAAAAfAKD/AAAAAAAAAAAhAKD/AAAAAAAAAAAeAKD/AAAAAAAAAAAeAKH/AAAAAAAAAAAeAKL/AAAAAAAAAAAdAKL/AAAAAAAAAAAcAKL/AAAAAAAAAAAbAKL/AAAAAAAAAAAaAKL/AAAAAAAAAAAaAKP/AAAAAAAAAAAaAKT/AAAAAAAAAAAXAKL/AAAAAAAAAAAWAKL/AAAAAAAAAAAVAKL/AAAAAAAAAAAUAKL/AAAAAAAAAAAQAJT/AAAAAAAAAAARAJT/AAAAAAAAAAASAJT/AAAAAAAAAAATAJT/AAAAAAAAAAAcAPL/AAAAAAAAAAAdAPL/AAAAAAAAAAAeAPL/AAAAAAAAAAAfAPL/AAAAAAAAAAAgAPL/AAAAAAAAAAA=")
 tile_set = ExtResource("2_7k7rs")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_j2blp")]
@@ -134,7 +135,7 @@ metadata/_edit_lock_ = true
 [node name="geo" type="Sprite2D" parent="Environment" unique_id=1818152900]
 z_index = -2
 position = Vector2(1517, -3662)
-texture = ExtResource("6_6h3uw")
+texture = ExtResource("8_1dtt1")
 metadata/_edit_lock_ = true
 
 [node name="Vines" type="Sprite2D" parent="Environment" unique_id=525881405]
@@ -293,6 +294,16 @@ script = ExtResource("14_cdd1g")
 position = Vector2(19.5, -6)
 shape = SubResource("RectangleShape2D_ejjlu")
 
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/DashGate/DashCollider" unique_id=934738965]
+position = Vector2(16.548637, 1.1864011)
+scale = Vector2(-0.18397449, 0.34473225)
+texture = ExtResource("15_1dtt1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interactables/DashGate/DashCollider" unique_id=2043139215]
+position = Vector2(16.548637, 1.1864011)
+scale = Vector2(0.18397449, 0.34473225)
+texture = ExtResource("15_1dtt1")
+
 [node name="DashCollider2" type="StaticBody2D" parent="Interactables/DashGate" unique_id=2046674521]
 position = Vector2(1189, -967)
 script = ExtResource("14_cdd1g")
@@ -300,6 +311,16 @@ script = ExtResource("14_cdd1g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/DashGate/DashCollider2" unique_id=418552077]
 position = Vector2(19.5, -2)
 shape = SubResource("RectangleShape2D_gbsts")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/DashGate/DashCollider2" unique_id=949657545]
+position = Vector2(19.404556, -1.5402837)
+scale = Vector2(-0.1401375, 0.20476773)
+texture = ExtResource("15_1dtt1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interactables/DashGate/DashCollider2" unique_id=1100655931]
+position = Vector2(19.404556, -1.5402837)
+scale = Vector2(0.1401375, 0.20476773)
+texture = ExtResource("15_1dtt1")
 
 [node name="MovingPlatforms" type="Node" parent="Interactables" unique_id=1304368286]
 
