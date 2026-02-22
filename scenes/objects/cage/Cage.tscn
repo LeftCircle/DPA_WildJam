@@ -37,40 +37,48 @@ texture = ExtResource("2_8wkho")
 [node name="CollisionBorders" type="Node2D" parent="Node2D" unique_id=1783952756]
 
 [node name="DashCollider" parent="Node2D/CollisionBorders" unique_id=1292891066 instance=ExtResource("3_a4msc")]
-position = Vector2(26, 3)
 collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Node2D/CollisionBorders/DashCollider" index="0" unique_id=2039415823]
-position = Vector2(27, -59)
+position = Vector2(-70, -57)
 shape = SubResource("RectangleShape2D_qfch2")
 
 [node name="DashCollider2" parent="Node2D/CollisionBorders" unique_id=8876226 instance=ExtResource("3_a4msc")]
-position = Vector2(-144, 5)
 collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Node2D/CollisionBorders/DashCollider2" index="0" unique_id=2039415823]
-position = Vector2(80, -61)
+position = Vector2(61, -61)
 shape = SubResource("RectangleShape2D_m3uxa")
 
 [node name="DashCollider3" parent="Node2D/CollisionBorders" unique_id=1285032291 instance=ExtResource("3_a4msc")]
-position = Vector2(-114, 3)
 collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Node2D/CollisionBorders/DashCollider3" index="0" unique_id=2039415823]
-position = Vector2(108, -3)
+position = Vector2(-2, -3)
 shape = SubResource("RectangleShape2D_8wkho")
 
 [node name="DashCollider4" parent="Node2D/CollisionBorders" unique_id=214932986 instance=ExtResource("3_a4msc")]
-position = Vector2(-113, -161)
 collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Node2D/CollisionBorders/DashCollider4" index="0" unique_id=2039415823]
-position = Vector2(107, 41)
+position = Vector2(-6, -121)
 shape = SubResource("RectangleShape2D_5jln6")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D/CollisionBorders" unique_id=981224597]
+remote_path = NodePath("../DashCollider")
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Node2D/CollisionBorders" unique_id=1658935997]
+remote_path = NodePath("../DashCollider2")
+
+[node name="RemoteTransform2D3" type="RemoteTransform2D" parent="Node2D/CollisionBorders" unique_id=1718341469]
+remote_path = NodePath("../DashCollider3")
+
+[node name="RemoteTransform2D4" type="RemoteTransform2D" parent="Node2D/CollisionBorders" unique_id=1171021489]
+remote_path = NodePath("../DashCollider4")
 
 [node name="DashCollisionEnabler" type="Area2D" parent="Node2D" unique_id=2017984844]
 collision_mask = 2

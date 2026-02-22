@@ -17,11 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="15_1dtt1"]
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="15_ejjlu"]
 [ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="16_ejjlu"]
-[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="16_lesd3"]
 [ext_resource type="Script" uid="uid://outuy70de4aj" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="17_gbsts"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="18_3d6ih"]
 [ext_resource type="Script" uid="uid://t0jo0yf4akm7" path="res://scenes/objects/hit_target/hit_target.gd" id="18_c7h1x"]
+[ext_resource type="Texture2D" uid="uid://v5h3e3acvgb" path="res://assets/environment/general/crate2.png" id="20_g78o7"]
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="22_64yx1"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="23_c7h1x"]
 
@@ -171,7 +171,7 @@ shadow_filter_smooth = 25.0
 offset = Vector2(-627.1792, -1.1088867)
 
 [node name="level5_window_light4" parent="Environment/Lights" unique_id=562540595 instance=ExtResource("10_tg547")]
-position = Vector2(51.33374, -6995.2207)
+position = Vector2(143.99976, -6960)
 rotation = -2.1648774
 scale = Vector2(2.9089122, 10.677901)
 energy = 0.57
@@ -273,20 +273,23 @@ position = Vector2(256, -6848)
 
 [node name="LockedHatch" parent="Interactables/Hatches" unique_id=1802310663 instance=ExtResource("13_sppnv")]
 position = Vector2(489, -529)
-rotation_amount = 90.0
+rotation_amount = -90.0
 
 [node name="LockedHatch2" parent="Interactables/Hatches" unique_id=8719398 instance=ExtResource("13_sppnv")]
 position = Vector2(987, -2249)
+rotation_amount = -90.0
 
 [node name="LockedHatch3" parent="Interactables/Hatches" unique_id=1473274005 instance=ExtResource("13_sppnv")]
 position = Vector2(238, -3160)
+rotation_amount = -90.0
 
 [node name="LockedHatch4" parent="Interactables/Hatches" unique_id=443996797 instance=ExtResource("13_sppnv")]
 position = Vector2(1625, -5965)
+rotation_amount = -90.0
 
 [node name="DashGate" type="Node" parent="Interactables" unique_id=579118429]
 
-[node name="DashCollider" type="StaticBody2D" parent="Interactables/DashGate" unique_id=1292891066]
+[node name="DashCollider" type="AnimatableBody2D" parent="Interactables/DashGate" unique_id=1876925843]
 position = Vector2(335, -1402)
 script = ExtResource("14_cdd1g")
 
@@ -296,7 +299,8 @@ shape = SubResource("RectangleShape2D_ejjlu")
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/DashGate/DashCollider" unique_id=934738965]
 position = Vector2(16.548637, 1.1864011)
-scale = Vector2(-0.18397449, 0.34473225)
+rotation = -3.1415927
+scale = Vector2(0.18397449, -0.34473225)
 texture = ExtResource("15_1dtt1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Interactables/DashGate/DashCollider" unique_id=2043139215]
@@ -304,7 +308,7 @@ position = Vector2(16.548637, 1.1864011)
 scale = Vector2(0.18397449, 0.34473225)
 texture = ExtResource("15_1dtt1")
 
-[node name="DashCollider2" type="StaticBody2D" parent="Interactables/DashGate" unique_id=2046674521]
+[node name="DashCollider2" type="AnimatableBody2D" parent="Interactables/DashGate" unique_id=1063455096]
 position = Vector2(1189, -967)
 script = ExtResource("14_cdd1g")
 
@@ -314,7 +318,8 @@ shape = SubResource("RectangleShape2D_gbsts")
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/DashGate/DashCollider2" unique_id=949657545]
 position = Vector2(19.404556, -1.5402837)
-scale = Vector2(-0.1401375, 0.20476773)
+rotation = -3.1415927
+scale = Vector2(0.1401375, -0.20476773)
 texture = ExtResource("15_1dtt1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Interactables/DashGate/DashCollider2" unique_id=1100655931]
@@ -346,11 +351,11 @@ position = Vector2(1024, -2688)
 position = Vector2(2048, -3904)
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/MovingPlatforms/MovingPlatform3" unique_id=390816198]
-position = Vector2(128.5, -32)
-scale = Vector2(2.0078125, 0.5)
-texture = ExtResource("16_lesd3")
+position = Vector2(128.50018, -32.499924)
+scale = Vector2(0.8766668, 0.24333282)
+texture = ExtResource("20_g78o7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/MovingPlatforms/MovingPlatform3" unique_id=699296989]
+[node name="StaticBody2D" type="AnimatableBody2D" parent="Interactables/MovingPlatforms/MovingPlatform3" unique_id=1183294149]
 collision_layer = 64
 collision_mask = 0
 
@@ -388,15 +393,18 @@ position = Vector2(129.5, -32.5)
 scale = Vector2(1.64, 1.64)
 shape = SubResource("RectangleShape2D_ahe2n")
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Interactables/MovingPlatforms/MovingPlatform3" unique_id=1274442732]
+remote_path = NodePath("../StaticBody2D")
+
 [node name="MovingPlatform4" type="Node2D" parent="Interactables/MovingPlatforms" unique_id=2007689490]
 position = Vector2(832, -3904)
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/MovingPlatforms/MovingPlatform4" unique_id=1567281772]
-position = Vector2(64.000015, -32)
-scale = Vector2(2.0000002, 0.5)
-texture = ExtResource("16_lesd3")
+position = Vector2(67.00002, -32.000023)
+scale = Vector2(0.89333344, 0.24000017)
+texture = ExtResource("20_g78o7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/MovingPlatforms/MovingPlatform4" unique_id=1362248201]
+[node name="StaticBody2D" type="AnimatableBody2D" parent="Interactables/MovingPlatforms/MovingPlatform4" unique_id=1842625436]
 collision_layer = 64
 collision_mask = 0
 
@@ -433,6 +441,9 @@ collision_mask = 4
 position = Vector2(64, -32.5)
 scale = Vector2(1.64, 1.64)
 shape = SubResource("RectangleShape2D_c7h1x")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Interactables/MovingPlatforms/MovingPlatform4" unique_id=375456143]
+remote_path = NodePath("../StaticBody2D")
 
 [node name="MovingPlatform5" parent="Interactables/MovingPlatforms" unique_id=1196039264 instance=ExtResource("15_ejjlu")]
 position = Vector2(2048, -6400)
@@ -627,21 +638,21 @@ metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=961778453]
 position = Vector2(-57, 22)
-polygon = PackedVector2Array(789, -423, 872, -59, 668, -16, 653, -486, 744, -752, 745, -825, 683, -857, 448, -808, 427, -734, 444, -605, 385, -695, 428, -845, 789, -892, 828, -1074, 757, -1261, 752, -1569, 724, -1678, 611, -1735, 1057, -1731, 879, -1430, 910.5968, -1212.4689, 1111, -1252, 992, -1200, 931, -1072, 914, -861, 875, -604)
+polygon = PackedVector2Array(789, -423, 872, -59, 668, -16, 668, -485, 746, -665, 766, -765, 745, -825, 683, -857, 532, -840, 448, -808, 427, -734, 444, -605, 385, -695, 428, -845, 789, -892, 828, -1074, 757, -1261, 752, -1569, 724, -1678, 611, -1735, 1057, -1731, 879, -1430, 910.5968, -1212.4689, 1111, -1252, 992, -1200, 931, -1072, 914, -861, 875, -604)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=1226426692]
-polygon = PackedVector2Array(2187, -1668, 2282, -1671, 2287, -1452, 2182, -1348, 2175, -1237, 2227, -1127, 2225, -923, 2284, -795, 2153, -1140, 2007, -1026, 1897, -1057, 2032, -1108, 2091.2266, -1321.9799, 2182, -1488)
+polygon = PackedVector2Array(2187, -1668, 2282, -1671, 2287, -1452, 2182, -1348, 2175, -1237, 2227, -1127, 2220, -933, 2230, -861, 2292, -783, 2211, -829, 2180, -923, 2183, -1059, 2153, -1140, 2007, -1026, 1900, -1054, 1978, -1057, 2032, -1108, 2091.2266, -1321.9799, 2182, -1488)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=1344210701]
 position = Vector2(-150, -610)
-polygon = PackedVector2Array(471, -938, 336, -1126, 386, -1342, 333, -1461, 443, -1586, 566, -1776, 998, -1742, 1058, -1877, 952, -1792, 720, -1908, 471, -1882, 326, -1666, 151, -1742, 165, -1201)
+polygon = PackedVector2Array(471, -938, 336, -1126, 386, -1342, 333, -1461, 443, -1586, 566, -1776, 998, -1742, 1060, -1864, 952, -1792, 720, -1908, 471, -1882, 326, -1666, 151, -1742, 165, -1201)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=246700893]
 polygon = PackedVector2Array(1377, -3030, 1223, -3291, 1314, -3517, 1308, -3662, 1136, -3197, 680, -3089, 644, -2953, 585, -2726, 652, -2668, 695, -2894, 743, -2999, 1015, -3064, 1195, -2964, 1430, -2625)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=282847224]
 position = Vector2(612, -3853)
-polygon = PackedVector2Array(2420, -1821, 1420, -1492, 1761, -1378, 1485, -871, 1673, -999, 1620, -680, 1382, -545, 1641, -613, 1690, -724, 1761, -689, 1730, -798, 1719, -1124, 1848, -1299, 2028, -1427, 2244, -1464, 2384, -1444)
+polygon = PackedVector2Array(2420, -1821, 2182, -1753, 1922, -1463, 1420, -1492, 1761, -1378, 1485, -871, 1673, -999, 1620, -680, 1594, -636, 1385, -580, 1515, -554, 1641, -613, 1690, -724, 1761, -689, 1730, -798, 1719, -1124, 1848, -1299, 2028, -1427, 2244, -1464, 2384, -1444)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=481189293]
 position = Vector2(636, -2334)

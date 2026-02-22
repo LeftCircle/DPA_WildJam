@@ -20,9 +20,9 @@ position = Vector2(63.5, -31)
 scale = Vector2(0.42333332, 0.20666665)
 texture = ExtResource("1_fja67")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=699296989]
+[node name="StaticBody2D" type="AnimatableBody2D" parent="." unique_id=980542387]
 collision_layer = 64
-collision_mask = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1397954966]
 position = Vector2(64, -32)
@@ -56,5 +56,8 @@ collision_mask = 4
 position = Vector2(64, -32.5)
 scale = Vector2(1.64, 1.64)
 shape = SubResource("RectangleShape2D_ahe2n")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=1963403514]
+remote_path = NodePath("../StaticBody2D")
 
 [connection signal="target_hit" from="HitTarget" to="MoveAndPauseOnHit" method="_on_hit_target_target_hit"]
