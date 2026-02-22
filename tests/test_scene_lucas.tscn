@@ -59,3 +59,51 @@ position = Vector2(167, 413)
 
 [node name="FeatherPickup5" parent="." unique_id=1983111436 instance=ExtResource("8_g0mm2")]
 position = Vector2(22, 406)
+
+[node name="FeatherPickup6" parent="." unique_id=798402610 instance=ExtResource("8_g0mm2")]
+position = Vector2(-105, 401)
+
+[node name="FeatherPickup7" parent="." unique_id=954152877 instance=ExtResource("8_g0mm2")]
+position = Vector2(409, 407)
+
+[node name="FeatherPickup8" parent="." unique_id=1551541591 instance=ExtResource("8_g0mm2")]
+position = Vector2(293, 414)
+
+[node name="FeatherPickup9" parent="." unique_id=1369470874 instance=ExtResource("8_g0mm2")]
+position = Vector2(167, 413)
+
+[node name="FeatherPickup10" parent="." unique_id=501573330 instance=ExtResource("8_g0mm2")]
+position = Vector2(22, 406)
+
+[node name="FeatherPickup11" parent="." unique_id=1460146087 instance=ExtResource("8_g0mm2")]
+position = Vector2(-105, 401)
+
+[node name="FeatherPickup12" parent="." unique_id=1386584190 instance=ExtResource("8_g0mm2")]
+position = Vector2(409, 407)
+
+[node name="FeatherPickup13" parent="." unique_id=397824903 instance=ExtResource("8_g0mm2")]
+position = Vector2(293, 414)
+
+[node name="FeatherPickup14" parent="." unique_id=128615067 instance=ExtResource("8_g0mm2")]
+position = Vector2(167, 413)
+
+[node name="FeatherPickup15" parent="." unique_id=1583574510 instance=ExtResource("8_g0mm2")]
+position = Vector2(22, 406)
+
+[node name="FeatherPickup16" parent="." unique_id=2016750526 instance=ExtResource("8_g0mm2")]
+position = Vector2(-105, 401)
+
+[node name="FeatherPickup17" parent="." unique_id=900937541 instance=ExtResource("8_g0mm2")]
+position = Vector2(409, 407)
+
+[node name="FeatherPickup18" parent="." unique_id=792451161 instance=ExtResource("8_g0mm2")]
+position = Vector2(293, 414)
+
+[node name="FeatherPickup19" parent="." unique_id=632790631 instance=ExtResource("8_g0mm2")]
+position = Vector2(167, 413)
+
+[node name="FeatherPickup20" parent="." unique_id=1906552446 instance=ExtResource("8_g0mm2")]
+position = Vector2(22, 406)
+
+[editable path="Character"]
+[editable path="HUD"]
