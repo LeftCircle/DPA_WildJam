@@ -7,7 +7,6 @@ uniform vec4 wipe_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 void fragment() {
     float edge = progress;
 
-    // 左→右遮罩
     float cover = smoothstep(edge - softness, edge + softness, UV.x);
 
     COLOR = vec4(wipe_color.rgb, wipe_color.a * cover);

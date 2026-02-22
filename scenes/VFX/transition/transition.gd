@@ -11,13 +11,12 @@ signal finished
 
 var _time: float = 0.0
 var _playing: bool = false
-var _direction: int = 1 # 1 = out(變黑), -1 = in(退黑)
+var _direction: int = 1
 
 func _ready() -> void:
-	# 永遠在最上層
+
 	layer = top_layer
 
-	# 保證鋪滿畫面（就算你忘了設 Full Rect）
 	rect.set_anchors_preset(Control.PRESET_FULL_RECT)
 	rect.offset_left = 0
 	rect.offset_top = 0
@@ -59,7 +58,6 @@ func _process(delta: float) -> void:
 		_playing = false
 		finished.emit()
 
-# 一條龍：黑幕→切場景→退黑
 func change_scene_to_packed_with_wipe(next_scene: PackedScene) -> void:
 	wipe_out()
 	await finished
