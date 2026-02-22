@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="10_yy4na"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="11_07dqf"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="11_76vq8"]
+[ext_resource type="Texture2D" uid="uid://chq8uhwmrdavg" path="res://assets/environment/general/metalGate.png" id="15_o3rdr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nanf4"]
 size = Vector2(896, 74)
@@ -151,7 +152,7 @@ visible = false
 position = Vector2(1386, -1073)
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_gkpor")]
-position = Vector2(782, -1062)
+position = Vector2(2768, -275)
 
 [node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
 _test_count = 16
@@ -240,6 +241,11 @@ position = Vector2(2240, -1280)
 [node name="CollisionShape2D" parent="Interactables/DashCollider" index="0" unique_id=2039415823]
 position = Vector2(0, 53.5)
 shape = SubResource("RectangleShape2D_tdc43")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/DashCollider" unique_id=1659197872]
+position = Vector2(1, 50)
+scale = Vector2(0.19, 0.195)
+texture = ExtResource("15_o3rdr")
 
 [node name="LockedHatch" parent="Interactables" unique_id=1802310663 instance=ExtResource("11_07dqf")]
 position = Vector2(1086, -1144)

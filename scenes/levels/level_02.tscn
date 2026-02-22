@@ -17,6 +17,7 @@
 [ext_resource type="TileSet" uid="uid://bf3ofngk54hsf" path="res://resources/levels/quarter_tile_collisions.tres" id="12_4dr30"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="12_4hx2o"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="13_km0xc"]
+[ext_resource type="Texture2D" uid="uid://b2nixutnk7xla" path="res://assets/environment/general/woodenDoor.png" id="14_dscar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keemd"]
 size = Vector2(2239, 61.5)
@@ -28,7 +29,8 @@ size = Vector2(700, 57.625)
 size = Vector2(260.5, 217)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1yl6"]
-size = Vector2(82.677246, 23.077238)
+size = Vector2(31.004272, 28.846546)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_km0xc"]
 polygon = PackedVector2Array(132, 147, 137, -2422, 2814, -2416, 2814, -1913, 3196, -1906, 3198, -1784, 2691, -1792, 2693, -2302, 257, -2299, 263, -1277, 764, -1271, 764, -1150, 253, -1140, 263, -252, 511, -248, 507, -28, 1926, -12, 1924, -111, 2167, -113, 2169, 18, 2691, 16, 2695, -117, 3456, -106, 3451, 126)
 
@@ -123,8 +125,13 @@ move_magnitude = 128.0
 velocity = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/FirstDoor/LockedDoor" unique_id=2102852642]
-position = Vector2(-5.1672363, -1.4423256)
+position = Vector2(-1.291748, 1.4423313)
 shape = SubResource("RectangleShape2D_l1yl6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/FirstDoor/LockedDoor" unique_id=1540575966]
+position = Vector2(0, 0.9915982)
+scale = Vector2(0.222, 0.020179622)
+texture = ExtResource("14_dscar")
 
 [node name="HitTarget" parent="Interactables/FirstDoor" unique_id=562628805 instance=ExtResource("10_o4ql5")]
 position = Vector2(2669, -198)
@@ -185,30 +192,30 @@ position = Vector2(1344, -1497)
 position = Vector2(384, -2240)
 
 [node name="Target" parent="Interactables/Cage4/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1587096711, 1417091144) index="0" unique_id=1141455337]
-position = Vector2(384, -2304)
+position = Vector2(384, -2272)
 
 [node name="Target2" parent="Interactables/Cage4/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1587096711, 1417091144) index="1" unique_id=1289752025]
 position = Vector2(384, -1984)
 
 [node name="HitTarget" parent="Interactables/Cage4/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1587096711, 1417091144) index="2" unique_id=562628805]
-position = Vector2(384, -2304)
+position = Vector2(384, -2272)
 
 [node name="Cage5" parent="Interactables" unique_id=983691347 instance=ExtResource("11_o4ql5")]
 position = Vector2(768, -2240)
 
 [node name="Target" parent="Interactables/Cage5/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(983691347, 1417091144) index="0" unique_id=1141455337]
-position = Vector2(768, -2304)
+position = Vector2(768, -2272)
 
 [node name="Target2" parent="Interactables/Cage5/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(983691347, 1417091144) index="1" unique_id=1289752025]
 position = Vector2(768, -1984)
 
 [node name="HitTarget" parent="Interactables/Cage5/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(983691347, 1417091144) index="2" unique_id=562628805]
-position = Vector2(768, -2304)
+position = Vector2(768, -2272)
 
 [node name="Feathers" type="Node2D" parent="." unique_id=789649564]
 
 [node name="FeatherPickup" parent="Feathers" unique_id=2120564041 instance=ExtResource("13_km0xc")]
-position = Vector2(2560, -1344)
+position = Vector2(2466, -1327)
 
 [node name="Environemnt" type="Node2D" parent="." unique_id=1376156260]
 
@@ -230,7 +237,6 @@ occluder = SubResource("OccluderPolygon2D_m2jhg")
 [node name="Lights" type="Node2D" parent="Environemnt" unique_id=710798192]
 visible = false
 
-[editable path="Interactables/FirstDoor/LockedDoor"]
 [editable path="Interactables/Chandelier/Chandelier"]
 [editable path="Interactables/Cage"]
 [editable path="Interactables/Cage/Node2D/CollisionBorders/DashCollider"]

@@ -210,6 +210,7 @@ position = Vector2(0, -236.53)
 
 [node name="HitTarget" parent="Interactables" unique_id=562628805 instance=ExtResource("10_ijn0p")]
 position = Vector2(369, -2170)
+
 [node name="Environemnt" type="Node2D" parent="." unique_id=1292971125]
 
 [node name="Occluders" type="Node2D" parent="Environemnt" unique_id=259571948]

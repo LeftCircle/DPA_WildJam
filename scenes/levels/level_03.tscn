@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://def6p3q55es4g" path="res://assets/environment/level_03/Level_3_column5.png" id="21_gpenj"]
 [ext_resource type="Texture2D" uid="uid://c6qwn1bwbe0ln" path="res://assets/environment/level_03/Level_3_column6.png" id="22_dn1io"]
 [ext_resource type="Texture2D" uid="uid://b4fi2p7yftlls" path="res://assets/environment/level_03/Level_3_column7.png" id="23_jeigf"]
+[ext_resource type="Texture2D" uid="uid://b2nixutnk7xla" path="res://assets/environment/general/woodenDoor.png" id="25_jeigf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4tf"]
 size = Vector2(5824, 182)
@@ -477,6 +478,11 @@ can_dash_through = null
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/LockedDoor" unique_id=606780487]
 position = Vector2(702.7568, -346.15854)
 shape = SubResource("RectangleShape2D_tipwo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/LockedDoor" unique_id=260782420]
+position = Vector2(707.9242, -346.51913)
+scale = Vector2(0.41, 0.038)
+texture = ExtResource("25_jeigf")
 
 [node name="Feathers" type="Node" parent="." unique_id=149227485]
 

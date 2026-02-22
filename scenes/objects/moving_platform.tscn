@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2owmwuwa3oxv"]
 
-[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="1_gfj5l"]
+[ext_resource type="Texture2D" uid="uid://v5h3e3acvgb" path="res://assets/environment/general/crate2.png" id="1_fja67"]
 [ext_resource type="Script" uid="uid://outuy70de4aj" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="2_fja67"]
 [ext_resource type="Script" uid="uid://t0jo0yf4akm7" path="res://scenes/objects/hit_target/hit_target.gd" id="3_fja67"]
 
@@ -16,9 +16,9 @@ size = Vector2(84.14635, 45.731705)
 [node name="MovingPlatform" type="Node2D" unique_id=208779414]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=390816198]
-position = Vector2(64, -32)
-scale = Vector2(1, 0.5)
-texture = ExtResource("1_gfj5l")
+position = Vector2(63.5, -31)
+scale = Vector2(0.42333332, 0.20666665)
+texture = ExtResource("1_fja67")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=699296989]
 collision_layer = 64
