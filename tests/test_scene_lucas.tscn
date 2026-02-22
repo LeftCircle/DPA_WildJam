@@ -3,21 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="1_56sry"]
 [ext_resource type="Script" uid="uid://dgowu7rjgboft" path="res://scenes/levels/level.gd" id="1_k4wrx"]
 [ext_resource type="PackedScene" uid="uid://u3hm0ly3ap0k" path="res://scenes/characters/ui/HUD.tscn" id="1_lpe0m"]
+[ext_resource type="PackedScene" uid="uid://cwdr74u1mywek" path="res://scenes/levels/level_05.tscn" id="2_g0mm2"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="2_jia1c"]
-[ext_resource type="PackedScene" uid="uid://ci2clx0srv2vs" path="res://scenes/levels/level_01.tscn" id="2_kc0hd"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="3_lpe0m"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="4_g0mm2"]
+[ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="8_g0mm2"]
+[ext_resource type="PackedScene" uid="uid://bpxgmdkqj6ii2" path="res://scenes/objects/tutorial_box/tutorial_box.tscn" id="9_67c3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvlhi"]
 
-[node name="TestSceneLucas" type="Node2D" unique_id=1690665844]
+[node name="TestSceneLucas" type="Node2D" unique_id=1690665844 node_paths=PackedStringArray("llc", "urc")]
 script = ExtResource("1_k4wrx")
-next_level = ExtResource("2_kc0hd")
+next_level = ExtResource("2_g0mm2")
+llc = NodePath("CameraLimits/LLC")
+urc = NodePath("CameraLimits/URC")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_56sry")]
-position = Vector2(612, 431)
+position = Vector2(737, 446)
 
-[node name="HUD" parent="." unique_id=510809081 instance=ExtResource("1_lpe0m")]
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=400808911]
+unique_name_in_owner = true
+position = Vector2(0, -300)
 
 [node name="ExitArea" type="Area2D" parent="." unique_id=548818195]
 script = ExtResource("4_g0mm2")
@@ -30,11 +36,91 @@ position = Vector2(552.00006, 503)
 scale = Vector2(24.556017, 2.478949)
 shape = SubResource("RectangleShape2D_uvlhi")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D" unique_id=45901508]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D" unique_id=2068098562]
+position = Vector2(61.99994, 503)
+scale = Vector2(24.556017, 2.478949)
+shape = SubResource("RectangleShape2D_uvlhi")
+
 [node name="Chandelier" parent="." unique_id=2022063999 node_paths=PackedStringArray("target") instance=ExtResource("2_jia1c")]
 position = Vector2(1014, 239)
 target = NodePath("../HitTarget")
 
 [node name="HitTarget" parent="." unique_id=562628805 instance=ExtResource("3_lpe0m")]
 position = Vector2(1009, 36)
+
+[node name="HUD" parent="." unique_id=510809081 instance=ExtResource("1_lpe0m")]
+
+[node name="FeatherPickup" parent="." unique_id=2120564041 instance=ExtResource("8_g0mm2")]
+position = Vector2(-105, 401)
+
+[node name="FeatherPickup2" parent="." unique_id=629972713 instance=ExtResource("8_g0mm2")]
+position = Vector2(409, 407)
+
+[node name="FeatherPickup3" parent="." unique_id=1654140536 instance=ExtResource("8_g0mm2")]
+position = Vector2(293, 414)
+
+[node name="FeatherPickup4" parent="." unique_id=1569357941 instance=ExtResource("8_g0mm2")]
+position = Vector2(167, 413)
+
+[node name="FeatherPickup5" parent="." unique_id=1983111436 instance=ExtResource("8_g0mm2")]
+position = Vector2(22, 406)
+
+[node name="FeatherPickup6" parent="." unique_id=798402610 instance=ExtResource("8_g0mm2")]
+position = Vector2(-105, 401)
+
+[node name="FeatherPickup7" parent="." unique_id=954152877 instance=ExtResource("8_g0mm2")]
+position = Vector2(409, 407)
+
+[node name="FeatherPickup8" parent="." unique_id=1551541591 instance=ExtResource("8_g0mm2")]
+position = Vector2(293, 414)
+
+[node name="FeatherPickup9" parent="." unique_id=1369470874 instance=ExtResource("8_g0mm2")]
+position = Vector2(167, 413)
+
+[node name="FeatherPickup10" parent="." unique_id=501573330 instance=ExtResource("8_g0mm2")]
+position = Vector2(22, 406)
+
+[node name="FeatherPickup11" parent="." unique_id=1460146087 instance=ExtResource("8_g0mm2")]
+position = Vector2(-105, 401)
+
+[node name="FeatherPickup12" parent="." unique_id=1386584190 instance=ExtResource("8_g0mm2")]
+position = Vector2(409, 407)
+
+[node name="FeatherPickup13" parent="." unique_id=397824903 instance=ExtResource("8_g0mm2")]
+position = Vector2(293, 414)
+
+[node name="FeatherPickup14" parent="." unique_id=128615067 instance=ExtResource("8_g0mm2")]
+position = Vector2(167, 413)
+
+[node name="FeatherPickup15" parent="." unique_id=1583574510 instance=ExtResource("8_g0mm2")]
+position = Vector2(22, 406)
+
+[node name="FeatherPickup16" parent="." unique_id=2016750526 instance=ExtResource("8_g0mm2")]
+position = Vector2(-105, 401)
+
+[node name="FeatherPickup17" parent="." unique_id=900937541 instance=ExtResource("8_g0mm2")]
+position = Vector2(409, 407)
+
+[node name="FeatherPickup18" parent="." unique_id=792451161 instance=ExtResource("8_g0mm2")]
+position = Vector2(293, 414)
+
+[node name="FeatherPickup19" parent="." unique_id=632790631 instance=ExtResource("8_g0mm2")]
+position = Vector2(167, 413)
+
+[node name="FeatherPickup20" parent="." unique_id=1906552446 instance=ExtResource("8_g0mm2")]
+position = Vector2(22, 406)
+
+[node name="CameraLimits" type="Node" parent="." unique_id=1125290379]
+
+[node name="LLC" type="Node2D" parent="CameraLimits" unique_id=1205830703]
+position = Vector2(-184, 528)
+
+[node name="URC" type="Node2D" parent="CameraLimits" unique_id=381555255]
+position = Vector2(1145, -14)
+
+[node name="TutorialBox" parent="." unique_id=395832783 instance=ExtResource("9_67c3q")]
+position = Vector2(598, 403)
 
 [editable path="HUD"]

@@ -7,10 +7,6 @@
 script = ExtResource("1_8ocu7")
 featherUIItem = ExtResource("2_wn535")
 
-[node name="Button" type="Button" parent="." unique_id=600408330]
-offset_right = 8.0
-offset_bottom = 8.0
-
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1693561565]
 offset_top = 16.0
 offset_right = 40.0

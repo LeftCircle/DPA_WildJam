@@ -4,6 +4,8 @@ class_name PlayerCharacter
 signal feather_used()
 signal dash()
 signal dash_finished()
+signal feather_collected()
+signal reset_feathers()
 
 var feather_counter = 0
 var acquired_feathers : int = 0
@@ -27,6 +29,7 @@ func _on_feather_pickup() -> void:
 	feather_counter += 1
 	acquired_feathers += 1
 	%FeatherStream.play(0.35)
+	feather_collected.emit()
 
 func _crumble_platforms() -> void:
 	var coll : KinematicCollision2D = get_last_slide_collision()

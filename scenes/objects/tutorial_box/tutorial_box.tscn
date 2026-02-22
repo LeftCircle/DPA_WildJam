@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bpxgmdkqj6ii2"]
+
+[ext_resource type="Script" uid="uid://bemqq2m5ow55" path="res://scenes/objects/tutorial_box/tutorial_box.gd" id="1_exxx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d481"]
+
+[node name="TutorialBox" type="Area2D" unique_id=395832783]
+script = ExtResource("1_exxx7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1494585486]
+shape = SubResource("RectangleShape2D_2d481")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgiuqwrfsqvuy"]
 
-[ext_resource type="Script" path="res://scenes/objects/feather/feather_pickup.gd" id="1_b26d6"]
+[ext_resource type="Script" uid="uid://bueajn2hl8eq1" path="res://scenes/objects/feather/feather_pickup.gd" id="1_b26d6"]
 [ext_resource type="Texture2D" uid="uid://ntuemj3pul34" path="res://assets/feathers/goodFeather.png" id="2_irt8i"]
 [ext_resource type="PackedScene" uid="uid://cqf2bumwyf4es" path="res://scenes/VFX/feather_light/feather_self_emission.tscn" id="3_vifbp"]
 
