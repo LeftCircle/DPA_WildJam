@@ -13,6 +13,7 @@ class_name Level
 
 func _ready():
 	if start_music:
+		LevelDriver.title_music.stop()
 		LevelDriver.level_music.play()
 	LevelDriver.current_level = self
 	if is_instance_valid(exit_area):

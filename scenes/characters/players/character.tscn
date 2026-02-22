@@ -23,12 +23,12 @@
 [ext_resource type="PackedScene" uid="uid://d1a0opq8vmrkp" path="res://scenes/VFX/feather_light/vfx_feathers_light.tscn" id="18_wllcr"]
 [ext_resource type="PackedScene" uid="uid://dgo5ql4vc04gt" path="res://scenes/VFX/dust/vfx_dust.tscn" id="19_ntitv"]
 [ext_resource type="Texture2D" uid="uid://bmhrqgmkq5col" path="res://assets/characters/player/RunSprites.png" id="20_ap4c4"]
-[ext_resource type="Texture2D" uid="uid://cnjfj735v4lub" path="res://assets/characters/player/dash.png" id="21_a1yh3"]
 [ext_resource type="Texture2D" uid="uid://b482a70sptrw3" path="res://assets/characters/player/MCSpriteSheetJumpV3.png" id="22_a1yh3"]
 [ext_resource type="PackedScene" uid="uid://c3ansguf6th5d" path="res://scenes/characters/players/feather_resetter.tscn" id="23_0tlt7"]
 [ext_resource type="Texture2D" uid="uid://buqgu5ssjyva5" path="res://assets/characters/player/MCSpriteSheetThrowSide.png" id="24_mt0yb"]
 [ext_resource type="AudioStream" uid="uid://2i8e3m23djwb" path="res://audio/sfx/jump_randomizer.tres" id="24_y28c2"]
 [ext_resource type="Script" uid="uid://bu0m3hx2a4xrk" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
+[ext_resource type="Texture2D" uid="uid://cm05pmihtg2ld" path="res://assets/characters/player/MCSpriteSheetDashV2.png" id="25_t02n3"]
 [ext_resource type="PackedScene" uid="uid://e0q6ej4cqhvc" path="res://scenes/characters/interactions/PlayerInteract.tscn" id="27_ewdww"]
 [ext_resource type="AudioStream" uid="uid://v07t1rlfhshi" path="res://audio/sfx/Collect Feather.WAV" id="31_t5lbr"]
 [ext_resource type="PackedScene" uid="uid://u3hm0ly3ap0k" path="res://scenes/characters/ui/HUD.tscn" id="32_t02n3"]
@@ -51,7 +51,7 @@ metadata/_snap_enabled = true
 
 [sub_resource type="Animation" id="Animation_5hhuf"]
 resource_name = "Dash"
-length = 0.55
+length = 0.51666665
 step = 0.016666668
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -84,10 +84,10 @@ tracks/2/path = NodePath("Sprites/Dash:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.13333334, 0.18333334, 0.21666668, 0.31666666, 0.36666667, 0.4166667),
+"times": PackedFloat32Array(0, 0.083333336, 0.13333334, 0.18333334, 0.21666668, 0.3166667, 0.36666667, 0.4166667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0, -50.94), Vector2(-13.47, -50.94), Vector2(0, -50.94), Vector2(-14.155, -50.94), Vector2(-22.71, -50.94), Vector2(0, -50.94), Vector2(5.755, -50.94), Vector2(0, -50.94)]
+"values": [Vector2(0, -103.935), Vector2(-13.47, -111.59), Vector2(0, -139.165), Vector2(-14.155, -138.215), Vector2(7.945, -140.84), Vector2(0, -149.265), Vector2(5.755, -106.625), Vector2(0, -106.345)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -872,9 +872,9 @@ frame = 1
 [node name="Dash" type="Sprite2D" parent="Sprites" unique_id=908139868]
 visible = false
 position = Vector2(0, -102.665)
-texture = ExtResource("21_a1yh3")
+texture = ExtResource("25_t02n3")
 offset = Vector2(0, -52.665)
-hframes = 17
+hframes = 14
 
 [node name="Jump" type="Sprite2D" parent="Sprites" unique_id=64023432]
 visible = false
