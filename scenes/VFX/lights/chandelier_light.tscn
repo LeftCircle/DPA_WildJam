@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dh5si3s3ql611"]
+
+[ext_resource type="Texture2D" uid="uid://1bfii5uyg3cd" path="res://assets/VFX/Flare_small.PNG" id="1_wgv63"]
+
+[node name="chandelier_light" type="PointLight2D" unique_id=1680736457]
+color = Color(1, 0.5058824, 0, 1)
+energy = 2.0
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 20.0
+texture = ExtResource("1_wgv63")
+texture_scale = 25.0

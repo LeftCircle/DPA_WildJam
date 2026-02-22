@@ -9,6 +9,7 @@ var feather_counter = 99
 var acquired_feathers : int = 99
 
 
+
 func _ready():
 	LevelDriver.player = self
 	reset_feathers_to(LevelDriver.player_starting_state.current_feathers)
@@ -26,7 +27,7 @@ func _on_feather_pickup() -> void:
 
 func _crumble_platforms() -> void:
 	var coll : KinematicCollision2D = get_last_slide_collision()
-	if is_instance_valid(coll):
+	if is_instance_valid(coll) and is_instance_valid(coll.get_collider()):
 		if coll.get_collider().has_method("crumble"):
 			coll.get_collider().crumble()
 

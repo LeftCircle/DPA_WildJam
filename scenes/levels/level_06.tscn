@@ -7,10 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="3_j2blp"]
 [ext_resource type="Texture2D" uid="uid://d2fhva8l4nhle" path="res://assets/environment/level_06/Level_6_sky.png" id="4_yc2un"]
 [ext_resource type="Texture2D" uid="uid://cibbkxghbltjs" path="res://assets/environment/level_06/Level_6_matte.png" id="5_s7m4s"]
-[ext_resource type="Texture2D" uid="uid://b00pdyxw2go2y" path="res://assets/environment/level_06/Level_6_Geo.png" id="6_6h3uw"]
 [ext_resource type="Texture2D" uid="uid://cnbb4kv1dr1q0" path="res://assets/environment/level_06/Level_6_RootsThorns.png" id="7_17n5y"]
+[ext_resource type="Texture2D" uid="uid://fu6587nltyln" path="res://assets/environment/level_06/Level_6_staticGeo.png" id="8_1dtt1"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="8_s7m4s"]
-[ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/level_5_window_light.tscn" id="10_tg547"]
+[ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/window_light.tscn" id="10_tg547"]
+[ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="12_6vksy"]
+[ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="13_sppnv"]
+[ext_resource type="Script" uid="uid://eg5uygnpo1ct" path="res://scenes/objects/dash_collider/dash_collider.gd" id="14_cdd1g"]
+[ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="15_1dtt1"]
+[ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="15_ejjlu"]
+[ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="16_ejjlu"]
+[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="16_lesd3"]
+[ext_resource type="Script" uid="uid://outuy70de4aj" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
+[ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="17_gbsts"]
+[ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="18_3d6ih"]
+[ext_resource type="Script" uid="uid://t0jo0yf4akm7" path="res://scenes/objects/hit_target/hit_target.gd" id="18_c7h1x"]
+[ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="22_64yx1"]
+[ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="23_c7h1x"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6vksy"]
 cull_mode = 1
@@ -28,8 +41,62 @@ polygon = PackedVector2Array(18, -5315, 372, -5492, 378, -5859, 595, -6052, 644,
 cull_mode = 1
 polygon = PackedVector2Array(1561, -2179, 1682, -2178, 1691, -1924, 2324, -1914, 2329, -2176, 2448, -2178, 2454, -2557, 2573, -2559, 2576, -2948, 2702, -2946, 2709, -3334, 2828, -3332, 2837, -3534, 3015, -3476, 3009, -39, 2574, -32, 2574, -1655, 2310, -1667, 2302, -1439, 2179, -1342, 2233, -1168, 2241, -836, 2340, -762, 2165, -983, 2119, -1123, 1917, -1021, 2082, -1206, 2101, -1394, 2205, -1498, 2184, -1670, 1242, -1658, 1249, -1026, 1178, -1023, 1175, -2247, 1057, -2243, 1054, -2302, 1169, -2297, 1178, -2951, 1035, -3048, 715, -2946, 672, -2642, 565, -2723, 752, -3129, 280, -3129, 279, -3200, 1130, -3203, 1297, -3669, 1268, -3201, 1430, -3194, 1437, -2953, 1559, -2946)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cdd1g"]
+polygon = PackedVector2Array(1436, -3534, 1693, -3534, 1686, -3580, 1437, -3584)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ejjlu"]
+polygon = PackedVector2Array(1053, -5050, 1298, -5047, 1299, -5116, 1047, -5116)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gbsts"]
+polygon = PackedVector2Array(1298, -5954, 1555, -5954, 1552, -6008, 1300, -6011)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3d6ih"]
+polygon = PackedVector2Array(1694, -5808, 1736, -5807, 1741, -5958, 1981, -5959, 1985, -6095, 2191, -6097, 2192, -6142, 1939, -6143, 1938, -6018, 1694, -6014)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6sve2"]
+polygon = PackedVector2Array(1046, -7279, 1048, -7049, 1867, -7041, 1623, -6907, 1458, -6665, 1861, -6947, 1959, -6899, 2049, -6600, 2439, -6592, 2538, -6287, 3014, -6258, 3016, -7283)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_56vtv"]
+polygon = PackedVector2Array(911, -7281, 922, -6905, 1298, -6900, 1297, -6864, 1048, -6862, 1045, -6777, 785, -6776, 781, -7038, 21, -7034, 25, -7284)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lesd3"]
+polygon = PackedVector2Array(1, -5310, 152, -5308, 157, -4611, 403, -4606, 399, -4549, 157, -4551, 153, -2299, 341, -2506, 658, -2495, 845, -2420, 913, -2528, 851, -2354, 371, -2390, 333, -2295, 917, -2296, 916, -2246, 344, -2241, 188, -2031, 261, -1976, 208, -1679, 404, -1527, 153, -1631, 151, -1295, 417, -1284, 417, -1221, 155, -1209, 155, -396, 4, -389)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_64yx1"]
+polygon = PackedVector2Array(6, -251, 272, -255, 273, -214, 158, -206, 153, -41, 22, -41)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c7h1x"]
+polygon = PackedVector2Array(635, -502, 539, -502, 541, -554, 649, -552, 712, -726, 605, -825, 374, -749, 420, -564, 394, -494, 324, -738, 400, -896, 663, -900, 735, -828, 776, -1036, 681, -1277, 645, -1665, 524, -1716, 539, -1785, 1029, -1785, 1033, -1711, 862, -1461, 842, -1183, 922, -1206, 923, -1266, 1066, -1263, 1061, -1214, 933, -1161, 889, -965, 822, -675, 836, -558, 731, -280, 819, -40, 614, -34)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1dtt1"]
+polygon = PackedVector2Array(1817, -895, 2079, -892, 2081, -843, 1810, -839)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6h3uw"]
 size = Vector2(138, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejjlu"]
+size = Vector2(59, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbsts"]
+size = Vector2(59, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfj5l"]
+size = Vector2(256, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhnjg"]
+size = Vector2(156.70724, 37.80488)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahe2n"]
+size = Vector2(164.02435, 45.731705)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lesd3"]
+size = Vector2(256, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64yx1"]
+size = Vector2(156.70724, 37.80488)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7h1x"]
+size = Vector2(164.02435, 45.731705)
 
 [node name="Level06" type="Node2D" unique_id=826856563 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_17n5y")
@@ -44,69 +111,76 @@ tile_set = ExtResource("1_xbig6")
 [node name="HalfGridCollisions" type="TileMapLayer" parent="." unique_id=1067852637]
 modulate = Color(1, 1, 1, 0.18039216)
 z_index = -5
-tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAJAPf/AAAAAAAAAAAKAPf/AAAAAAAAAAAKAPL/AAAAAAAAAAAJAPL/AAAAAAAAAAAIAPL/AAAAAAAAAAAHAPL/AAAAAAAAAAAGAPL/AAAAAAAAAAACAOz/AAAAAAAAAAADAOz/AAAAAAAAAAAEAOz/AAAAAAAAAAAFAOz/AAAAAAAAAAAIAOT/AAAAAAAAAAAJAOT/AAAAAAAAAAAKAOT/AAAAAAAAAAALAOT/AAAAAAAAAAAMAOT/AAAAAAAAAAANAOT/AAAAAAAAAAAOAOT/AAAAAAAAAAAPAOT/AAAAAAAAAAAPAOz/AAAAAAAAAAAOAOz/AAAAAAAAAAASAOb/AAAAAAAAAAASAOf/AAAAAAAAAAASAOj/AAAAAAAAAAASAOn/AAAAAAAAAAASAOr/AAAAAAAAAAASAOv/AAAAAAAAAAASAOz/AAAAAAAAAAASAO3/AAAAAAAAAAASAO7/AAAAAAAAAAASAO//AAAAAAAAAAASAPL/AAAAAAAAAAASAPP/AAAAAAAAAAASAPT/AAAAAAAAAAASAPX/AAAAAAAAAAASAPb/AAAAAAAAAAASAPf/AAAAAAAAAAASAPj/AAAAAAAAAAASAPn/AAAAAAAAAAASAPr/AAAAAAAAAAASAPv/AAAAAAAAAAASAPz/AAAAAAAAAAASAP3/AAAAAAAAAAASAP7/AAAAAAAAAAASAP//AAAAAAAAAAARANv/AAAAAAAAAAAQANv/AAAAAAAAAAANANv/AAAAAAAAAAAMANv/AAAAAAAAAAALANv/AAAAAAAAAAAKANv/AAAAAAAAAAAJANv/AAAAAAAAAAAIANv/AAAAAAAAAAAHANv/AAAAAAAAAAAGANv/AAAAAAAAAAAFANv/AAAAAAAAAAAEANv/AAAAAAAAAAADANv/AAAAAAAAAAACANv/AAAAAAAAAAARAM7/AAAAAAAAAAAQAM7/AAAAAAAAAAAPAM7/AAAAAAAAAAAOAM7/AAAAAAAAAAANAM7/AAAAAAAAAAAMAM7/AAAAAAAAAAALAM7/AAAAAAAAAAAKAM7/AAAAAAAAAAAJAM7/AAAAAAAAAAAIAM7/AAAAAAAAAAAHAM7/AAAAAAAAAAAGAM7/AAAAAAAAAAAFAM7/AAAAAAAAAAAEAM7/AAAAAAAAAAAWAMj/AAAAAAAAAAAXAMj/AAAAAAAAAAAYAMj/AAAAAAAAAAAZAMj/AAAAAAAAAAACALj/AAAAAAAAAAADALj/AAAAAAAAAAAEALj/AAAAAAAAAAAFALj/AAAAAAAAAAAQALD/AAAAAAAAAAARALD/AAAAAAAAAAASALD/AAAAAAAAAAATALD/AAAAAAAAAAAgAKz/AAAAAAAAAAAhAKz/AAAAAAAAAAAiAKz/AAAAAAAAAAAjAKz/AAAAAAAAAAAgAKD/AAAAAAAAAAAfAKD/AAAAAAAAAAAhAKD/AAAAAAAAAAAeAKD/AAAAAAAAAAAeAKH/AAAAAAAAAAAeAKL/AAAAAAAAAAAdAKL/AAAAAAAAAAAcAKL/AAAAAAAAAAAbAKL/AAAAAAAAAAAaAKL/AAAAAAAAAAAaAKP/AAAAAAAAAAAaAKT/AAAAAAAAAAAXAKL/AAAAAAAAAAAWAKL/AAAAAAAAAAAVAKL/AAAAAAAAAAAUAKL/AAAAAAAAAAAQAJT/AAAAAAAAAAARAJT/AAAAAAAAAAASAJT/AAAAAAAAAAATAJT/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAJAPf/AAAAAAAAAAAKAPf/AAAAAAAAAAAKAPL/AAAAAAAAAAAJAPL/AAAAAAAAAAAIAPL/AAAAAAAAAAAHAPL/AAAAAAAAAAAGAPL/AAAAAAAAAAACAOz/AAAAAAAAAAADAOz/AAAAAAAAAAAEAOz/AAAAAAAAAAAFAOz/AAAAAAAAAAAIAOT/AAAAAAAAAAAJAOT/AAAAAAAAAAAKAOT/AAAAAAAAAAALAOT/AAAAAAAAAAAMAOT/AAAAAAAAAAANAOT/AAAAAAAAAAAOAOT/AAAAAAAAAAAPAOT/AAAAAAAAAAAPAOz/AAAAAAAAAAAOAOz/AAAAAAAAAAASAOb/AAAAAAAAAAASAOf/AAAAAAAAAAASAOj/AAAAAAAAAAASAOn/AAAAAAAAAAASAOr/AAAAAAAAAAASAOv/AAAAAAAAAAASAOz/AAAAAAAAAAASAO3/AAAAAAAAAAASAO7/AAAAAAAAAAASAO//AAAAAAAAAAASAPL/AAAAAAAAAAASAPP/AAAAAAAAAAASAPT/AAAAAAAAAAASAPX/AAAAAAAAAAASAPb/AAAAAAAAAAASAPf/AAAAAAAAAAASAPj/AAAAAAAAAAASAPn/AAAAAAAAAAASAPr/AAAAAAAAAAASAPv/AAAAAAAAAAASAPz/AAAAAAAAAAASAP3/AAAAAAAAAAASAP7/AAAAAAAAAAASAP//AAAAAAAAAAARANv/AAAAAAAAAAAQANv/AAAAAAAAAAANANv/AAAAAAAAAAAMANv/AAAAAAAAAAALANv/AAAAAAAAAAAKANv/AAAAAAAAAAAJANv/AAAAAAAAAAAIANv/AAAAAAAAAAAHANv/AAAAAAAAAAAGANv/AAAAAAAAAAAFANv/AAAAAAAAAAAEANv/AAAAAAAAAAADANv/AAAAAAAAAAACANv/AAAAAAAAAAARAM7/AAAAAAAAAAAQAM7/AAAAAAAAAAAPAM7/AAAAAAAAAAAOAM7/AAAAAAAAAAANAM7/AAAAAAAAAAAMAM7/AAAAAAAAAAALAM7/AAAAAAAAAAAKAM7/AAAAAAAAAAAJAM7/AAAAAAAAAAAIAM7/AAAAAAAAAAAHAM7/AAAAAAAAAAAGAM7/AAAAAAAAAAAFAM7/AAAAAAAAAAAEAM7/AAAAAAAAAAAWAMj/AAAAAAAAAAAXAMj/AAAAAAAAAAAYAMj/AAAAAAAAAAAZAMj/AAAAAAAAAAACALj/AAAAAAAAAAADALj/AAAAAAAAAAAEALj/AAAAAAAAAAAFALj/AAAAAAAAAAAQALD/AAAAAAAAAAARALD/AAAAAAAAAAASALD/AAAAAAAAAAATALD/AAAAAAAAAAAgAKz/AAAAAAAAAAAhAKz/AAAAAAAAAAAiAKz/AAAAAAAAAAAjAKz/AAAAAAAAAAAgAKD/AAAAAAAAAAAfAKD/AAAAAAAAAAAhAKD/AAAAAAAAAAAeAKD/AAAAAAAAAAAeAKH/AAAAAAAAAAAeAKL/AAAAAAAAAAAdAKL/AAAAAAAAAAAcAKL/AAAAAAAAAAAbAKL/AAAAAAAAAAAaAKL/AAAAAAAAAAAaAKP/AAAAAAAAAAAaAKT/AAAAAAAAAAAXAKL/AAAAAAAAAAAWAKL/AAAAAAAAAAAVAKL/AAAAAAAAAAAUAKL/AAAAAAAAAAAQAJT/AAAAAAAAAAARAJT/AAAAAAAAAAASAJT/AAAAAAAAAAATAJT/AAAAAAAAAAAcAPL/AAAAAAAAAAAdAPL/AAAAAAAAAAAeAPL/AAAAAAAAAAAfAPL/AAAAAAAAAAAgAPL/AAAAAAAAAAA=")
 tile_set = ExtResource("2_7k7rs")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_j2blp")]
-position = Vector2(384, -2560)
+position = Vector2(200, -297)
 
 [node name="Environment" type="Node2D" parent="." unique_id=993262859]
+metadata/_edit_lock_ = true
 
 [node name="sky" type="Sprite2D" parent="Environment" unique_id=1783528339]
 z_index = -2
 position = Vector2(1517, -3662)
 texture = ExtResource("4_yc2un")
+metadata/_edit_lock_ = true
 
 [node name="matte" type="Sprite2D" parent="Environment" unique_id=1298206293]
 z_index = -2
 position = Vector2(1517, -3662)
 texture = ExtResource("5_s7m4s")
+metadata/_edit_lock_ = true
 
 [node name="geo" type="Sprite2D" parent="Environment" unique_id=1818152900]
 z_index = -2
 position = Vector2(1517, -3662)
-texture = ExtResource("6_6h3uw")
+texture = ExtResource("8_1dtt1")
+metadata/_edit_lock_ = true
 
 [node name="Vines" type="Sprite2D" parent="Environment" unique_id=525881405]
 z_index = -2
 position = Vector2(1517, -3662)
 texture = ExtResource("7_17n5y")
+metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=1661540075]
-visible = false
-color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+color = Color(0.446777, 0.44677705, 0.44677693, 1)
 
 [node name="Lights" type="Node2D" parent="Environment" unique_id=1979007900]
-visible = false
 
 [node name="level5_window_light" parent="Environment/Lights" unique_id=1477126154 instance=ExtResource("10_tg547")]
-position = Vector2(116.32849, -6901.4995)
+position = Vector2(2902.4067, -6000.7383)
 rotation = -0.8532903
 scale = Vector2(2.9089122, 10.677901)
-shadow_filter_smooth = 37.6
-offset = Vector2(-171.73865, 241.15431)
+energy = 0.2
+shadow_filter_smooth = 25.0
+offset = Vector2(-568.17236, -10.901016)
 texture_scale = 4.3
 
 [node name="level5_window_light2" parent="Environment/Lights" unique_id=616931820 instance=ExtResource("10_tg547")]
-position = Vector2(805.43896, -3711.8074)
+position = Vector2(776.6327, -3726.899)
 scale = Vector2(0.9589025, 3.8608594)
 energy = 0.57
-offset = Vector2(-484.72852, -1.1497955)
+shadow_filter_smooth = 25.0
+offset = Vector2(-500.4663, 6.3112183)
 
 [node name="level5_window_light3" parent="Environment/Lights" unique_id=555889304 instance=ExtResource("10_tg547")]
-position = Vector2(2008.5054, -2594.6187)
-offset = Vector2(-633.82886, 0.7123413)
+position = Vector2(2012.327, -2589.7024)
+shadow_filter_smooth = 25.0
+offset = Vector2(-627.1792, -1.1088867)
 
 [node name="level5_window_light4" parent="Environment/Lights" unique_id=562540595 instance=ExtResource("10_tg547")]
-position = Vector2(2971.6384, -6232.2905)
+position = Vector2(51.33374, -6995.2207)
 rotation = -2.1648774
 scale = Vector2(2.9089122, 10.677901)
-shadow_filter_smooth = 37.6
-offset = Vector2(-234.80035, -183.75708)
+energy = 0.57
+shadow_filter = 2
+shadow_filter_smooth = 25.0
+offset = Vector2(-1014.0764, 2.8807983)
 texture_scale = 4.3
 
 [node name="Occluders" type="Node2D" parent="Environment" unique_id=1444223111]
-visible = false
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Occluders" unique_id=156438906]
 z_index = -3
@@ -123,7 +197,49 @@ z_index = -3
 occluder = SubResource("OccluderPolygon2D_sppnv")
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="Environment/Occluders" unique_id=2064878423]
+z_index = -3
 occluder = SubResource("OccluderPolygon2D_tg547")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Environment/Occluders" unique_id=2123818099]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_cdd1g")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1781356813]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_ejjlu")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1571715236]
+z_index = -3
+position = Vector2(0, -1)
+occluder = SubResource("OccluderPolygon2D_gbsts")
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1852901740]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_3d6ih")
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1798801211]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_6sve2")
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="Environment/Occluders" unique_id=542052307]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_56vtv")
+
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="Environment/Occluders" unique_id=892220382]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_lesd3")
+
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1173154688]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_64yx1")
+
+[node name="LightOccluder2D13" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1596193674]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_c7h1x")
+
+[node name="LightOccluder2D14" type="LightOccluder2D" parent="Environment/Occluders" unique_id=117927519]
+z_index = -3
+occluder = SubResource("OccluderPolygon2D_1dtt1")
 
 [node name="ExitArea" type="Area2D" parent="." unique_id=1414754941]
 position = Vector2(918, -7238)
@@ -136,3 +252,413 @@ shape = SubResource("RectangleShape2D_6h3uw")
 
 [node name="Spawn" type="Node2D" parent="." unique_id=2080521928]
 position = Vector2(93, -346)
+
+[node name="Feathers" type="Node" parent="." unique_id=1268849878]
+
+[node name="FeatherPickup" parent="Feathers" unique_id=2120564041 instance=ExtResource("12_6vksy")]
+position = Vector2(572, -666)
+
+[node name="FeatherPickup2" parent="Feathers" unique_id=815749792 instance=ExtResource("12_6vksy")]
+position = Vector2(192, -1408)
+
+[node name="FeatherPickup3" parent="Feathers" unique_id=680509271 instance=ExtResource("12_6vksy")]
+position = Vector2(2688, -1600)
+
+[node name="FeatherPickup4" parent="Feathers" unique_id=207123837 instance=ExtResource("12_6vksy")]
+position = Vector2(256, -6848)
+
+[node name="Interactables" type="Node" parent="." unique_id=553164919]
+
+[node name="Hatches" type="Node" parent="Interactables" unique_id=357940886]
+
+[node name="LockedHatch" parent="Interactables/Hatches" unique_id=1802310663 instance=ExtResource("13_sppnv")]
+position = Vector2(489, -529)
+rotation_amount = 90.0
+
+[node name="LockedHatch2" parent="Interactables/Hatches" unique_id=8719398 instance=ExtResource("13_sppnv")]
+position = Vector2(987, -2249)
+
+[node name="LockedHatch3" parent="Interactables/Hatches" unique_id=1473274005 instance=ExtResource("13_sppnv")]
+position = Vector2(238, -3160)
+
+[node name="LockedHatch4" parent="Interactables/Hatches" unique_id=443996797 instance=ExtResource("13_sppnv")]
+position = Vector2(1625, -5965)
+
+[node name="DashGate" type="Node" parent="Interactables" unique_id=579118429]
+
+[node name="DashCollider" type="StaticBody2D" parent="Interactables/DashGate" unique_id=1292891066]
+position = Vector2(335, -1402)
+script = ExtResource("14_cdd1g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/DashGate/DashCollider" unique_id=2039415823]
+position = Vector2(19.5, -6)
+shape = SubResource("RectangleShape2D_ejjlu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/DashGate/DashCollider" unique_id=934738965]
+position = Vector2(16.548637, 1.1864011)
+scale = Vector2(-0.18397449, 0.34473225)
+texture = ExtResource("15_1dtt1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interactables/DashGate/DashCollider" unique_id=2043139215]
+position = Vector2(16.548637, 1.1864011)
+scale = Vector2(0.18397449, 0.34473225)
+texture = ExtResource("15_1dtt1")
+
+[node name="DashCollider2" type="StaticBody2D" parent="Interactables/DashGate" unique_id=2046674521]
+position = Vector2(1189, -967)
+script = ExtResource("14_cdd1g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/DashGate/DashCollider2" unique_id=418552077]
+position = Vector2(19.5, -2)
+shape = SubResource("RectangleShape2D_gbsts")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/DashGate/DashCollider2" unique_id=949657545]
+position = Vector2(19.404556, -1.5402837)
+scale = Vector2(-0.1401375, 0.20476773)
+texture = ExtResource("15_1dtt1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interactables/DashGate/DashCollider2" unique_id=1100655931]
+position = Vector2(19.404556, -1.5402837)
+scale = Vector2(0.1401375, 0.20476773)
+texture = ExtResource("15_1dtt1")
+
+[node name="MovingPlatforms" type="Node" parent="Interactables" unique_id=1304368286]
+
+[node name="MovingPlatform" parent="Interactables/MovingPlatforms" unique_id=208779414 instance=ExtResource("15_ejjlu")]
+position = Vector2(1408, -384)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(208779414, 351322013) index="0" unique_id=769849614]
+position = Vector2(1280, -384)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(208779414, 351322013) index="1" unique_id=1832171401]
+position = Vector2(2432, -384)
+
+[node name="MovingPlatform2" parent="Interactables/MovingPlatforms" unique_id=245187573 instance=ExtResource("15_ejjlu")]
+position = Vector2(512, -2688)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform2/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(245187573, 351322013) index="0" unique_id=769849614]
+position = Vector2(128, -2688)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform2/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(245187573, 351322013) index="1" unique_id=1832171401]
+position = Vector2(1024, -2688)
+
+[node name="MovingPlatform3" type="Node2D" parent="Interactables/MovingPlatforms" unique_id=410793605]
+position = Vector2(2048, -3904)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/MovingPlatforms/MovingPlatform3" unique_id=390816198]
+position = Vector2(128.5, -32)
+scale = Vector2(2.0078125, 0.5)
+texture = ExtResource("16_lesd3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/MovingPlatforms/MovingPlatform3" unique_id=699296989]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/MovingPlatforms/MovingPlatform3/StaticBody2D" unique_id=1397954966]
+position = Vector2(128, -32)
+shape = SubResource("RectangleShape2D_gfj5l")
+
+[node name="MoveAndPauseOnHit" type="Node" parent="Interactables/MovingPlatforms/MovingPlatform3" unique_id=351322013 node_paths=PackedStringArray("node_to_move", "target_positions")]
+script = ExtResource("17_64yx1")
+node_to_move = NodePath("..")
+target_positions = [NodePath("point"), NodePath("point2")]
+
+[node name="point" type="Node2D" parent="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" unique_id=346874468]
+position = Vector2(1536, -3904)
+
+[node name="point2" type="Node2D" parent="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" unique_id=1564190070]
+position = Vector2(2688, -3904)
+
+[node name="HitTarget" type="StaticBody2D" parent="Interactables/MovingPlatforms/MovingPlatform3" unique_id=562628805]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("18_c7h1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/MovingPlatforms/MovingPlatform3/HitTarget" unique_id=407416290]
+position = Vector2(127.5, -32)
+scale = Vector2(1.64, 1.64)
+shape = SubResource("RectangleShape2D_xhnjg")
+
+[node name="Area2D" type="Area2D" parent="Interactables/MovingPlatforms/MovingPlatform3/HitTarget" unique_id=1680344580]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/MovingPlatforms/MovingPlatform3/HitTarget/Area2D" unique_id=1855681186]
+position = Vector2(129.5, -32.5)
+scale = Vector2(1.64, 1.64)
+shape = SubResource("RectangleShape2D_ahe2n")
+
+[node name="MovingPlatform4" type="Node2D" parent="Interactables/MovingPlatforms" unique_id=2007689490]
+position = Vector2(832, -3904)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/MovingPlatforms/MovingPlatform4" unique_id=1567281772]
+position = Vector2(64.000015, -32)
+scale = Vector2(2.0000002, 0.5)
+texture = ExtResource("16_lesd3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/MovingPlatforms/MovingPlatform4" unique_id=1362248201]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/MovingPlatforms/MovingPlatform4/StaticBody2D" unique_id=2049870482]
+position = Vector2(64, -32)
+shape = SubResource("RectangleShape2D_lesd3")
+
+[node name="MoveAndPauseOnHit" type="Node" parent="Interactables/MovingPlatforms/MovingPlatform4" unique_id=1933989309 node_paths=PackedStringArray("node_to_move", "target_positions")]
+script = ExtResource("17_64yx1")
+node_to_move = NodePath("..")
+target_positions = [NodePath("point"), NodePath("point2")]
+
+[node name="point" type="Node2D" parent="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" unique_id=597792504]
+position = Vector2(1280, -3904)
+
+[node name="point2" type="Node2D" parent="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" unique_id=1190162835]
+position = Vector2(128, -3904)
+
+[node name="HitTarget" type="StaticBody2D" parent="Interactables/MovingPlatforms/MovingPlatform4" unique_id=1127957993]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("18_c7h1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/MovingPlatforms/MovingPlatform4/HitTarget" unique_id=1446524260]
+position = Vector2(62.999996, -32)
+scale = Vector2(1.64, 1.64)
+shape = SubResource("RectangleShape2D_64yx1")
+
+[node name="Area2D" type="Area2D" parent="Interactables/MovingPlatforms/MovingPlatform4/HitTarget" unique_id=1437499891]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/MovingPlatforms/MovingPlatform4/HitTarget/Area2D" unique_id=995576978]
+position = Vector2(64, -32.5)
+scale = Vector2(1.64, 1.64)
+shape = SubResource("RectangleShape2D_c7h1x")
+
+[node name="MovingPlatform5" parent="Interactables/MovingPlatforms" unique_id=1196039264 instance=ExtResource("15_ejjlu")]
+position = Vector2(2048, -6400)
+
+[node name="point" parent="Interactables/MovingPlatforms/MovingPlatform5/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(1196039264, 351322013) index="0" unique_id=769849614]
+position = Vector2(1664, -6400)
+
+[node name="point2" parent="Interactables/MovingPlatforms/MovingPlatform5/MoveAndPauseOnHit" parent_id_path=PackedInt32Array(1196039264, 351322013) index="1" unique_id=1832171401]
+position = Vector2(2560, -6400)
+
+[node name="CrumbleBlocks" type="Node" parent="Interactables" unique_id=1316602619]
+
+[node name="CrumblingPlatform" parent="Interactables/CrumbleBlocks" unique_id=1786747694 instance=ExtResource("16_ejjlu")]
+position = Vector2(1408, -576)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform2" parent="Interactables/CrumbleBlocks" unique_id=714805446 instance=ExtResource("16_ejjlu")]
+position = Vector2(1536, -576)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform3" parent="Interactables/CrumbleBlocks" unique_id=1268491016 instance=ExtResource("16_ejjlu")]
+position = Vector2(2048, -320)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform4" parent="Interactables/CrumbleBlocks" unique_id=304181107 instance=ExtResource("16_ejjlu")]
+position = Vector2(2176, -320)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform5" parent="Interactables/CrumbleBlocks" unique_id=1813060042 instance=ExtResource("16_ejjlu")]
+position = Vector2(2176, -320)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform6" parent="Interactables/CrumbleBlocks" unique_id=2084278911 instance=ExtResource("16_ejjlu")]
+position = Vector2(2688, -832)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform7" parent="Interactables/CrumbleBlocks" unique_id=831687910 instance=ExtResource("16_ejjlu")]
+position = Vector2(2560, -832)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform9" parent="Interactables/CrumbleBlocks" unique_id=1068291591 instance=ExtResource("16_ejjlu")]
+position = Vector2(1944, -2369)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform10" parent="Interactables/CrumbleBlocks" unique_id=1632314792 instance=ExtResource("16_ejjlu")]
+position = Vector2(1536, -2560)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform11" parent="Interactables/CrumbleBlocks" unique_id=81946011 instance=ExtResource("16_ejjlu")]
+position = Vector2(1536, -2880)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform19" parent="Interactables/CrumbleBlocks" unique_id=1563821517 instance=ExtResource("16_ejjlu")]
+position = Vector2(2176, -3648)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform21" parent="Interactables/CrumbleBlocks" unique_id=1880431079 instance=ExtResource("16_ejjlu")]
+position = Vector2(768, -4288)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform22" parent="Interactables/CrumbleBlocks" unique_id=666712408 instance=ExtResource("16_ejjlu")]
+position = Vector2(896, -4288)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform23" parent="Interactables/CrumbleBlocks" unique_id=1115575325 instance=ExtResource("16_ejjlu")]
+position = Vector2(1536, -4800)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform24" parent="Interactables/CrumbleBlocks" unique_id=1599277524 instance=ExtResource("16_ejjlu")]
+position = Vector2(1408, -4800)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform25" parent="Interactables/CrumbleBlocks" unique_id=270381631 instance=ExtResource("16_ejjlu")]
+position = Vector2(512, -5696)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform26" parent="Interactables/CrumbleBlocks" unique_id=1908687137 instance=ExtResource("16_ejjlu")]
+position = Vector2(384, -5696)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform27" parent="Interactables/CrumbleBlocks" unique_id=1252369182 instance=ExtResource("16_ejjlu")]
+position = Vector2(256, -6080)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform28" parent="Interactables/CrumbleBlocks" unique_id=544126792 instance=ExtResource("16_ejjlu")]
+position = Vector2(128, -6080)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform29" parent="Interactables/CrumbleBlocks" unique_id=774728897 instance=ExtResource("16_ejjlu")]
+position = Vector2(512, -6464)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform30" parent="Interactables/CrumbleBlocks" unique_id=2139947697 instance=ExtResource("16_ejjlu")]
+position = Vector2(640, -6464)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform20" parent="Interactables/CrumbleBlocks" unique_id=750612591 instance=ExtResource("16_ejjlu")]
+position = Vector2(2304, -3648)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform12" parent="Interactables/CrumbleBlocks" unique_id=1047602118 instance=ExtResource("16_ejjlu")]
+position = Vector2(1664, -2880)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform13" parent="Interactables/CrumbleBlocks" unique_id=518272601 instance=ExtResource("16_ejjlu")]
+position = Vector2(1792, -2880)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform14" parent="Interactables/CrumbleBlocks" unique_id=1477053206 instance=ExtResource("16_ejjlu")]
+position = Vector2(1920, -2880)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform15" parent="Interactables/CrumbleBlocks" unique_id=436521304 instance=ExtResource("16_ejjlu")]
+position = Vector2(2048, -2880)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform16" parent="Interactables/CrumbleBlocks" unique_id=415314696 instance=ExtResource("16_ejjlu")]
+position = Vector2(2176, -2880)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform17" parent="Interactables/CrumbleBlocks" unique_id=122603360 instance=ExtResource("16_ejjlu")]
+position = Vector2(2304, -2880)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform18" parent="Interactables/CrumbleBlocks" unique_id=628970164 instance=ExtResource("16_ejjlu")]
+position = Vector2(2432, -2880)
+scale = Vector2(1, 0.5)
+
+[node name="CrumblingPlatform8" parent="Interactables/CrumbleBlocks" unique_id=1441448586 instance=ExtResource("16_ejjlu")]
+position = Vector2(2240, -1088)
+scale = Vector2(1, 0.5)
+
+[node name="Chandeliers" type="Node" parent="Interactables" unique_id=315842073]
+
+[node name="Chandelier" parent="Interactables/Chandeliers" unique_id=2022063999 node_paths=PackedStringArray("target") instance=ExtResource("17_gbsts")]
+position = Vector2(1408, -1471.9999)
+scale = Vector2(0.24, 0.285)
+target = NodePath("../HitTarget")
+chain_length = 576.0
+
+[node name="HitTarget" parent="Interactables/Chandeliers" unique_id=840324721 instance=ExtResource("18_3d6ih")]
+position = Vector2(1408, -1664)
+
+[node name="Chandelier2" parent="Interactables/Chandeliers" unique_id=1327778415 node_paths=PackedStringArray("target") instance=ExtResource("17_gbsts")]
+position = Vector2(1856, -1471.9999)
+scale = Vector2(0.24, 0.285)
+target = NodePath("../HitTarget2")
+chain_length = 256.0
+
+[node name="HitTarget2" parent="Interactables/Chandeliers" unique_id=1362260255 instance=ExtResource("18_3d6ih")]
+position = Vector2(1856, -1664)
+
+[node name="Chandelier3" parent="Interactables/Chandeliers" unique_id=1279369234 node_paths=PackedStringArray("target") instance=ExtResource("17_gbsts")]
+position = Vector2(2496, -1536)
+scale = Vector2(0.18, 0.285)
+target = NodePath("../HitTarget3")
+chain_length = 256.0
+
+[node name="HitTarget3" parent="Interactables/Chandeliers" unique_id=1784839046 instance=ExtResource("18_3d6ih")]
+position = Vector2(2496, -1664)
+
+[node name="Chandelier4" parent="Interactables/Chandeliers" unique_id=129142178 node_paths=PackedStringArray("target") instance=ExtResource("17_gbsts")]
+position = Vector2(1152, -4928)
+target = NodePath("../HitTarget4")
+chain_length = 256.0
+
+[node name="HitTarget4" parent="Interactables/Chandeliers" unique_id=1877205791 instance=ExtResource("18_3d6ih")]
+position = Vector2(1152, -5056)
+
+[node name="Cages" type="Node" parent="Interactables" unique_id=198264480]
+
+[node name="Cage" parent="Interactables/Cages" unique_id=1612517743 instance=ExtResource("22_64yx1")]
+position = Vector2(2752, -4864)
+
+[node name="Target" parent="Interactables/Cages/Cage/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1612517743, 1417091144) index="0" unique_id=1141455337]
+position = Vector2(2752, -4352)
+
+[node name="Target2" parent="Interactables/Cages/Cage/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1612517743, 1417091144) index="1" unique_id=1289752025]
+position = Vector2(2752, -5056)
+
+[node name="HitTarget" parent="Interactables/Cages/Cage/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1612517743, 1417091144) index="2" unique_id=562628805]
+position = Vector2(2752, -5248)
+
+[node name="FeatherPickup" parent="Interactables/Cages/Cage" unique_id=1292950112 instance=ExtResource("12_6vksy")]
+position = Vector2(0, 61)
+
+[node name="KillZones" type="Node" parent="." unique_id=1840856642]
+
+[node name="DeathZone" type="Area2D" parent="KillZones" unique_id=2144429765]
+script = ExtResource("23_c7h1x")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=961778453]
+position = Vector2(-57, 22)
+polygon = PackedVector2Array(789, -423, 872, -59, 668, -16, 653, -486, 744, -752, 745, -825, 683, -857, 448, -808, 427, -734, 444, -605, 385, -695, 428, -845, 789, -892, 828, -1074, 757, -1261, 752, -1569, 724, -1678, 611, -1735, 1057, -1731, 879, -1430, 910.5968, -1212.4689, 1111, -1252, 992, -1200, 931, -1072, 914, -861, 875, -604)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=1226426692]
+polygon = PackedVector2Array(2187, -1668, 2282, -1671, 2287, -1452, 2182, -1348, 2175, -1237, 2227, -1127, 2225, -923, 2284, -795, 2153, -1140, 2007, -1026, 1897, -1057, 2032, -1108, 2091.2266, -1321.9799, 2182, -1488)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=1344210701]
+position = Vector2(-150, -610)
+polygon = PackedVector2Array(471, -938, 336, -1126, 386, -1342, 333, -1461, 443, -1586, 566, -1776, 998, -1742, 1058, -1877, 952, -1792, 720, -1908, 471, -1882, 326, -1666, 151, -1742, 165, -1201)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=246700893]
+polygon = PackedVector2Array(1377, -3030, 1223, -3291, 1314, -3517, 1308, -3662, 1136, -3197, 680, -3089, 644, -2953, 585, -2726, 652, -2668, 695, -2894, 743, -2999, 1015, -3064, 1195, -2964, 1430, -2625)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=282847224]
+position = Vector2(612, -3853)
+polygon = PackedVector2Array(2420, -1821, 1420, -1492, 1761, -1378, 1485, -871, 1673, -999, 1620, -680, 1382, -545, 1641, -613, 1690, -724, 1761, -689, 1730, -798, 1719, -1124, 1848, -1299, 2028, -1427, 2244, -1464, 2384, -1444)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=481189293]
+position = Vector2(636, -2334)
+polygon = PackedVector2Array(1101, -4047, 1059, -4158, 262, -3719, 338, -3629)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="KillZones/DeathZone" unique_id=412727658]
+position = Vector2(1541, -3825)
+polygon = PackedVector2Array(-40, -2866, 81, -3075, 327, -3207, 1389, -2896, 1289, -2355, 1150, -2462, 961, -2593, 825, -2815, 683, -2850, 542, -2828, 471, -2906, 418, -3096, 331, -3122, 215, -3090)
+
+[connection signal="target_hit" from="Interactables/MovingPlatforms/MovingPlatform3/HitTarget" to="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" method="_on_hit_target_target_hit"]
+[connection signal="target_hit" from="Interactables/MovingPlatforms/MovingPlatform4/HitTarget" to="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" method="_on_hit_target_target_hit"]
+
+[editable path="Interactables/MovingPlatforms/MovingPlatform"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform2"]
+[editable path="Interactables/MovingPlatforms/MovingPlatform5"]
+[editable path="Interactables/Cages/Cage"]
+[editable path="Interactables/Cages/Cage/Node2D/CollisionBorders/DashCollider"]
+[editable path="Interactables/Cages/Cage/Node2D/CollisionBorders/DashCollider2"]
+[editable path="Interactables/Cages/Cage/Node2D/CollisionBorders/DashCollider3"]
+[editable path="Interactables/Cages/Cage/Node2D/CollisionBorders/DashCollider4"]

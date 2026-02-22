@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cgiuqwrfsqvuy"]
 
-[ext_resource type="Script" uid="uid://bueajn2hl8eq1" path="res://scenes/objects/feather/feather_pickup.gd" id="1_b26d6"]
+[ext_resource type="Script" path="res://scenes/objects/feather/feather_pickup.gd" id="1_b26d6"]
 [ext_resource type="Texture2D" uid="uid://ntuemj3pul34" path="res://assets/feathers/goodFeather.png" id="2_irt8i"]
+[ext_resource type="PackedScene" uid="uid://cqf2bumwyf4es" path="res://scenes/VFX/feather_light/feather_self_emission.tscn" id="3_vifbp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_irt8i"]
 radius = 31.780497
@@ -17,5 +18,7 @@ texture = ExtResource("2_irt8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=501757788]
 shape = SubResource("CircleShape2D_irt8i")
+
+[node name="feather_self_emission" parent="." unique_id=131690398 instance=ExtResource("3_vifbp")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

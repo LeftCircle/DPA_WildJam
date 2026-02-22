@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cqf2bumwyf4es"]
+
+[ext_resource type="Texture2D" uid="uid://1bfii5uyg3cd" path="res://assets/VFX/Flare_small.PNG" id="1_p7sjt"]
+[ext_resource type="Texture2D" uid="uid://kq0ukhnnd8c2" path="res://assets/VFX/cfxr aura rays.png" id="2_flcim"]
+[ext_resource type="Script" uid="uid://unc0y8lfa61u" path="res://scenes/VFX/feather_light/light_rotator.gd" id="3_8gtwe"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1aj68"]
+blend_mode = 1
+
+[node name="feather_self_emission" type="Node2D" unique_id=131690398]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1823639307]
+energy = 2.0
+texture = ExtResource("1_p7sjt")
+texture_scale = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1726559177]
+modulate = Color(1, 1, 1, 0.5803922)
+material = SubResource("CanvasItemMaterial_1aj68")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_flcim")
+script = ExtResource("3_8gtwe")

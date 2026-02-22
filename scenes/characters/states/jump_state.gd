@@ -10,9 +10,11 @@ class_name JumpState
 @export var horizontal_movement : HorizontalMovement = load("res://resources/character/PlayerHorizontalMovement.tres")
 @export var input_processor : InputProcessor
 @export var anim_tree : PlayerAnimationTree
-@onready var playerVFX: PlayerVFX =$"../../PlayerVFX"
+
 var _current_jump_time : float = 0
 var _jump_frames : int = 0
+
+@onready var playerVFX: PlayerVFX =$"../../PlayerVFX"
 
 func _enter():
 	_current_jump_time = 0
@@ -22,6 +24,8 @@ func _enter():
 	else:
 		anim_tree.start_anim("Jump", true)
 	_emit_jump_dust()
+	play_sound.emit(audio, audio_start)
+	
 
 func _update(delta):
 	_current_jump_time += delta
