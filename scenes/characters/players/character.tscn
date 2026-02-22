@@ -824,11 +824,6 @@ anim_player = NodePath("../AnimationPlayer")
 [node name="InputProcessor" type="Node" parent="." unique_id=656449399]
 script = ExtResource("8_ymfos")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=80016861]
-zoom = Vector2(0.6, 0.6)
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1279856151]
 libraries/ = SubResource("AnimationLibrary_7lw86")
 

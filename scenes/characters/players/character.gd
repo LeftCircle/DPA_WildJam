@@ -8,6 +8,7 @@ signal dash_finished()
 var feather_counter = 99
 var acquired_feathers : int = 99
 
+@onready var camera = %Camera2D
 
 
 func _ready():
