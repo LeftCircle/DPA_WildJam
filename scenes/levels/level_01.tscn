@@ -59,6 +59,7 @@ next_level = ExtResource("2_qdh5e")
 spawn_point = NodePath("Spawn")
 llc = NodePath("CameraLimits/LLC")
 urc = NodePath("CameraLimits/URC")
+start_music = true
 
 [node name="Environment" type="Node" parent="." unique_id=546714053]
 

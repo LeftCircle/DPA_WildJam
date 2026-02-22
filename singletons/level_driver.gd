@@ -11,11 +11,11 @@ var player_starting_state : PlayerStartingState = PlayerStartingState.new()
 var t : Transition
 
 @onready var level_music : AudioStreamPlayer = $LevelMusic
+@onready var title_music : AudioStreamPlayer = $TitleMusic
 
 func _ready():
 	player_starting_state.current_feathers = 0
 	level_music.bus = "Music"
-	level_music.play()
 	
 func reset_player():
 	player_starting_state = PlayerStartingState.new()

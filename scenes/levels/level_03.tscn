@@ -717,6 +717,12 @@ position = Vector2(5984, -1536)
 [node name="Box6" parent="Interactables/Node" unique_id=1402347980 instance=ExtResource("13_iaubp")]
 position = Vector2(5984, -1664)
 
+[node name="Box12" parent="Interactables/Node" unique_id=530632489 instance=ExtResource("13_iaubp")]
+position = Vector2(0, -1536)
+
+[node name="Box17" parent="Interactables/Node" unique_id=898292712 instance=ExtResource("13_iaubp")]
+position = Vector2(128, -1536)
+
 [node name="Box7" parent="Interactables/Node" unique_id=241188367 instance=ExtResource("13_iaubp")]
 position = Vector2(6112, -1664)
 
@@ -752,12 +758,14 @@ texture = ExtResource("25_jeigf")
 [node name="Feathers" type="Node" parent="." unique_id=149227485]
 
 [node name="FeatherPickup" parent="Feathers" unique_id=2120564041 instance=ExtResource("9_hvqp8")]
+z_index = -1
 position = Vector2(64, -1600)
 
 [node name="FeatherPickup3" parent="Feathers" unique_id=1955299447 instance=ExtResource("9_hvqp8")]
 position = Vector2(896, -2304)
 
 [node name="FeatherPickup2" parent="Feathers" unique_id=569059541 instance=ExtResource("9_hvqp8")]
+z_index = -1
 position = Vector2(6176, -1344)
 
 [node name="CameraLimits" type="Node" parent="." unique_id=51580226]

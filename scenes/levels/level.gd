@@ -5,12 +5,15 @@ class_name Level
 @export var spawn_point : Node2D
 @export var llc : Node2D
 @export var urc : Node2D
+@export var start_music : bool = false
 
 @onready var exit_area : ExitArea = $ExitArea
 @onready var camera : Camera2D = %Camera2D
 
 
 func _ready():
+	if start_music:
+		LevelDriver.level_music.play()
 	LevelDriver.current_level = self
 	if is_instance_valid(exit_area):
 		exit_area.exit_level.connect(LevelDriver._on_level_exit)

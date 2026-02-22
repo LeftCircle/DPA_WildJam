@@ -817,6 +817,7 @@ impulse_force = 2800.0
 throw_point = NodePath("../../ThrowPoint")
 projectile_container = NodePath("../../ProjectileContainer")
 anim_tree = NodePath("../../AnimationTree")
+horizontal_movement = ExtResource("6_al1dr")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://hhqyur0hswxn"
 

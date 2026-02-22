@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://fu6587nltyln" path="res://assets/environment/level_06/Level_6_staticGeo.png" id="8_1dtt1"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="8_s7m4s"]
 [ext_resource type="PackedScene" uid="uid://1sk167xtn8qv" path="res://scenes/VFX/lights/window_light.tscn" id="10_tg547"]
+[ext_resource type="Texture2D" uid="uid://p01kqe4ikhab" path="res://assets/environment/level_06/Level_6_hazards.png" id="11_e78jm"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="12_6vksy"]
+[ext_resource type="Texture2D" uid="uid://dpb1ljd1ikmjo" path="res://assets/environment/level_06/Level_6_shrubs.png" id="12_i0uhb"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="13_sppnv"]
 [ext_resource type="Script" uid="uid://eg5uygnpo1ct" path="res://scenes/objects/dash_collider/dash_collider.gd" id="14_cdd1g"]
 [ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="15_1dtt1"]
@@ -161,9 +163,21 @@ texture = ExtResource("8_1dtt1")
 metadata/_edit_lock_ = true
 
 [node name="Vines" type="Sprite2D" parent="Environment" unique_id=525881405]
-z_index = -2
+z_index = 2
 position = Vector2(1517, -3662)
 texture = ExtResource("7_17n5y")
+metadata/_edit_lock_ = true
+
+[node name="hazards" type="Sprite2D" parent="Environment" unique_id=1357899351]
+z_index = 2
+position = Vector2(1517, -3662)
+texture = ExtResource("11_e78jm")
+metadata/_edit_lock_ = true
+
+[node name="shrubs" type="Sprite2D" parent="Environment" unique_id=824090536]
+z_index = 2
+position = Vector2(1517, -3662)
+texture = ExtResource("12_i0uhb")
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=1661540075]
