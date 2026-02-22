@@ -20,10 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="17_de7pb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ot78m"]
-polygon = PackedVector2Array(-339, 1326, -213, 1326, -207, 1360, -334, 1359)
+polygon = PackedVector2Array(-338, 1319, -211, 1319, -209, 1352, -335, 1352)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c1tix"]
-polygon = PackedVector2Array(788, -531, 785, -1176, 1045, -1162, 1053, -812, 1294, -843, 1294, -908, 1939, -856, 1941, -908, 2196, -913, 2204, -661, 2576, -1043, 2821, -1038, 2879, -1139, 2810, -1549, 2959, -1694, 2961, -1742, 2703, -1742, 2706, -1802, 2927, -1796, 2926, -2051, 2783, -2041, 2559, -1821, 2606, -1446, 2736, -1353, 2735, -1208, 2521, -1520, 2410, -1158, 2371, -1443, 2438, -1561, 2407, -1813, 2719, -2153, 2717, -2193, 3127, -2191, 3129, -86, 2968, -91, 2961, -961, 2536, -833, 2212, -258, 2198, -95, 1932, -88, 1941, -258, 1782, -231, 1589, -378, 1401, -378, 1231, -589, 1054, -633, 1042, -442, 984, -461, 933, -517)
+polygon = PackedVector2Array(788, -531, 785, -1176, 1050, -1167, 1053, -812, 1294, -843, 1294, -908, 1939, -856, 1941, -908, 2196, -913, 2204, -661, 2576, -1043, 2669, -1039, 2675, -1074, 2849, -1075, 2879, -1139, 2810, -1549, 2959, -1694, 2961, -1742, 2703, -1742, 2706, -1802, 2927, -1796, 2926, -2051, 2783, -2041, 2559, -1821, 2606, -1446, 2736, -1353, 2735, -1208, 2521, -1520, 2410, -1158, 2371, -1443, 2438, -1561, 2407, -1813, 2534, -2021, 2719, -2153, 2717, -2193, 3127, -2191, 3129, -86, 2968, -91, 2961, -961, 2536, -833, 2212, -258, 2198, -95, 1943, -90, 1941, -258, 1782, -231, 1589, -378, 1401, -378, 1231, -589, 1054, -633, 1056, -448, 984, -461, 933, -517)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ywrx1"]
 polygon = PackedVector2Array(-1491, 1243, -722, 1244, -636, 1149, -576, 1166, -576, 1414, -1489, 1414)
@@ -32,10 +32,10 @@ polygon = PackedVector2Array(-1491, 1243, -722, 1244, -636, 1149, -576, 1166, -5
 polygon = PackedVector2Array(138, -398, 274, -398, 278, -1042, 313, -1070, 285, -1754, 331, -1791, 620, -1804, 292, -1862, 286, -2633, 346, -2712, 741, -2680, 795, -2426, 755, -2089, 450, -2049, 754, -2015, 767, -1405, 1051, -1433, 1057, -2326, 969, -2497, 1058, -2610, 1054, -2698, 881, -2698, 514, -2911, 139, -2914)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7gy4l"]
-polygon = PackedVector2Array(1950, -2691, 1952, -2463, 2197, -2453, 2197, -2701)
+polygon = PackedVector2Array(1940, -2703, 1943, -2461, 2197, -2453, 2197, -2701)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tavyg"]
-polygon = PackedVector2Array(1955, -2251, 1947, -1091, 2076, -1015, 2205, -1248, 2202, -2243, 2089, -2289)
+polygon = PackedVector2Array(1941, -2257, 1947, -1091, 2074, -1022, 2201, -1249, 2202, -2243, 2102, -2278)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f3k6o"]
 polygon = PackedVector2Array(444, -2272, 587, -2271, 587, -2320, 446, -2320)
@@ -44,7 +44,7 @@ polygon = PackedVector2Array(444, -2272, 587, -2271, 587, -2320, 446, -2320)
 polygon = PackedVector2Array(447, -732, 588, -732, 587, -778, 445, -779)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kkx70"]
-polygon = PackedVector2Array(446, -1510, 588, -1508, 587, -1559, 445, -1556)
+polygon = PackedVector2Array(444, -1510, 588, -1508, 587, -1559, 446, -1558)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy1ns"]
 size = Vector2(128, 64)
@@ -98,47 +98,54 @@ texture = ExtResource("5_5j0jk")
 metadata/_edit_lock_ = true
 
 [node name="Lights" type="Node2D" parent="Environment" unique_id=1601875454]
-visible = false
 
 [node name="level5_window_light" parent="Environment/Lights" unique_id=1477126154 instance=ExtResource("4_c1tix")]
-position = Vector2(515.0277, -535.0367)
+position = Vector2(526.20703, -1014.75507)
+offset = Vector2(-648.8415, -5.327835)
 
 [node name="level5_window_light2" parent="Environment/Lights" unique_id=1141108501 instance=ExtResource("4_c1tix")]
-position = Vector2(516.0278, -1303.0366)
+position = Vector2(523.42706, -1776.4644)
+offset = Vector2(-640.333, -3.526352)
 
 [node name="level5_window_light3" parent="Environment/Lights" unique_id=2030936550 instance=ExtResource("4_c1tix")]
-position = Vector2(513.0277, -2065.0369)
+position = Vector2(514.37994, -2548.6082)
+energy = 0.38
+offset = Vector2(-654.05273, -0.64445496)
 
 [node name="level5_window_light4" parent="Environment/Lights" unique_id=1470183109 instance=ExtResource("4_c1tix")]
-position = Vector2(708.0277, -2197.0369)
+position = Vector2(737.0515, -2657.3547)
+offset = Vector2(-622.6013, -13.832108)
 
 [node name="level5_window_light5" parent="Environment/Lights" unique_id=751786595 instance=ExtResource("4_c1tix")]
-position = Vector2(1371.9999, -2054)
+position = Vector2(1089.9214, -2612.615)
 rotation = -2.3819919
+offset = Vector2(-796.9452, -100.46704)
 texture_scale = 5.08
 
 [node name="level5_window_light6" parent="Environment/Lights" unique_id=1859082497 instance=ExtResource("4_c1tix")]
 z_index = -1
-position = Vector2(2123, -2236)
-rotation = -0.837478
+position = Vector2(2962.791, -2701.721)
+rotation = -0.8829763
 scale = Vector2(1.0125449, 3.3058898)
-energy = 0.2
-shadow_enabled = false
+energy = 0.47
+offset = Vector2(-861.24634, 44.10495)
 
 [node name="level5_window_light7" parent="Environment/Lights" unique_id=1123214087 instance=ExtResource("4_c1tix")]
-position = Vector2(2660.0002, -2180.0002)
+position = Vector2(2320, -2585.0002)
 rotation = -2.2983408
-energy = 0.2
-texture_scale = 3.94
+energy = 0.3
+offset = Vector2(-871.0437, -6.168701)
+texture_scale = 4.62
 
 [node name="level5_window_light8" parent="Environment/Lights" unique_id=1132610412 instance=ExtResource("4_c1tix")]
-position = Vector2(2643.0002, -1120)
+position = Vector2(2644.2903, -1609.474)
+offset = Vector2(-662.0364, -0.61486816)
 
 [node name="level5_window_light9" parent="Environment/Lights" unique_id=590862500 instance=ExtResource("4_c1tix")]
-position = Vector2(2777.0002, -744.0001)
+position = Vector2(2778.2644, -1236.4895)
+offset = Vector2(-666.1149, -0.60253906)
 
 [node name="Occluders" type="Node2D" parent="Environment" unique_id=1795442860]
-visible = false
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1522256849]
 z_index = -1
@@ -179,8 +186,7 @@ z_index = -1
 occluder = SubResource("OccluderPolygon2D_kkx70")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=523999365]
-visible = false
-color = Color(0.62152386, 0.62152386, 0.6215238, 1)
+color = Color(0.71838135, 0.7183814, 0.7183811, 1)
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1209705684]
 visible = false
