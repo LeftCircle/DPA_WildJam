@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://lfnekpog5n6n"]
+
+[ext_resource type="Texture2D" uid="uid://dmge4tooys6a2" path="res://assets/VFX/Gradient01.png" id="1_e08ud"]
+
+[node name="glowing_water" type="PointLight2D" unique_id=1171283211]
+rotation = 3.1415927
+scale = Vector2(30.872719, 5.0078416)
+energy = 0.7
+texture = ExtResource("1_e08ud")

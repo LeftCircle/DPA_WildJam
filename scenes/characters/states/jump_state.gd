@@ -10,6 +10,7 @@ class_name JumpState
 @export var horizontal_movement : HorizontalMovement = load("res://resources/character/PlayerHorizontalMovement.tres")
 @export var input_processor : InputProcessor
 @export var anim_tree : PlayerAnimationTree
+@export var double_jump_audio : AudioStream
 
 var _current_jump_time : float = 0
 var _jump_frames : int = 0
@@ -21,10 +22,11 @@ func _enter():
 	_jump_frames = 0
 	if not character.is_on_floor():
 		anim_tree.start_anim("DoubleJump", true)
+		play_sound.emit(double_jump_audio, audio_start)
 	else:
 		anim_tree.start_anim("Jump", true)
+		play_sound.emit(audio, audio_start)
 	_emit_jump_dust()
-	play_sound.emit(audio, audio_start)
 	
 
 func _update(delta):

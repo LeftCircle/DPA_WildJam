@@ -1,0 +1,68 @@
+~ start
+if first == true:
+	=>< Introduction
+	set first = false
+else:
+	=>< Reintroduction
+if check_feathers():
+	What will you do?
+	- Every journey starts with a single step... (Give)
+		=>< Give_Dialogue
+		do give_feathers()
+		do save_npc()
+		do disappear()
+		=> END
+	- Get your head out of the clouds and face reality. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do doom_player()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+else:
+	What will you do?
+	- ??? [if check_feathers()]
+		=>< Give_Dialogue
+		do give_feathers()
+		do disappear()
+		=> END
+	- Get your head out of the clouds and face reality. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+
+~ Introduction
+The Braggart: Oh, I didn’t see you there! Come to think of it, I didn’t know there was anyone else in this tower but me!
+The Braggart: That’s a nice feather you got there! Did you know they make you extra agile?
+The Braggart: I got a couple myself– real nice, huh? Don’t know how they floated down here, but surely this means we can get to the world outside!
+The Braggart: I’ve been saving these feathers up: you see, I got big plans for when I escape this flooded old cell. I’m gonna travel the world!
+The Braggart: Yeah, once I get outta here, I’ll make money sailing from port to port! I’ll become a captain of my own ship and eat like a sultan! 
+The Braggart: Then, when I’ve made my riches, I’ll find a pretty woman and start a family. We’ll grow old, have a few kids, and settle down by the old sea!
+The Braggart: …That is to say, when I manage to break free of this wretched place. I feel like I’ve been saying this for years.
+The Braggart: Haha… once I find a few more feathers, then I’ll be ready.
+ => END
+
+~ Reintroduction
+The Braggart: Oh, you’re back! How’s the search for feathers going? I haven’t had any luck yet, but I will. Just as soon as I’m ready...
+ => END
+
+~ Give_Dialogue
+The Braggart: … Wait, you’re giving this to me?
+The Braggart: What do you mean I’ve been holding myself back?
+The Braggart: I’ve spent all this time thinking about a way out, but I’ve been able to escape this whole time?
+The Braggart: Well… thank you.
+The Braggart: I suppose I’ll be on my way, then.
+The Braggart: I won’t forget the kindness you’ve shown me!
+ => END
+
+~ Take_Dialogue
+The Braggart: !!!
+The Braggart: How dare you –!
+The Braggart: …
+The Braggart: Maybe you’re right. What was I thinking? Collecting feathers? In this damp cell, with no windows under the sea?
+The Braggart: … Is there truly no escape?
+ => END

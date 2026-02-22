@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bmphlybfnvbgs"]
+
+[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="1_iu5ju"]
+[ext_resource type="Resource" uid="uid://bii3skosd4h1o" path="res://assets/dialogue/Braggart_Lv2.dialogue" id="2_x2kyq"]
+
+[node name="Npc" unique_id=1113561624 instance=ExtResource("1_iu5ju")]
+
+[node name="Interactable" parent="." index="3" unique_id=27851606]
+dialogue_resource = ExtResource("2_x2kyq")
+feather_give = -1
+feather_take = 4

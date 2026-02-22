@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://vlwu5cpnx855"]
+
+[ext_resource type="AudioStream" uid="uid://cnyafbco8dnop" path="res://audio/sfx/Double Jump.WAV" id="1_dxoj5"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_dxoj5")

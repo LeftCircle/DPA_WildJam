@@ -17,6 +17,7 @@ func _enter():
 	_current_dash_frames = 0
 	anim_tree.start_anim("Dash")
 	character.dash.emit()
+	play_sound.emit(audio, 0.0)
 
 func _update(delta : float) -> void:
 	character.velocity = _dash_direction * dash_speed

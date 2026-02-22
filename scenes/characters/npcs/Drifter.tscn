@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://wmhe3h0cis6a"]
+
+[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="1_7edr3"]
+[ext_resource type="Resource" uid="uid://dhn7vevcjn7cl" path="res://assets/dialogue/Drifter_Lv4.dialogue" id="2_vvt8i"]
+
+[node name="Npc" unique_id=1113561624 instance=ExtResource("1_7edr3")]
+
+[node name="Interactable" parent="." index="3" unique_id=27851606]
+dialogue_resource = ExtResource("2_vvt8i")
+feather_take = 0
+npc_index = 2

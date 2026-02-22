@@ -9,8 +9,9 @@
 [ext_resource type="TileSet" uid="uid://bf5qntnxirghm" path="res://resources/levels/half_grid_collisions.tres" id="4_yjjx0"]
 [ext_resource type="Texture2D" uid="uid://dvi2cd4c4jawg" path="res://assets/environment/level_02/Level_2_water.png" id="5_q6ljp"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="6_a3l5x"]
+[ext_resource type="Texture2D" uid="uid://dmge4tooys6a2" path="res://assets/VFX/Gradient01.png" id="6_dscar"]
+[ext_resource type="PackedScene" uid="uid://lfnekpog5n6n" path="res://scenes/VFX/lights/glowing_water.tscn" id="6_m2te4"]
 [ext_resource type="Script" uid="uid://dvh4xwyli7yrw" path="res://scenes/objects/exit_zone/ExitArea.gd" id="7_keemd"]
-[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="9_c6rld"]
 [ext_resource type="Script" uid="uid://byxa0rv3p7sg6" path="res://scenes/objects/locked_door/locked_door.gd" id="9_km0xc"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="10_o4ql5"]
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="11_o4ql5"]
@@ -18,6 +19,23 @@
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="12_4hx2o"]
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="13_km0xc"]
 [ext_resource type="Texture2D" uid="uid://b2nixutnk7xla" path="res://assets/environment/general/woodenDoor.png" id="14_dscar"]
+[ext_resource type="Texture2D" uid="uid://7imgv35cai7u" path="res://assets/environment/general/darkChandelierNoChain.png" id="17_01hg1"]
+[ext_resource type="PackedScene" uid="uid://bmphlybfnvbgs" path="res://scenes/characters/npcs/Braggart.tscn" id="21_m2te4"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_km0xc"]
+polygon = PackedVector2Array(132, 147, 137, -2422, 2814, -2416, 2814, -1913, 3196, -1906, 3198, -1784, 2691, -1792, 2693, -2302, 257, -2299, 263, -1277, 764, -1271, 764, -1150, 253, -1140, 263, -252, 511, -248, 507, -28, 1926, -12, 1924, -111, 2167, -113, 2169, 18, 2691, 16, 2695, -117, 3456, -106, 3451, 126)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n536o"]
+polygon = PackedVector2Array(392, -884, 504, -880, 519, -398, 392, -388)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m2jhg"]
+polygon = PackedVector2Array(1024, -2160, 1276, -2160, 1273, -1661, 1658, -1645, 1666, -1281, 1787, -1275, 1789, -895, 2433, -903, 2442, -1279, 2683, -1269, 2693, -1412, 2159, -1418, 2161, -1171, 2047, -1163, 2057, -1408, 1793, -1410, 1801, -1659, 3082, -1649, 3071, -1801, 3194, -1792, 3209, -1154, 2822, -1150, 2820, -377, 3456, -369, 3456, -88, 3335, -85, 3333, -259, 2695, -263, 2697, -645, 1537, -635, 1535, -1524, 637, -1526, 646, -1668, 1028, -1655)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4dr30"]
+polygon = PackedVector2Array(516, -248, 514, -189, 644, -185, 644, -251)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dscar"]
+polygon = PackedVector2Array(898, -256, 896, -186, 1023, -189, 1025, -253)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keemd"]
 size = Vector2(2239, 61.5)
@@ -31,19 +49,12 @@ size = Vector2(260.5, 217)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1yl6"]
 size = Vector2(82.677246, 23.077238)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_km0xc"]
-polygon = PackedVector2Array(132, 147, 137, -2422, 2814, -2416, 2814, -1913, 3196, -1906, 3198, -1784, 2691, -1792, 2693, -2302, 257, -2299, 263, -1277, 764, -1271, 764, -1150, 253, -1140, 263, -252, 511, -248, 507, -28, 1926, -12, 1924, -111, 2167, -113, 2169, 18, 2691, 16, 2695, -117, 3456, -106, 3451, 126)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n536o"]
-polygon = PackedVector2Array(392, -884, 504, -880, 519, -398, 392, -388)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m2jhg"]
-polygon = PackedVector2Array(1024, -2160, 1276, -2160, 1273, -1661, 1658, -1645, 1666, -1281, 1787, -1275, 1789, -895, 2433, -903, 2442, -1279, 2683, -1269, 2693, -1412, 2159, -1418, 2161, -1171, 2047, -1163, 2057, -1408, 1793, -1410, 1801, -1659, 3082, -1649, 3071, -1801, 3194, -1792, 3209, -1154, 2822, -1150, 2820, -377, 3456, -369, 3456, -88, 3335, -85, 3333, -259, 2695, -263, 2697, -645, 1537, -635, 1535, -1524, 637, -1526, 646, -1668, 1028, -1655)
-
-[node name="Level02" type="Node2D" unique_id=453271988 node_paths=PackedStringArray("spawn_point")]
+[node name="Level02" type="Node2D" unique_id=453271988 node_paths=PackedStringArray("spawn_point", "llc", "urc")]
 script = ExtResource("1_yjjx0")
 next_level = ExtResource("2_ppbiy")
 spawn_point = NodePath("SpawnPoint")
+llc = NodePath("CameraLimits/LLC")
+urc = NodePath("CameraLimits/URC")
 
 [node name="Environment" type="Node2D" parent="." unique_id=1623401425]
 
@@ -59,8 +70,50 @@ texture = ExtResource("4_q6ljp")
 position = Vector2(1536, -1152)
 texture = ExtResource("5_q6ljp")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=1968136896]
+color = Color(0.6623608, 0.6899365, 0.6679884, 1)
+
+[node name="Occluders" type="Node2D" parent="Environment" unique_id=2053150416]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Occluders" unique_id=2095341164]
+z_index = -2
+occluder = SubResource("OccluderPolygon2D_km0xc")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1450899474]
+z_index = -2
+occluder = SubResource("OccluderPolygon2D_n536o")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1265212893]
+z_index = -2
+occluder = SubResource("OccluderPolygon2D_m2jhg")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1258069413]
+z_index = -2
+occluder = SubResource("OccluderPolygon2D_4dr30")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Environment/Occluders" unique_id=1367688635]
+z_index = -2
+occluder = SubResource("OccluderPolygon2D_dscar")
+
+[node name="Lights" type="Node2D" parent="Environment" unique_id=710798192]
+
+[node name="glowing_water" parent="Environment/Lights" unique_id=1171283211 instance=ExtResource("6_m2te4")]
+position = Vector2(1494, 304.99997)
+
+[node name="glowing_water2" type="PointLight2D" parent="Environment/Lights" unique_id=1296344793]
+position = Vector2(1993, -861.00006)
+rotation = -3.1415927
+scale = Vector2(5.72, 1.4369999)
+energy = 0.7
+texture = ExtResource("6_dscar")
+
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(3008, -128)
+position = Vector2(2944, -128)
+
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=1928407894]
+unique_name_in_owner = true
+position = Vector2(0, -256)
+zoom = Vector2(0.795, 0.795)
 
 [node name="DeathAreas" type="Node" parent="." unique_id=1000883032]
 
@@ -92,10 +145,8 @@ metadata/_custom_type_script = "uid://dvh4xwyli7yrw"
 position = Vector2(2983.75, -1749)
 shape = SubResource("RectangleShape2D_ppbiy")
 
-[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("9_c6rld")]
-position = Vector2(2236, -1667)
-
 [node name="LevelGeo" type="Node2D" parent="." unique_id=1901881762]
+visible = false
 
 [node name="LargeGridCollisions" type="TileMapLayer" parent="LevelGeo" unique_id=1063974431]
 modulate = Color(1, 1, 1, 0.2509804)
@@ -151,6 +202,26 @@ target = NodePath("../target/HitTarget")
 
 [node name="StaticBody2D" parent="Interactables/Chandelier/Chandelier" index="0" unique_id=1376589567]
 position = Vector2(-14.5450115, -210.9092)
+
+[node name="Base" parent="Interactables/Chandelier/Chandelier/StaticBody2D/CollisionShape2D" parent_id_path=PackedInt32Array(2022063999, 1388294678) index="0" unique_id=1895817165]
+position = Vector2(-0.10464078, -26.497166)
+scale = Vector2(0.037, 0.17)
+texture = ExtResource("17_01hg1")
+
+[node name="Flame" parent="Interactables/Chandelier/Chandelier/StaticBody2D/CollisionShape2D/Base" index="0" unique_id=1476004817]
+position = Vector2(-226.25021, 11.545586)
+
+[node name="Flame2" parent="Interactables/Chandelier/Chandelier/StaticBody2D/CollisionShape2D/Base" index="1" unique_id=1148418310]
+position = Vector2(-82.0157, -2.886383)
+
+[node name="Flame3" parent="Interactables/Chandelier/Chandelier/StaticBody2D/CollisionShape2D/Base" index="2" unique_id=1510751351]
+position = Vector2(90.49997, -2.886444)
+
+[node name="Flame4" parent="Interactables/Chandelier/Chandelier/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
+position = Vector2(240.39105, 20.20485)
+
+[node name="chandelier_light" parent="Interactables/Chandelier/Chandelier/StaticBody2D" index="1" unique_id=1680736457]
+color = Color(9.62615e-07, 0.7869806, 0.4550653, 1)
 
 [node name="Cage" parent="Interactables" unique_id=1488418667 instance=ExtResource("11_o4ql5")]
 position = Vector2(832, -1024)
@@ -219,25 +290,35 @@ position = Vector2(2466, -1327)
 
 [node name="Environemnt" type="Node2D" parent="." unique_id=1376156260]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Environemnt" unique_id=1968136896]
+[node name="CanvasModulate" type="CanvasModulate" parent="Environemnt" unique_id=179223648]
 visible = false
 
-[node name="Occluders" type="Node2D" parent="Environemnt" unique_id=2053150416]
+[node name="Occluders" type="Node2D" parent="Environemnt" unique_id=460801344]
 visible = false
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=2095341164]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=609904203]
 occluder = SubResource("OccluderPolygon2D_km0xc")
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1450899474]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=678853298]
 occluder = SubResource("OccluderPolygon2D_n536o")
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1265212893]
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Environemnt/Occluders" unique_id=1691245150]
 occluder = SubResource("OccluderPolygon2D_m2jhg")
 
-[node name="Lights" type="Node2D" parent="Environemnt" unique_id=710798192]
+[node name="Lights" type="Node2D" parent="Environemnt" unique_id=215168334]
 visible = false
 
-[editable path="Npc"]
+[node name="CameraLimits" type="Node" parent="." unique_id=515816810]
+
+[node name="LLC" type="Node2D" parent="CameraLimits" unique_id=1198716267]
+position = Vector2(-192, 512)
+
+[node name="URC" type="Node2D" parent="CameraLimits" unique_id=691322855]
+position = Vector2(3200, -2816)
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("21_m2te4")]
+position = Vector2(2208, -1648)
+
 [editable path="Interactables/Chandelier/Chandelier"]
 [editable path="Interactables/Cage"]
 [editable path="Interactables/Cage/Node2D/CollisionBorders/DashCollider"]

@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dbcvx275h70gn" path="res://assets/VFX/cfxr stretch inv spike fade.png" id="1_eo8iy"]
 
-[node name="level5_window_light" type="PointLight2D" unique_id=1477126154]
+[node name="window_light" type="PointLight2D" unique_id=1477126154]
 rotation = -1.5707964
 scale = Vector2(0.739346, 2.0982916)
-energy = 0.4
+energy = 0.6
 shadow_enabled = true
 shadow_filter = 1
-shadow_filter_smooth = 21.7
+shadow_filter_smooth = 50.0
 texture = ExtResource("1_eo8iy")
 texture_scale = 2.8

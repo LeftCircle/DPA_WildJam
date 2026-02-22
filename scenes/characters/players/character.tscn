@@ -10,10 +10,13 @@
 [ext_resource type="Resource" uid="uid://cp2xagdfik1wc" path="res://resources/character/PlayerHorizontalMovement.tres" id="6_al1dr"]
 [ext_resource type="Script" uid="uid://b3scqiwxsp3ai" path="res://scenes/characters/states/dash.gd" id="6_eqpns"]
 [ext_resource type="Script" uid="uid://c7cdvchn6xmqc" path="res://scenes/characters/states/jump_state.gd" id="8_fwqwt"]
+[ext_resource type="AudioStream" uid="uid://dpgd13iudkeo" path="res://audio/sfx/SingleFootstepRand.tres" id="8_fyyhp"]
 [ext_resource type="Script" uid="uid://dshk7xfko5k4n" path="res://scenes/characters/players/input_processor.gd" id="8_ymfos"]
+[ext_resource type="AudioStream" uid="uid://b7rwyx6e4isog" path="res://audio/sfx/DashHarpRand.tres" id="10_0mw0e"]
 [ext_resource type="Script" uid="uid://hhqyur0hswxn" path="res://scenes/characters/states/throw_state.gd" id="11_7lw86"]
 [ext_resource type="PackedScene" uid="uid://rxkask47dfie" path="res://scenes/objects/feather/thrown_feather.tscn" id="12_3omnj"]
 [ext_resource type="Texture2D" uid="uid://djhvm2ypm6j4n" path="res://assets/characters/wings/TestWingSpriteSheet.png" id="12_yqo81"]
+[ext_resource type="AudioStream" uid="uid://vlwu5cpnx855" path="res://audio/sfx/DoubleJumpRand.tres" id="13_3m5he"]
 [ext_resource type="Script" uid="uid://c8dvwd1im3862" path="res://scenes/characters/players/PlayerAnimationTree.gd" id="13_kgru6"]
 [ext_resource type="Texture2D" uid="uid://bx2ilo45uwif0" path="res://assets/characters/player/TestMCSpriteSheetV2.png" id="15_12orm"]
 [ext_resource type="Script" uid="uid://5ekrd6brmrx3" path="res://scenes/characters/players/player_vfx_controller.gd" id="17_uiu2b"]
@@ -610,7 +613,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ewdww"]
 resource_name = "Throw"
-length = 0.33333752
+length = 0.2083375
 step = 0.041666668
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -631,7 +634,7 @@ tracks/1/path = NodePath("Sprites/Throw:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25),
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [1, 2, 3, 4]
@@ -760,14 +763,15 @@ script = ExtResource("3_2qjml")
 character = NodePath("..")
 input_processor = NodePath("../InputProcessor")
 
-[node name="Run" type="LimboState" parent="SM_Character" unique_id=1913486763 node_paths=PackedStringArray("character", "input_processor", "anim_tree")]
+[node name="Run" type="LimboState" parent="SM_Character" unique_id=1913486763 node_paths=PackedStringArray("input_processor", "anim_tree", "character")]
 blackboard_plan = ExtResource("3_y3q2w")
 script = ExtResource("4_ma1fs")
 horizontal_movement = ExtResource("6_al1dr")
-character = NodePath("../..")
 input_processor = NodePath("../../InputProcessor")
 coyote_timer = SubResource("Resource_ymfos")
 anim_tree = NodePath("../../AnimationTree")
+character = NodePath("../..")
+audio = ExtResource("8_fyyhp")
 
 [node name="InAir" type="LimboState" parent="SM_Character" unique_id=366118137 node_paths=PackedStringArray("character", "ground_state", "input_processor", "anim_tree", "anim_player")]
 script = ExtResource("5_ma1fs")
@@ -783,6 +787,7 @@ script = ExtResource("6_eqpns")
 input_processor = NodePath("../../InputProcessor")
 anim_tree = NodePath("../../AnimationTree")
 character = NodePath("../..")
+audio = ExtResource("10_0mw0e")
 metadata/_custom_type_script = "uid://b3scqiwxsp3ai"
 
 [node name="JumpState" type="LimboState" parent="SM_Character" unique_id=685114196 node_paths=PackedStringArray("air_state", "input_processor", "anim_tree", "character")]
@@ -794,17 +799,19 @@ air_state = NodePath("../InAir")
 horizontal_movement = ExtResource("6_al1dr")
 input_processor = NodePath("../../InputProcessor")
 anim_tree = NodePath("../../AnimationTree")
+double_jump_audio = ExtResource("13_3m5he")
 character = NodePath("../..")
 audio = ExtResource("24_y28c2")
 metadata/_custom_type_script = "uid://c7cdvchn6xmqc"
 
-[node name="ThrowState" type="LimboState" parent="SM_Character" unique_id=196387958 node_paths=PackedStringArray("input_processor", "throw_point", "projectile_container", "character")]
+[node name="ThrowState" type="LimboState" parent="SM_Character" unique_id=196387958 node_paths=PackedStringArray("input_processor", "throw_point", "projectile_container", "anim_tree", "character")]
 script = ExtResource("11_7lw86")
 projectile_ps = ExtResource("12_3omnj")
 input_processor = NodePath("../../InputProcessor")
 impulse_force = 2800.0
 throw_point = NodePath("../../ThrowPoint")
 projectile_container = NodePath("../../ProjectileContainer")
+anim_tree = NodePath("../../AnimationTree")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://hhqyur0hswxn"
 
@@ -816,11 +823,6 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="InputProcessor" type="Node" parent="." unique_id=656449399]
 script = ExtResource("8_ymfos")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=80016861]
-zoom = Vector2(0.6, 0.6)
-limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1279856151]
 libraries/ = SubResource("AnimationLibrary_7lw86")
@@ -902,11 +904,25 @@ player = NodePath("..")
 stream = ExtResource("24_y28c2")
 script = ExtResource("25_msr6y")
 
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1183712163]
+stream = ExtResource("24_y28c2")
+script = ExtResource("25_msr6y")
+
+[node name="RunStream" type="AudioStreamPlayer2D" parent="." unique_id=1063610897]
+stream = ExtResource("24_y28c2")
+volume_db = -5.081
+script = ExtResource("25_msr6y")
+_frames_between = 20
+
 [node name="PlayerInteract" parent="." unique_id=1225313529 instance=ExtResource("27_ewdww")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteract" unique_id=248721896]
 position = Vector2(0, -52)
 shape = SubResource("RectangleShape2D_0mw0e")
 
+[connection signal="clear_sound" from="SM_Character/Run" to="RunStream" method="_on_run_clear_sound"]
+[connection signal="play_sound" from="SM_Character/Run" to="RunStream" method="_play_sound"]
+[connection signal="play_sound" from="SM_Character/DashState" to="AudioStreamPlayer2D2" method="_play_sound"]
 [connection signal="play_sound" from="SM_Character/JumpState" to="AudioStreamPlayer2D" method="_on_jump_state_play_sound"]
 [connection signal="animation_finished" from="AnimationPlayer" to="SM_Character/DashState" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationTree" method="_on_animation_player_animation_finished"]

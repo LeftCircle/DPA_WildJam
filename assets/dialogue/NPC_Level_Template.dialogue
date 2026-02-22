@@ -4,33 +4,35 @@ if first == true:
 	set first = false
 else:
 	=>< Reintroduction
-What will you do?
 if check_feathers():
-	- Give
+	What will you do?
+	- ... (Give)
 		=>< Give_Dialogue
 		do give_feathers()
+		do save_npc()
 		do disappear()
 		=> END
-	- Take
+	- ... (Take)
 		=>< Take_Dialogue
 		do take_feathers()
+		do doom_player()
 		do disappear()
 		=> END
-	- Ignore
+	- ... (Ignore)
 		=> END
 else:
-	What will you do?
+	What will you do? 
 	- ??? [if check_feathers()]
 		=>< Give_Dialogue
 		do give_feathers()
 		do disappear()
 		=> END
-	- Take
+	- ... (Take)
 		=>< Take_Dialogue
 		do take_feathers()
 		do disappear()
 		=> END
-	- Ignore
+	- ... (Ignore)
 		=> END
 
 ~ Introduction

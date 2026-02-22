@@ -1,0 +1,67 @@
+~ start
+if first == true:
+	=>< Introduction
+	set first = false
+else:
+	=>< Reintroduction
+if check_feathers():
+	What will you do?
+	- There’s more to see in this world than the inside of a tower. (Give)
+		=>< Give_Dialogue
+		do give_feathers()
+		do save_npc()
+		do disappear()
+		=> END
+	- This food won’t save you. When the waters come, you’ll be washed away. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do doom_player()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+else:
+	What will you do?
+	- ??? [if check_feathers()]
+		=>< Give_Dialogue
+		do give_feathers()
+		do disappear()
+		=> END
+	- This food won’t save you. When the waters come, you’ll be washed away. (Take)
+		=>< Take_Dialogue
+		do take_feathers()
+		do disappear()
+		=> END
+	- ... (Ignore)
+		=> END
+
+~ Introduction
+The Pragmatist: Goodness, You scared me! 
+The Pragmatist: Did you come from below? You must have, you’re soaked through!
+The Pragmatist: Come, sit! Have a bite to eat! This spot is dry enough, at least.
+The Pragmatist: Don’t be shy, take it! And don’t worry about taking too much, I have enough food here to last me a couple of years at least!
+The Pragmatist: If I had to guess, this place used to have ships coming and going in its hey day, but I’ve yet to see one in all of my time here…
+The Pragmatist: So, are you headed for the top?
+ => END
+
+~ Reintroduction
+The Pragmatist: Oh, you’re still here! 
+The Pragmatist: Feel free to stay as long as you like! The food is still good, and there’s plenty of it!
+ => END
+
+~ Give_Dialogue
+The Pragmatist: Oh, what’s this?
+The Pragmatist: Hmm… Are you saying I should leave? But why? I’m safe here, surrounded by plenty…
+#[tower rumbling sound plays]
+The Pragmatist: …Then again, perhaps it is time to move on!
+The Pragmatist: You said you were headed to the top?
+The Pragmatist: Then I shall head that way as well, my friend.
+The Pragmatist: I hope to see you at the top!
+ => END
+
+~ Take_Dialogue
+The Pragmatist: How dare you! You think I’m a fool? 
+The Pragmatist: The water won’t reach me here! It won’t!
+The Pragmatist: You should leave, get out of here! Take these useless things and go!
+The Pragmatist: … I’ll be safe, as long as I stay right here…
+ => END

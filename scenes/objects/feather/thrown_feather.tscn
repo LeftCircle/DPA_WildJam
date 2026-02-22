@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rxkask47dfie"]
 
 [ext_resource type="Script" uid="uid://dwha0puhmhquq" path="res://scenes/objects/feather/thrown_feather.gd" id="1_511yg"]
-[ext_resource type="Texture2D" uid="uid://hvtketacwvwl" path="res://icon.svg" id="1_lbleq"]
+[ext_resource type="Texture2D" uid="uid://ntuemj3pul34" path="res://assets/feathers/goodFeather.png" id="2_511yg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_511yg"]
 radius = 13.0
@@ -18,6 +18,9 @@ script = ExtResource("1_511yg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=114443382]
 shape = SubResource("CircleShape2D_511yg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1763371507]
+[node name="Pivot" type="Node2D" parent="." unique_id=1982712825]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=1763371507]
+rotation = -1.5707964
 scale = Vector2(0.195, 0.195)
-texture = ExtResource("1_lbleq")
+texture = ExtResource("2_511yg")

@@ -9,6 +9,11 @@ signal reset_feathers()
 
 var feather_counter = 99
 var acquired_feathers : int = 99
+var npcs_saved: Array[bool] = [false, false, false, false, false]
+var doomed = false
+
+@onready var camera = %Camera2D
+
 
 func _ready():
 	LevelDriver.player = self
@@ -37,3 +42,12 @@ func _on_death() -> void:
 func reset_feathers_to(val : int) -> void:
 	acquired_feathers = val
 	feather_counter = val
+
+func reset_doom_to(val : bool) -> void:
+	doomed = val
+
+func save_npc(val: int) -> void:
+	npcs_saved[val] = true
+
+func reset_saved_to(val : Array[bool]) -> void:
+	npcs_saved = val

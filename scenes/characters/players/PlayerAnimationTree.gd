@@ -17,9 +17,19 @@ func _physics_process(delta) -> void:
 
 func start_anim(anim_name : StringName, reset: bool = false) -> void:
 	if is_instance_valid(anim_player):
+		if (anim_name == "Run" or anim_name == "Idle") and anim_player.current_animation == "Throw":
+			if anim_player.is_playing():
+				return
 		anim_player.play("RESET")
 		anim_player.seek(1)
 		anim_player.play(anim_name)
 
 func is_playing(anim_name : StringName) -> bool:
 	return anim_player.current_animation == anim_name
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Throw":
+		anim_player.play("RESET")
+		anim_player.seek(1)
+		anim_player.play("Idle")

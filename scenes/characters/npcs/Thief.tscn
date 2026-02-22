@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://du6v5oy87d2hw"]
+
+[ext_resource type="PackedScene" uid="uid://e2p81t27ffog" path="res://scenes/characters/npcs/npc.tscn" id="1_mypmf"]
+[ext_resource type="Resource" uid="uid://ch3w6c6vr7mwq" path="res://assets/dialogue/Thief_Lv5.dialogue" id="2_cbys3"]
+
+[node name="Npc" unique_id=1113561624 instance=ExtResource("1_mypmf")]
+
+[node name="Interactable" parent="." index="3" unique_id=27851606]
+dialogue_resource = ExtResource("2_cbys3")
+feather_give = -3
+feather_take = 2
+npc_index = 3

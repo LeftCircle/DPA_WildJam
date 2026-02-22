@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends AnimatableBody2D
 class_name DashCollider
 
 @onready var coll_shape: CollisionShape2D = $CollisionShape2D

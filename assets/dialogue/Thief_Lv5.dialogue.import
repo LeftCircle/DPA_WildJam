@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ch3w6c6vr7mwq"
+path="res://.godot/imported/Thief_Lv5.dialogue-25404020f4fdf5c437fb119c9ecbba60.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Thief_Lv5.dialogue"
+dest_files=["res://.godot/imported/Thief_Lv5.dialogue-25404020f4fdf5c437fb119c9ecbba60.tres"]
+
+[params]
+
+defaults=true

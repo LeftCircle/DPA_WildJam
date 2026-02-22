@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://dpgd13iudkeo"]
+
+[ext_resource type="AudioStream" uid="uid://ksf67ivar30x" path="res://audio/sfx/Single Footstep.WAV" id="1_20jg8"]
+
+[resource]
+random_pitch = 1.2632731
+streams_count = 1
+stream_0/stream = ExtResource("1_20jg8")
