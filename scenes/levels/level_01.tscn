@@ -105,9 +105,12 @@ metadata/_edit_lock_ = true
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_e1ghi")]
 position = Vector2(151, 257)
 
+[node name="vfx_dust" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="1" unique_id=1359231882]
+visible = false
+
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=392900602]
 unique_name_in_owner = true
-position = Vector2(-1.000061, -250.00003)
+position = Vector2(2.999939, -190.00003)
 zoom = Vector2(1.555, 1.555)
 
 [node name="Spawn" type="Node2D" parent="." unique_id=1284389690]
@@ -318,6 +321,7 @@ position = Vector2(487.99997, 367.99997)
 position = Vector2(0, -51)
 shape = SubResource("RectangleShape2D_cwffn")
 
+[editable path="Character"]
 [editable path="Interactables/DashCollider"]
 [editable path="Interactables/Chandelier2"]
 [editable path="Interactables/Chandelier3"]

@@ -36,3 +36,4 @@ text = "fullscreen
 script = ExtResource("3_0guy0")
 
 [connection signal="pressed" from="Control/fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Control/fullscreen" to="Control/fullscreen" method="_on_pressed"]

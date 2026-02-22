@@ -147,7 +147,6 @@ position = Vector2(2983.75, -1749)
 shape = SubResource("RectangleShape2D_ppbiy")
 
 [node name="LevelGeo" type="Node2D" parent="." unique_id=1901881762]
-visible = false
 
 [node name="LargeGridCollisions" type="TileMapLayer" parent="LevelGeo" unique_id=1063974431]
 modulate = Color(1, 1, 1, 0.2509804)
