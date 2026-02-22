@@ -250,6 +250,9 @@ position = Vector2(319, -1058)
 [node name="Cage3" parent="Interactables" unique_id=867606538 instance=ExtResource("11_o4ql5")]
 position = Vector2(1344, -832)
 
+[node name="FeatherPickup" parent="Interactables/Cage3/Node2D" parent_id_path=PackedInt32Array(867606538, 2016495508) index="3" unique_id=2120564041 instance=ExtResource("13_km0xc")]
+position = Vector2(-4, -57)
+
 [node name="Target" parent="Interactables/Cage3/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(867606538, 1417091144) index="0" unique_id=1141455337]
 position = Vector2(1344, -1472)
 
@@ -285,7 +288,7 @@ position = Vector2(768, -2272)
 
 [node name="Feathers" type="Node2D" parent="." unique_id=789649564]
 
-[node name="FeatherPickup" parent="Feathers" unique_id=2120564041 instance=ExtResource("13_km0xc")]
+[node name="FeatherPickup" parent="Feathers" unique_id=445838757 instance=ExtResource("13_km0xc")]
 position = Vector2(2466, -1327)
 
 [node name="Environemnt" type="Node2D" parent="." unique_id=1376156260]

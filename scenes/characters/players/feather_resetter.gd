@@ -1,9 +1,13 @@
 extends Node
 class_name FeatherResetter
 
+
+signal reset_feathers()
+@export var player : PlayerCharacter
+
+
 var _can_reset : bool = false
 
-@export var player : PlayerCharacter
 
 @onready var timer : Timer = $Timer
 
@@ -13,9 +17,7 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	if _can_reset and player.is_missing_feather() and player.is_on_floor():
-		player.reset_feathers_to(player.acquired_feathers)
-		print("Reset feathers")
-		player.reset_feathers.emit()
+		reset_feathers.emit()
 
 
 func _on_timer_timeout():

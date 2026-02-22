@@ -7,6 +7,7 @@ extends CanvasLayer
 @export var featherUIItem : PackedScene
 
 func _ready() -> void:
+	await get_tree().physics_frame
 	num_feathers = LevelDriver.player_starting_state.current_feathers
 	for feather in range(num_feathers):
 		_add_feather()
