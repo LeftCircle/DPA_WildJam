@@ -9,6 +9,7 @@ var feather_counter = 99
 var acquired_feathers : int = 99
 
 
+
 func _ready():
 	LevelDriver.player = self
 	reset_feathers_to(LevelDriver.player_starting_state.current_feathers)

@@ -903,7 +903,7 @@ metadata/_custom_type_script = "uid://bnnpphxe1vvln"
 position = Vector2(0, -52)
 shape = SubResource("RectangleShape2D_y28c2")
 
-[node name="FeatherResetter" parent="." unique_id=863521036 node_paths=PackedStringArray("player") instance=ExtResource("23_0tlt7")]
+[node name="FeatherResetter" parent="." unique_id=863521036 node_paths=PackedStringArray("player") instance=ExtResource("24_y28c2")]
 player = NodePath("..")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1304099039]
