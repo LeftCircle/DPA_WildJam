@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LevelDriver="*uid://da3ypp0f5upja"
 DialogueManager="*uid://c3rodes2l3gxb"
+LevelDriver="*uid://bjk2ot631uqsi"
 
 [dotnet]
 

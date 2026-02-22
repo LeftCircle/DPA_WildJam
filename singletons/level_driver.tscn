@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bjk2ot631uqsi"]
+
+[ext_resource type="Script" uid="uid://da3ypp0f5upja" path="res://singletons/level_driver.gd" id="1_tkdj7"]
+[ext_resource type="AudioStream" uid="uid://1stc4qsf4dk" path="res://audio/music/Level Music for Feather Game.wav" id="2_jubos"]
+
+[node name="LevelDriver" type="Node" unique_id=1178145967]
+script = ExtResource("1_tkdj7")
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=195350862]
+stream = ExtResource("2_jubos")
+volume_db = -19.683
+
+[connection signal="finished" from="LevelMusic" to="." method="_on_level_music_finished"]

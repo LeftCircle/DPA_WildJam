@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://b7rwyx6e4isog"]
+
+[ext_resource type="AudioStream" uid="uid://blncn77783pvh" path="res://audio/sfx/Dashing Harp.WAV" id="1_5qx0v"]
+
+[resource]
+random_pitch = 1.0217791
+random_volume_offset_db = 0.62
+streams_count = 1
+stream_0/stream = ExtResource("1_5qx0v")

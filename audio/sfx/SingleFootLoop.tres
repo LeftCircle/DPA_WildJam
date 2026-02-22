@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" script_class="LoopedRandomizer" format=3 uid="uid://bwiif4rxsp0dm"]
+
+[ext_resource type="Script" uid="uid://bbrbv2ataclr0" path="res://audio/sfx/LoopedRandom.gd" id="1_qcoxv"]
+[ext_resource type="AudioStream" uid="uid://2v207gj4kms4" path="res://audio/sfx/Single Jump.WAV" id="2_xj4j3"]
+
+[resource]
+random_pitch = 1.0678186
+streams_count = 1
+stream_0/stream = ExtResource("2_xj4j3")
+script = ExtResource("1_qcoxv")
+metadata/_custom_type_script = "uid://bbrbv2ataclr0"

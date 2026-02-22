@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1stc4qsf4dk"
+path="res://.godot/imported/Level Music for Feather Game.wav-5fbc521332f4577fefe8fcd2fb126edb.sample"
+
+[deps]
+
+source_file="res://audio/music/Level Music for Feather Game.wav"
+dest_files=["res://.godot/imported/Level Music for Feather Game.wav-5fbc521332f4577fefe8fcd2fb126edb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
