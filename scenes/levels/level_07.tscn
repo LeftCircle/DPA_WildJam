@@ -11,15 +11,26 @@
 [ext_resource type="Script" uid="uid://q7wrgyf31rgt" path="res://scenes/levels/load_ending.gd" id="9_rd35g"]
 [ext_resource type="Texture2D" uid="uid://8ja477c3jtas" path="res://assets/characters/simurgh.png" id="10_ubdts"]
 [ext_resource type="PackedScene" uid="uid://c16tt0ahwqqfa" path="res://scenes/characters/npcs/OldMan.tscn" id="11_0p0qm"]
+[ext_resource type="PackedScene" uid="uid://dwav2e80ef8gn" path="res://scenes/characters/npcs/Innocent.tscn" id="12_g1ox6"]
 [ext_resource type="Texture2D" uid="uid://di047qmccmxls" path="res://assets/environment/general/SpriteFire.png" id="12_ke6ln"]
+[ext_resource type="Resource" uid="uid://nonhyyl2tqty" path="res://assets/dialogue/Farewells/OldMan_Farewell.dialogue" id="12_qxnau"]
 [ext_resource type="PackedScene" uid="uid://baw108qfcqu80" path="res://scenes/characters/interactions/Interactable.tscn" id="13_30ggj"]
+[ext_resource type="PackedScene" uid="uid://du6v5oy87d2hw" path="res://scenes/characters/npcs/Thief.tscn" id="13_o8k4g"]
+[ext_resource type="Resource" uid="uid://d0tluvr1qnfh1" path="res://assets/dialogue/Farewells/Innocent_Farewell.dialogue" id="14_1jk42"]
 [ext_resource type="Resource" uid="uid://t4e3pin0h5dm" path="res://assets/dialogue/Campfire_1.dialogue" id="14_ifo3o"]
+[ext_resource type="PackedScene" uid="uid://wmhe3h0cis6a" path="res://scenes/characters/npcs/Drifter.tscn" id="14_xkqg5"]
 [ext_resource type="Script" uid="uid://wd2kg88hp7p2" path="res://scenes/levels/scale.gd" id="15_3lj0t"]
 [ext_resource type="Texture2D" uid="uid://mh8nyouhyjw5" path="res://assets/environment/general/scalesNeutral.png" id="15_18kj7"]
 [ext_resource type="Resource" uid="uid://c0scn2a31ykie" path="res://assets/dialogue/Campfire_2.dialogue" id="15_hqi3p"]
+[ext_resource type="PackedScene" uid="uid://djcwgxca24fgm" path="res://scenes/characters/npcs/Pragmatist.tscn" id="15_l8eh6"]
+[ext_resource type="PackedScene" uid="uid://bmphlybfnvbgs" path="res://scenes/characters/npcs/Braggart.tscn" id="16_1yus6"]
+[ext_resource type="Resource" uid="uid://dn14b0o44vrv6" path="res://assets/dialogue/Farewells/Thief_Farewell.dialogue" id="16_24m26"]
 [ext_resource type="Texture2D" uid="uid://025rriid4ivt" path="res://assets/environment/general/scalesLeftDown.png" id="16_bg08u"]
 [ext_resource type="Resource" uid="uid://bl28hx4d42xp8" path="res://assets/dialogue/Cutscene_Lv7.dialogue" id="16_f1q3m"]
 [ext_resource type="Texture2D" uid="uid://cyodg6qxc36wp" path="res://assets/environment/general/scalesRightDown.png" id="17_3lj0t"]
+[ext_resource type="Resource" uid="uid://5fa1bntfqsqk" path="res://assets/dialogue/Farewells/Drifter_Farewell.dialogue" id="18_ar5fw"]
+[ext_resource type="Resource" uid="uid://r3qqg2yexa02" path="res://assets/dialogue/Farewells/Pragmatist_Farewell.dialogue" id="20_a2c24"]
+[ext_resource type="Resource" uid="uid://brbueq4i0ln4i" path="res://assets/dialogue/Farewells/Braggart_Farewell.dialogue" id="22_iijch"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eafdw"]
 polygon = PackedVector2Array(34, -2583, 1766, -2587, 1831, -2627, 1870, -2569, 1815, -2502, 1819, -28, -108, -35, -105, -2591)
@@ -143,13 +154,49 @@ texture = ExtResource("10_ubdts")
 [node name="OldMan" parent="Characters" unique_id=1113561624 instance=ExtResource("11_0p0qm")]
 position = Vector2(2642, -1587)
 
+[node name="OldMan2" parent="Characters" unique_id=147856281 instance=ExtResource("11_0p0qm")]
+position = Vector2(176, -2560)
+
+[node name="Interactable" parent="Characters/OldMan2" index="3" unique_id=27851606]
+dialogue_resource = ExtResource("12_qxnau")
+
+[node name="Innocent" parent="Characters" unique_id=486334123 instance=ExtResource("12_g1ox6")]
+position = Vector2(304, -2560)
+
+[node name="Interactable" parent="Characters/Innocent" index="3" unique_id=27851606]
+dialogue_resource = ExtResource("14_1jk42")
+
+[node name="Thief" parent="Characters" unique_id=901109594 instance=ExtResource("13_o8k4g")]
+position = Vector2(432, -2560)
+
+[node name="Interactable" parent="Characters/Thief" index="3" unique_id=27851606]
+dialogue_resource = ExtResource("16_24m26")
+
+[node name="Drifter" parent="Characters" unique_id=1555964811 instance=ExtResource("14_xkqg5")]
+position = Vector2(560, -2560)
+
+[node name="Interactable" parent="Characters/Drifter" index="3" unique_id=27851606]
+dialogue_resource = ExtResource("18_ar5fw")
+
+[node name="Pragmatist" parent="Characters" unique_id=1583992146 instance=ExtResource("15_l8eh6")]
+position = Vector2(688, -2560)
+
+[node name="Interactable" parent="Characters/Pragmatist" index="3" unique_id=27851606]
+dialogue_resource = ExtResource("20_a2c24")
+
+[node name="Braggart" parent="Characters" unique_id=1906082765 instance=ExtResource("16_1yus6")]
+position = Vector2(816, -2560)
+
+[node name="Interactable" parent="Characters/Braggart" index="3" unique_id=27851606]
+dialogue_resource = ExtResource("22_iijch")
+
 [node name="Fire" type="Node2D" parent="." unique_id=17067607]
 position = Vector2(2792, -1636)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fire" unique_id=977984557]
 texture = ExtResource("12_ke6ln")
 
-[node name="Interactable" parent="Fire" unique_id=27851606 instance=ExtResource("13_30ggj")]
+[node name="Interactable" parent="Fire" unique_id=13316671 instance=ExtResource("13_30ggj")]
 dialogue_resource = ExtResource("14_ifo3o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire/Interactable" unique_id=508494888]
@@ -157,7 +204,7 @@ position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_ifo3o")
 
 [node name="Fire2" type="Node2D" parent="." unique_id=908949865]
-position = Vector2(291, -2614)
+position = Vector2(56, -2608)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fire2" unique_id=1284066480]
 texture = ExtResource("12_ke6ln")
@@ -196,3 +243,10 @@ shape = SubResource("RectangleShape2D_f1q3m")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Scale/Area2D" to="Scale" method="_on_area_2d_body_entered"]
+
+[editable path="Characters/OldMan2"]
+[editable path="Characters/Innocent"]
+[editable path="Characters/Thief"]
+[editable path="Characters/Drifter"]
+[editable path="Characters/Pragmatist"]
+[editable path="Characters/Braggart"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://r3qqg2yexa02"
+path="res://.godot/imported/Pragmatist_Farewell.dialogue-03c68bc45bd6c04b0e3f23299a43c19e.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Farewells/Pragmatist_Farewell.dialogue"
+dest_files=["res://.godot/imported/Pragmatist_Farewell.dialogue-03c68bc45bd6c04b0e3f23299a43c19e.tres"]
+
+[params]
+
+defaults=true

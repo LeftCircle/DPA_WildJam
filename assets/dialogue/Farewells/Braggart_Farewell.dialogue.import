@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://brbueq4i0ln4i"
+path="res://.godot/imported/Braggart_Farewell.dialogue-fd5acb05a00728255a819bf8f2e11541.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Farewells/Braggart_Farewell.dialogue"
+dest_files=["res://.godot/imported/Braggart_Farewell.dialogue-fd5acb05a00728255a819bf8f2e11541.tres"]
+
+[params]
+
+defaults=true

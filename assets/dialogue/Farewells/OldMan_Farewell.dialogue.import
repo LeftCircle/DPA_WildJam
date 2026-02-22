@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://nonhyyl2tqty"
+path="res://.godot/imported/OldMan_Farewell.dialogue-a08e65ae55ce1cd6b9eeec2709f3c69f.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/Farewells/OldMan_Farewell.dialogue"
+dest_files=["res://.godot/imported/OldMan_Farewell.dialogue-a08e65ae55ce1cd6b9eeec2709f3c69f.tres"]
+
+[params]
+
+defaults=true
