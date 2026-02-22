@@ -108,7 +108,7 @@ energy = 0.7
 texture = ExtResource("6_dscar")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(2039, -202)
+position = Vector2(3026, -136)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=1928407894]
 unique_name_in_owner = true

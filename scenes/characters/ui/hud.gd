@@ -49,3 +49,11 @@ func _remove_feather() -> void:
 	if (hbox.get_child_count() > 5):
 		hbox_separation += 100/hbox.get_child_count()
 		hbox.set_deferred("theme_override_constants/separation", hbox_separation)
+
+
+func _on_fullscreen_pressed():
+	print("Fullscreen")
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
