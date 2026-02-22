@@ -934,6 +934,10 @@ stream = ExtResource("31_t5lbr")
 
 [node name="HUD" parent="." unique_id=510809081 node_paths=PackedStringArray("player") instance=ExtResource("32_t02n3")]
 player = NodePath("..")
+[node name="BulletTimeDuration" type="Timer" parent="." unique_id=1316856730]
+wait_time = 2.0
+one_shot = true
+ignore_time_scale = true
 
 [connection signal="feather_used" from="." to="FeatherResetter" method="_on_character_feather_used"]
 [connection signal="clear_sound" from="SM_Character/Run" to="Audio/RunStream" method="_on_run_clear_sound"]
@@ -942,3 +946,5 @@ player = NodePath("..")
 [connection signal="play_sound" from="SM_Character/JumpState" to="Audio/AudioStreamPlayer2D" method="_on_jump_state_play_sound"]
 [connection signal="animation_finished" from="AnimationPlayer" to="SM_Character/DashState" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="AnimationTree" method="_on_animation_player_animation_finished"]
+[connection signal="reset_feathers" from="FeatherResetter" to="." method="_on_feather_resetter_reset_feathers"]
+[connection signal="timeout" from="BulletTimeDuration" to="." method="_on_bullet_time_duration_timeout"]

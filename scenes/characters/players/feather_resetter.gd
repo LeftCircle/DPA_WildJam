@@ -1,9 +1,13 @@
 extends Node
 class_name FeatherResetter
 
+
+signal reset_feathers()
+@export var player : PlayerCharacter
+
+
 var _can_reset : bool = false
 
-@export var player : PlayerCharacter
 
 @onready var timer : Timer = $Timer
 

@@ -1,6 +1,8 @@
 extends Node
 class_name InputProcessor
 
+
+
 var input_dir : Vector2
 var last_input_dir : Vector2
 
