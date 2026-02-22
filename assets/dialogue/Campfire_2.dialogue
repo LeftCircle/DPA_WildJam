@@ -1,0 +1,6 @@
+~ start
+Would you like to rest?
+- Accept
+	#DO ENDING 3/5
+- Refuse
+ => END

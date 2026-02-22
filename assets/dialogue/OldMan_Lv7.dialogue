@@ -1,0 +1,32 @@
+~ start
+if check_perfect() == true && first == true:
+	=>< Perfect
+	set first = false
+elif first == true:
+	=>< Introduction
+else:
+	=>< Reintroduction
+
+
+~ Perfect
+The Old Man: Ah, yet another shining face has made it. So many more today than usual.
+The Old Man: Is that your doing? It brings my heart so much warmth.
+The Old Man: Your friends are waiting for you above.
+The Old Man: Still, your wings may not have the strength to make it up that cliff. 
+The Old Man: Here, I want you to have this. I’ve been saving it for just such an occasion.
+do gift_feather()
+The Old Man: Still, if you lack the courage to make the final leap, you may rest here as long as you like.
+ => END
+
+~ Introduction
+The Old Man: Ah, another aspiring prisoner
+The Old Man: Congratulations are in order! Enjoy the feeling of the sun and the breeze.
+The Old Man: Do you see that cliff? If you truly desire freedom, then you must make one final climb. 
+The Old Man: I have seen many try to reach the top, and nearly as many fail. I myself never had the courage for that final leap.
+The Old Man: So, here I sit. 
+The Old Man: You may rest here as well, if you like.
+ => END
+
+~ Reintroduction
+The Old Man: Doesn’t the breeze feel nice? The air is so soothing out here.
+ => END

@@ -1,0 +1,8 @@
+~ start
+Would you like to rest?
+- Accept
+	The Old Man: Very well. Feel proud of your accomplishments, and rest easy.
+	#DO ENDING 1
+- Refuse
+	The Old Man: Very well. I wish you the best of luck in your climb.
+ => END
