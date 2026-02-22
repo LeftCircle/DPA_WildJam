@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ansguf6th5d" path="res://scenes/characters/players/feather_resetter.tscn" id="23_0tlt7"]
 [ext_resource type="Texture2D" uid="uid://buqgu5ssjyva5" path="res://assets/characters/player/MCSpriteSheetThrowSide.png" id="24_mt0yb"]
 [ext_resource type="AudioStream" uid="uid://2i8e3m23djwb" path="res://audio/sfx/jump_randomizer.tres" id="24_y28c2"]
-[ext_resource type="Script" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
+[ext_resource type="Script" uid="uid://bu0m3hx2a4xrk" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
 [ext_resource type="PackedScene" uid="uid://e0q6ej4cqhvc" path="res://scenes/characters/interactions/PlayerInteract.tscn" id="27_ewdww"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgru6"]
@@ -610,7 +610,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ewdww"]
 resource_name = "Throw"
-length = 0.33333752
+length = 0.2083375
 step = 0.041666668
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -631,7 +631,7 @@ tracks/1/path = NodePath("Sprites/Throw:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25),
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [1, 2, 3, 4]
@@ -798,13 +798,14 @@ character = NodePath("../..")
 audio = ExtResource("24_y28c2")
 metadata/_custom_type_script = "uid://c7cdvchn6xmqc"
 
-[node name="ThrowState" type="LimboState" parent="SM_Character" unique_id=196387958 node_paths=PackedStringArray("input_processor", "throw_point", "projectile_container", "character")]
+[node name="ThrowState" type="LimboState" parent="SM_Character" unique_id=196387958 node_paths=PackedStringArray("input_processor", "throw_point", "projectile_container", "anim_tree", "character")]
 script = ExtResource("11_7lw86")
 projectile_ps = ExtResource("12_3omnj")
 input_processor = NodePath("../../InputProcessor")
 impulse_force = 2800.0
 throw_point = NodePath("../../ThrowPoint")
 projectile_container = NodePath("../../ProjectileContainer")
+anim_tree = NodePath("../../AnimationTree")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://hhqyur0hswxn"
 
@@ -909,3 +910,4 @@ shape = SubResource("RectangleShape2D_0mw0e")
 
 [connection signal="play_sound" from="SM_Character/JumpState" to="AudioStreamPlayer2D" method="_on_jump_state_play_sound"]
 [connection signal="animation_finished" from="AnimationPlayer" to="SM_Character/DashState" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationTree" method="_on_animation_player_animation_finished"]

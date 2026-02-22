@@ -10,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="7_1ey3t"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="8_t0hvh"]
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="9_kfebt"]
+[ext_resource type="Texture2D" uid="uid://cnqr0dtmuir2m" path="res://assets/environment/general/metalGate02.png" id="10_07lms"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="10_ijn0p"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="10_r72dd"]
+[ext_resource type="Texture2D" uid="uid://7imgv35cai7u" path="res://assets/environment/general/darkChandelierNoChain.png" id="13_gi8m4"]
 [ext_resource type="PackedScene" uid="uid://dh5si3s3ql611" path="res://scenes/VFX/lights/chandelier_light.tscn" id="13_tyxjt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ey3t"]
@@ -58,11 +60,13 @@ next_level = ExtResource("2_qdh5e")
 z_index = -1
 position = Vector2(768, -1152)
 texture = ExtResource("3_jmes4")
+metadata/_edit_lock_ = true
 
 [node name="geo" type="Sprite2D" parent="Environment" unique_id=1967736116]
 z_index = -1
 position = Vector2(768, -1152)
 texture = ExtResource("4_tyxjt")
+metadata/_edit_lock_ = true
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_e1ghi")]
 position = Vector2(151, 257)
@@ -188,8 +192,19 @@ position = Vector2(128.00005, -511.99997)
 position = Vector2(808, 314.99997)
 shape = SubResource("RectangleShape2D_kfebt")
 
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/DashCollider" unique_id=1590972497]
+position = Vector2(806.39996, 319.75998)
+scale = Vector2(0.1, 0.18)
+texture = ExtResource("10_07lms")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interactables/DashCollider" unique_id=1063760964]
+position = Vector2(806.39996, 319.75998)
+scale = Vector2(-0.1, 0.18)
+texture = ExtResource("10_07lms")
+
 [node name="LockedHatch" parent="Interactables" unique_id=1802310663 instance=ExtResource("9_kfebt")]
 position = Vector2(1598, -891)
+rotation_amount = -90.0
 
 [node name="Chandelier2" parent="Interactables" unique_id=1656317491 node_paths=PackedStringArray("target") instance=ExtResource("10_r72dd")]
 position = Vector2(1087, -2015.9999)
@@ -199,6 +214,23 @@ chain_length = 256.0
 
 [node name="StaticBody2D" parent="Interactables/Chandelier2" index="0" unique_id=1376589567]
 position = Vector2(0, -236.53)
+
+[node name="Base" parent="Interactables/Chandelier2/StaticBody2D/CollisionShape2D" parent_id_path=PackedInt32Array(1656317491, 1388294678) index="0" unique_id=1895817165]
+position = Vector2(-0.40152857, -25.196732)
+scale = Vector2(0.037, 0.173)
+texture = ExtResource("13_gi8m4")
+
+[node name="Flame" parent="Interactables/Chandelier2/StaticBody2D/CollisionShape2D/Base" index="0" unique_id=1476004817]
+position = Vector2(-231.51187, 14.51152)
+
+[node name="Flame2" parent="Interactables/Chandelier2/StaticBody2D/CollisionShape2D/Base" index="1" unique_id=1148418310]
+position = Vector2(-79.58229, 18.139156)
+
+[node name="Flame3" parent="Interactables/Chandelier2/StaticBody2D/CollisionShape2D/Base" index="2" unique_id=1510751351]
+position = Vector2(94.051674, 14.511444)
+
+[node name="Flame4" parent="Interactables/Chandelier2/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
+position = Vector2(242.36406, 10.883461)
 
 [node name="HitTarget2" parent="Interactables" unique_id=594915268 instance=ExtResource("10_ijn0p")]
 position = Vector2(1085, -2176)
@@ -211,6 +243,23 @@ chain_length = 256.0
 
 [node name="StaticBody2D" parent="Interactables/Chandelier3" index="0" unique_id=1376589567]
 position = Vector2(0, -236.53)
+
+[node name="Base" parent="Interactables/Chandelier3/StaticBody2D/CollisionShape2D" parent_id_path=PackedInt32Array(2022063999, 1388294678) index="0" unique_id=1895817165]
+position = Vector2(0.13384284, -28.962482)
+scale = Vector2(0.038, 0.175)
+texture = ExtResource("13_gi8m4")
+
+[node name="Flame" parent="Interactables/Chandelier3/StaticBody2D/CollisionShape2D/Base" index="0" unique_id=1476004817]
+position = Vector2(-228.94173, 10.759216)
+
+[node name="Flame2" parent="Interactables/Chandelier3/StaticBody2D/CollisionShape2D/Base" index="1" unique_id=1148418310]
+position = Vector2(-84.53231, 3.586296)
+
+[node name="Flame3" parent="Interactables/Chandelier3/StaticBody2D/CollisionShape2D/Base" index="2" unique_id=1510751351]
+position = Vector2(95.09884, 0.00032043457)
+
+[node name="Flame4" parent="Interactables/Chandelier3/StaticBody2D/CollisionShape2D/Base" index="3" unique_id=1241317450]
+position = Vector2(239.50827, 0.00037384033)
 
 [node name="HitTarget" parent="Interactables" unique_id=562628805 instance=ExtResource("10_ijn0p")]
 position = Vector2(369, -2170)
@@ -252,3 +301,4 @@ color = Color(0.45452428, 0.45452422, 0.4545244, 1)
 [editable path="Interactables/DashCollider"]
 [editable path="Interactables/Chandelier2"]
 [editable path="Interactables/Chandelier3"]
+[editable path="Environemnt/Lights/chandelier_light2"]

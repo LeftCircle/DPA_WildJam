@@ -11,6 +11,5 @@ func _ready():
 	LevelDriver.current_level = self
 	exit_area.exit_level.connect(LevelDriver._on_level_exit)
 
-
 func _on_hit_target_target_hit():
 	print("Target hit!!")

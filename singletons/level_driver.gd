@@ -18,7 +18,8 @@ func remove_npc(name : String) -> void:
 
 func _on_level_exit():
 	player_starting_state.current_feathers = player.feather_counter
-	get_tree().change_scene_to_packed(current_level.next_level)
+	#get_tree().change_scene_to_packed(current_level.next_level)
+	get_tree().call_deferred("change_scene_to_packed", current_level.next_level)
 
 func _on_death_area_entered() -> void:
 	print("Death Area entered")
