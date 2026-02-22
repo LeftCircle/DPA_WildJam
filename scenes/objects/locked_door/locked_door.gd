@@ -25,7 +25,7 @@ enum {OPEN, CLOSED}
 func _ready() -> void:
 	if (is_door):
 		lock.target_hit.connect(_open_door)
-	if (can_dash_through) :
+	if (can_dash_through):
 		LevelDriver.player.dash.connect(_on_player_dash)
 		LevelDriver.player.dash_finished.connect(_on_player_dash_finished)
 	set_physics_process(false)

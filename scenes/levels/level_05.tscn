@@ -62,7 +62,7 @@ size = Vector2(88, 1312)
 size = Vector2(992, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27puk"]
-size = Vector2(960, 197)
+size = Vector2(2133, 197)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_836dv"]
 size = Vector2(138, 128)
@@ -73,10 +73,12 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3k6o"]
 size = Vector2(44, 264)
 
-[node name="Level05" type="Node2D" unique_id=282548391 node_paths=PackedStringArray("spawn_point")]
+[node name="Level05" type="Node2D" unique_id=282548391 node_paths=PackedStringArray("spawn_point", "llc", "urc")]
 script = ExtResource("1_pe0ra")
 next_level = ExtResource("2_hqfam")
 spawn_point = NodePath("Spawn")
+llc = NodePath("CameraLimits/LLC")
+urc = NodePath("CameraLimits/URC")
 
 [node name="Environment" type="Node2D" parent="." unique_id=275101980]
 metadata/_edit_lock_ = true
@@ -252,7 +254,7 @@ polygon = PackedVector2Array(672, 1056, 1184, 896, 1408, 896, 1472, 928, 1568, 8
 polygon = PackedVector2Array(2336, -352, 2592, -352, 2592, -32, 2570, -305, 2488, -303, 2393, -268, 2297, -193, 2164, -78, 2119, 47, 2176, 160, 2217, 189, 2242, 271, 2354, 410, 2367, 505, 2318, 421, 2193, 367, 2144, 228, 2076, 446, 2089, 547, 2053, 480, 2048, 320, 2095, 194, 2112, -192)
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=1419277704]
-position = Vector2(1152, 1760)
+position = Vector2(1297, 1867)
 shape = SubResource("RectangleShape2D_27puk")
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=1618109031]
@@ -273,6 +275,9 @@ position = Vector2(192, -288)
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_ot78m")]
 position = Vector2(192, -288)
+
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=1723648193]
+unique_name_in_owner = true
 
 [node name="Feathers" type="Node" parent="." unique_id=858447090]
 
@@ -391,6 +396,14 @@ position = Vector2(1728, -1728)
 
 [node name="HitTarget" parent="Interactables/Cages/Cage5/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1816597658, 1417091144) index="2" unique_id=562628805]
 position = Vector2(1728, -2688)
+
+[node name="CameraLimits" type="Node" parent="." unique_id=671640015]
+
+[node name="LLC" type="Node2D" parent="CameraLimits" unique_id=1805913704]
+position = Vector2(157, -105)
+
+[node name="URC" type="Node2D" parent="CameraLimits" unique_id=1994908899]
+position = Vector2(3084, -2882)
 
 [connection signal="animation_finished" from="Interactables/CrumbleBlocks/CrumblingPlatform3/AnimatedSprite2D" to="Interactables/CrumbleBlocks/CrumblingPlatform3" method="_on_animated_sprite_2d_animation_finished"]
 

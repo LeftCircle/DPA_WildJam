@@ -49,10 +49,12 @@ size = Vector2(260.5, 217)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1yl6"]
 size = Vector2(82.677246, 23.077238)
 
-[node name="Level02" type="Node2D" unique_id=453271988 node_paths=PackedStringArray("spawn_point")]
+[node name="Level02" type="Node2D" unique_id=453271988 node_paths=PackedStringArray("spawn_point", "llc", "urc")]
 script = ExtResource("1_yjjx0")
 next_level = ExtResource("2_ppbiy")
 spawn_point = NodePath("SpawnPoint")
+llc = NodePath("CameraLimits/LLC")
+urc = NodePath("CameraLimits/URC")
 
 [node name="Environment" type="Node2D" parent="." unique_id=1623401425]
 
@@ -106,7 +108,12 @@ energy = 0.7
 texture = ExtResource("6_dscar")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(3008, -128)
+position = Vector2(2944, -128)
+
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=1928407894]
+unique_name_in_owner = true
+position = Vector2(0, -256)
+zoom = Vector2(0.795, 0.795)
 
 [node name="DeathAreas" type="Node" parent="." unique_id=1000883032]
 
@@ -142,6 +149,7 @@ shape = SubResource("RectangleShape2D_ppbiy")
 position = Vector2(2236, -1667)
 
 [node name="LevelGeo" type="Node2D" parent="." unique_id=1901881762]
+visible = false
 
 [node name="LargeGridCollisions" type="TileMapLayer" parent="LevelGeo" unique_id=1063974431]
 modulate = Color(1, 1, 1, 0.2509804)
@@ -302,6 +310,14 @@ occluder = SubResource("OccluderPolygon2D_m2jhg")
 
 [node name="Lights" type="Node2D" parent="Environemnt" unique_id=215168334]
 visible = false
+
+[node name="CameraLimits" type="Node" parent="." unique_id=515816810]
+
+[node name="LLC" type="Node2D" parent="CameraLimits" unique_id=1198716267]
+position = Vector2(-192, 512)
+
+[node name="URC" type="Node2D" parent="CameraLimits" unique_id=691322855]
+position = Vector2(3200, -2816)
 
 [editable path="Npc"]
 [editable path="Interactables/Chandelier/Chandelier"]

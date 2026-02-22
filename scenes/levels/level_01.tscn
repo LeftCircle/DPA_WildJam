@@ -48,10 +48,13 @@ size = Vector2(127.6342, 1087.9996)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfebt"]
 size = Vector2(30.999954, 130.99997)
 
-[node name="Level01" type="Node2D" unique_id=922797211]
+[node name="Level01" type="Node2D" unique_id=922797211 node_paths=PackedStringArray("spawn_point", "llc", "urc")]
 position = Vector2(128.00005, -511.99997)
 script = ExtResource("1_uvc87")
 next_level = ExtResource("2_qdh5e")
+spawn_point = NodePath("Spawn")
+llc = NodePath("CameraLimits/LLC")
+urc = NodePath("CameraLimits/URC")
 
 [node name="Environment" type="Node" parent="." unique_id=546714053]
 
@@ -96,6 +99,11 @@ metadata/_edit_lock_ = true
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("1_e1ghi")]
 position = Vector2(151, 257)
+
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=392900602]
+unique_name_in_owner = true
+position = Vector2(-1.000061, -250.00003)
+zoom = Vector2(1.555, 1.555)
 
 [node name="Spawn" type="Node2D" parent="." unique_id=1284389690]
 position = Vector2(148.99995, 204.99997)
@@ -289,6 +297,14 @@ position = Vector2(239.50827, 0.00037384033)
 
 [node name="HitTarget" parent="Interactables" unique_id=562628805 instance=ExtResource("10_ijn0p")]
 position = Vector2(369, -2170)
+
+[node name="CameraLimits" type="Node" parent="." unique_id=1120977665]
+
+[node name="LLC" type="Node2D" parent="CameraLimits" unique_id=564145592]
+position = Vector2(-328, -29)
+
+[node name="URC" type="Node2D" parent="CameraLimits" unique_id=2117157828]
+position = Vector2(1859, -2253)
 
 [editable path="Interactables/DashCollider"]
 [editable path="Interactables/Chandelier2"]
