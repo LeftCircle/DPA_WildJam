@@ -754,7 +754,7 @@ position = Vector2(-261, 294)
 position = Vector2(6816, -2846)
 
 [node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("26_jeigf")]
-position = Vector2(5682, -1282)
+position = Vector2(5696, -1280)
 
 [editable path="Interactables/Chandeliers/Chandelier"]
 [editable path="Interactables/Chandeliers/Chandelier2"]

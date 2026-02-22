@@ -18,13 +18,14 @@
 [ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="15_1dtt1"]
 [ext_resource type="PackedScene" uid="uid://2owmwuwa3oxv" path="res://scenes/objects/moving_platform.tscn" id="15_ejjlu"]
 [ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="16_ejjlu"]
-[ext_resource type="Script" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
+[ext_resource type="Script" uid="uid://outuy70de4aj" path="res://scenes/objects/components/move_and_pause_on_hit.gd" id="17_64yx1"]
 [ext_resource type="PackedScene" uid="uid://c037eq4c6thr1" path="res://scenes/objects/chandelier/Chandelier.tscn" id="17_gbsts"]
 [ext_resource type="PackedScene" uid="uid://d3b76o2tmwyjv" path="res://scenes/objects/hit_target/hit_target.tscn" id="18_3d6ih"]
 [ext_resource type="Script" uid="uid://t0jo0yf4akm7" path="res://scenes/objects/hit_target/hit_target.gd" id="18_c7h1x"]
 [ext_resource type="Texture2D" uid="uid://v5h3e3acvgb" path="res://assets/environment/general/crate2.png" id="20_g78o7"]
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="22_64yx1"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="23_c7h1x"]
+[ext_resource type="PackedScene" uid="uid://dwav2e80ef8gn" path="res://scenes/characters/npcs/Innocent.tscn" id="26_58pjx"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6vksy"]
 cull_mode = 1
@@ -717,6 +718,9 @@ position = Vector2(29, -50)
 
 [node name="URC" type="Node2D" parent="CameraLimits" unique_id=153344792]
 position = Vector2(2993, -7269)
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("26_58pjx")]
+position = Vector2(2016, -2176)
 
 [connection signal="target_hit" from="Interactables/MovingPlatforms/MovingPlatform3/HitTarget" to="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" method="_on_hit_target_target_hit"]
 [connection signal="target_hit" from="Interactables/MovingPlatforms/MovingPlatform4/HitTarget" to="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" method="_on_hit_target_target_hit"]

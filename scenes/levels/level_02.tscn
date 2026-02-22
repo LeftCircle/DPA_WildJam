@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cgiuqwrfsqvuy" path="res://scenes/objects/feather/feather_pickup.tscn" id="13_km0xc"]
 [ext_resource type="Texture2D" uid="uid://b2nixutnk7xla" path="res://assets/environment/general/woodenDoor.png" id="14_dscar"]
 [ext_resource type="Texture2D" uid="uid://7imgv35cai7u" path="res://assets/environment/general/darkChandelierNoChain.png" id="17_01hg1"]
+[ext_resource type="PackedScene" uid="uid://bmphlybfnvbgs" path="res://scenes/characters/npcs/Braggart.tscn" id="21_m2te4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_km0xc"]
 polygon = PackedVector2Array(132, 147, 137, -2422, 2814, -2416, 2814, -1913, 3196, -1906, 3198, -1784, 2691, -1792, 2693, -2302, 257, -2299, 263, -1277, 764, -1271, 764, -1150, 253, -1140, 263, -252, 511, -248, 507, -28, 1926, -12, 1924, -111, 2167, -113, 2169, 18, 2691, 16, 2695, -117, 3456, -106, 3451, 126)
@@ -315,7 +316,9 @@ position = Vector2(-192, 512)
 [node name="URC" type="Node2D" parent="CameraLimits" unique_id=691322855]
 position = Vector2(3200, -2816)
 
-[editable path="Npc"]
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("21_m2te4")]
+position = Vector2(2208, -1648)
+
 [editable path="Interactables/Chandelier/Chandelier"]
 [editable path="Interactables/Cage"]
 [editable path="Interactables/Cage/Node2D/CollisionBorders/DashCollider"]
@@ -342,4 +345,3 @@ position = Vector2(3200, -2816)
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider2"]
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider3"]
 [editable path="Interactables/Cage5/Node2D/CollisionBorders/DashCollider4"]
-[editable path="Npc"]

@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bg5youuuhfwkh" path="res://scenes/objects/locked_hatch/locked_hatch.tscn" id="11_07dqf"]
 [ext_resource type="PackedScene" uid="uid://dmxadubd3eidt" path="res://scenes/objects/dash_collider/dash_collider.tscn" id="11_76vq8"]
 [ext_resource type="Texture2D" uid="uid://chq8uhwmrdavg" path="res://assets/environment/general/metalGate.png" id="15_o3rdr"]
+[ext_resource type="PackedScene" uid="uid://wmhe3h0cis6a" path="res://scenes/characters/npcs/Drifter.tscn" id="17_lr2mp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nanf4"]
 size = Vector2(896, 74)
@@ -262,6 +263,9 @@ position = Vector2(-75, 177)
 
 [node name="URC" type="Node2D" parent="CameraLimits" unique_id=1459942481]
 position = Vector2(2872, -2456)
+
+[node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("17_lr2mp")]
+position = Vector2(2432, -1160)
 
 [editable path="Character"]
 [editable path="Character/PlayerVFX/vfx_feathers_light"]
