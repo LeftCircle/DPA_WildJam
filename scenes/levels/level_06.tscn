@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="22_64yx1"]
 [ext_resource type="Script" uid="uid://0x6lvlhqx6h3" path="res://scenes/objects/death_zones/death_zone.gd" id="23_c7h1x"]
 [ext_resource type="PackedScene" uid="uid://dwav2e80ef8gn" path="res://scenes/characters/npcs/Innocent.tscn" id="26_58pjx"]
+[ext_resource type="Texture2D" uid="uid://1bfii5uyg3cd" path="res://assets/VFX/Flare_small.PNG" id="29_jl2hf"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6vksy"]
 cull_mode = 1
@@ -115,7 +116,7 @@ llc = NodePath("CameraLimits/LLC")
 urc = NodePath("CameraLimits/URC")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_j2blp")]
-position = Vector2(85, -274)
+position = Vector2(104, -274)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=150881781]
 unique_name_in_owner = true
@@ -123,6 +124,7 @@ position = Vector2(0, -258)
 zoom = Vector2(0.84, 0.84)
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1907974147]
+visible = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Collisions" unique_id=345466624]
 z_index = -5
@@ -733,7 +735,12 @@ position = Vector2(29, -50)
 position = Vector2(2993, -7269)
 
 [node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("26_58pjx")]
-position = Vector2(2016, -2176)
+position = Vector2(2016, -1919)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1785345561]
+position = Vector2(960, -7226)
+texture = ExtResource("29_jl2hf")
+texture_scale = 12.75
 
 [connection signal="target_hit" from="Interactables/MovingPlatforms/MovingPlatform3/HitTarget" to="Interactables/MovingPlatforms/MovingPlatform3/MoveAndPauseOnHit" method="_on_hit_target_target_hit"]
 [connection signal="target_hit" from="Interactables/MovingPlatforms/MovingPlatform4/HitTarget" to="Interactables/MovingPlatforms/MovingPlatform4/MoveAndPauseOnHit" method="_on_hit_target_target_hit"]

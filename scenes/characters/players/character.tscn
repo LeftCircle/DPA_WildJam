@@ -787,7 +787,7 @@ anim_player = NodePath("../../AnimationPlayer")
 
 [node name="DashState" type="LimboState" parent="SM_Character" unique_id=476023899 node_paths=PackedStringArray("input_processor", "anim_tree", "character")]
 script = ExtResource("6_eqpns")
-dash_speed = 625.0
+dash_speed = 575.0
 input_processor = NodePath("../../InputProcessor")
 anim_tree = NodePath("../../AnimationTree")
 character = NodePath("../..")
@@ -816,6 +816,7 @@ input_processor = NodePath("../../InputProcessor")
 impulse_force = 2800.0
 throw_point = NodePath("../../ThrowPoint")
 projectile_container = NodePath("../../ProjectileContainer")
+throw_impulse = 400.0
 anim_tree = NodePath("../../AnimationTree")
 horizontal_movement = ExtResource("6_al1dr")
 character = NodePath("../..")
@@ -941,6 +942,8 @@ wait_time = 2.0
 one_shot = true
 ignore_time_scale = true
 
+[node name="BulletTimeReset" type="Timer" parent="." unique_id=372653174]
+
 [connection signal="feather_used" from="." to="FeatherResetter" method="_on_character_feather_used"]
 [connection signal="clear_sound" from="SM_Character/Run" to="Audio/RunStream" method="_on_run_clear_sound"]
 [connection signal="play_sound" from="SM_Character/Run" to="Audio/RunStream" method="_play_sound"]
@@ -950,3 +953,4 @@ ignore_time_scale = true
 [connection signal="animation_finished" from="AnimationPlayer" to="AnimationTree" method="_on_animation_player_animation_finished"]
 [connection signal="reset_feathers" from="FeatherResetter" to="." method="_on_feather_resetter_reset_feathers"]
 [connection signal="timeout" from="BulletTimeDuration" to="." method="_on_bullet_time_duration_timeout"]
+[connection signal="timeout" from="BulletTimeReset" to="." method="_on_bullet_time_reset_timeout"]

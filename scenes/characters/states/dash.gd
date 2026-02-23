@@ -12,7 +12,7 @@ func _ready() -> void:
 	LevelDriver.player_entered_cage.connect(_on_player_entered_cage)
 
 func _enter():
-	_dash_direction = input_processor.get_input_dir()
+	_dash_direction = input_processor.last_input_dir
 	_dash_direction.y = 0
 	_current_dash_frames = 0
 	anim_tree.start_anim("Dash")

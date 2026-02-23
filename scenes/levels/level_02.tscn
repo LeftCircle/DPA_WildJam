@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://7imgv35cai7u" path="res://assets/environment/general/darkChandelierNoChain.png" id="17_01hg1"]
 [ext_resource type="PackedScene" uid="uid://bfau541w7rx5y" path="res://scenes/objects/crumbling_platform/crumbling_platform.tscn" id="21_kxbgd"]
 [ext_resource type="PackedScene" uid="uid://bmphlybfnvbgs" path="res://scenes/characters/npcs/Braggart.tscn" id="21_m2te4"]
+[ext_resource type="Texture2D" uid="uid://1bfii5uyg3cd" path="res://assets/VFX/Flare_small.PNG" id="23_lky54"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_km0xc"]
 polygon = PackedVector2Array(132, 147, 137, -2422, 2814, -2416, 2814, -1913, 3196, -1906, 3198, -1784, 2691, -1792, 2693, -2302, 257, -2299, 263, -1277, 764, -1271, 764, -1150, 253, -1140, 263, -252, 511, -248, 507, -28, 1926, -12, 1924, -111, 2167, -113, 2169, 18, 2691, 16, 2695, -117, 3456, -106, 3451, 126)
@@ -109,7 +110,7 @@ energy = 0.7
 texture = ExtResource("6_dscar")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("3_c5o3r")]
-position = Vector2(2965, -127)
+position = Vector2(2969, -128)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=1928407894]
 unique_name_in_owner = true
@@ -147,6 +148,7 @@ position = Vector2(2983.75, -1749)
 shape = SubResource("RectangleShape2D_ppbiy")
 
 [node name="LevelGeo" type="Node2D" parent="." unique_id=1901881762]
+visible = false
 
 [node name="LargeGridCollisions" type="TileMapLayer" parent="LevelGeo" unique_id=1063974431]
 modulate = Color(1, 1, 1, 0.2509804)
@@ -249,19 +251,19 @@ position = Vector2(320, -384)
 position = Vector2(319, -1058)
 
 [node name="Cage3" parent="Interactables" unique_id=867606538 instance=ExtResource("11_o4ql5")]
-position = Vector2(1344, -832)
+position = Vector2(1152, -832)
 
 [node name="FeatherPickup" parent="Interactables/Cage3/Node2D" parent_id_path=PackedInt32Array(867606538, 2016495508) index="3" unique_id=2120564041 instance=ExtResource("13_km0xc")]
 position = Vector2(-4, -57)
 
 [node name="Target" parent="Interactables/Cage3/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(867606538, 1417091144) index="0" unique_id=1141455337]
-position = Vector2(1344, -1472)
+position = Vector2(1156, -1472)
 
 [node name="Target2" parent="Interactables/Cage3/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(867606538, 1417091144) index="1" unique_id=1289752025]
-position = Vector2(1344, -768)
+position = Vector2(1150, -768)
 
 [node name="HitTarget" parent="Interactables/Cage3/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(867606538, 1417091144) index="2" unique_id=562628805]
-position = Vector2(1344, -1497)
+position = Vector2(1152, -1497)
 
 [node name="Cage4" parent="Interactables" unique_id=1587096711 instance=ExtResource("11_o4ql5")]
 position = Vector2(384, -2240)
@@ -288,10 +290,16 @@ position = Vector2(768, -1984)
 position = Vector2(768, -2272)
 
 [node name="CrumblingPlatform" parent="Interactables" unique_id=1786747694 instance=ExtResource("21_kxbgd")]
-position = Vector2(522, -752)
+z_index = 1
+position = Vector2(512, -768)
+
+[node name="CrumblingPlatform3" parent="Interactables" unique_id=731684396 instance=ExtResource("21_kxbgd")]
+z_index = 1
+position = Vector2(512, -640)
 
 [node name="CrumblingPlatform2" parent="Interactables" unique_id=1771812993 instance=ExtResource("21_kxbgd")]
-position = Vector2(650, -752)
+z_index = 1
+position = Vector2(640, -768)
 
 [node name="Feathers" type="Node2D" parent="." unique_id=789649564]
 
@@ -328,6 +336,11 @@ position = Vector2(3200, -2816)
 
 [node name="Npc" parent="." unique_id=1113561624 instance=ExtResource("21_m2te4")]
 position = Vector2(2208, -1648)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1024026715]
+position = Vector2(3158, -1742)
+texture = ExtResource("23_lky54")
+texture_scale = 12.75
 
 [editable path="Interactables/Chandelier/Chandelier"]
 [editable path="Interactables/Cage"]

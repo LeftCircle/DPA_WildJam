@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://drtmt1mktrlyl" path="res://scenes/objects/cage/Cage.tscn" id="13_tavyg"]
 [ext_resource type="Texture2D" uid="uid://snu48epj1274" path="res://assets/environment/general/metalGate03.png" id="17_de7pb"]
 [ext_resource type="PackedScene" uid="uid://du6v5oy87d2hw" path="res://scenes/characters/npcs/Thief.tscn" id="19_5j0jk"]
+[ext_resource type="Texture2D" uid="uid://1bfii5uyg3cd" path="res://assets/VFX/Flare_small.PNG" id="20_vqqq3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ot78m"]
 polygon = PackedVector2Array(-338, 1319, -211, 1319, -209, 1352, -335, 1352)
@@ -47,23 +48,23 @@ polygon = PackedVector2Array(447, -732, 588, -732, 587, -778, 445, -779)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kkx70"]
 polygon = PackedVector2Array(444, -1510, 588, -1508, 587, -1559, 446, -1558)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy1ns"]
-size = Vector2(128, 64)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv7r2"]
 size = Vector2(320, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jejc5"]
-size = Vector2(176, 1728)
+size = Vector2(169, 1728)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe0ra"]
-size = Vector2(88, 1312)
+size = Vector2(67, 1312)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqfam"]
 size = Vector2(992, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27puk"]
 size = Vector2(2133, 197)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy1ns"]
+size = Vector2(128, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_836dv"]
 size = Vector2(138, 128)
@@ -191,7 +192,54 @@ occluder = SubResource("OccluderPolygon2D_kkx70")
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment" unique_id=523999365]
 color = Color(0.71838135, 0.7183814, 0.7183811, 1)
 
+[node name="DeathZones" type="Node" parent="." unique_id=1995673078]
+
+[node name="DeathZone" type="Area2D" parent="DeathZones" unique_id=1786005740]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(352, -1760)
+script = ExtResource("3_xv7r2")
+metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=441354806]
+position = Vector2(64, -48)
+shape = SubResource("RectangleShape2D_xv7r2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=1389933794]
+position = Vector2(256, -288)
+shape = SubResource("RectangleShape2D_xv7r2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=867806368]
+position = Vector2(352, -928)
+shape = SubResource("RectangleShape2D_xv7r2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=890327430]
+position = Vector2(-155.5, -96)
+shape = SubResource("RectangleShape2D_jejc5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=2124540075]
+position = Vector2(446.5, -304)
+shape = SubResource("RectangleShape2D_pe0ra")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=681864530]
+position = Vector2(1136, 992)
+shape = SubResource("RectangleShape2D_hqfam")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=783106907]
+polygon = PackedVector2Array(672, 1056, 1184, 896, 1408, 896, 1472, 928, 1568, 896, 1600, 1632, 1472, 1504, 1248, 1376, 1088, 1376, 960, 1216)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=1789325274]
+polygon = PackedVector2Array(2336, -352, 2592, -352, 2592, -32, 2570, -305, 2488, -303, 2393, -268, 2297, -193, 2164, -78, 2119, 47, 2176, 160, 2217, 189, 2242, 271, 2354, 410, 2367, 505, 2318, 421, 2193, 367, 2144, 228, 2076, 446, 2089, 547, 2053, 480, 2048, 320, 2095, 194, 2112, -192)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=1419277704]
+position = Vector2(1297, 1867)
+shape = SubResource("RectangleShape2D_27puk")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=1618109031]
+position = Vector2(160, 480)
+polygon = PackedVector2Array(1728, 640, 1920, 384, 2112, 256, 2321, 273, 2419, 181, 2391, -75, 2350, -225, 2373, -373, 2455, -410, 2496, 384, 2304, 448)
+
 [node name="Collisions" type="Node2D" parent="." unique_id=1209705684]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Collisions" unique_id=1484128992]
@@ -220,52 +268,6 @@ one_way_collision = true
 position = Vector2(512, -2272)
 shape = SubResource("RectangleShape2D_yy1ns")
 one_way_collision = true
-
-[node name="DeathZones" type="Node" parent="." unique_id=1995673078]
-
-[node name="DeathZone" type="Area2D" parent="DeathZones" unique_id=1786005740]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(352, -1760)
-script = ExtResource("3_xv7r2")
-metadata/_custom_type_script = "uid://0x6lvlhqx6h3"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=441354806]
-position = Vector2(64, -48)
-shape = SubResource("RectangleShape2D_xv7r2")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=1389933794]
-position = Vector2(256, -288)
-shape = SubResource("RectangleShape2D_xv7r2")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=867806368]
-position = Vector2(352, -928)
-shape = SubResource("RectangleShape2D_xv7r2")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=890327430]
-position = Vector2(-152, -96)
-shape = SubResource("RectangleShape2D_jejc5")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=2124540075]
-position = Vector2(436, -304)
-shape = SubResource("RectangleShape2D_pe0ra")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=681864530]
-position = Vector2(1136, 992)
-shape = SubResource("RectangleShape2D_hqfam")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=783106907]
-polygon = PackedVector2Array(672, 1056, 1184, 896, 1408, 896, 1472, 928, 1568, 896, 1600, 1632, 1472, 1504, 1248, 1376, 1088, 1376, 960, 1216)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=1789325274]
-polygon = PackedVector2Array(2336, -352, 2592, -352, 2592, -32, 2570, -305, 2488, -303, 2393, -268, 2297, -193, 2164, -78, 2119, 47, 2176, 160, 2217, 189, 2242, 271, 2354, 410, 2367, 505, 2318, 421, 2193, 367, 2144, 228, 2076, 446, 2089, 547, 2053, 480, 2048, 320, 2095, 194, 2112, -192)
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="DeathZones/DeathZone" unique_id=1419277704]
-position = Vector2(1297, 1867)
-shape = SubResource("RectangleShape2D_27puk")
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="DeathZones/DeathZone" unique_id=1618109031]
-position = Vector2(160, 480)
-polygon = PackedVector2Array(1728, 640, 1920, 384, 2112, 256, 2321, 273, 2419, 181, 2391, -75, 2350, -225, 2373, -373, 2455, -410, 2496, 384, 2304, 448)
 
 [node name="ExitArea" type="Area2D" parent="." unique_id=2048681686]
 position = Vector2(3072, -2240)
@@ -413,6 +415,11 @@ position = Vector2(157, -105)
 
 [node name="URC" type="Node2D" parent="CameraLimits" unique_id=1994908899]
 position = Vector2(3084, -2882)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1286409849]
+position = Vector2(3042, -2254)
+texture = ExtResource("20_vqqq3")
+texture_scale = 12.75
 
 [connection signal="animation_finished" from="Interactables/CrumbleBlocks/CrumblingPlatform3/AnimatedSprite2D" to="Interactables/CrumbleBlocks/CrumblingPlatform3" method="_on_animated_sprite_2d_animation_finished"]
 

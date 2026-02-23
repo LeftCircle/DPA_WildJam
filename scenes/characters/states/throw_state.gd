@@ -51,5 +51,6 @@ func _float() -> void:
 	character.move_and_slide()
 
 func _bounce_on_throw() -> void:
-	character.velocity -= _throw_dir * throw_impulse
-	character.move_and_slide()
+	if !character.is_on_floor():
+		character.velocity -= _throw_dir * throw_impulse
+		character.move_and_slide()

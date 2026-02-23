@@ -11,13 +11,14 @@ signal reset_feathers()
 
 var feather_counter = 0
 var acquired_feathers : int = 0
-#var npcs_saved: Array[bool] = [false, false, false, false, false]
-var npcs_saved: Array[bool] = [true,true,true,true,true]
+var npcs_saved: Array[bool] = [false, false, false, false, false]
+#var npcs_saved: Array[bool] = [true,true,true,true,true]
 var doomed = false
 var _can_bullet_time : bool = true
 
 @onready var camera = %Camera2D
 @onready var bullet_time_timer : Timer = $BulletTimeDuration
+@onready var bullet_time_reset : Timer = $BulletTimeReset
 
 
 func _ready():
@@ -31,12 +32,13 @@ func _physics_process(delta):
 func _try_to_bullet_time() -> void:
 	if _can_bullet_time:
 		if Input.is_action_just_pressed("bullet_time"):
-			if feather_counter > 0:
-				feather_counter -= 1
-				feather_used.emit()
+			#if feather_counter > 0:
+				#feather_counter -= 1
+				#feather_used.emit()
 			Engine.time_scale = slow_time
 			_can_bullet_time = false
 			bullet_time_timer.start()
+			bullet_time_reset.start()
 	if Input.is_action_just_released("bullet_time"):
 		Engine.time_scale = 1.0
 
@@ -96,3 +98,7 @@ func _on_feather_resetter_reset_feathers():
 
 func _on_bullet_time_duration_timeout():
 	Engine.time_scale = 1.0
+
+
+func _on_bullet_time_reset_timeout():
+	_can_bullet_time = true
