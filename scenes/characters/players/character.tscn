@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://bu0m3hx2a4xrk" path="res://scenes/characters/players/player_audio.gd" id="25_msr6y"]
 [ext_resource type="Texture2D" uid="uid://cm05pmihtg2ld" path="res://assets/characters/player/MCSpriteSheetDashV2.png" id="25_t02n3"]
 [ext_resource type="PackedScene" uid="uid://e0q6ej4cqhvc" path="res://scenes/characters/interactions/PlayerInteract.tscn" id="27_ewdww"]
+[ext_resource type="Texture2D" uid="uid://bmn1a24c6mhsb" path="res://assets/characters/player/MCSpriteSheetDeath.png" id="28_s6xxd"]
 [ext_resource type="AudioStream" uid="uid://v07t1rlfhshi" path="res://audio/sfx/Collect Feather.WAV" id="31_t5lbr"]
 [ext_resource type="PackedScene" uid="uid://u3hm0ly3ap0k" path="res://scenes/characters/ui/HUD.tscn" id="32_t02n3"]
 
@@ -100,6 +101,47 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2(1, 1), Vector2(1.43, 1.43), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8t2c8"]
+resource_name = "Death"
+length = 1.1250125
+step = 0.11111111
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Death:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Death:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Death:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_yqo81"]
@@ -584,6 +626,42 @@ tracks/21/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Sprites/Death:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Sprites/Death:frame")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Sprites/Death:scale")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_y28c2"]
 resource_name = "Run"
@@ -728,6 +806,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7lw86"]
 _data = {
 &"Dash": SubResource("Animation_5hhuf"),
+&"Death": SubResource("Animation_8t2c8"),
 &"DoubleJump": SubResource("Animation_yqo81"),
 &"DoubleJumpLeft": SubResource("Animation_uiu2b"),
 &"Falling": SubResource("Animation_msr6y"),
@@ -903,6 +982,13 @@ visible = false
 position = Vector2(0, -50)
 texture = ExtResource("24_mt0yb")
 hframes = 5
+
+[node name="Death" type="Sprite2D" parent="Sprites" unique_id=1630446041]
+visible = false
+position = Vector2(0, -64)
+scale = Vector2(-1, 1)
+texture = ExtResource("28_s6xxd")
+hframes = 9
 
 [node name="FeatherResetter" parent="." unique_id=863521036 node_paths=PackedStringArray("player") instance=ExtResource("23_0tlt7")]
 player = NodePath("..")
