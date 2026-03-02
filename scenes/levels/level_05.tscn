@@ -393,6 +393,9 @@ position = Vector2(1600, -1728)
 [node name="HitTarget" parent="Interactables/Cages/Cage4/MoveToPositionsOnHit" parent_id_path=PackedInt32Array(1221126364, 1417091144) index="2" unique_id=562628805]
 position = Vector2(1600, -2688)
 
+[node name="FeatherPickup" parent="Interactables/Cages/Cage4" unique_id=279937344 instance=ExtResource("10_ywrx1")]
+position = Vector2(-2, 55)
+
 [node name="Cage5" parent="Interactables/Cages" unique_id=1816597658 instance=ExtResource("13_tavyg")]
 position = Vector2(1728, -704)
 

@@ -21,15 +21,13 @@ func reset_player():
 	player_starting_state = PlayerStartingState.new()
 
 func _on_level_exit():
-	
 	TransitionManager.wipe_in()
 	await TransitionManager.finished
 
 	player_starting_state.current_feathers = player.acquired_feathers
-	#get_tree().change_scene_to_packed(current_level.next_level)
-	get_tree().call_deferred("change_scene_to_packed", current_level.next_level)
-	player_starting_state.npcs_saved = player.npcs_saved
+	player_starting_state.npcs_saved = player.npcs_saved.duplicate(true)
 	player_starting_state.doomed = player.doomed
+	get_tree().call_deferred("change_scene_to_packed", current_level.next_level)
 	
 	get_tree().change_scene_to_packed(current_level.next_level)
 	await get_tree().process_frame
@@ -40,6 +38,7 @@ func _on_level_exit():
 func _on_death_area_entered() -> void:
 	print("Death Area entered")
 	player._on_death()
+	await player.death_finished
 	
 	TransitionManager.wipe_in()
 	await TransitionManager.finished

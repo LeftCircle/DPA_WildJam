@@ -8,6 +8,7 @@ extends LimboHSM
 @onready var dash : CharacterState = $DashState
 @onready var throw : CharacterState = $ThrowState
 @onready var jump_state : CharacterState = $JumpState
+@onready var death : CharacterState = $DeathState
 
 func _ready():
 	initialize(character)
@@ -45,4 +46,6 @@ func _check_for_feather() -> bool:
 		character.feather_used.emit()
 	print("Current Feathers = ", character.feather_counter)
 	return check
-		
+
+func _on_death() -> void:
+	change_active_state(death)

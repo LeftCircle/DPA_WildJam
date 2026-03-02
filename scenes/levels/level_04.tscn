@@ -155,7 +155,7 @@ tile_map_data = PackedByteArray("AABjAN3/AAAAAAAAAABiAN3/AAAAAAAAAABhAN3/AAAAAAA
 tile_set = ExtResource("2_31sm7")
 
 [node name="Character" parent="." unique_id=608707863 instance=ExtResource("8_gkpor")]
-position = Vector2(793, -1052)
+position = Vector2(2763, -272)
 
 [node name="vfx_feathers_light" parent="Character/PlayerVFX" parent_id_path=PackedInt32Array(608707863, 1899400860) index="0" unique_id=501012890]
 _test_count = 16

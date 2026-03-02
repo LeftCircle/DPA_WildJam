@@ -6,6 +6,7 @@ signal dash()
 signal dash_finished()
 signal feather_collected()
 signal reset_feathers()
+signal death_finished()
 
 @export var slow_time : float = 0.3
 
@@ -19,11 +20,19 @@ var _can_bullet_time : bool = true
 @onready var camera = %Camera2D
 @onready var bullet_time_timer : Timer = $BulletTimeDuration
 @onready var bullet_time_reset : Timer = $BulletTimeReset
+@onready var anim_tree : PlayerAnimationTree = $AnimationTree
+@onready var anim_player : AnimationPlayer = $AnimationPlayer
+@onready var sm : LimboHSM = $SM_Character
+@onready var feather_vfx : FeathersLight = $PlayerVFX/vfx_feathers_light
 
 
 func _ready():
 	LevelDriver.player = self
 	reset_feathers_to(LevelDriver.player_starting_state.current_feathers)
+	doomed = LevelDriver.player_starting_state.doomed
+	npcs_saved = LevelDriver.player_starting_state.npcs_saved
+	print("Doomed = ", doomed)
+	print("Npc saved = ", npcs_saved)
 
 func _physics_process(delta):
 	_crumble_platforms()
@@ -73,12 +82,13 @@ func _crumble_platforms() -> void:
 			coll.get_collider().crumble()
 
 func _on_death() -> void:
-	pass
+	sm._on_death()
 
 func reset_feathers_to(val : int) -> void:
 	acquired_feathers = val
 	feather_counter = val
 	reset_feathers.emit()
+	#feather_vfx.update_feathers_count(feather_counter)
 
 func reset_doom_to(val : bool) -> void:
 	doomed = val
@@ -88,7 +98,6 @@ func save_npc(val: int) -> void:
 
 func reset_saved_to(val : Array[bool]) -> void:
 	npcs_saved = val
-
 
 func _on_feather_resetter_reset_feathers():
 	reset_feathers_to(acquired_feathers)
@@ -102,3 +111,13 @@ func _on_bullet_time_duration_timeout():
 
 func _on_bullet_time_reset_timeout():
 	_can_bullet_time = true
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Death":
+		death_finished.emit()
+
+
+func _on_feather_used():
+	#feather_vfx.update_feathers_count(feather_counter)
+	pass

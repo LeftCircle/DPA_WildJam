@@ -14,7 +14,8 @@ class_name FeathersLight
 	set(value):
 		_test_count = value
 		if is_node_ready():
-			update_feathers_count(_test_count)
+			#update_feathers_count(_test_count)
+			pass
 @export var _test_light_is_on: bool = true:
 	set(value):
 		_test_light_is_on = value
@@ -32,17 +33,18 @@ func _ready() -> void:
 	var cm_node = get_tree().root.find_child("CanvasModulate", true, false)
 	if cm_node is CanvasModulate:
 		_dimmed_color = cm_node.color
-	update_feathers_count(INIT_COUNT)
+	#update_feathers_count(INIT_COUNT)
 	
 	
 # light update ( 1-20 )
-func update_feathers_count(count: int) -> void:
-	if not is_node_ready() or light == null or count < 1: 
+#func update_feathers_count(count: int) -> void:
+func _physics_process(delta):
+	if not is_node_ready() or light == null:# or count < 1: 
 		return
-	_current_count = count
+	_current_count = target_character.feather_counter
 	light.texture_scale = min_scale+( _level * _current_count)
 	update_light_state(true)
-	print("count = ", _current_count, "  texture_scale = ", light.texture_scale)
+	#print("count = ", _current_count, "  texture_scale = ", light.texture_scale)
 
 # light turn on or turn off
 func update_light_state(is_on: bool):

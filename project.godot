@@ -13,7 +13,11 @@ config_version=5
 config/name="DPA_WildJam"
 run/main_scene="uid://dr2uj3id5qrck"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/stretch_mode=2
+boot_splash/use_filter=false
+boot_splash/image="uid://cugww5cnj1qpe"
+config/icon="uid://ntuemj3pul34"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
@@ -25,7 +29,6 @@ TransitionManager="*uid://c3ws1iojn1u3n"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -109,5 +112,3 @@ common/physics_interpolation=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

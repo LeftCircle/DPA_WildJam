@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://vlwu5cpnx855" path="res://audio/sfx/DoubleJumpRand.tres" id="13_3m5he"]
 [ext_resource type="Script" uid="uid://c8dvwd1im3862" path="res://scenes/characters/players/PlayerAnimationTree.gd" id="13_kgru6"]
 [ext_resource type="Texture2D" uid="uid://bx2ilo45uwif0" path="res://assets/characters/player/TestMCSpriteSheetV2.png" id="15_12orm"]
+[ext_resource type="Script" uid="uid://cy7432rdtpmig" path="res://scenes/characters/states/DeathState.gd" id="17_8t2c8"]
 [ext_resource type="Script" uid="uid://5ekrd6brmrx3" path="res://scenes/characters/players/player_vfx_controller.gd" id="17_uiu2b"]
 [ext_resource type="PackedScene" uid="uid://d1a0opq8vmrkp" path="res://scenes/VFX/feather_light/vfx_feathers_light.tscn" id="18_wllcr"]
 [ext_resource type="PackedScene" uid="uid://dgo5ql4vc04gt" path="res://scenes/VFX/dust/vfx_dust.tscn" id="19_ntitv"]
@@ -105,7 +106,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_8t2c8"]
 resource_name = "Death"
-length = 1.1250125
+length = 1.1111223
 step = 0.11111111
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -901,6 +902,12 @@ horizontal_movement = ExtResource("6_al1dr")
 character = NodePath("../..")
 metadata/_custom_type_script = "uid://hhqyur0hswxn"
 
+[node name="DeathState" type="LimboState" parent="SM_Character" unique_id=1704794740 node_paths=PackedStringArray("anim_tree", "character")]
+script = ExtResource("17_8t2c8")
+anim_tree = NodePath("../../AnimationTree")
+character = NodePath("../..")
+metadata/_custom_type_script = "uid://cy7432rdtpmig"
+
 [node name="AnimationTree" type="Node" parent="." unique_id=1974321728 node_paths=PackedStringArray("input_processor", "sprite_container", "anim_player")]
 script = ExtResource("13_kgru6")
 input_processor = NodePath("../InputProcessor")
@@ -922,7 +929,10 @@ position = Vector2(0, -81)
 script = ExtResource("17_uiu2b")
 jump_dust_particles = ExtResource("19_ntitv")
 
-[node name="vfx_feathers_light" parent="PlayerVFX" unique_id=501012890 instance=ExtResource("18_wllcr")]
+[node name="vfx_feathers_light" parent="PlayerVFX" unique_id=501012890 node_paths=PackedStringArray("target_character") instance=ExtResource("18_wllcr")]
+target_character = NodePath("../..")
+max_scale = 20.0
+_test_light_is_on = false
 
 [node name="vfx_dust" parent="PlayerVFX" unique_id=1359231882 instance=ExtResource("19_ntitv")]
 
@@ -1030,11 +1040,13 @@ ignore_time_scale = true
 
 [node name="BulletTimeReset" type="Timer" parent="." unique_id=372653174]
 
+[connection signal="feather_used" from="." to="." method="_on_feather_used"]
 [connection signal="feather_used" from="." to="FeatherResetter" method="_on_character_feather_used"]
 [connection signal="clear_sound" from="SM_Character/Run" to="Audio/RunStream" method="_on_run_clear_sound"]
 [connection signal="play_sound" from="SM_Character/Run" to="Audio/RunStream" method="_play_sound"]
 [connection signal="play_sound" from="SM_Character/DashState" to="Audio/AudioStreamPlayer2D2" method="_play_sound"]
 [connection signal="play_sound" from="SM_Character/JumpState" to="Audio/AudioStreamPlayer2D" method="_on_jump_state_play_sound"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="SM_Character/DashState" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="AnimationTree" method="_on_animation_player_animation_finished"]
 [connection signal="reset_feathers" from="FeatherResetter" to="." method="_on_feather_resetter_reset_feathers"]

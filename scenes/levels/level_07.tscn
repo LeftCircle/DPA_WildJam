@@ -124,7 +124,7 @@ color = Color(0.91881675, 0.91881675, 0.9188166, 1)
 [node name="CameraLimits" type="Node" parent="." unique_id=1627289321]
 
 [node name="LLC" type="Node2D" parent="CameraLimits" unique_id=905163794]
-position = Vector2(46, -71)
+position = Vector2(6, -71)
 
 [node name="URC" type="Node2D" parent="CameraLimits" unique_id=634794723]
 position = Vector2(3897, -3758)
