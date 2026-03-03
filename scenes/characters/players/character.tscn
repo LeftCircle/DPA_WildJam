@@ -931,7 +931,7 @@ jump_dust_particles = ExtResource("19_ntitv")
 
 [node name="vfx_feathers_light" parent="PlayerVFX" unique_id=501012890 node_paths=PackedStringArray("target_character") instance=ExtResource("18_wllcr")]
 target_character = NodePath("../..")
-max_scale = 20.0
+max_scale = 15.0
 _test_light_is_on = false
 
 [node name="vfx_dust" parent="PlayerVFX" unique_id=1359231882 instance=ExtResource("19_ntitv")]

@@ -27,17 +27,16 @@ func _physics_process(delta: float) -> void:
 func _lower_chandelier():
 	if (state == DEACTIVE) :
 		set_physics_process(true)
-	
+
 		# Taking base position and adding a lower position to it; chain_length controls
 		# how far down the chandelier moves
 		final_position = base_body.global_position
 		final_position += Vector2(0,1) * chain_length
-		
+
 		state = ACTIVE
-	
+
 
 func _play_fire_animations() -> void:
 	for child in base_sprite.get_children():
 		if child.has_method("start"):
 			child.start()
-		

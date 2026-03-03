@@ -53,7 +53,7 @@ func _try_to_bullet_time() -> void:
 
 func is_missing_feather() -> bool:
 	return feather_counter < acquired_feathers
-	
+
 func is_doomed() -> bool:
 	return doomed
 
