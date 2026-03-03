@@ -1,0 +1,355 @@
+[gd_scene format=3 uid="uid://cbjx1fi5n5fko"]
+
+[ext_resource type="Texture2D" uid="uid://mh8nyouhyjw5" path="res://assets/environment/general/scalesNeutral.png" id="1_px3m3"]
+[ext_resource type="Texture2D" uid="uid://025rriid4ivt" path="res://assets/environment/general/scalesLeftDown.png" id="2_2uyxb"]
+[ext_resource type="Texture2D" uid="uid://cyodg6qxc36wp" path="res://assets/environment/general/scalesRightDown.png" id="3_aaoc7"]
+[ext_resource type="Texture2D" uid="uid://f2rtk4285xip" path="res://assets/feathers/peacockFeather.png" id="4_12ffn"]
+[ext_resource type="Texture2D" uid="uid://ntuemj3pul34" path="res://assets/feathers/goodFeather.png" id="5_yovoh"]
+[ext_resource type="PackedScene" uid="uid://bnt0x2atitjy4" path="res://scenes/characters/players/character.tscn" id="6_gi7oe"]
+
+[sub_resource type="Animation" id="Animation_px3m3"]
+resource_name = "FeatherFall"
+length = 3.0
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/ScalesNeutral:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/ScalesLeftDown:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/ScalesRightDown:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/PeacockFeather:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2),
+"points": PackedFloat32Array(-25900002, 0, 0, 0.075391605, 0, -25900002, -0.075391605, -50406.473, 0.42316657, 282927.2, -7100000, -0.16945791, -133484.14, 0.25370866, 199849.53, -23900000, -0.49855816, -333333.66, 0, 0),
+"times": PackedFloat32Array(0, 0.45234963, 1.4690971, 2.991349)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/PeacockFeather:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2),
+"points": PackedFloat32Array(-94300000, 0, 0, 0.075391605, 0, -94300000, -0.075391605, -1973411.6, 0.42316657, 11076589, -63500000, -0.16945791, -5225899.5, 0.25370866, 7824101.5, -16000001, -0.49855816, -13050000, 0, 0),
+"times": PackedFloat32Array(0, 0.45234963, 1.4690971, 2.991349)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites/PeacockFeather:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 100000, -0.07333334, -16666.668, 0, 0, 100000, -0.42522484, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.44, 2.991349)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites/PeacockFeather:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 100000, -0.07333334, -16666.668, 0, 0, 100000, -0.42522484, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.44, 2.991349)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites/PeacockFeather:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.0105456, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.991349)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sprites/GoodFeather:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(25500002, -0.25, 0, 0.25, 0, 24099996, -0.5, 233334.33, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprites/GoodFeather:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-94400000, -0.25, 0, 0.25, 0, -14000001, -0.5, -13400000, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sprites/GoodFeather:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.1554079, -0.5, -0.19256799, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sprites/GoodFeather:scale:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1e-05, 0, 0, 0.06116682, 16666.668, 100000.01, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3670009)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sprites/GoodFeather:scale:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1e-05, 0, 0, 0.06116682, 16666.668, 100000.01, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3670009)
+}
+
+[sub_resource type="Animation" id="Animation_2uyxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/ScalesNeutral:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/ScalesLeftDown:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/ScalesRightDown:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/PeacockFeather:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-25900002, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/PeacockFeather:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-94300000, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites/PeacockFeather:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites/PeacockFeather:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites/PeacockFeather:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.0105456, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sprites/GoodFeather:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(25500002, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprites/GoodFeather:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-94400000, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sprites/GoodFeather:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sprites/GoodFeather:scale:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(100000.01, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sprites/GoodFeather:scale:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(100000.01, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aaoc7"]
+_data = {
+&"FeatherFall": SubResource("Animation_px3m3"),
+&"RESET": SubResource("Animation_2uyxb")
+}
+
+[node name="Scale" type="Node2D" unique_id=233578601]
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1411279193]
+z_index = 2
+scale = Vector2(1e-05, 1e-05)
+
+[node name="ScalesNeutral" type="Sprite2D" parent="Sprites" unique_id=236166856]
+visible = false
+position = Vector2(0, -21500002)
+scale = Vector2(100000.01, 100000.01)
+texture = ExtResource("1_px3m3")
+
+[node name="ScalesLeftDown" type="Sprite2D" parent="Sprites" unique_id=1709012477]
+visible = false
+position = Vector2(0, -21500002)
+scale = Vector2(100000.01, 100000.01)
+texture = ExtResource("2_2uyxb")
+
+[node name="ScalesRightDown" type="Sprite2D" parent="Sprites" unique_id=1624899936]
+visible = false
+position = Vector2(0, -21500002)
+scale = Vector2(100000.01, 100000.01)
+texture = ExtResource("3_aaoc7")
+
+[node name="PeacockFeather" type="Sprite2D" parent="Sprites" unique_id=733691377]
+position = Vector2(-25900002, -94300000)
+rotation = -1.0105456
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("4_12ffn")
+
+[node name="GoodFeather" type="Sprite2D" parent="Sprites" unique_id=4852283]
+position = Vector2(25500002, -94400000)
+scale = Vector2(100000.01, 100000.01)
+texture = ExtResource("5_yovoh")
+
+[node name="Character" parent="." unique_id=608707863 instance=ExtResource("6_gi7oe")]
+position = Vector2(441, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2059004474]
+libraries/ = SubResource("AnimationLibrary_aaoc7")
