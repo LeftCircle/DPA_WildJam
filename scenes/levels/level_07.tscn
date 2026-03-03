@@ -31,6 +31,7 @@
 [ext_resource type="Resource" uid="uid://5fa1bntfqsqk" path="res://assets/dialogue/Farewells/Drifter_Farewell.dialogue" id="18_ar5fw"]
 [ext_resource type="Resource" uid="uid://r3qqg2yexa02" path="res://assets/dialogue/Farewells/Pragmatist_Farewell.dialogue" id="20_a2c24"]
 [ext_resource type="Resource" uid="uid://brbueq4i0ln4i" path="res://assets/dialogue/Farewells/Braggart_Farewell.dialogue" id="22_iijch"]
+[ext_resource type="PackedScene" uid="uid://cbjx1fi5n5fko" path="res://scenes/objects/scale/scale.tscn" id="27_1jk42"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eafdw"]
 polygon = PackedVector2Array(34, -2583, 1766, -2587, 1831, -2627, 1870, -2569, 1815, -2502, 1819, -28, -108, -35, -105, -2591)
@@ -216,7 +217,11 @@ dialogue_resource = ExtResource("15_hqi3p")
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_ifo3o")
 
+[node name="Scale2" parent="." unique_id=233578601 instance=ExtResource("27_1jk42")]
+position = Vector2(1418.2278, -2605.4592)
+
 [node name="Scale" type="Node2D" parent="." unique_id=138198154]
+visible = false
 script = ExtResource("15_3lj0t")
 dialogue_resource = ExtResource("16_f1q3m")
 
